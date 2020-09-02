@@ -1,0 +1,32 @@
+@font-face {
+  font-style: normal;
+  font-weight: 300;
+  font-family: "plex";
+
+  font-display: swap;
+  src:
+    url("../fonts/IBMPlexSansLight.woff2") format("woff2"),
+    url("../fonts/IBMPlexSansLight.woff") format("woff");
+}
+
+@font-face {
+  font-style: italic;
+  font-weight: 300;
+  font-family: "plex";
+
+  font-display: swap;
+  src:
+    url("../fonts/IBMPlexSansLightItalic.woff2") format("woff2"),
+    url("../fonts/IBMPlexSansLightItalic.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 600;
+  font-family: "plex";
+
+  font-display: swap;
+  src:
+    url("../fonts/IBMPlexSansSemiBold.woff2") format("woff2"),
+    url("../fonts/IBMPlexSansSemiBold.woff") format("woff");
+}

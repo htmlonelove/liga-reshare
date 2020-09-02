@@ -1,0 +1,28 @@
+.btn {
+  display: inline-flex;
+  min-width: 240px;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 20px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: $color-blue;
+  color: $color-default-white;
+  font-weight: 600;
+  transition: background $default-transition-settings;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+
+  @include viewport--sm {
+    width: 100%;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      background-color: $color-pink;
+    }
+  }
+}

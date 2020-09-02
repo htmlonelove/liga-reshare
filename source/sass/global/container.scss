@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 60px;
+
+  @include viewport--md {
+    padding: 0 30px;
+  }
+
+  @include viewport--sm {
+    padding: 0 15px;
+  }
+
+  &--no-padding {
+    @include viewport--sm {
+      padding: 0;
+    }
+  }
+}

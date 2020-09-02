@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+  @@include("source/html/base/head.html")
+  <title>Лига компонентов</title>
+
+</head>
+<body>
+
+  <div style="display: none;">
+    @@include("build/img/sprite_auto.svg")
+  </div>
+
+  <div class="wrapper">
+    @@include("source/html/base/header.html", {
+      "main": true
+    })
+
+    <main>
+      <div class="container">
+        <div class="intro">
+          <div class="intro__wrapper">
+            <div class="intro__drako">
+              <svg width="190" height="215">
+                <use xlink:href="#icon-drako"></use>
+              </svg>
+            </div>
+            <h1 class="intro__title">
+              <span>Лига а.</span>
+              <span class="intro__title-pale">Библиотека</span>
+              <span>Компонентов</span>
+            </h1>
+          </div>
+          <div class="intro__description">
+            <p>Мы написали и будем писать для Вас <em>все самое вкусное</em> и&nbsp;почти&nbsp;без плагинов.</p>
+            <p>И будем писать еще...</p>
+          </div>
+        </div>
+
+        <nav class="components-nav">
+          <ul class="components-nav__list">
+            <li class="components-nav__item">
+              <a class="components-nav__link" href="custom-select.html">Кастомный селект</a>
+            </li>
+            <li class="components-nav__item">
+              <a class="components-nav__link" href="modal.html">Модальные окна</a>
+            </li>
+            <li class="components-nav__item">
+              <a class="components-nav__link" href="tabs.html">Табы</a>
+            </li>
+            <li class="components-nav__item">
+              <a class="components-nav__link" href="accordion.html">Аккордеон</a>
+            </li>
+            <li class="components-nav__item">
+              <a class="components-nav__link" href="phone-mask.html">Легковесная телефонная маска</a>
+            </li>
+            <li class="components-nav__item">
+              <a class="components-nav__link" href="sliders.html">Слайдеры и кастомная пагинация</a>
+            </li>
+            <li class="components-nav__item">
+              <a class="components-nav__link" href="sticky-onscroll.html">Блок прилипающий при скролле</a>
+            </li>
+            <li class="components-nav__item">
+              <a class="components-nav__link" href="#">Автозапуск фонового HTML&nbsp;видео</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>

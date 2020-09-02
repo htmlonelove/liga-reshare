@@ -1,0 +1,56 @@
+// Colors
+//---------------------------------
+
+// Default
+
+$color-default-black:             #000000;
+$color-default-white:             #ffffff;
+$color-transparent:               rgba(255, 255, 255, 0);
+
+// Base
+
+$color-blue:                      #2c39f2;
+$color-pink:                      #ff1553;
+
+$color-gray-light:                #f2f2f2;
+
+$color-gray-dark:                 #d3d3d3;
+$color-gray-bg:                   #efefef;
+$color-gray-text:                 #555555;
+$color-gray-gloomy:               #777777;
+$color-gray-subtitle:             #878787;
+$color-gray-caption:              #a5a5a5;
+
+// Shadow
+
+$shadow-black:                      0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+// Gradient
+
+$black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+
+// Typography
+//---------------------------------
+
+$font-family--plex:                 "plex", "Arial", sans-serif;
+
+// Animation
+//---------------------------------
+
+$default-transition-settings:       0.3s ease;
+$modal-transition-settings:         0.6s cubic-bezier(0.55, 0, 0.1, 1);
+
+// Viewports
+//---------------------------------
+
+$viewport--sm:                      320px;
+$viewport--md:                      768px;
+$viewport--lg:                      1024px;
+$viewport--xl:                      1440px;
+$viewport--xxl:                     1920px;
+
+// Retina
+//---------------------------------
+
+$retina-dpi:                        144dpi;
+$retina-dppx:                       1.5dppx;

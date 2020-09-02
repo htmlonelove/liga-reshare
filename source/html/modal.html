@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+  @@include("source/html/base/head.html")
+  <title>Лига компонентов</title>
+
+</head>
+<body>
+
+  <div style="display: none;">
+    @@include("build/img/sprite_auto.svg")
+  </div>
+
+  <div class="wrapper">
+    @@include("source/html/base/header.html")
+
+    <main>
+      <div class="container">
+        <div class="component">
+          <div class="component__heading">
+            <h1 class="component__title">Модальные окна</h1>
+            <a class="component__download-link btn" href="components/modal.zip" download>Скачать</a>
+          </div>
+          <div class="component__description">
+            <p>Подробное описание компонента, включая <em>важные моменты</em>, <a href="#">ссылки</a> и инлайновые вставки кода <code>main.style.minHeight = mainHMin - (headerH + footerH) + 'px';</code></p>
+          </div>
+          <h2 class="component__subtitle">Демо</h2>
+          <div class="component__demo">
+            <p><a class="btn" href="#">Вызов модалки 1</a></p>
+            <p><a class="btn" href="#">Вызов модалки 2</a></p>
+            <p><a class="btn" href="#">Вызов модалки 3</a></p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/vendor.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+</html>

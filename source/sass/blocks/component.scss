@@ -1,0 +1,99 @@
+.component {
+  margin-top: 60px;
+
+  &__heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 20px;
+    margin-right: 40px;
+
+    @include viewport--sm {
+      font-size: 30px;
+      line-height: 34px;
+      word-break: break-word;
+    }
+  }
+
+  &__subtitle {
+    font-size: 40px;
+    line-height: 48px;
+    margin: 40px 0 20px;
+
+    & + .component__code-snippet {
+      margin-top: -10px;
+    }
+
+    @include viewport--sm {
+      font-size: 26px;
+      line-height: 30px;
+    }
+  }
+
+  &__download-link {
+    margin-bottom: 40px;
+  }
+
+  &__code-snippet {
+    margin: 20px 0;
+
+    pre {
+      margin: 0;
+      display: flex;
+    }
+
+    code {
+      width: 100%;
+      padding-right: 32px;
+      background-color: $color-gray-light;
+    }
+  }
+
+  &__description {
+    p {
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 34px;
+
+      @include viewport--sm {
+        font-size: 20px;
+        line-height: 24px;
+      }
+
+      em {
+        font-style: normal;
+        color: $color-pink;
+      }
+
+      code {
+        padding: 4px 8px;
+        background-color: $color-gray-light;
+        font-size: 0.8em;
+
+        @include viewport--sm {
+          word-break: break-word;
+        }
+      }
+
+      a {
+        color: $color-blue;
+        transition: color $default-transition-settings;
+
+        @media (hover: hover), screen and (min-width: 0\0) {
+          &:hover,
+          &:focus {
+            color: $color-pink;
+          }
+        }
+      }
+    }
+  }
+}

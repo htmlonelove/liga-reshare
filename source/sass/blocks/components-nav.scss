@@ -1,0 +1,71 @@
+.components-nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + 40px);
+    margin-bottom: -40px;
+
+    @media (max-width: 1279px) {
+      width: calc(100% + 30px);
+      margin-bottom: -30px;
+    }
+
+    @include viewport--md {
+      width: calc(100% + 30px);
+      margin-bottom: -30px;
+    }
+
+    @include viewport--sm {
+      width: calc(100% + 15px);
+      margin-bottom: -15px;
+    }
+  }
+
+  &__item {
+    width: calc(25% - 40px);
+    margin-bottom: 40px;
+    margin-right: 40px;
+    min-height: 100px;
+
+    @media (max-width: 1279px) {
+      width: calc(25% - 30px);
+      margin-right: 30px;
+      margin-bottom: 30px;
+    }
+
+    @include viewport--md {
+      width: calc(33.3333% - 30px);
+    }
+
+    @include viewport--sm {
+      margin-right: 15px;
+      margin-bottom: 15px;
+      width: calc(50% - 15px);
+    }
+  }
+
+  &__link {
+    padding: 20px;
+    display: flex;
+    font-size: 17px;
+    line-height: 22px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+    background-color: $color-blue;
+    color: $color-default-white;
+    font-weight: 600;
+    transition: background $default-transition-settings;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        background-color: $color-pink;
+      }
+    }
+  }
+}
