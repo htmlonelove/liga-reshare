@@ -1,0 +1,18 @@
+.component__demo--autoresize-textarea {
+  .autoresize-textarea {
+    margin-bottom: 20px;
+
+    textarea {
+      font-size: 26px;
+      line-height: 30px;
+      min-width: 300px;
+      border: 2px solid $color-default-black;
+      transition: border $default-transition-settings;
+
+      &:hover,
+      &:focus {
+        border-color: $color-blue;
+      }
+    }
+  }
+}

@@ -23,10 +23,17 @@
 @import "blocks/components-nav";
 @import "blocks/component";
 
+// Demos
+//---------------------------------
+
+@import "demos/autoresize-textarea";
+@import "demos/phone-mask";
+
 // Components
 //---------------------------------
 
 @import "./../components/modal/modal";
+@import "./../components/custom-select/custom-select";
 
 
 // используйте это для отключения ховеров на тач устройствах

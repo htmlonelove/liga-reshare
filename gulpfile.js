@@ -109,9 +109,9 @@ gulp.task(`server`, function () {
     ui: false,
   });
 
-  gulp.watch(`source/html/**/*.html`, gulp.series(`html`, `refresh`));
-  gulp.watch(`source/sass/**/*.{scss,sass}`, gulp.series(`css`));
-  gulp.watch(`source/js/**/*.js`, gulp.series(`script`, `refresh`));
+  gulp.watch(`source/**/*.html`, gulp.series(`html`, `refresh`));
+  gulp.watch(`source/**/*.{scss,sass}`, gulp.series(`css`));
+  gulp.watch(`source/**/*.js`, gulp.series(`script`, `refresh`));
   gulp.watch(`source/img/**/*.svg`, gulp.series(`copysvg`, `sprite`, `html`, `refresh`));
   gulp.watch(`source/img/**/*.{png,jpg}`, gulp.series(`copypngjpg`, `html`, `refresh`));
 });
