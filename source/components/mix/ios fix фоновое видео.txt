@@ -1,0 +1,10 @@
+1. Что бы работало автовоспроизведение видео должны быть обязательные атрибут
+    preload="auto" autoplay muted playsinline<video preload="auto" autoplay muted loop playsinline poster="img/poster.jpg">
+    <source src="video/video.mp4" type="video/mp4">
+</video>    Если пункт №1 не сработал, переходим к следующим:2. Оставить только видео в формате mp4
+
+3. Подключить библиотеку iphone-inline-video.js 
+    находится по адресу: https://github.com/fregante/iphone-inline-video. Подключить в своем js файле инициализацию этой библиотеки (инструкция также есть по ссылке в пункте №3)    var video = document.querySelector('video');
+    enableInlineVideo(video);
+
+!navigator.userAgent.includes("Instagram")  https://prnt.sc/114okwh 

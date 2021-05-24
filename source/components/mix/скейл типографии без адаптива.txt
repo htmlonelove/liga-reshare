@@ -1,0 +1,14 @@
+.h2 {
+    font-size: 40px;
+    line-height: 1.2;
+    @media tablet {
+        font-size: 40px * .8
+    }
+}
+.h3 {
+    font-size: 32px;
+    line-height: 1.2;
+    @media tablet {
+        font-size: 32px * .8
+    }
+}

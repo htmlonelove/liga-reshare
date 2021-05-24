@@ -1,0 +1,18 @@
+Обязательно &#8288; и white-space nowrap
+
+
+      <a href="#" class="catalog-menu-lg__link">
+        <svg class="catalog-menu-lg__link-icon" width="21" height="21" focusable="false">
+          <use xlink:href="#icon-duck"></use>
+        </svg>
+        Игры и игрушки
+        <span class="catalog-menu-lg__link-go-icon-wrapper">&#8288;
+        <svg class="catalog-menu-lg__link-go-icon" width="20" height="21" focusable="false">
+          <use xlink:href="#icon-arrow-next"></use>
+        </svg></span>
+      </a>
+
+
+  &__link-go-icon-wrapper {
+    white-space: nowrap;
+  }

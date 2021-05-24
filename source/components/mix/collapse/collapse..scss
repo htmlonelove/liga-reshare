@@ -1,0 +1,20 @@
+.collapse {
+  overflow-anchor: none;
+}
+
+.collapse--opened {
+
+}
+
+.collapse__visible {
+
+}
+
+.collapse__hidden {
+  overflow: hidden;
+  max-height: 0;
+}
+
+.collapse__toggle {
+
+}
