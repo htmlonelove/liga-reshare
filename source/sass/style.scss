@@ -28,13 +28,19 @@
 
 @import "demos/autoresize-textarea";
 @import "demos/phone-mask";
+@import "demos/tab-class";
+@import "demos/data-tab";
+@import "demos/accordion-class";
+@import "demos/data-accordion";
+@import "demos/custom-input";
+@import "demos/custom-select";
+@import "demos/custom-toggle";
+@import "demos/toggle-group";
 
 // Components
 //---------------------------------
 
 @import "./../components/modal/modal";
-@import "./../components/custom-select/custom-select";
-
 
 // используйте это для отключения ховеров на тач устройствах
 // ! но не используйте это для текстовых полей ( input, textarea )

@@ -1,0 +1,132 @@
+.custom-toggle {
+  position: relative;
+
+  display: flex;
+  width: 500px;
+  padding: 20px 0;
+
+  &__error {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    color: $color-fire-brick;
+
+    opacity: 0;
+
+    transition: opacity $default-transition-settings;
+  }
+
+  input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+
+    clip: rect(0 0 0 0);
+  }
+
+  label {
+    position: relative;
+
+    padding-left: 26px;
+
+    cursor: pointer;
+
+    span {
+      margin-bottom: 0;
+      margin-left: 0;
+    }
+  }
+
+  &--checkbox {
+    label {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 0;
+
+        width: 16px;
+        height: 16px;
+
+        border: 1px solid $color-eucalyptus;
+
+        transition: border $default-transition-settings;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 4px;
+
+        width: 8px;
+        height: 8px;
+
+        background-color: $color-transparent;
+
+        transition: background-color $default-transition-settings;
+      }
+    }
+  }
+
+  &--radio {
+    label {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 0;
+
+        width: 16px;
+        height: 16px;
+
+        border: 1px solid $color-eucalyptus;
+        border-radius: 50%;
+
+        transition: border $default-transition-settings;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 4px;
+
+        width: 8px;
+        height: 8px;
+
+        background-color: $color-transparent;
+        border-radius: 50%;
+
+        transition: background-color $default-transition-settings;
+      }
+    }
+  }
+
+  input:checked + label::after {
+    background-color: $color-eucalyptus;
+  }
+
+  input:disabled + label::before {
+    opacity: 0.5;
+  }
+
+  &.is-invalid {
+    label span {
+      color: $color-fire-brick;
+    }
+
+    .custom-toggle__error {
+      opacity: 1;
+    }
+  }
+
+  /*&.is-valid {
+    label span {
+      color: $color-eucalyptus;
+    }
+  }*/
+}

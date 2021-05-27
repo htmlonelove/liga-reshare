@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+  @@include("source/html/base/head.html")
+  <title>Лига компонентов</title>
+
+</head>
+<body>
+
+  <div style="display: none;">
+    @@include("build/img/sprite_auto.svg")
+  </div>
+
+  <div class="wrapper">
+    @@include("source/html/base/header.html")
+
+    <main>
+      <div class="container">
+        <div class="component">
+          <div class="component__heading">
+            <h1 class="component__title">Аккордеон</h1>
+            <a class="component__download-link btn" href="components/accordion.zip" download>Скачать</a>
+          </div>
+          <div class="component__description">
+            <p></p>
+          </div>
+
+          <div class="component__description">
+            <h2 class="component__subtitle">Обязательные data атрибуты</h2>
+            <p>data-accordion="parent" Устанавливается на родителе</p>
+            <p>data-accordion="element" Устанавливается на элементе аккордеона</p>
+            <p>data-accordion="button" Устанавливается на кнопке открытия</p>
+            <p>data-accordion="content" Устанавливается на обёртке контента</p>
+            <h2 class="component__subtitle">Не обязательные data атрибуты</h2>
+            <p>data-type="single" Устанавливается на родителе, отвечает за показ только одного открытого аккордеона в группе родителя</p>
+            <p>is-open Это класс которые можно повесить на элемент аккордеона для его открытия при загрузке.</p>
+            <p><em>Аккордеоны можно вклыдывать друг вдруга с любой глубиной вложенности. Но в данный момент анимированное открытие возможно только в аккордеонах без вложенности, но мы над этим работаем)</em></p>
+          </div>
+
+          <h2 class="component__subtitle">Демо</h2>
+          <div class="component__demo">
+            @@include("source/components/accordion/accordion.html")
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/vendor.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+</html>

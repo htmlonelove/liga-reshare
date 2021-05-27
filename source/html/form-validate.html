@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    @@include("source/html/base/head.html")
+    <title>Лига компонентов</title>
+  </head>
+  <body>
+    <div style="display: none">@@include("build/img/sprite_auto.svg")</div>
+
+    <div class="wrapper">
+      @@include("source/html/base/header.html")
+
+      <main>
+        <div class="container">
+          <div class="component">
+            <div class="component__heading">
+              <h1 class="component__title">Валидация формы</h1>
+              <a class="component__download-link btn" href="components/form-validate.zip" download>Скачать</a>
+            </div>
+            <div class="component__description">
+              <p>Форма должна быть обёрнута в html элемент c data атрибутом data-validate. Для передачи колбеков при сабмите, успеха и ошибки валидации нужно установить дата атрибут data-callback="callback" с указанием типа колбеков если ничего не указывать то будет использоваться base колбек. Примеры находятся в файле init-form-validate.js</p>
+              <p>Для сброса формы нужно использовать button(type="reset") либо любой элемент с дата атрибутом data-reset</p>
+              <p>Указания типа валидаци инпута, добавляются на родительский div инпута, если не указать тип то валидироваться инпут не будет! К инпуту будут добавлятся два ариа атрибута aria-required="true" и aria-invalid="true" если в инпуте есть предустановленое значение то при инициализации и первичной проверке если введённое значение валидно aria-invalid="true" будет изменён на aria-invalid="false"</p>
+              <ul>
+                <li>
+                  <p>data-validate-type="text"</p>
+                  <p>Валилируется как обычное текстовое поле, инпуту можно указать minlength ограничение, если оно не указаны то минимальное значение при валидации будет равно 1 символу</p>
+                </li>
+                <li>
+                  <p>data-validate-type="phone"</p>
+                  <p>Валилируется по длине матрици const matrix = `${BASE_COUNTRY_CODE}${BASE_MATRIX}` где BASE_COUNTRY_CODE = "+7", а BASE_MATRIX = "(___) ___ __ __". Вы можите изменить базовый код страны и базовую матрицу поменяв константы в коде, они находятся в самом верху.</p>
+                </li>
+                <li>
+                  <p>data-validate-type="email"</p>
+                  <p>Валилируется как обычный email, от 1 символа до @ и от 1 после, затем точка и от 2 до 6 символов после неё</p>
+                </li>
+                <li>
+                  <p>data-validate-type="matrix"</p>
+                  <p>Валилируется по длине матрицы. Обязательно указывать матрицу data-matrix="____ ______" и ограничения ввода data-matrix-limitations="digit".</p>
+                </li>
+                <li>
+                  <p>data-validate-type="select"</p>
+                  <p>Валилируется на выбор как минимум одного пункта из списка</p>
+                </li>
+                <li>
+                  <p>data-validate-type="checkbox"</p>
+                  <p>Валилируется на checked, если чекбокс один то он должен быть чекнут</p>
+                </li>
+                <li>
+                  <p>data-validate-type="toggle-group"</p>
+                  <p>Валилируется группа из чекбоксов или радиокнопок на checked хотя бы одного элемента</p>
+                </li>
+              </ul>
+              <p>Ограничения ввода data-limitations="любой из пяти допустимых", добавляются на родительский div инпута вы можите добавить свои собственные ограничения в конструкцию switch case при необходимости</p>
+              <ul>
+                <li>
+                  <p>data-limitations="digit"</p>
+                  <p>Доступен ввод только цифр</p>
+                </li>
+                <li>
+                  <p>data-limitations="letters"</p>
+                  <p>Доступен ввод только букв и пробела</p>
+                </li>
+                <li>
+                  <p>data-limitations="letters-and-digit"</p>
+                  <p>Доступен ввод только букв, цифр и пробела</p>
+                </li>
+                <li>
+                  <p>data-limitations="cyrillic"</p>
+                  <p>Доступен ввод только кирилицы и пробела</p>
+                </li>
+                <li>
+                  <p>data-limitations="latin"</p>
+                  <p>Доступен ввод только латинских букв и пробела</p>
+                </li>
+              </ul>
+              <p>Ограничения ввода по матрице data-matrix-limitations="любой из пяти допустимых", добавляются на родительский div инпута вы можите добавить свои собственные ограничения в конструкцию switch case при необходимости</p>
+              <ul>
+                <li>
+                  <p>data-limitations="digit"</p>
+                  <p>Доступен ввод только цифр</p>
+                </li>
+                <li>
+                  <p>data-limitations="letters"</p>
+                  <p>Доступен ввод только букв и пробела</p>
+                </li>
+                <li>
+                  <p>data-limitations="letters-and-digit"</p>
+                  <p>Доступен ввод только букв, цифр и пробела</p>
+                </li>
+                <li>
+                  <p>data-limitations="cyrillic"</p>
+                  <p>Доступен ввод только кирилицы и пробела</p>
+                </li>
+                <li>
+                  <p>data-limitations="latin"</p>
+                  <p>Доступен ввод только латинских букв и пробела</p>
+                </li>
+              </ul>
+              <p>Ограничения ввода могут добавлятся и не на обязательные для заполнения поля форм.</p>
+              <p>Матрица передаётся дата атрибутом data-matrix="__.__.____" обязательно указывать и второй атрибут data-matrix-limitations="любой из пяти допустимых". Нижние подчёркивание в матрице соответствует введённому с клавиатуры символу. Тоесть вместо нижнего подчёркивания будет вставлятся введённый символ.<br>data-matrix="__.__.____" в данном примере при вводе мы получим следующий результат 21.02.1982<br>data-matrix="____ ______" в данном примере при вводе мы получим следующий результат 4234 234242<br>data-matrix="__-__-______" в данном примере при вводе мы получим следующий результат 42-34-234242</p>
+            </div>
+
+            <h2 class="component__subtitle">Демо</h2>
+            <div class="component__demo">
+              @@include("source/components/form-validate/form-validate.html")
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

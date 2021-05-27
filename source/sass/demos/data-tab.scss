@@ -1,0 +1,22 @@
+[data-tab="parent"].no-transition {
+  [data-tab="content"],
+  [data-tab="element"] {
+    transition: none;
+  }
+}
+
+[data-tab="content"] {
+  position: relative;
+  transition: height 0.3s;
+}
+
+[data-tab="element"] {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+[data-tab="element"].is-active {
+  z-index: 1;
+  opacity: 1;
+}

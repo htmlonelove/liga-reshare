@@ -1,16 +1,194 @@
-<div class="custom-input  custom-input--select">
-  <label for="demo">Какой-то лейбл</label>
-  <div class="custom-input__wrapper">
-    <!-- замените на svg из спрайта -->
-    <svg class="custom-input__dropdown-icon" width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M7.99967 9.19164L0.458008 1.64998L1.63301 0.474976L7.99967 6.83331L14.3663 0.474976L15.5413 1.64998L7.99967 9.19164Z"/>
-    </svg>
-    <input type="text" id="demo" name="demo" placeholder="Выберите из списка" readonly>
-    <ul class="custom-input__select-list">
-      <li class="custom-input__select-item" tabindex="0">Пункт 1</li>
-      <li class="custom-input__select-item" tabindex="0">Пункт 2</li>
-      <li class="custom-input__select-item" tabindex="0">Пункт 3</li>
+<form method="get" action="https://echo.htmlacademy.ru">
+  <h2 class="component__subtitle">Базовый селект</h2>
+  <div class="custom-select" data-select="" data-name="name-example-1" data-id="id-example-1">
+    <span class="custom-select__label">label-1</span><span class="custom-select__error">some-error</span>
+    <button class="custom-select__button" type="button" aria-label="Выберите одну из опций">
+      <span class="custom-select__text"></span><span class="custom-select__icon"></span>
+    </button>
+    <ul class="custom-select__list" role="listbox">
+      <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="false" role="option">
+        example-1
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">
+        example-2
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">
+        example-3
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">
+        example-4
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">
+        example-5
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">
+        example-6
+      </li>
     </ul>
   </div>
-  <p class="custom-input__error">Выберите пункт из списка</p>
-</div>
+  <h2 class="component__subtitle">Базовый селект c выбранной опцией</h2>
+  <div class="custom-select custom-select--slide-up" data-select="" data-name="name-example-2" data-id="id-example-2">
+    <span class="custom-select__label">label-2</span><span class="custom-select__error">some-error</span>
+    <button class="custom-select__button" type="button" aria-label="Выберите одну из опций">
+      <span class="custom-select__text"></span><span class="custom-select__icon"></span>
+    </button>
+    <ul class="custom-select__list" role="listbox">
+      <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="true" role="option">
+        example-1
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">
+        example-2
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">
+        example-3
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">
+        example-4
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">
+        example-5
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">
+        example-6
+      </li>
+    </ul>
+  </div>
+  <h2 class="component__subtitle">Селект с мультивыбором без вставки текста в кнопку</h2>
+  <div
+    class="custom-select custom-select--slide-up"
+    data-select=""
+    data-name="name-example-3"
+    data-multiple="true"
+    data-id="id-example-3"
+  >
+    <span class="custom-select__label">label-3</span><span class="custom-select__error">some-error</span>
+    <button class="custom-select__button" type="button" aria-label="Выберите одну из опций">
+      <span class="custom-select__text"></span><span class="custom-select__icon"></span>
+    </button>
+    <ul class="custom-select__list" role="listbox">
+      <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="false" role="option">
+        example-1
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">
+        example-2
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">
+        example-3
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">
+        example-4
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">
+        example-5
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">
+        example-6
+      </li>
+    </ul>
+  </div>
+  <h2 class="component__subtitle">Селект с мультивыбором без вставки текста в кнопку c выбранной опцией</h2>
+  <div
+    class="custom-select custom-select--slide-up"
+    data-select=""
+    data-name="name-example-4"
+    data-multiple="true"
+    data-id="id-example-4"
+  >
+    <span class="custom-select__label">label-4</span><span class="custom-select__error">some-error</span>
+    <button class="custom-select__button" type="button" aria-label="Выберите одну из опций">
+      <span class="custom-select__text"></span>
+      <span class="custom-select__icon"></span>
+    </button>
+    <ul class="custom-select__list" role="listbox">
+      <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="true" role="option">
+        example-1
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">
+        example-2
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="true" role="option">
+        example-3
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">
+        example-4
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">
+        example-5
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">
+        example-6
+      </li>
+    </ul>
+  </div>
+  <h2 class="component__subtitle">Селект с мультивыбором и вставкой текста в кнопку</h2>
+  <div
+    class="custom-select custom-select--slide-up"
+    data-select=""
+    data-name="name-example-5"
+    data-multiple="true"
+    data-id="id-example-5"
+    data-insert="true"
+  >
+    <span class="custom-select__label">label-5</span><span class="custom-select__error">some-error</span>
+    <button class="custom-select__button" type="button" aria-label="Выберите одну из опций">
+      <span class="custom-select__text"></span>
+      <span class="custom-select__icon"></span>
+    </button>
+    <ul class="custom-select__list" role="listbox">
+      <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="false" role="option">
+        example-1
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">
+        example-2
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">
+        example-3
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">
+        example-4
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">
+        example-5
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">
+        example-6
+      </li>
+    </ul>
+  </div>
+  <h2 class="component__subtitle">Селект с мультивыбором и вставкой текста в кнопку c выбранной опцией</h2>
+  <div
+    class="custom-select custom-select--slide-up custom-select--open-up"
+    data-select=""
+    data-name="name-example-6"
+    data-multiple="true"
+    data-id="id-example-6"
+    data-insert="true"
+  >
+    <span class="custom-select__label">label-6</span><span class="custom-select__error">some-error</span>
+    <button class="custom-select__button" type="button" aria-label="Выберите одну из опций">
+      <span class="custom-select__text"></span>
+      <span class="custom-select__icon"></span>
+    </button>
+    <ul class="custom-select__list" role="listbox">
+      <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="false" role="option">
+        example-1
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="true" role="option">
+        example-2
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="true" role="option">
+        example-3
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">
+        example-4
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">
+        example-5
+      </li>
+      <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">
+        example-6
+      </li>
+    </ul>
+  </div>
+  <button class="btn btn--blue" type="submit">Отправить</button>
+</form>

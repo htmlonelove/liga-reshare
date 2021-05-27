@@ -10,7 +10,7 @@
   background-color: $color-blue;
   color: $color-default-white;
   font-weight: 600;
-  transition: background $default-transition-settings;
+  transition: background $default-transition-settings, opacity $default-transition-settings;
   border: none;
   border-radius: 0;
   cursor: pointer;

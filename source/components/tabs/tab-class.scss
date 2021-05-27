@@ -1,0 +1,48 @@
+.tab-class {
+  margin-top: 50px;
+  max-width: 1000px;
+}
+
+.tab-class__controls {
+  display: flex;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.tab-class__control {
+  width: 100px;
+  padding: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-right: 40px;
+  opacity: 0.5;
+
+  &.is-active {
+    opacity: 1;
+    pointer-events: none;
+  }
+}
+
+.tab-class__content {
+  margin-bottom: 40px;
+}
+
+.tab-class__element {
+  padding: 10px;
+
+  &:nth-child(1) {
+    background-color: rgb(250, 235, 215);
+  }
+
+  &:nth-child(2) {
+    background-color: rgb(229, 250, 215);
+  }
+
+  &:nth-child(3) {
+    background-color: rgb(180, 188, 233);
+  }
+
+  &:nth-child(4) {
+    background-color: rgb(255, 187, 204);
+  }
+}

@@ -1,124 +1,372 @@
-const initInputSelect = () => {
-  const ENTER_KEY_CODE = 13;
-  const inputSelect = document.querySelectorAll('.custom-input--select');
-  if (!inputSelect.length) {
+// Функции создания разметки и рендера нативного селекта
+
+const createElement = (template) => {
+  const newElement = document.createElement('div');
+
+  newElement.innerHTML = template;
+
+  return newElement.firstChild;
+};
+
+const renderElement = (container, component, place = 'beforeend') => {
+  switch (place) {
+    case 'prepend':
+      container.prepend(component);
+      break;
+    case 'afterend':
+      container.after(component);
+      break;
+    case 'beforeend':
+      container.append(component);
+      break;
+  }
+};
+
+const createNativeOptionsMarkup = (items, activeIndex) => {
+  return items.map((el, index) => {
+    if (activeIndex.length) {
+      const currentIndex = activeIndex.find((item) => item === index);
+      if (currentIndex === index) {
+        return `<option ${el.value ? `value=${el.value}` : ''} selected>${el.text ? `${el.text}` : ''}</option>`;
+      } else {
+        return `<option ${el.value ? `value=${el.value}` : ''}>${el.text ? `${el.text}` : ''}</option>`;
+      }
+    } else {
+      return `<option ${el.value ? `value=${el.value}` : ''}>${el.text ? `${el.text}` : ''}</option>`;
+    }
+  }).join('\n');
+};
+
+const createNativeSelectMarkup = ({id, items, multiple, name, required, activeIndex = []}) => {
+  return `<select ${id ? `id='${id}'` : ''} ${name ? `name='${name}'` : ''} ${multiple ? 'multiple' : ''} ${
+    required ? 'required' : ''
+  } tabindex="-1" aria-hidden="true">
+            <option value=""></option>
+            ${createNativeOptionsMarkup(items, activeIndex)}
+          </select>`;
+};
+
+// Функция расстановки активных состояний у li по умолчанию
+
+const setActiveState = (multiple, selectItems) => {
+  let flag = true;
+  let activeIndex = [];
+  selectItems.forEach((item, index) => {
+    if (multiple) {
+      if (item.getAttribute('aria-selected') === 'true') {
+        activeIndex.push(index);
+      }
+    } else {
+      if (item.getAttribute('aria-selected') === 'true' && flag) {
+        activeIndex.push(index);
+        flag = false;
+      } else {
+        item.setAttribute('aria-selected', 'false');
+      }
+    }
+  });
+  return activeIndex;
+};
+
+
+// Формирование строки для мультиселекта
+
+const createMultiString = (arr) => {
+  let str = '';
+  if (arr.length) {
+    if (arr.length === 1) {
+      str = arr[0].innerHTML;
+    } else {
+      arr.forEach((el, index) => {
+        if (index === arr.length - 1) {
+          str += el.innerHTML;
+        } else {
+          str += `${el.innerHTML}, `;
+        }
+      });
+    }
+  }
+  return str;
+};
+
+// Функция расстановки активных состояний у li по умолчанию
+
+const setSelectActiveState = (multiple, insert, item) => {
+  const buttonTextBlock = item.querySelector('.custom-select__text');
+  const activeItems = item.querySelectorAll('.custom-select__item[aria-selected="true"]');
+  const label = item.querySelector('.custom-select__label');
+  const str = createMultiString(activeItems);
+
+  buttonTextBlock.style.transition = '0s';
+  label.style.transition = '0s';
+
+  setTimeout(() => {
+    label.style.transition = null;
+    buttonTextBlock.style.transition = null;
+  }, 300);
+
+  if (multiple && insert) {
+    item.classList.add('not-empty');
+    buttonTextBlock.innerHTML = str;
+  } else if (multiple) {
+    return;
+  } else {
+    item.classList.add('not-empty');
+    buttonTextBlock.innerHTML = activeItems[0].innerHTML;
+  }
+};
+
+// Функция создания структуры селекта, после создания селекта она сразу его рендерит
+
+const createSelectStructure = (item) => {
+  const options = {};
+  options.items = [];
+  const multiple = item.dataset.multiple;
+  const id = item.dataset.id;
+  const name = item.dataset.name;
+  const required = item.dataset.required;
+  const insert = item.dataset.insert;
+  const selectItems = item.querySelectorAll('.custom-select__item');
+  const activeIndex = setActiveState(multiple, selectItems);
+
+  if (activeIndex.length) {
+    options.activeIndex = activeIndex;
+    setSelectActiveState(multiple, insert, item);
+  }
+
+  if (name) {
+    options.name = name;
+  } else {
+    options.name = false;
+  }
+
+  if (required) {
+    options.required = true;
+  } else {
+    options.required = false;
+  }
+
+  if (multiple) {
+    options.multiple = true;
+  } else {
+    options.multiple = false;
+  }
+
+  if (id) {
+    options.id = id;
+  } else {
+    options.id = false;
+  }
+
+  selectItems.forEach((selectItem) => {
+    const value = selectItem.dataset.selectValue;
+    const itemInfo = {};
+    itemInfo.text = selectItem.innerText;
+    itemInfo.value = value;
+    options.items.push(itemInfo);
+  });
+
+  renderElement(item, createElement(createNativeSelectMarkup(options)));
+
+  return item;
+};
+
+// Закрытие селекта
+
+const closeSelect = () => {
+  const activeSelect = document.querySelector('[data-select].is-open');
+  document.removeEventListener('click', onDocumentClick);
+  document.removeEventListener('keydown', onEscapePress);
+  if (activeSelect) {
+    activeSelect.classList.remove('is-open');
+  }
+};
+
+// Действия при клике на элемент списка
+
+const clickAction = (el, index) => {
+  const parent = el.closest('.custom-select');
+  const multiple = parent.dataset.multiple;
+  const insert = parent.dataset.insert;
+  const buttonTextBlock = parent.querySelector('.custom-select__text');
+  const itemText = el.innerText;
+  const options = parent.querySelectorAll('option');
+
+  if (multiple) {
+    if (insert === 'true') {
+      if (el.getAttribute('aria-selected') === 'true') {
+        el.setAttribute('aria-selected', 'false');
+        const activeItems = parent.querySelectorAll('.custom-select__item[aria-selected="true"]');
+        const str = createMultiString(activeItems);
+        options[index + 1].selected = false;
+        buttonTextBlock.innerText = str;
+        if (!str) {
+          parent.classList.remove('not-empty');
+          parent.classList.remove('is-valid');
+        }
+      } else {
+        el.setAttribute('aria-selected', 'true');
+        const activeItems = parent.querySelectorAll('.custom-select__item[aria-selected="true"]');
+        const str = createMultiString(activeItems);
+        buttonTextBlock.innerText = str;
+        parent.classList.add('not-empty');
+        parent.classList.add('is-valid');
+        options[index + 1].selected = true;
+      }
+    } else {
+      if (el.getAttribute('aria-selected') === 'true') {
+        el.setAttribute('aria-selected', 'false');
+        options[index + 1].selected = false;
+      } else {
+        el.setAttribute('aria-selected', 'true');
+        options[index + 1].selected = true;
+      }
+    }
+  } else {
+    const activeItem = parent.querySelector('.custom-select__item[aria-selected="true"]');
+    if (el.getAttribute('aria-selected') === 'true') {
+      closeSelect();
+    } else {
+      if (activeItem) {
+        activeItem.setAttribute('aria-selected', 'false');
+        parent.classList.remove('not-empty');
+        parent.classList.remove('is-valid');
+      }
+      buttonTextBlock.innerText = itemText;
+      el.setAttribute('aria-selected', 'true');
+      parent.classList.add('not-empty');
+      parent.classList.add('is-valid');
+      options[index + 1].selected = true;
+      closeSelect();
+    }
+  }
+};
+
+// Обработчики событий
+
+const onDocumentClick = ({target}) => {
+  if (!target.closest('.custom-select')) {
+    closeSelect();
+  }
+};
+
+const onEscapePress = (e) => {
+  const isEscape = e.key === 'Escape';
+  if (isEscape) {
+    closeSelect();
+  }
+};
+
+const onItemClick = (el, index) => {
+  clickAction(el, index);
+};
+
+const onItemKeydown = (e, el, index) => {
+  const isEnter = e.key === 'Enter';
+  if (isEnter) {
+    clickAction(el, index);
+  }
+};
+
+const onLastItemKeydown = (e) => {
+  const isTab = e.key === 'Tab';
+  if (isTab) {
+    closeSelect();
+  }
+};
+
+const onSelectClick = (e) => {
+  const parent = e.target.closest('[data-select]');
+  const activeSelect = document.querySelector('[data-select].is-open');
+
+  parent.classList.remove('is-invalid');
+
+  if (activeSelect && activeSelect === parent) {
+    activeSelect.classList.remove('is-open');
     return;
   }
 
-  const tabKeydowns = (event) => {
-    return (event.shiftKey && event.keyCode === 9) || (!event.shiftKey && event.keyCode === 9);
-  };
+  if (activeSelect) {
+    closeSelect();
+  }
 
-  const customSelectsInputs = document.querySelectorAll('.custom-input__wrapper input');
-  const customSelectsItems = document.querySelectorAll('.custom-input__select-item');
+  document.addEventListener('click', onDocumentClick);
+  document.addEventListener('keydown', onEscapePress);
 
-  const closeAllLists = () => {
-    inputSelect.forEach((el) => {
-      el.classList.remove('custom-input--select-opened');
-    });
-  };
-
-  const removeAllActiveClass = (items) => {
-    items.forEach((el) => {
-      el.classList.remove('active');
-    });
-  };
-
-  const documentClickHandler = (evt) => {
-    if (!evt.target.closest('.custom-input__wrapper')) {
-      closeAllLists();
-      document.removeEventListener('click', documentClickHandler);
-    }
-  };
-
-  const activeSelects = () => {
-    inputSelect.forEach((node) => {
-      const inputSelectNode = node.querySelector('.custom-input__wrapper input');
-      const inputSelectOptions = node.querySelectorAll('.custom-input__select-item');
-
-      inputSelectNode.addEventListener('keydown', (evt) => {
-        if (tabKeydowns(evt)) {
-          setTimeout(() => {
-            if (!document.activeElement.classList.contains('custom-input__select-item')) {
-              closeAllLists();
-            }
-          }, 10);
-        }
-      });
-
-      inputSelectOptions.forEach((el) => {
-        el.addEventListener('keydown', (evt) => {
-          if (tabKeydowns(evt)) {
-            // eslint-disable-next-line max-nested-callbacks
-            setTimeout(() => {
-              if (!document.activeElement.classList.contains('custom-input__select-item') && document.activeElement !== inputSelectNode) {
-                closeAllLists();
-              }
-            }, 10);
-          }
-        });
-      });
-    });
-
-    customSelectsItems.forEach((el) => {
-      const optionsHandler = () => {
-        el.classList.add('active');
-        const parent = el.closest('.custom-input--select');
-        const input = parent.querySelector('input');
-        input.value = el.innerText;
-        closeAllLists();
-        removeAllActiveClass(el);
-        const changeEv = new CustomEvent('change');
-        const inputEv = new CustomEvent('input');
-        input.dispatchEvent(changeEv);
-        input.dispatchEvent(inputEv);
-        const form = el.closest('form');
-        if (form) {
-          const formChangeEv = new CustomEvent('change');
-          const formInputEv = new CustomEvent('input');
-          form.dispatchEvent(formChangeEv);
-          form.dispatchEvent(formInputEv);
-        }
-      };
-
-      el.addEventListener('click', optionsHandler);
-
-      el.addEventListener('keydown', (evt) => {
-        if (evt.keyCode === ENTER_KEY_CODE) {
-          optionsHandler();
-        }
-      });
-    });
-
-    const showListOnClick = (evt) => {
-      evt.preventDefault();
-      document.addEventListener('click', documentClickHandler);
-      if (evt.target.closest('.custom-input--select').classList.contains('custom-input--select-opened')) {
-        closeAllLists();
-      } else {
-        evt.target.closest('.custom-input--select').classList.add('custom-input--select-opened');
-      }
-    };
-
-    const showListOnKeydown = (evt) => {
-      document.addEventListener('click', documentClickHandler);
-      if (evt.keyCode === ENTER_KEY_CODE) {
-        evt.preventDefault();
-        if (evt.target.parentNode.classList.contains('custom-input--select-opened')) {
-          closeAllLists();
-        } else {
-          evt.target.parentNode.classList.add('custom-input--select-opened');
-        }
-      }
-    };
-
-    customSelectsInputs.forEach((input) => {
-      input.addEventListener('click', showListOnClick);
-      input.addEventListener('keydown', showListOnKeydown);
-    });
-  };
-
-  activeSelects();
+  if (parent.classList.contains('is-open')) {
+    parent.classList.remove('is-open');
+  } else {
+    parent.classList.add('is-open');
+  }
 };
 
-export {initInputSelect};
+const onSelectKeydown = (e) => {
+  const parent = e.target.closest('[data-select]');
+  parent.classList.remove('is-invalid');
+  if (e.shiftKey && e.key === 'Tab' && parent.closest('.is-open')) {
+    closeSelect();
+  }
+};
+
+// Все действия с селектом
+
+const setSelectAction = (item) => {
+  const customSelect = item;
+  const button = customSelect.querySelector('.custom-select__button');
+  const selectItems = customSelect.querySelectorAll('.custom-select__item');
+
+  button.addEventListener('click', onSelectClick);
+  button.addEventListener('keydown', onSelectKeydown);
+
+  selectItems.forEach((el, index) => {
+    el.addEventListener('click', () => {
+      onItemClick(el, index);
+    });
+
+    el.addEventListener('keydown', (e) => {
+      onItemKeydown(e, el, index);
+    });
+
+    if (index === selectItems.length - 1) {
+      el.addEventListener('keydown', onLastItemKeydown);
+    }
+  });
+};
+
+// Класс CustomSelect
+
+class CustomSelect {
+  constructor() {
+    window.selectInit = this.init.bind(this);
+  }
+
+  setAction(item) {
+    setSelectAction(item);
+  }
+
+  createSelect(item) {
+    createSelectStructure(item);
+    return item;
+  }
+
+  initSelects() {
+    const selects = document.querySelectorAll('[data-select]');
+    if (selects.length) {
+      selects.forEach((select) => {
+        if (!select.classList.contains('is-initialized')) {
+          const newSelect = this.createSelect(select);
+          this.setAction(newSelect);
+          select.classList.add('is-initialized');
+        }
+      });
+    }
+  }
+
+  init() {
+    this.initSelects();
+  }
+}
+
+const select = new CustomSelect();
+
+export default select.init();

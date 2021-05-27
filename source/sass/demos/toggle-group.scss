@@ -1,0 +1,30 @@
+.toggle-group {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  padding: 20px 0;
+
+  &__error {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    color: $color-fire-brick;
+
+    opacity: 0;
+
+    transition: opacity $default-transition-settings;
+  }
+
+  &.is-invalid {
+    label span {
+      color: $color-fire-brick;
+    }
+
+    .toggle-group__error {
+      opacity: 1;
+    }
+  }
+}

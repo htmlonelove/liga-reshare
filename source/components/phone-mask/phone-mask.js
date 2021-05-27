@@ -3,7 +3,7 @@ const COUNTRY_CODE = '+7';
 const length = COUNTRY_CODE.length;
 
 const replacePhoneValue = (el) => {
-  const matrix = `${COUNTRY_CODE} (__) __ _ _`;
+  const matrix = `${COUNTRY_CODE} (___) ___ __ __`;
   const def = matrix.replace(/\D/g, '');
   let i = 0;
   let val = el.value.replace(/\D/g, '');

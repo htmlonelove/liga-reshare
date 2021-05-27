@@ -17,7 +17,7 @@ const resizeHeight = (el) => {
   el.style.height = `${getHeightWithoutBorder(el)}px`;
 };
 
-const initAutoresizeTextarea = () => { // ВЫНЕСТИ В ВИНДОВ
+const initAutoResizeTextarea = () => { // ВЫНЕСТИ В ВИНДОВ
   if (!textarea.length) {
     return;
   }
@@ -48,4 +48,4 @@ const initAutoresizeTextarea = () => { // ВЫНЕСТИ В ВИНДОВ
   });
 };
 
-export {initAutoresizeTextarea, resizeHeight};
+export {initAutoResizeTextarea, resizeHeight};
