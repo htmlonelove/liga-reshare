@@ -22,7 +22,7 @@
               <p>
                 Базовая структура селекта. Это div в который вложен "лейбл", сообщение об ошибке, кнопка в которую
                 вложен span под текст и span под иконку и список с элементами для выбора. Это базовая структура которая
-                обязательна для соблюдению! Всё остальное формируется на js.
+                обязательна для соблюдению, исключением являются поля с лейблом, плейсхолдером и ошибкой! Всё остальное формируется на js.
               </p>
               <div class="component__code-snippet">
                 <pre>
@@ -30,6 +30,7 @@
                     &lt;div class="select" data-select&gt;<br />
                         &lt;span class="select__label"&gt;label-1&lt;/span&gt;<br />
                         &lt;span class="select__error"&gt;some-error&lt;/span&gt;<br />
+                        &lt;span class="select__placeholder"&gt;some-placeholder&lt;/span&gt;<br />
                         &lt;button class="select__button" type="button" aria-label="Выберите одну из опций"&gt;<br />
                             &lt;span class="select__text"&gt;&lt;/span&gt;<br />
                             &lt;span class="select__icon"&gt;&lt;/span&gt;<br />

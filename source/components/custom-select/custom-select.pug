@@ -1,4 +1,7 @@
 mixin custom-select(options = {})
+  - var selectLabel = options.label ? options.label : false
+  - var selectError = options.error ? options.error : false
+  - var selectPlaceholder = options.placeholder ? options.placeholder : false
   - var selectClass = options.class ? `custom-select ${options.class}` : "custom-select"
   - var selectName = options.name ? options.name : false
   - var selectMultiple = options.multiple ? "true" : false
@@ -7,8 +10,12 @@ mixin custom-select(options = {})
   - var ariaLabel = options.ariaLabel ? options.ariaLabel : "Выберите одну из опций"
 
   div(class=selectClass, data-select="", data-name=selectName, data-multiple=selectMultiple, data-id=selectId, data-insert=selectInsert)
-    span.custom-select__label= options.label
-    span.custom-select__error= options.error
+    if selectLabel
+      span.custom-select__label=options.label
+    if selectError
+      span.custom-select__error=options.error
+    if selectPlaceholder
+      span.custom-select__placeholder=options.placeholder
     button.custom-select__button(type="button", aria-label=ariaLabel)
       span.custom-select__text
       span.custom-select__icon
@@ -20,6 +27,9 @@ mixin custom-select(options = {})
 form(method="get", action="https://echo.htmlacademy.ru")
   p Базовый селект
   +custom-select({id: "id-example-1", label: "label-1", ariaLabel: "Выберите одну из опций", name: "name-example-1", error: "some-error", options: [{text: "example-1", value: "id-1"}, {text: "example-2", value: "id-2"}, {text: "example-3", value: "id-3"}, {text: "example-4", value: "id-4"}, {text: "example-5", value: "id-5"}, {text: "example-6", value: "id-6"}]})
+
+  p Базовый селект с плейсхолдером
+  +custom-select({class: "custom-select--placeholder", label: "label-placeholder", id: "id-example-1", placeholder: "placeholder", ariaLabel: "Выберите одну из опций", name: "name-example-1", error: "some-error", options: [{text: "example-1", value: "id-1"}, {text: "example-2", value: "id-2"}, {text: "example-3", value: "id-3"}, {text: "example-4", value: "id-4"}, {text: "example-5", value: "id-5"}, {text: "example-6", value: "id-6"}]})
 
   p Базовый селект c выбранной опцией
   +custom-select({class: "custom-select--slide-up", id: "id-example-2", label: "label-2", name: "name-example-2", error: "some-error", options: [{text: "example-1", value: "id-1", isActive: true}, {text: "example-2", value: "id-2"}, {text: "example-3", value: "id-3"}, {text: "example-4", value: "id-4"}, {text: "example-5", value: "id-5"}, {text: "example-6", value: "id-6"}]})

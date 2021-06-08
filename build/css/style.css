@@ -1602,6 +1602,17 @@ button,
     transition: transform 0.3s ease, opacity 0.3s ease;
     transition: transform 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
     pointer-events: none; }
+  .custom-select__placeholder {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+    transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
+    pointer-events: none; }
   .custom-select select {
     position: absolute;
     width: 1px;
@@ -1654,18 +1665,18 @@ button,
     -webkit-transition: background-color 0.3s ease;
     transition: background-color 0.3s ease; }
     .custom-select__item[aria-selected="true"] {
-      background-color: rgba(255, 21, 83, 0.5); }
+      background-color: #b2b2b2; }
       @media (hover: hover), screen and (min-width: 0\0) {
         .custom-select__item[aria-selected="true"]:hover, .custom-select__item[aria-selected="true"]:focus {
-          background-color: rgba(255, 21, 83, 0.5); } }
+          background-color: #b2b2b2; } }
     @media (hover: hover), screen and (min-width: 0\0) {
       .custom-select__item:hover, .custom-select__item:focus {
-        background-color: #a5a5a5; } }
+        background-color: #f2f2f2; } }
   .custom-select__error {
     position: absolute;
     bottom: 0;
     left: 0;
-    color: #ff1553;
+    color: #b22222;
     opacity: 0;
     -webkit-transition: opacity 0.1s ease;
     transition: opacity 0.1s ease; }
@@ -1695,11 +1706,6 @@ button,
     transition: transform 0.3s ease, -webkit-transform 0.3s ease;
     -webkit-clip-path: polygon(100% 0, 100% 20%, 50% 100%, 0 20%, 0 0, 50% 80%);
             clip-path: polygon(100% 0, 100% 20%, 50% 100%, 0 20%, 0 0, 50% 80%); }
-  .custom-select--open-up .custom-select__list {
-    bottom: auto;
-    top: 0;
-    -webkit-transform: translateY(calc(32px - 100%));
-            transform: translateY(calc(32px - 100%)); }
   .custom-select.is-open .custom-select__list {
     visibility: visible;
     opacity: 1; }
@@ -1716,16 +1722,26 @@ button,
     opacity: 1; }
   .custom-select.not-empty .custom-select__label {
     opacity: 0; }
+  .custom-select.not-empty .custom-select__placeholder {
+    opacity: 0; }
   .custom-select.is-invalid .custom-select__error {
     opacity: 1; }
   .custom-select.is-invalid .custom-select__button {
-    border: 2px solid #ff1553; }
+    border: 2px solid #b22222; }
     .custom-select.is-invalid .custom-select__button:focus, .custom-select.is-invalid .custom-select__button:hover {
-      border: 2px solid rgba(255, 21, 83, 0.5); }
+      border: 2px solid rgba(178, 34, 34, 0.5); }
   .custom-select.is-valid .custom-select__button {
-    border: 2px solid #2c39f2; }
+    border: 2px solid #22b259; }
     .custom-select.is-valid .custom-select__button:focus, .custom-select.is-valid .custom-select__button:hover {
-      border: 2px solid rgba(44, 57, 242, 0.5); }
+      border: 2px solid rgba(34, 178, 89, 0.5); }
+  .custom-select--placeholder .custom-select__label {
+    -webkit-transform: translateY(calc(-50% - 40px));
+            transform: translateY(calc(-50% - 40px));
+    opacity: 1; }
+  .custom-select--placeholder.is-open .custom-select__label {
+    opacity: 1; }
+  .custom-select--placeholder.not-empty .custom-select__label {
+    opacity: 1; }
   .custom-select--slide-up.not-empty .custom-select__label {
     -webkit-transform: translateY(calc(-50% - 40px));
             transform: translateY(calc(-50% - 40px));

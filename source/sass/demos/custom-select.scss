@@ -16,6 +16,18 @@
     pointer-events: none;
   }
 
+  &__placeholder {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+
+    transform: translateY(-50%);
+
+    transition: transform $default-transition-settings, opacity $default-transition-settings;
+
+    pointer-events: none;
+  }
+
   select {
     position: absolute;
 
@@ -81,12 +93,12 @@
     transition: background-color $default-transition-settings;
 
     &[aria-selected="true"] {
-      background-color: rgba($color-pink, 0.5);
+      background-color: $color-pink-swan;
 
       @media (hover: hover), screen and (min-width: 0\0) {
         &:hover,
         &:focus {
-          background-color: rgba($color-pink, 0.5);
+          background-color: $color-pink-swan;
         }
       }
     }
@@ -94,7 +106,7 @@
     @media (hover: hover), screen and (min-width: 0\0) {
       &:hover,
       &:focus {
-        background-color: $color-gray-caption;
+        background-color: $color-white-smoke;
       }
     }
   }
@@ -104,7 +116,7 @@
     bottom: 0;
     left: 0;
 
-    color: $color-pink;
+    color: $color-fire-brick;
 
     opacity: 0;
 
@@ -142,14 +154,6 @@
     clip-path: polygon(100% 0, 100% 20%, 50% 100%, 0 20%, 0 0, 50% 80%);
   }
 
-  &--open-up {
-    .custom-select__list {
-      bottom: auto;
-      top: 0;
-      transform: translateY(calc(32px - 100%));
-    }
-  }
-
   &.is-open {
     .custom-select__list {
       visibility: visible;
@@ -180,6 +184,10 @@
     .custom-select__label {
       opacity: 0;
     }
+
+    .custom-select__placeholder {
+      opacity: 0;
+    }
   }
 
   &.is-invalid {
@@ -188,23 +196,38 @@
     }
 
     .custom-select__button {
-      border: 2px solid $color-pink;
+      border: 2px solid $color-fire-brick;
 
       &:focus,
       &:hover {
-        border: 2px solid rgba($color-pink, 0.5);
+        border: 2px solid rgba($color-fire-brick, 0.5);
       }
     }
   }
 
   &.is-valid {
     .custom-select__button {
-      border: 2px solid $color-blue;
+      border: 2px solid $color-eucalyptus;
 
       &:focus,
       &:hover {
-        border: 2px solid rgba($color-blue, 0.5);
+        border: 2px solid rgba($color-eucalyptus, 0.5);
       }
+    }
+  }
+
+  &--placeholder {
+    .custom-select__label {
+      transform: translateY(calc(-50% - 40px));
+      opacity: 1;
+    }
+
+    &.is-open .custom-select__label {
+      opacity: 1;
+    }
+
+    &.not-empty .custom-select__label {
+      opacity: 1;
     }
   }
 
