@@ -89,8 +89,13 @@ const initTabAction = (tab) => {
       const currentHeight = contentBlock.scrollHeight;
       const newHeight = tabsElements[i].scrollHeight;
 
-      activeControl.classList.remove('is-active');
-      activeTabElement.classList.remove('is-active');
+      if (activeControl) {
+        activeControl.classList.remove('is-active');
+      }
+
+      if (activeTabElement) {
+        activeTabElement.classList.remove('is-active');
+      }
 
       if (currentHeight > newHeight) {
         setTimeout(() => {
