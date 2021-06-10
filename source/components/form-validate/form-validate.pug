@@ -1,0 +1,36 @@
+mixin custom-input(options = {})
+  - const dataValidateType = options.dataValidateType ? options.dataValidateType : false
+  - const dataLimitations = options.dataLimitations ? options.dataLimitations : false
+  - const dataMatrix = options.dataMatrix ? options.dataMatrix : false
+  - const dataMatrixLimitations = options.dataMatrixLimitations ? options.dataMatrixLimitations : false
+  - const inputLabel = options.inputLabel ? options.inputLabel : false
+  - const inputPlaceholder= options.inputPlaceholder ? options.inputPlaceholder : false
+  - const inputError = options.inputError ? options.inputError : false
+  - const inputType = options.inputType ? options.inputType : "text"
+  - const inputId = options.inputId ? options.inputId : false
+  - const inputName = options.inputName ? options.inputName : false
+  - const inputValue = options.inputValue ? options.inputValue : false
+  - const inputMinLength = options.inputMinLength ? options.inputMinLength : false
+  - const inputMaxLength = options.inputMaxLength ? options.inputMaxLength : false
+
+  .custom-input(data-validate-type=dataValidateType, data-limitations=dataLimitations, data-matrix=dataMatrix, data-matrix-limitations=dataMatrixLimitations)
+    label
+      if inputLabel
+        span.custom-input__label!=inputLabel
+      input(type=inputType, id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder)
+    if inputError
+      .custom-input__error!=inputError
+
+div(data-validate)
+  form(method="get", action="https://echo.htmlacademy.ru")
+    p.input-desc Инпут data-validate-type="text" data-limitations="letters" с установленной minlength
+    +custom-input({
+      dataValidateType: "text",
+      dataLimitations: "letters",
+      inputLabel: "Введите ваше имя",
+      inputError: "Введено не корректное значение",
+      inputName: "user-name",
+      inputMinLength: "2"
+    })
+    +custom-input()
+    button.btn.btn--aquamarine(type="submit") Отправить форму

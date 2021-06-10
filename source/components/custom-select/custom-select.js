@@ -68,7 +68,6 @@ const setActiveState = (multiple, selectItems) => {
   return activeIndex;
 };
 
-
 // Формирование строки для мультиселекта
 
 const createMultiString = (arr) => {
@@ -134,29 +133,10 @@ const createSelectStructure = (item) => {
     setSelectActiveState(multiple, insert, item);
   }
 
-  if (name) {
-    options.name = name;
-  } else {
-    options.name = false;
-  }
-
-  if (required) {
-    options.required = true;
-  } else {
-    options.required = false;
-  }
-
-  if (multiple) {
-    options.multiple = true;
-  } else {
-    options.multiple = false;
-  }
-
-  if (id) {
-    options.id = id;
-  } else {
-    options.id = false;
-  }
+  options.name = name || false;
+  options.id = id || false;
+  options.required = Boolean(required);
+  options.multiple = Boolean(multiple);
 
   selectItems.forEach((selectItem) => {
     const value = selectItem.dataset.selectValue;
@@ -191,6 +171,19 @@ const clickAction = (el, index) => {
   const buttonTextBlock = parent.querySelector('.custom-select__text');
   const itemText = el.innerText;
   const options = parent.querySelectorAll('option');
+  const select = parent.querySelector('select');
+  const changeEv = new CustomEvent('change');
+  const inputEv = new CustomEvent('input');
+  select.dispatchEvent(changeEv);
+  select.dispatchEvent(inputEv);
+  const form = select.closest('form');
+
+  if (form) {
+    const formChangeEv = new CustomEvent('change');
+    const formInputEv = new CustomEvent('input');
+    form.dispatchEvent(formChangeEv);
+    form.dispatchEvent(formInputEv);
+  }
 
   if (multiple) {
     if (insert === 'true') {
