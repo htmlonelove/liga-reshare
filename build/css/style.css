@@ -1359,7 +1359,7 @@ button,
       background-color: #ff1553; } }
 
 .component {
-  margin-top: 60px; }
+  margin: 60px 0; }
   .component__heading {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1664,10 +1664,10 @@ button,
     cursor: pointer;
     -webkit-transition: background-color 0.3s ease;
     transition: background-color 0.3s ease; }
-    .custom-select__item[aria-selected="true"] {
+    .custom-select__item[aria-selected='true'] {
       background-color: #b2b2b2; }
       @media (hover: hover), screen and (min-width: 0\0) {
-        .custom-select__item[aria-selected="true"]:hover, .custom-select__item[aria-selected="true"]:focus {
+        .custom-select__item[aria-selected='true']:hover, .custom-select__item[aria-selected='true']:focus {
           background-color: #b2b2b2; } }
     @media (hover: hover), screen and (min-width: 0\0) {
       .custom-select__item:hover, .custom-select__item:focus {
@@ -1706,6 +1706,11 @@ button,
     transition: transform 0.3s ease, -webkit-transform 0.3s ease;
     -webkit-clip-path: polygon(100% 0, 100% 20%, 50% 100%, 0 20%, 0 0, 50% 80%);
             clip-path: polygon(100% 0, 100% 20%, 50% 100%, 0 20%, 0 0, 50% 80%); }
+  .custom-select.open-up .custom-select__list {
+    bottom: auto;
+    top: 0;
+    -webkit-transform: translateY(calc(-100% + 30px));
+            transform: translateY(calc(-100% + 30px)); }
   .custom-select.is-open .custom-select__list {
     visibility: visible;
     opacity: 1; }
@@ -1714,10 +1719,6 @@ button,
             transform: rotate(180deg); }
   .custom-select.is-open .custom-select__label {
     opacity: 0; }
-  .custom-select.is-open.custom-select--slide-up .custom-select__label {
-    -webkit-transform: translateY(calc(-50% - 40px));
-            transform: translateY(calc(-50% - 40px));
-    opacity: 1; }
   .custom-select.not-empty .custom-select__text {
     opacity: 1; }
   .custom-select.not-empty .custom-select__label {
@@ -1742,11 +1743,11 @@ button,
     opacity: 1; }
   .custom-select--placeholder.not-empty .custom-select__label {
     opacity: 1; }
-  .custom-select--slide-up.not-empty .custom-select__label {
+  .custom-select.slide-up.not-empty .custom-select__label, .custom-select.slide-up.is-open .custom-select__label {
     -webkit-transform: translateY(calc(-50% - 40px));
             transform: translateY(calc(-50% - 40px));
     opacity: 1; }
-  .custom-select--slide-up.not-empty .custom-select__text {
+  .custom-select.slide-up.not-empty .custom-select__text, .custom-select.slide-up.is-open .custom-select__text {
     opacity: 1; }
 
 .custom-toggle {

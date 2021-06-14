@@ -92,7 +92,7 @@
 
     transition: background-color $default-transition-settings;
 
-    &[aria-selected="true"] {
+    &[aria-selected='true'] {
       background-color: $color-pink-swan;
 
       @media (hover: hover), screen and (min-width: 0\0) {
@@ -154,6 +154,14 @@
     clip-path: polygon(100% 0, 100% 20%, 50% 100%, 0 20%, 0 0, 50% 80%);
   }
 
+  &.open-up {
+    .custom-select__list {
+      bottom: auto;
+      top: 0;
+      transform: translateY(calc(-100% + 30px));
+    }
+  }
+
   &.is-open {
     .custom-select__list {
       visibility: visible;
@@ -166,13 +174,6 @@
 
     .custom-select__label {
       opacity: 0;
-    }
-  }
-
-  &.is-open.custom-select--slide-up {
-    .custom-select__label {
-      transform: translateY(calc(-50% - 40px));
-      opacity: 1;
     }
   }
 
@@ -231,16 +232,15 @@
     }
   }
 
-  &--slide-up {
-    &.not-empty {
-      .custom-select__label {
-        transform: translateY(calc(-50% - 40px));
-        opacity: 1;
-      }
+  &.slide-up.not-empty,
+  &.slide-up.is-open {
+    .custom-select__label {
+      transform: translateY(calc(-50% - 40px));
+      opacity: 1;
+    }
 
-      .custom-select__text {
-        opacity: 1;
-      }
+    .custom-select__text {
+      opacity: 1;
     }
   }
 }

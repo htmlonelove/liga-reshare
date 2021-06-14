@@ -147,7 +147,6 @@ const createSelectStructure = (item) => {
   });
 
   renderElement(item, createElement(createNativeSelectMarkup(options)));
-
   return item;
 };
 
