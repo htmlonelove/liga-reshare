@@ -16,6 +16,18 @@
     pointer-events: none;
   }
 
+  &__placeholder {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+
+    transform: translateY(-50%);
+
+    transition: transform $default-transition-settings, opacity $default-transition-settings;
+
+    pointer-events: none;
+  }
+
   select {
     position: absolute;
 
@@ -80,7 +92,7 @@
 
     transition: background-color $default-transition-settings;
 
-    &[aria-selected="true"] {
+    &[aria-selected='true'] {
       background-color: $color-pink-swan;
 
       @media (hover: hover), screen and (min-width: 0\0) {
@@ -123,6 +135,10 @@
     opacity: 0;
 
     transition: opacity $default-transition-settings 0.1s;
+
+    br {
+      display: none;
+    }
   }
 
   &__icon {
@@ -136,6 +152,14 @@
     transition: transform $default-transition-settings;
 
     clip-path: polygon(100% 0, 100% 20%, 50% 100%, 0 20%, 0 0, 50% 80%);
+  }
+
+  &.open-up {
+    .custom-select__list {
+      bottom: auto;
+      top: 0;
+      transform: translateY(calc(-100% + 30px));
+    }
   }
 
   &.is-open {
@@ -153,19 +177,16 @@
     }
   }
 
-  &.is-open.custom-select--slide-up {
-    .custom-select__label {
-      transform: translateY(calc(-50% - 40px));
-      opacity: 1;
-    }
-  }
-
   &.not-empty {
     .custom-select__text {
       opacity: 1;
     }
 
     .custom-select__label {
+      opacity: 0;
+    }
+
+    .custom-select__placeholder {
       opacity: 0;
     }
   }
@@ -196,16 +217,30 @@
     }
   }
 
-  &--slide-up {
-    &.not-empty {
-      .custom-select__label {
-        transform: translateY(calc(-50% - 40px));
-        opacity: 1;
-      }
+  &--placeholder {
+    .custom-select__label {
+      transform: translateY(calc(-50% - 40px));
+      opacity: 1;
+    }
 
-      .custom-select__text {
-        opacity: 1;
-      }
+    &.is-open .custom-select__label {
+      opacity: 1;
+    }
+
+    &.not-empty .custom-select__label {
+      opacity: 1;
+    }
+  }
+
+  &.slide-up.not-empty,
+  &.slide-up.is-open {
+    .custom-select__label {
+      transform: translateY(calc(-50% - 40px));
+      opacity: 1;
+    }
+
+    .custom-select__text {
+      opacity: 1;
     }
   }
 }

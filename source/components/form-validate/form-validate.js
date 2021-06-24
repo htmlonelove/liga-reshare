@@ -283,7 +283,7 @@ const validateEmailInput = (input) => {
   const parent = input.closest('[data-validate-type]');
   parent.classList.remove('is-invalid');
   let flag = true;
-  const emailString = /[a-zA-Zа-яёА-ЯЁ0-9]{1}([a-zA-Zа-яёА-ЯЁ0-9\-_\.]{1,})?@[a-zA-Zа-яёА-ЯЁ0-9]{1}([a-zA-Zа-яёА-ЯЁ0-9.]{1,})?[a-zA-Zа-яёА-ЯЁ0-9]{1}\.[a-zA-Zа-яёА-ЯЁ]{2,6}/;
+  const emailString = /[a-zA-Zа-яёА-ЯЁ0-9]{1}([a-zA-Zа-яёА-ЯЁ0-9\-_\.]{1,})?@[a-zA-Zа-яёА-ЯЁ0-9\-]{1}([a-zA-Zа-яёА-ЯЁ0-9.\-]{1,})?[a-zA-Zа-яёА-ЯЁ0-9\-]{1}\.[a-zA-Zа-яёА-ЯЁ]{2,6}/;
   const regEmail = new RegExp(emailString, '');
   if (regEmail.test(input.value)) {
     parent.classList.add('is-valid');
