@@ -1,7 +1,7 @@
 import {ieFix} from './utils/ie-fix';
 
 import {initModals} from '../components/modal/init-modals';
-import '../components/tabs/tabs';
+import initTabs from '../components/tabs/tabs';
 import '../components/accordion/accordion';
 import '../components/custom-select/custom-select';
 import '../components/form-validate/init-form-validate';
@@ -20,3 +20,4 @@ ieFix();
 initModals();
 initAutoResizeTextarea();
 initPhoneMask();
+initTabs();

@@ -80,7 +80,8 @@ const initTabAction = (tab) => {
   controls.forEach((control, i) => {
     control.addEventListener('click', (e) => {
       e.preventDefault();
-      if (control.classList.contains('is-active')) {
+      const parent = control.closest('[data-tab="parent"]');
+      if (control.classList.contains('is-active') || parent.classList.contains('no-action')) {
         return;
       }
 
@@ -88,6 +89,8 @@ const initTabAction = (tab) => {
       const activeTabElement = tab.querySelector(':scope > [data-tab="content"] [data-tab="element"].is-active');
       const currentHeight = contentBlock.scrollHeight;
       const newHeight = tabsElements[i].scrollHeight;
+
+      parent.classList.add('no-action');
 
       if (activeControl) {
         activeControl.classList.remove('is-active');
@@ -101,6 +104,7 @@ const initTabAction = (tab) => {
         setTimeout(() => {
           control.classList.add('is-active');
           tabsElements[i].classList.add('is-active');
+          parent.classList.remove('no-action');
           if (dataHeight !== 'max') {
             contentBlock.style.height = newHeight + 'px';
           }
@@ -112,6 +116,7 @@ const initTabAction = (tab) => {
         setTimeout(() => {
           control.classList.add('is-active');
           tabsElements[i].classList.add('is-active');
+          parent.classList.remove('no-action');
         }, delay);
       }
     });
@@ -127,4 +132,4 @@ const initTabs = () => {
 
 window.initTabs = initTabs;
 
-export default initTabs();
+export default initTabs;
