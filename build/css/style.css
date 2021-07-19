@@ -1502,12 +1502,14 @@ button,
 [data-tab="element"] {
   position: absolute;
   opacity: 0;
-  -webkit-transition: opacity 0.3s ease-in;
-  transition: opacity 0.3s ease-in; }
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
+  transition: opacity 0.3s ease-in, visibility 0.3s ease-in; }
 
 [data-tab="element"].is-active {
   z-index: 1;
-  opacity: 1; }
+  opacity: 1;
+  visibility: visible; }
 
 .accordion-class {
   max-width: 500px; }

@@ -121,7 +121,7 @@ const prettifyPhoneInput = (input) => {
       input.value = `${BASE_COUNTRY_CODE}${input.value}`;
     }
   }
-
+  // onInputPhoneInput({input});
   const matrix = `${BASE_COUNTRY_CODE}${BASE_MATRIX}`;
   const def = matrix.replace(/\D/g, '');
   let i = 0;
@@ -162,7 +162,7 @@ const onKeydownPhoneInput = (e) => {
 
 const onBlurPhoneInput = ({target}) => {
   if (target.value === BASE_COUNTRY_CODE) {
-    const parent = target.closest('[data-validate-type="phone"');
+    const parent = target.closest('[data-validate-type="phone"]');
     target.value = '';
     parent.classList.remove('not-empty');
     target.removeEventListener('input', onInputPhoneInput);
@@ -586,83 +586,54 @@ export default class FormsValidate {
           // eslint-disable-next-line no-console
           console.error('На данной форме валидация уже инициализированна');
         } else {
-          wrapper.classList.add('is-initialized');
-          const form = wrapper.querySelector('form');
-          const resetButtons = form.querySelectorAll('button[type="reset"], [data-reset]');
-
-          form.noValidate = true;
-          form.addEventListener('submit', (e) => {
-            onFormSubmit(e, this.callback);
-          });
-          if (resetButtons.length) {
-            resetButtons.forEach((btn) => {
-              btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                clearForm(form);
-              });
-            });
-          }
-          const formValidateElements = form.querySelectorAll('[data-validate-type]');
-          const formLimitationsElements = form.querySelectorAll('[data-limitations]:not([data-validate-type])');
-          const formMatrixElements = form.querySelectorAll('[data-matrix]:not([data-validate-type])');
-          if (formValidateElements.length) {
-            formValidateElements.forEach((el) => {
-              formElementValidateAction(el);
-            });
-          }
-          if (formLimitationsElements.length) {
-            formLimitationsElements.forEach((el) => {
-              formElementLimitationsAction(el);
-            });
-          }
-          if (formMatrixElements.length) {
-            formMatrixElements.forEach((el) => {
-              formElementMatrixAction(el);
-            });
-          }
+          this.initItem(wrapper);
         }
       });
     } else if (typeOfNode === '[object HTMLDivElement]' || typeOfNode === '[object HTMLElement]') {
       if (!formWrappers.classList.contains('is-initialized')) {
-        formWrappers.classList.add('is-initialized');
-        const form = formWrappers.querySelector('form');
-        const resetButtons = form.querySelectorAll('button[type="reset"], [data-reset]');
-        form.noValidate = true;
-        form.addEventListener('submit', (e) => {
-          onFormSubmit(e, this.callback);
-        });
-        if (resetButtons.length) {
-          resetButtons.forEach((btn) => {
-            btn.addEventListener('click', (e) => {
-              e.preventDefault();
-              clearForm(form);
-            });
-          });
-        }
-        const formValidateElements = form.querySelectorAll('[data-validate-type]');
-        const formLimitationsElements = form.querySelectorAll('[data-limitations]:not([data-validate-type])');
-        const formMatrixElements = form.querySelectorAll('[data-matrix]:not([data-validate-type])');
-
-        if (formValidateElements.length) {
-          formValidateElements.forEach((el) => {
-            formElementValidateAction(el);
-          });
-        }
-        if (formLimitationsElements.length) {
-          formLimitationsElements.forEach((el) => {
-            formElementLimitationsAction(el);
-          });
-        }
-        if (formMatrixElements.length) {
-          formMatrixElements.forEach((el) => {
-            formElementMatrixAction(el);
-          });
-        }
+        this.initItem(formWrappers);
       }
     } else {
       // eslint-disable-next-line no-console
       console.error('Переданный обьект не соответствует формату');
       return;
+    }
+  }
+
+  initItem(element) {
+    element.classList.add('is-initialized');
+    const form = element.querySelector('form');
+    const resetButtons = form.querySelectorAll('button[type="reset"], [data-reset]');
+    form.noValidate = true;
+    form.addEventListener('submit', (e) => {
+      onFormSubmit(e, this.callback);
+    });
+    if (resetButtons.length) {
+      resetButtons.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          clearForm(form);
+        });
+      });
+    }
+    const formValidateElements = form.querySelectorAll('[data-validate-type]');
+    const formLimitationsElements = form.querySelectorAll('[data-limitations]:not([data-validate-type])');
+    const formMatrixElements = form.querySelectorAll('[data-matrix]:not([data-validate-type])');
+
+    if (formValidateElements.length) {
+      formValidateElements.forEach((el) => {
+        formElementValidateAction(el);
+      });
+    }
+    if (formLimitationsElements.length) {
+      formLimitationsElements.forEach((el) => {
+        formElementLimitationsAction(el);
+      });
+    }
+    if (formMatrixElements.length) {
+      formMatrixElements.forEach((el) => {
+        formElementMatrixAction(el);
+      });
     }
   }
 }
