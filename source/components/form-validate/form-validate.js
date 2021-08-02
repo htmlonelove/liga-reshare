@@ -175,6 +175,7 @@ const onBlurPhoneInput = ({target}) => {
 const hideError = (el) => {
   if (el.classList.contains('toggle-group')) {
     validateToggleGroup(el);
+    el.setAttribute('aria-invalid', 'true');
     el.classList.remove('is-invalid');
     el.classList.add('is-valid');
   } else {
@@ -188,6 +189,7 @@ const hideError = (el) => {
 const showError = (el) => {
   if (el.classList.contains('toggle-group')) {
     validateToggleGroup(el);
+    el.setAttribute('aria-invalid', 'false');
     el.classList.add('is-invalid');
     el.classList.remove('is-valid');
   } else {
@@ -259,8 +261,10 @@ const validateTextInput = (input) => {
   }
   if (input.value.length >= minLength) {
     parent.classList.add('is-valid');
+    input.setAttribute('aria-invalid', 'false');
   } else {
     parent.classList.remove('is-valid');
+    input.setAttribute('aria-invalid', 'true');
     flag = false;
   }
   return flag;
@@ -272,8 +276,10 @@ const validatePhoneInput = (input) => {
   let flag = true;
   if (input.value.length >= phoneLength) {
     parent.classList.add('is-valid');
+    input.setAttribute('aria-invalid', 'false');
   } else {
     parent.classList.remove('is-valid');
+    input.setAttribute('aria-invalid', 'true');
     flag = false;
   }
   return flag;
@@ -287,8 +293,10 @@ const validateEmailInput = (input) => {
   const regEmail = new RegExp(emailString, '');
   if (regEmail.test(input.value)) {
     parent.classList.add('is-valid');
+    input.setAttribute('aria-invalid', 'false');
   } else {
     parent.classList.remove('is-valid');
+    input.setAttribute('aria-invalid', 'true');
     flag = false;
   }
   return flag;
@@ -301,8 +309,10 @@ const validateMatrixInput = (input) => {
   const matrix = input.closest('[data-matrix]').dataset.matrix;
   if (input.value.length === matrix.length) {
     parent.classList.add('is-valid');
+    input.setAttribute('aria-invalid', 'false');
   } else {
     parent.classList.remove('is-valid');
+    input.setAttribute('aria-invalid', 'true');
     flag = false;
   }
   return flag;
@@ -323,11 +333,14 @@ const validateSelect = (input) => {
   const options = input.querySelectorAll('option');
   const customSelectText = parent.querySelector('.custom-select__text');
   parent.classList.remove('is-invalid');
+  input.setAttribute('aria-invalid', 'false');
   let flag = true;
   if (findSelectedOption(options)) {
     parent.classList.add('is-valid');
+    input.setAttribute('aria-invalid', 'false');
   } else {
     parent.classList.remove('is-valid');
+    input.setAttribute('aria-invalid', 'true');
     customSelectText.innerHTML = '';
     parent.classList.remove('not-empty');
     flag = false;
