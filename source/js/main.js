@@ -2,7 +2,7 @@ import {ieFix} from './utils/ie-fix';
 
 import {initModals} from '../components/modal/init-modals';
 import initTabs from '../components/tabs/tabs';
-import '../components/accordion/accordion';
+import {initAccordions} from '../components/accordion/js/init-accordion';
 import '../components/custom-select/custom-select';
 import '../components/form-validate/init-form-validate';
 import {initAutoResizeTextarea} from '../components/auto-resize-textarea/auto-resize-textarea';
@@ -21,3 +21,4 @@ initModals();
 initAutoResizeTextarea();
 initPhoneMask();
 initTabs();
+initAccordions();

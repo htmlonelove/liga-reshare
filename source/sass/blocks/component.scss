@@ -9,32 +9,32 @@
   }
 
   &__title {
-    font-size: 60px;
-    line-height: 60px;
+    font-size: 40px;
+    line-height: 44px;
     font-weight: 600;
     margin: 0;
     margin-bottom: 20px;
     margin-right: 40px;
 
     @include viewport--sm {
-      font-size: 30px;
-      line-height: 34px;
+      font-size: 32px;
+      line-height: 36px;
       word-break: break-word;
     }
   }
 
   &__subtitle {
-    font-size: 40px;
-    line-height: 48px;
-    margin: 40px 0 20px;
+    font-size: 32px;
+    line-height: 36px;
+    margin: 20px 0 20px;
 
     & + .component__code-snippet {
       margin-top: -10px;
     }
 
     @include viewport--sm {
-      font-size: 26px;
-      line-height: 30px;
+      font-size: 20px;
+      line-height: 24px;
     }
   }
 
@@ -60,12 +60,12 @@
   &__description {
     p {
       margin: 0 0 10px;
-      font-size: 30px;
-      line-height: 34px;
+      font-size: 20px;
+      line-height: 24px;
 
       @include viewport--sm {
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 16px;
+        line-height: 20px;
       }
 
       em {

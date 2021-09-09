@@ -1373,27 +1373,27 @@ button,
         -ms-flex-pack: justify;
             justify-content: space-between; }
   .component__title {
-    font-size: 60px;
-    line-height: 60px;
+    font-size: 40px;
+    line-height: 44px;
     font-weight: 600;
     margin: 0;
     margin-bottom: 20px;
     margin-right: 40px; }
     @media (max-width: 767px) {
       .component__title {
-        font-size: 30px;
-        line-height: 34px;
+        font-size: 32px;
+        line-height: 36px;
         word-break: break-word; } }
   .component__subtitle {
-    font-size: 40px;
-    line-height: 48px;
-    margin: 40px 0 20px; }
+    font-size: 32px;
+    line-height: 36px;
+    margin: 20px 0 20px; }
     .component__subtitle + .component__code-snippet {
       margin-top: -10px; }
     @media (max-width: 767px) {
       .component__subtitle {
-        font-size: 26px;
-        line-height: 30px; } }
+        font-size: 20px;
+        line-height: 24px; } }
   .component__download-link {
     margin-bottom: 40px; }
   .component__code-snippet {
@@ -1409,12 +1409,12 @@ button,
       background-color: #f2f2f2; }
   .component__description p {
     margin: 0 0 10px;
-    font-size: 30px;
-    line-height: 34px; }
+    font-size: 20px;
+    line-height: 24px; }
     @media (max-width: 767px) {
       .component__description p {
-        font-size: 20px;
-        line-height: 24px; } }
+        font-size: 16px;
+        line-height: 20px; } }
     .component__description p em {
       font-style: normal;
       color: #ff1553; }
@@ -1511,20 +1511,26 @@ button,
   opacity: 1;
   visibility: visible; }
 
-.accordion-class {
-  max-width: 500px; }
-
-.accordion-class__element {
-  margin-bottom: 50px; }
-
-.accordion-class__element.is-open > .accordion-class__button {
-  opacity: 0.5; }
-
-.accordion-class__button {
-  width: 100%;
-  padding: 10px;
-  text-transform: uppercase;
-  cursor: pointer; }
+.accordion {
+  max-width: 500px;
+  margin: 0 auto 150px auto; }
+  .accordion .accordion {
+    width: 90%;
+    margin: 0 auto; }
+  .accordion__element:last-child {
+    margin-bottom: 0; }
+  .accordion__element {
+    margin-bottom: 50px;
+    padding: 10px; }
+  .accordion__element.is-open > .accordion__button {
+    opacity: 0.5; }
+  .accordion__button {
+    width: 100%;
+    padding: 10px;
+    text-transform: uppercase;
+    cursor: pointer; }
+  .accordion__wrapper {
+    padding: 10px; }
 
 [data-accordion="element"].is-open > [data-accordion="content"] {
   max-height: 100%; }
