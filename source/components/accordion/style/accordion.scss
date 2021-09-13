@@ -16,7 +16,7 @@
     padding: 10px;
   }
 
-  &__element.is-open > &__button {
+  &__element.is-active > &__button {
     opacity: 0.5;
   }
 

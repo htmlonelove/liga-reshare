@@ -1,15 +1,15 @@
-.tab-class {
+.tabs {
   margin-top: 50px;
   max-width: 1000px;
 }
 
-.tab-class__controls {
+.tabs__controls {
   display: flex;
   width: 100%;
   margin-bottom: 40px;
 }
 
-.tab-class__control {
+.tabs__control {
   text-transform: uppercase;
   cursor: pointer;
   margin-right: 40px;
@@ -21,11 +21,11 @@
   }
 }
 
-.tab-class__content {
+.tabs__content {
   margin-bottom: 40px;
 }
 
-.tab-class__element {
+.tabs__element {
   padding: 10px;
 
   &:nth-child(1) {

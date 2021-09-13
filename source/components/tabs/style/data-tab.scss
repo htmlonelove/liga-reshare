@@ -1,23 +1,23 @@
-[data-tab="parent"].no-transition {
-  [data-tab="content"],
-  [data-tab="element"] {
+[data-tabs="parent"].no-transition {
+  [data-tabs="content"],
+  [data-tabs="element"] {
     transition: none;
   }
 }
 
-[data-tab="content"] {
+[data-tabs="content"] {
   position: relative;
   transition: height 0.3s;
 }
 
-[data-tab="element"] {
+[data-tabs="element"] {
   position: absolute;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
 }
 
-[data-tab="element"].is-active {
+[data-tabs="element"].is-active {
   z-index: 1;
   opacity: 1;
   visibility: visible;

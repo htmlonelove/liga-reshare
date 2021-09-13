@@ -1455,58 +1455,58 @@ button,
   .component__demo--phone-mask input[type="tel"]:hover, .component__demo--phone-mask input[type="tel"]:focus {
     border-color: #2c39f2; }
 
-.tab-class {
+.tabs {
   margin-top: 50px;
   max-width: 1000px; }
 
-.tab-class__controls {
+.tabs__controls {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
   margin-bottom: 40px; }
 
-.tab-class__control {
+.tabs__control {
   text-transform: uppercase;
   cursor: pointer;
   margin-right: 40px;
   opacity: 0.5; }
-  .tab-class__control.is-active {
+  .tabs__control.is-active {
     opacity: 1;
     pointer-events: none; }
 
-.tab-class__content {
+.tabs__content {
   margin-bottom: 40px; }
 
-.tab-class__element {
+.tabs__element {
   padding: 10px; }
-  .tab-class__element:nth-child(1) {
+  .tabs__element:nth-child(1) {
     background-color: antiquewhite; }
-  .tab-class__element:nth-child(2) {
+  .tabs__element:nth-child(2) {
     background-color: #e5fad7; }
-  .tab-class__element:nth-child(3) {
+  .tabs__element:nth-child(3) {
     background-color: #b4bce9; }
-  .tab-class__element:nth-child(4) {
+  .tabs__element:nth-child(4) {
     background-color: #ffbbcc; }
 
-[data-tab="parent"].no-transition [data-tab="content"],
-[data-tab="parent"].no-transition [data-tab="element"] {
+[data-tabs="parent"].no-transition [data-tabs="content"],
+[data-tabs="parent"].no-transition [data-tabs="element"] {
   -webkit-transition: none;
   transition: none; }
 
-[data-tab="content"] {
+[data-tabs="content"] {
   position: relative;
   -webkit-transition: height 0.3s;
   transition: height 0.3s; }
 
-[data-tab="element"] {
+[data-tabs="element"] {
   position: absolute;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
   transition: opacity 0.3s ease-in, visibility 0.3s ease-in; }
 
-[data-tab="element"].is-active {
+[data-tabs="element"].is-active {
   z-index: 1;
   opacity: 1;
   visibility: visible; }
@@ -1522,7 +1522,7 @@ button,
   .accordion__element {
     margin-bottom: 50px;
     padding: 10px; }
-  .accordion__element.is-open > .accordion__button {
+  .accordion__element.is-active > .accordion__button {
     opacity: 0.5; }
   .accordion__button {
     width: 100%;
