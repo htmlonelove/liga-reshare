@@ -21,7 +21,7 @@ export class Accordions {
 
     evt.preventDefault();
     const element = target.closest('[data-accordion="element"]');
-    if (element.classList.contains('is-active')) {
+    if (element.classList.contains('is-open')) {
       this.closeAccordion(element);
       return;
     }
@@ -46,37 +46,33 @@ export class Accordions {
     });
   }
 
-  _setAccordionHeight(el, height, transition) {
-    if (transition) {
-      el.style.maxHeight = `${height}px`;
-      return;
-    }
-    el.style.transition = 'none';
-    el.style.maxHeight = `${height}px`;
-    setTimeout(() => {
-      el.style.transition = null;
-    });
-  }
-
   updateAccordionsHeight(element = null) {
     if (element) {
       const content = element.querySelector('[data-accordion="content"]');
-      this._setAccordionHeight(content, content.scrollHeight, false);
+      content.style.transition = 'none';
+      content.style.maxHeight = `${content.scrollHeight}px`;
+      setTimeout(() => {
+        content.style.transition = null;
+      });
       return;
     }
-    const openElements = document.querySelectorAll('[data-accordion="element"].is-active');
+    const openElements = document.querySelectorAll('[data-accordion="element"].is-open');
     openElements.forEach((openElement) => {
       const content = openElement.querySelector('[data-accordion="content"]');
-      this._setAccordionHeight(content, content.scrollHeight, false);
+      content.style.transition = 'none';
+      content.style.maxHeight = `${content.scrollHeight}px`;
+      setTimeout(() => {
+        content.style.transition = null;
+      });
     });
   }
 
   fullUpdate(parent = null, transition = false) {
     let openElements;
     if (parent) {
-      openElements = parent.querySelectorAll('[data-accordion="element"].is-active');
+      openElements = parent.querySelectorAll('[data-accordion="element"].is-open');
     } else {
-      openElements = document.querySelectorAll('[data-accordion="element"].is-active');
+      openElements = document.querySelectorAll('[data-accordion="element"].is-open');
     }
     openElements.forEach((openElement) => {
       const innerParent = openElement.querySelector('[data-accordion="parent"]');
@@ -96,8 +92,17 @@ export class Accordions {
       this._closeAllAccordion(parentElement);
     }
 
-    element.classList.add('is-active');
-    this._setAccordionHeight(contentElement, this._openHeight, transition);
+    element.classList.add('is-open');
+    if (transition) {
+      contentElement.style.maxHeight = `${this._openHeight}px`;
+    } else {
+      contentElement.style.transition = 'none';
+      contentElement.style.maxHeight = `${this._openHeight}px`;
+      setTimeout(() => {
+        contentElement.style.transition = null;
+      });
+    }
+
     if (parentElement.closest('[data-accordion="element"]')) {
       this.openAccordion(parentElement.closest('[data-accordion="element"]'), transition);
       return;
@@ -108,7 +113,15 @@ export class Accordions {
 
   closeAccordion(element, transition = true) {
     const contentElement = element.querySelector('[data-accordion="content"]');
-    element.classList.remove('is-active');
-    this._setAccordionHeight(contentElement, 0, transition);
+    element.classList.remove('is-open');
+    if (transition) {
+      contentElement.style.maxHeight = '0';
+    } else {
+      contentElement.style.transition = 'none';
+      contentElement.style.maxHeight = '0';
+      setTimeout(() => {
+        contentElement.style.transition = null;
+      });
+    }
   }
 }

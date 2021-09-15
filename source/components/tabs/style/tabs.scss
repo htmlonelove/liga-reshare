@@ -10,12 +10,12 @@
 }
 
 .tabs__control {
-  width: 100px;
-  padding: 10px;
   text-transform: uppercase;
   cursor: pointer;
   margin-right: 40px;
   opacity: 0.5;
+  min-width: auto;
+  width: 25%;
 
   &.is-active {
     opacity: 1;
@@ -25,10 +25,13 @@
 
 .tabs__content {
   margin-bottom: 40px;
+
+  transition: height 0.3s;
 }
 
 .tabs__element {
   padding: 10px;
+  width: 100%;
 
   &:nth-child(1) {
     background-color: rgb(250, 235, 215);

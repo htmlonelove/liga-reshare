@@ -1457,7 +1457,7 @@ button,
 
 .tabs {
   margin-top: 50px;
-  max-width: 1000px; }
+  max-width: 100%; }
 
 .tabs__controls {
   display: -webkit-box;
@@ -1470,16 +1470,21 @@ button,
   text-transform: uppercase;
   cursor: pointer;
   margin-right: 40px;
-  opacity: 0.5; }
+  opacity: 0.5;
+  min-width: auto;
+  width: 25%; }
   .tabs__control.is-active {
     opacity: 1;
     pointer-events: none; }
 
 .tabs__content {
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  -webkit-transition: height 0.3s;
+  transition: height 0.3s; }
 
 .tabs__element {
-  padding: 10px; }
+  padding: 10px;
+  width: 100%; }
   .tabs__element:nth-child(1) {
     background-color: antiquewhite; }
   .tabs__element:nth-child(2) {
@@ -1489,27 +1494,33 @@ button,
   .tabs__element:nth-child(4) {
     background-color: #ffbbcc; }
 
-[data-tabs="parent"].no-transition [data-tabs="content"],
-[data-tabs="parent"].no-transition [data-tabs="element"] {
-  -webkit-transition: none;
-  transition: none; }
+[data-tabs="parent"] {
+  overflow: hidden; }
+  [data-tabs="parent"].no-transition > [data-tabs="control"],
+  [data-tabs="parent"].no-transition > [data-tabs="content"],
+  [data-tabs="parent"].no-transition > [data-tabs="element"] {
+    -webkit-transition: none;
+    transition: none; }
+  [data-tabs="parent"].no-transition-global [data-tabs="control"],
+  [data-tabs="parent"].no-transition-global [data-tabs="content"],
+  [data-tabs="parent"].no-transition-global [data-tabs="element"] {
+    -webkit-transition: none;
+    transition: none; }
 
-[data-tabs="content"] {
-  position: relative;
-  -webkit-transition: height 0.3s;
-  transition: height 0.3s; }
+[data-tabs="parent"] [data-tabs="content"] {
+  position: relative; }
 
 [data-tabs="element"] {
   position: absolute;
-  opacity: 0;
   visibility: hidden;
+  opacity: 0;
   -webkit-transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
   transition: opacity 0.3s ease-in, visibility 0.3s ease-in; }
 
 [data-tabs="element"].is-active {
   z-index: 1;
-  opacity: 1;
-  visibility: visible; }
+  visibility: visible;
+  opacity: 1; }
 
 .accordion {
   max-width: 500px;

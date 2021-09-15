@@ -116,24 +116,75 @@
           </div>
 
           <div class="component__description">
+            <p>Аккордеоны состоят из следующих файлов: tabs.js, init-tabs.js, tabs.scss и data-tabs.scss все файлы обязательны к переносу в проект!</p>
+            <p>В данной реализации используется ResizeObserver что помогает менять высоту блока при изменении размеров его содержимого без вызова дополнительных методов или функций (например если в табе будет кнопка показать ещё которая будет разворачивать дополнительный текст)</em></p>
+            <p>В файле init-tabs.js создаётся экземпляр класса Tabs который записывается в переменную tabs, им вы можете пользоваться по проекту при необходимости, так же он записывается в window.tabs но запись закомментирована <em>раскомментировать только при запросе бэкэнда на вынос экземпляра класса в глобальную область видимости!</em></p>
             <h2 class="component__subtitle">Обязательные data атрибуты</h2>
-            <p>data-tab="parent" Устанавливается на родителе</p>
-            <p>data-tab="control" Устанавливается на кнопке</p>
-            <p>data-tab="content" Устанавливается на родителе показываемых элементов</p>
-            <p>data-tab="element" Устанавливается на показываемом элементе</p>
+            <p>data-tabs="parent" Устанавливается на родителе</p>
+            <p>data-tabs="control" Устанавливается на кнопке</p>
+            <p>data-tabs="content" Устанавливается на родителе показываемых элементов</p>
+            <p>data-tabs="element" Устанавливается на показываемом элементе</p>
             <h2 class="component__subtitle">Не обязательные data атрибуты</h2>
-            <p>data-delay="время в милимикундах" Устанавливается на родителе отвечает за задержку при смене слайдов</p>
+            <p>data-delay="время в милисекундах" Устанавливается на родителе отвечает за задержку при смене табов</p>
             <p>data-height="max" Устанавливается на родителе, если он установлен, то высота блока будет равна высота максимального контентного блока</p>
+            <h2 class="component__subtitle">Методы экземпляра классса tabs</h2>
+            <p>tabs.openTab(control) принимает контрол (кнопку) в виде дом элемента отвечающую за открытие таба</p>
+            <p>tabs.reInit() Вызывается при динамическом добавлении новых табов, никак не влияет на те табы что уже есть на странице</p>
           </div>
-
           <h2 class="component__subtitle">Демо</h2>
           <div class="component__demo">
             <h2 class="component__subtitle">Пример без data-height="max"</h2>
 
-<div class="tabs" data-tabs="parent" data-delay="300">
+<div class="tabs no-transition-global" data-tabs="parent" data-delay="300">
   <div class="tabs__controls" data-tabs="controls">
     <button class="tabs__control btn" type="button" data-tabs="control">Таб 1</button>
     <button class="tabs__control btn is-active" type="button" data-tabs="control">Таб 2</button>
+    <button class="tabs__control btn" type="button" data-tabs="control">Таб 3</button>
+    <button class="tabs__control btn" type="button" data-tabs="control">Таб 4</button>
+  </div>
+  <div class="tabs__content" data-tabs="content">
+    <div class="tabs__element" data-tabs="element">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
+    </div>
+    <div class="tabs__element" data-tabs="element">
+      <div class="tabs no-transition-global" data-tabs="parent" data-delay="300">
+        <div class="tabs__controls" data-tabs="controls">
+          <button class="tabs__control btn" type="button" data-tabs="control">Таб 1</button>
+          <button class="tabs__control btn" type="button" data-tabs="control">Таб 2</button>
+          <button class="tabs__control btn" type="button" data-tabs="control">Таб 3</button>
+          <button class="tabs__control btn is-active" type="button" data-tabs="control">Таб 4</button>
+        </div>
+        <div class="tabs__content" data-tabs="content">
+          <div class="tabs__element" data-tabs="element">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
+          </div>
+          <div class="tabs__element" data-tabs="element">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
+          </div>
+          <div class="tabs__element" data-tabs="element">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
+          </div>
+          <div class="tabs__element" data-tabs="element">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tabs__element" data-tabs="element">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
+    </div>
+    <div class="tabs__element" data-tabs="element">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
+    </div>
+  </div>
+</div>
+
+<h2 class="component__subtitle">Пример с data-height="max"</h2>
+
+<div class="tabs no-transition-global" data-tabs="parent" data-delay="300" data-height="max">
+  <div class="tabs__controls" data-tabs="controls">
+    <button class="tabs__control btn" type="button" data-tabs="control">Таб 1</button>
+    <button class="tabs__control btn" type="button" data-tabs="control">Таб 2</button>
     <button class="tabs__control btn" type="button" data-tabs="control">Таб 3</button>
     <button class="tabs__control btn" type="button" data-tabs="control">Таб 4</button>
   </div>
@@ -153,9 +204,9 @@
   </div>
 </div>
 
-<h2 class="component__subtitle">Пример с data-height="max"</h2>
+<h2 class="component__subtitle">Пример без data-delay</h2>
 
-<div class="tabs" data-tabs="parent" data-delay="300" data-height="max">
+<div class="tabs no-transition-global" data-tabs="parent">
   <div class="tabs__controls" data-tabs="controls">
     <button class="tabs__control btn" type="button" data-tabs="control">Таб 1</button>
     <button class="tabs__control btn" type="button" data-tabs="control">Таб 2</button>
@@ -179,7 +230,6 @@
 </div>
 
 <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</h2>
-
 
           </div>
         </div>

@@ -1,10 +1,11 @@
-import {Accordions} from './accordions';
-let accordions;
+import {Tabs} from './tabs';
 
-const initAccordions = () => {
-  accordions = new Accordions();
+let tabs;
+
+const initTabs = () => {
+  tabs = new Tabs();
   // Раскомментировать только при запросе бэкэнда на вынос экземпляра класса в глобальную область видимости
-  // window.accordions = accordions;
+  // window.tabs = tabs;
 };
 
-export {initAccordions, accordions};
+export {initTabs, tabs};
