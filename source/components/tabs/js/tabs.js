@@ -84,7 +84,7 @@ export class Tabs {
     return height[height.length - 1];
   }
 
-  _cleanNodeList(nodeList, parent) {
+  _returnScopeList(nodeList, parent) {
     const array = [];
     nodeList.forEach((element) => {
       const elementParent = element.closest('[data-tabs="parent"]');
@@ -124,7 +124,7 @@ export class Tabs {
     const parentElement = element.closest('[data-tabs="parent"]');
     const dataHeight = parentElement.dataset.height;
     const contentElement = this._returnScopeChild(parentElement.querySelectorAll('[data-tabs="content"]'), parentElement);
-    const tabElements = this._cleanNodeList(parentElement.querySelectorAll('[data-tabs="element"]'), parentElement);
+    const tabElements = this._returnScopeList(parentElement.querySelectorAll('[data-tabs="element"]'), parentElement);
 
     if (!transition) {
       parentElement.classList.add('no-transition');
@@ -143,8 +143,8 @@ export class Tabs {
     const dataHeight = tab.dataset.height;
     const dataDelay = tab.dataset.delay ? tab.dataset.delay : 0;
     const tabContentElement = tab.querySelector('[data-tabs="content"]');
-    const tabControlElements = this._cleanNodeList(tab.querySelectorAll('[data-tabs="control"]'), tab);
-    const tabElements = this._cleanNodeList(tab.querySelectorAll('[data-tabs="element"]'), tab);
+    const tabControlElements = this._returnScopeList(tab.querySelectorAll('[data-tabs="control"]'), tab);
+    const tabElements = this._returnScopeList(tab.querySelectorAll('[data-tabs="element"]'), tab);
     this._setTabStartState(tab, dataHeight, tabElements, tabContentElement, tabControlElements, dataDelay);
     tabElements.forEach((element) => {
       this._resizeObserver().observe(element);
@@ -169,7 +169,7 @@ export class Tabs {
     const dataDelay = parentElement.dataset.delay ? parentElement.dataset.delay : 0;
     const dataHeight = parentElement.dataset.height;
     const contentElement = parentElement.querySelector('[data-tabs="content"]');
-    const tabElements = this._cleanNodeList(parentElement.querySelectorAll('[data-tabs="element"]'), parentElement);
+    const tabElements = this._returnScopeList(parentElement.querySelectorAll('[data-tabs="element"]'), parentElement);
 
     const activeControl = this._returnScopeChild(parentElement.querySelectorAll('[data-tabs="control"].is-active'), parentElement);
     const activeElement = this._returnScopeChild(parentElement.querySelectorAll('[data-tabs="element"].is-active'), parentElement);

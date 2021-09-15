@@ -93,7 +93,7 @@
   <div class="wrapper">
     <header class="header">
   <div class="container">
-    <a class="header__logo"  aria-label="Переход на главную">
+    <a class="header__logo"  href="index.html" aria-label="Переход на главную">
       <svg width="120" height="27">
         <use xlink:href="#icon-logo"></use>
       </svg>
@@ -109,60 +109,73 @@
 
     <main>
       <div class="container">
-        <div class="intro">
-          <div class="intro__wrapper">
-            <div class="intro__drako">
-              <svg width="190" height="215">
-                <use xlink:href="#icon-drako"></use>
-              </svg>
-            </div>
-            <h1 class="intro__title">
-              <span>Лига</span>
-              <span class="intro__title-pale">Решений</span>
-            </h1>
+        <div class="component">
+          <div class="component__heading">
+            <h1 class="component__title">Склонение слов</h1>
+            <a class="component__download-link btn" href="components/declension.zip" download>Скачать компонент</a>
           </div>
-          <div class="intro__description">
-            <!-- <p>Мы написали и будем писать для Вас <em>все самое вкусное</em> и&nbsp;почти&nbsp;без плагинов.</p> -->
+
+          <div class="component__description">
+            <p>В обьекте wordEndings по ключам лежат склонения слов в зависимости от числа с которым используется данное слово. В обьекте приведены два примера, вы можете расширять его в зависимости отнужд проекта</p>
+          </div>
+          <h2 class="component__subtitle">Демо</h2>
+          <div class="component__demo">
+            <div class="component__code-snippet">
+  <pre>
+    <code>
+      const wordEndings = {
+        'yearsEndings': {
+          firstState: 'лет',
+          secondState: 'год',
+          thirdState: 'года',
+          fourthState: 'лет',
+        },
+        'monthEndings': {
+          firstState: 'месяцев',
+          secondState: 'месяц',
+          thirdState: 'месяца',
+          fourthState: 'месяцев',
+        },
+      };
+
+      export const inclineWord = (num, type) => {
+        let n = num ? num.toString() : '1';
+        let last = n.slice(-1);
+        let twoLast = n.slice(-2);
+        if (twoLast === '11' || twoLast === '12' || twoLast === '13' || twoLast === '14') {
+          return `${n} ${wordEndings[type].firstState}`;
+        }
+        if (last === '1') {
+          return `${n} ${wordEndings[type].secondState}`;
+        }
+        if (last === '2' || last === '3' || last === '4') {
+          return `${n} ${wordEndings[type].thirdState}`;
+        }
+        return `${n} ${wordEndings[type].fourthState}`;
+      };
+    </code>
+  </pre>
+</div>
+
+          </div>
+
+          <div class="component__description">
+            <p>Примеры вызова и получаемы результаты:</p>
+            <p>inclineWord(1, 'yearsEndings') => 1 год</p>
+            <p>inclineWord(2, 'yearsEndings') => 2 года</p>
+            <p>inclineWord(11, 'yearsEndings') => 11 лет</p>
+            <p>inclineWord(21, 'yearsEndings') => 21 год</p>
+            <p>inclineWord(1, 'monthEndings') => 1 месяц</p>
+            <p>inclineWord(2, 'monthEndings') => 2 месяца</p>
+            <p>inclineWord(11, 'monthEndings') => 11 месяцев</p>
+            <p>inclineWord(21, 'monthEndings') => 21 месяц</p>
           </div>
         </div>
-
-        <nav class="components-nav">
-          <ul class="components-nav__list">
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="auto-resize-textarea.html">Автоизменение высоты textarea</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="custom-select.html">Кастомный селект</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="form-validate.html">Валидация формы</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="tabs.html">Табы</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="accordion.html">Аккордеон</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="phone-mask.html">Легковесная телефонная маска</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="incline-word.html">Склонение слов</a>
-            </li>
-            <!-- <li class="components-nav__item">
-              <a class="components-nav__link" href="sliders.html">Слайдеры и кастомная пагинация</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="sticky-onscroll.html">Блок прилипающий при скролле</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="#">Автозапуск фонового HTML&nbsp;видео</a>
-            </li> -->
-          </ul>
-        </nav>
       </div>
     </main>
   </div>
 
+  <script src="js/vendor.min.js"></script>
+  <script src="js/main.min.js"></script>
 </body>
 </html>

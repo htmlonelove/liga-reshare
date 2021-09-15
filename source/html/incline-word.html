@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+  @@include("source/html/base/head.html")
+  <title>Лига компонентов</title>
+
+</head>
+<body>
+
+  <div style="display: none;">
+    @@include("build/img/sprite_auto.svg")
+  </div>
+
+  <div class="wrapper">
+    @@include("source/html/base/header.html")
+
+    <main>
+      <div class="container">
+        <div class="component">
+          <div class="component__heading">
+            <h1 class="component__title">Склонение слов</h1>
+            <a class="component__download-link btn" href="components/declension.zip" download>Скачать компонент</a>
+          </div>
+
+          <div class="component__description">
+            <p>В обьекте wordEndings по ключам лежат склонения слов в зависимости от числа с которым используется данное слово. В обьекте приведены два примера, вы можете расширять его в зависимости отнужд проекта</p>
+          </div>
+          <h2 class="component__subtitle">Демо</h2>
+          <div class="component__demo">
+            @@include("source/components/incline-word/incline-word.html")
+          </div>
+
+          <div class="component__description">
+            <p>Примеры вызова и получаемы результаты:</p>
+            <p>inclineWord(1, 'yearsEndings') => 1 год</p>
+            <p>inclineWord(2, 'yearsEndings') => 2 года</p>
+            <p>inclineWord(11, 'yearsEndings') => 11 лет</p>
+            <p>inclineWord(21, 'yearsEndings') => 21 год</p>
+            <p>inclineWord(1, 'monthEndings') => 1 месяц</p>
+            <p>inclineWord(2, 'monthEndings') => 2 месяца</p>
+            <p>inclineWord(11, 'monthEndings') => 11 месяцев</p>
+            <p>inclineWord(21, 'monthEndings') => 21 месяц</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/vendor.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+</html>
