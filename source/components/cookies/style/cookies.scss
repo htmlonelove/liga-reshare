@@ -1,0 +1,33 @@
+.cookies {
+  display: none;
+  align-items: center;
+  left: 25px;
+  bottom: 25px;
+  padding: 25px 20px;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(18, 18, 28, 0.37);
+
+  &.is-active {
+    display: inline-flex;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &__btn {
+    align-self: start;
+    margin-left: 20px;
+    padding: 10px 15px;
+    color: $color-default-white;
+    border: 0;
+    border-radius: 4px;
+    background-color: $color-pink;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}

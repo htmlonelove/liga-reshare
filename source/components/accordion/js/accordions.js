@@ -21,7 +21,7 @@ export class Accordions {
 
     evt.preventDefault();
     const element = target.closest('[data-accordion="element"]');
-    if (element.classList.contains('is-open')) {
+    if (element.classList.contains('is-active')) {
       this.closeAccordion(element);
       return;
     }
@@ -56,7 +56,7 @@ export class Accordions {
       });
       return;
     }
-    const openElements = document.querySelectorAll('[data-accordion="element"].is-open');
+    const openElements = document.querySelectorAll('[data-accordion="element"].is-active');
     openElements.forEach((openElement) => {
       const content = openElement.querySelector('[data-accordion="content"]');
       content.style.transition = 'none';
@@ -70,9 +70,9 @@ export class Accordions {
   fullUpdate(parent = null, transition = false) {
     let openElements;
     if (parent) {
-      openElements = parent.querySelectorAll('[data-accordion="element"].is-open');
+      openElements = parent.querySelectorAll('[data-accordion="element"].is-active');
     } else {
-      openElements = document.querySelectorAll('[data-accordion="element"].is-open');
+      openElements = document.querySelectorAll('[data-accordion="element"].is-active');
     }
     openElements.forEach((openElement) => {
       const innerParent = openElement.querySelector('[data-accordion="parent"]');
@@ -92,7 +92,7 @@ export class Accordions {
       this._closeAllAccordion(parentElement);
     }
 
-    element.classList.add('is-open');
+    element.classList.add('is-active');
     if (transition) {
       contentElement.style.maxHeight = `${this._openHeight}px`;
     } else {
@@ -113,7 +113,7 @@ export class Accordions {
 
   closeAccordion(element, transition = true) {
     const contentElement = element.querySelector('[data-accordion="content"]');
-    element.classList.remove('is-open');
+    element.classList.remove('is-active');
     if (transition) {
       contentElement.style.maxHeight = '0';
     } else {

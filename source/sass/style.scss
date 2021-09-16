@@ -28,10 +28,6 @@
 
 @import "demos/autoresize-textarea";
 @import "demos/phone-mask";
-@import "demos/tabs";
-@import "demos/data-tabs";
-@import "demos/accordion";
-@import "demos/data-accordion";
 @import "demos/custom-input";
 @import "demos/custom-select";
 @import "demos/custom-toggle";
@@ -40,7 +36,12 @@
 // Components
 //---------------------------------
 
-@import "./../components/modal/modal";
+@import "../components/modal/modal";
+@import "../components/tabs/style/tabs";
+@import "../components/tabs/style/data-tabs";
+@import "../components/accordion/style/accordion";
+@import "../components/accordion/style/data-accordion";
+@import "../components/cookies/style/cookies";
 
 // используйте это для отключения ховеров на тач устройствах
 // ! но не используйте это для текстовых полей ( input, textarea )
