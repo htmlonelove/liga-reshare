@@ -115,14 +115,136 @@
             <a class="component__download-link btn" href="components/modal.zip" download>Скачать компонент</a>
           </div>
           <div class="component__description">
-            <p>Подробное описание компонента, включая <em>важные моменты</em>, <a href="#">ссылки</a> и инлайновые вставки кода <code>main.style.minHeight = mainHMin - (headerH + footerH) + 'px';</code></p>
+            <h2 class="component__subtitle">Описание</h2>
+            <p>Модальные окна полностью переписаны, сейчас используется делегирование как при открытии так и в самом модальном окне <em>=></em> как следствие отсутствуют проблемы с динамическим добавлением элементов: кнопок вызова и самих модальных окон</p>
+            <p>В файле init-modals.js создаётся экземпляр класса Modals который записывается в переменную modals, им вы можете пользоваться по проекту при необходимости, так же он записывается в window.modals. <em>Используйте в разработке экспортируемую переменную modals, window сделан для бэкэнда</em></p>
+            <p>Модальные окна состоят из следующих файлов: focus-lock.js, scroll-lock.js, modals.js, init-modals.js, и modal.scss все файлы обязательны к переносу в проект!</p>
+            <h2 class="component__subtitle">Обязательные data атрибуты</h2>
+            <p><em>data-open-modal="Имя модального окна"</em> Устанавливается на кнопке вызова модального окна</p>
+            <p><em>data-modal="Имя модального окна"</em> Устанавливается на модальном окне</p>
+            <p><em>data-close-modal"</em> Устанавливается на элементе который должен закрыть модальное окно, по умолчанию установлен на оверлее и на кнопки закрытия, может добавлятся на любые элементы в модальном окне.</p>
+            <h2 class="component__subtitle">Не обязательные data атрибуты</h2>
+            <p><em>data-focus</em> Устанавливается на том элементе который при открытии модального окна должен попатсть в фокус, если не установить то в фокус попадёт первый интерактивный элемент в модальном окне</p>
+            <h2 class="component__subtitle">Настройки</h2>
+            <p>При создании экземпляра класса передаются настройки в формате ключ - "Имя модального окна" значение - обьект</p>
+            <p>По умолчанию работаю настройки по умолчанию</p>
+            <p><em>preventDefault</em> Отмена действия по умолчанию, по умолчанию true</p>
+            <p><em>stopPlay</em> Остановка проигрывание стандартных HTML элементов video и audio, по умолчанию true</p>
+            <p><em>lockFocus</em> Блокировка фокуса внутри модального окна, по умолчанию true</p>
+            <p><em>disableScrolling</em> Блокировка скрола при открытии, по умолчанию true</p>
+            <p><em>enableScrolling</em> Разлокировка скрола при открытии, по умолчанию true</p>
+            <p><em>openTimeout</em> Таймаут при открытии модального окна, по умолчанию 0мс</p>
+            <p><em>enableScrollTimeout</em> Таймаут при разблокировке скрола при закрытии, по умолчанию 500мс</p>
+            <p><em>openCallback</em> Callback при открытии, по умолчанию false</p>
+            <p><em>closeCallback</em> Callback при закрытии, по умолчанию false</p>
+            <pre>
+              <code>
+                const settings = {
+                  'default': {
+                    preventDefault: true,
+                    stopPlay: true,
+                    lockFocus: true,
+                    disableScrolling: true,
+                    enableScrolling: true,
+                    openTimeout: 0,
+                    enableScrollTimeout: 500,
+                    openCallback: false,
+                    closeCallback: false,
+                  },
+                  // modal-3 добавлен исключительно для примера при добавлении на проект ключь и обект записанный в нём нужно удалить
+                  'modal-3': {
+                    openCallback: () => console.log('Я отработаю при открытии example-3'),
+                    closeCallback: () => modals.open('modal-5'),
+                  },
+                };
+              </code>
+            </pre>
           </div>
           <h2 class="component__subtitle">Демо</h2>
           <div class="component__demo">
-            <p><a class="btn" href="#">Вызов модалки 1</a></p>
-            <p><a class="btn" href="#">Вызов модалки 2</a></p>
-            <p><a class="btn" href="#">Вызов модалки 3</a></p>
+            <p><button class="btn" type="button" data-open-modal="modal-1">Вызов модального окна 1</button></p>
+            <p><button class="btn" type="button" data-open-modal="modal-2">Вызов модального окна 2</button></p>
+            <p><button class="btn" type="button" data-open-modal="modal-3">Вызов модального окна 3</button></p>
+            <p><button class="btn" type="button" data-open-modal="modal-4">Вызов модального окна 4</button></p>
+            <p><button class="btn" type="button" data-open-modal="modal-5">Вызов модального окна 5</button></p>
+            <section class="modal modal--preload" data-modal="modal-1">
+              <div class="modal__wrapper">
+                <div class="modal__overlay" data-close-modal></div>
+                <div class="modal__content">
+                  <section>
+                    <h2>example-1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                    <p><button class="btn" type="button" data-open-modal="modal-2">Вызов модального окна 2</button></p>
+                    <p><button class="btn" type="button" data-open-modal="modal-3">Вызов модального окна 3</button></p>
+                    <p><button class="btn" type="button" data-open-modal="modal-4">Вызов модального окна 4</button></p>
+                    <p><button class="btn" type="button" data-open-modal="modal-5">Вызов модального окна 5</button></p>
+                  </section>
+                  <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>Закрыть</button>
+                </div>
+              </div>
+            </section>
+            <section class="modal modal--preload" data-modal="modal-2">
+              <div class="modal__wrapper">
+                <div class="modal__overlay" data-close-modal></div>
+                <div class="modal__content">
+                  <section>
+                    <h2>example-2</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                    <p><button class="btn" type="button" data-open-modal="modal-3">Вызов модального окна 3</button></p>
+                  </section>
+                  <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>Закрыть</button>
+                </div>
+              </div>
+            </section>
+            <section class="modal modal--preload" data-modal="modal-3">
+              <div class="modal__wrapper">
+                <div class="modal__overlay" data-close-modal></div>
+                <div class="modal__content">
+                  <section>
+                    <h2>example-3</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                  </section>
+                  <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>Закрыть</button>
+                </div>
+              </div>
+            </section>
+            <section class="modal modal--preload" data-modal="modal-4">
+              <div class="modal__wrapper">
+                <div class="modal__overlay" data-close-modal></div>
+                <div class="modal__content">
+                  <section>
+                    <h2>example-4</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                   <p> <button class="btn" type="button" data-open-modal="modal-5">Вызов модального окна 5</button></p>
+                  </section>
+                  <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>Закрыть</button>
+                </div>
+              </div>
+            </section>
+            <section class="modal modal--preload" data-modal="modal-5">
+              <div class="modal__wrapper">
+                <div class="modal__overlay" data-close-modal></div>
+                <div class="modal__content">
+                  <section>
+                    <h2>example-5</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                  </section>
+                  <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>Закрыть</button>
+                </div>
+              </div>
+            </section>
           </div>
+
         </div>
       </div>
     </main>

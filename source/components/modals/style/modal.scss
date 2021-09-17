@@ -9,16 +9,17 @@
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 
-  background-color: rgba($color-default-black, 0.6);
-  transform: scale(1.2);
+  transform: scale(1.1);
   visibility: hidden;
   opacity: 0;
-  pointer-events: none;
 
-  transition: opacity $modal-transition-settings,
-    transform $modal-transition-settings,
-    visibility $modal-transition-settings;
+  transition: opacity $trans--modal,
+    transform $trans--modal,
+    visibility $trans--modal;
+
+  pointer-events: none;
 
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -28,6 +29,8 @@
   }
 
   &__wrapper {
+    transform: translateZ(0);
+    background-color: rgba($color-default-black, 0.6);
     position: relative;
 
     display: flex;
@@ -38,7 +41,7 @@
     min-height: 100%;
     padding: 60px 40px;
 
-    @include viewport--sm {
+    @include vp--767 {
       padding: 60px 16px;
     }
   }
@@ -62,7 +65,7 @@
 
     background-color: $color-default-white;
 
-    @include viewport--sm {
+    @include vp--767 {
       width: 100%;
       padding: 20px;
     }
@@ -72,36 +75,35 @@
     position: absolute;
     top: 15px;
     right: 15px;
-  }
 
-  &--responsive {
-    .modal__content {
-      width: 100%;
+    padding: 0;
+
+    background: $color-transparent;
+    border: none;
+    cursor: pointer;
+
+    // Стили только для компонентов в проекте удалите их
+
+    background: $color-blue;
+    min-width: auto;
+    padding: 5px;
+
+    //--------------------------------------
+
+    svg {
+      display: block;
     }
-  }
-
-  &--fit-content {
-    .modal__content {
-      width: auto;
-
-      @include viewport--sm {
-        width: 100%;
-      }
-    }
-  }
-
-  &--no-scale {
-    transform: none;
   }
 
   &--preload {
-    display: none;
+    transition: none;
   }
 
   &--active {
     transform: scale(1);
     visibility: visible;
     opacity: 1;
+
     pointer-events: auto;
   }
 }

@@ -925,29 +925,6 @@ button.swiper-pagination-bullet {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
 
-/* @mixin viewport--md {
-  @media (min-width: $viewport--md) {
-    @content;
-  }
-}
-
-@mixin viewport--lg {
-  @media (min-width: $viewport--lg) {
-    @content;
-  }
-}
-
-@mixin viewport--xl {
-  @media (min-width: $viewport--xl) {
-    @content;
-  }
-}
-
-@mixin viewport--xxl {
-  @media (min-width: $viewport--xxl) {
-    @content;
-  }
-} */
 @font-face {
   font-style: normal;
   font-weight: 300;
@@ -1791,21 +1768,24 @@ button,
       -ms-flex-direction: column;
           flex-direction: column;
   overflow-y: auto;
-  background-color: rgba(0, 0, 0, 0.6);
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
   visibility: hidden;
   opacity: 0;
-  pointer-events: none;
   -webkit-transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+  pointer-events: none;
   -ms-overflow-style: none;
   scrollbar-width: none; }
   .modal::-webkit-scrollbar {
     display: none; }
   .modal__wrapper {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    background-color: rgba(0, 0, 0, 0.6);
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1843,19 +1823,19 @@ button,
   .modal__close-btn {
     position: absolute;
     top: 15px;
-    right: 15px; }
-  .modal--responsive .modal__content {
-    width: 100%; }
-  .modal--fit-content .modal__content {
-    width: auto; }
-    @media (max-width: 767px) {
-      .modal--fit-content .modal__content {
-        width: 100%; } }
-  .modal--no-scale {
-    -webkit-transform: none;
-            transform: none; }
+    right: 15px;
+    padding: 0;
+    background: rgba(255, 255, 255, 0);
+    border: none;
+    cursor: pointer;
+    background: #2c39f2;
+    min-width: auto;
+    padding: 5px; }
+    .modal__close-btn svg {
+      display: block; }
   .modal--preload {
-    display: none; }
+    -webkit-transition: none;
+    transition: none; }
   .modal--active {
     -webkit-transform: scale(1);
             transform: scale(1);

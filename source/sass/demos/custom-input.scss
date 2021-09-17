@@ -20,7 +20,7 @@
       border-radius: 5px;
       outline: none;
 
-      transition: border $default-transition-settings;
+      transition: border $trans--300;
 
       &:hover {
         border: 2px solid rgba($color-default-black, 0.5);
@@ -41,7 +41,7 @@
 
     opacity: 0;
 
-    transition: opacity $default-transition-settings;
+    transition: opacity $trans--300;
   }
 
   &.is-invalid {

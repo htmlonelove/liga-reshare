@@ -10,12 +10,12 @@
   background-color: $color-blue;
   color: $color-default-white;
   font-weight: 600;
-  transition: background $default-transition-settings, opacity $default-transition-settings;
+  transition: background $trans--300, opacity $trans--300;
   border: none;
   border-radius: 0;
   cursor: pointer;
 
-  @include viewport--sm {
+  @include vp--767 {
     width: 100%;
   }
 

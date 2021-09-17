@@ -16,7 +16,7 @@
     margin-bottom: 20px;
     margin-right: 40px;
 
-    @include viewport--sm {
+    @include vp--767 {
       font-size: 32px;
       line-height: 36px;
       word-break: break-word;
@@ -32,7 +32,7 @@
       margin-top: -10px;
     }
 
-    @include viewport--sm {
+    @include vp--767 {
       font-size: 20px;
       line-height: 24px;
     }
@@ -63,7 +63,7 @@
       font-size: 20px;
       line-height: 24px;
 
-      @include viewport--sm {
+      @include vp--767 {
         font-size: 16px;
         line-height: 20px;
       }
@@ -78,14 +78,14 @@
         background-color: $color-gray-light;
         font-size: 0.8em;
 
-        @include viewport--sm {
+        @include vp--767 {
           word-break: break-word;
         }
       }
 
       a {
         color: $color-blue;
-        transition: color $default-transition-settings;
+        transition: color $trans--300;
 
         @media (hover: hover), screen and (min-width: 0\0) {
           &:hover,

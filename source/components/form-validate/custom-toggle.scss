@@ -14,7 +14,7 @@
 
     opacity: 0;
 
-    transition: opacity $default-transition-settings;
+    transition: opacity $trans--300;
   }
 
   input {
@@ -53,7 +53,7 @@
 
         border: 1px solid $color-eucalyptus;
 
-        transition: border $default-transition-settings;
+        transition: border $trans--300;
       }
 
       &::after {
@@ -67,7 +67,7 @@
 
         background-color: $color-transparent;
 
-        transition: background-color $default-transition-settings;
+        transition: background-color $trans--300;
       }
     }
   }
@@ -86,7 +86,7 @@
         border: 1px solid $color-eucalyptus;
         border-radius: 50%;
 
-        transition: border $default-transition-settings;
+        transition: border $trans--300;
       }
 
       &::after {
@@ -101,7 +101,7 @@
         background-color: $color-transparent;
         border-radius: 50%;
 
-        transition: background-color $default-transition-settings;
+        transition: background-color $trans--300;
       }
     }
   }

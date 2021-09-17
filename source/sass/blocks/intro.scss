@@ -8,7 +8,7 @@
     margin-bottom: 60px;
   }
 
-  @include viewport--sm {
+  @include vp--767 {
     margin-top: 30px;
     margin-bottom: 30px;
   }
@@ -17,14 +17,14 @@
     display: flex;
     align-items: center;
 
-    @include viewport--sm {
+    @include vp--767 {
       flex-direction: column;
       align-items: flex-start;
     }
   }
 
   &__drako {
-    @include viewport--sm {
+    @include vp--767 {
       margin: 0 auto;
 
       svg {
@@ -46,13 +46,13 @@
     text-transform: uppercase;
     opacity: 0.9;
 
-    @include viewport--md {
+    @include vp--1023 {
       margin-left: 40px;
       font-size: 60px;
       line-height: 60px;
     }
 
-    @include viewport--sm {
+    @include vp--767 {
       font-size: 38px;
       line-height: 42px;
       margin-left: 0;
@@ -69,12 +69,12 @@
       margin-top: 30px;
     }
 
-    @include viewport--md {
+    @include vp--1023 {
       font-size: 32px;
       line-height: 36px;
     }
 
-    @include viewport--sm {
+    @include vp--767 {
       margin-top: 15px;
       font-size: 24px;
       line-height: 30px;

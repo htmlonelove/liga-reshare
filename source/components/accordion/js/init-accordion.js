@@ -3,8 +3,8 @@ let accordions;
 
 const initAccordions = () => {
   accordions = new Accordions();
-  // Раскомментировать только при запросе бэкэнда на вынос экземпляра класса в глобальную область видимости
-  // window.accordions = accordions;
+  // Используйте в разработке экспортируемую переменную accordions, window сделан для бэкэнда
+  window.accordions = accordions;
 };
 
 export {initAccordions, accordions};

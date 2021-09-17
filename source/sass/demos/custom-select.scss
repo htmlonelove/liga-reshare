@@ -11,7 +11,7 @@
 
     transform: translateY(-50%);
 
-    transition: transform $default-transition-settings, opacity $default-transition-settings;
+    transition: transform $trans--300, opacity $trans--300;
 
     pointer-events: none;
   }
@@ -23,7 +23,7 @@
 
     transform: translateY(-50%);
 
-    transition: transform $default-transition-settings, opacity $default-transition-settings;
+    transition: transform $trans--300, opacity $trans--300;
 
     pointer-events: none;
   }
@@ -51,7 +51,7 @@
     outline: none;
     cursor: pointer;
 
-    transition: border $default-transition-settings;
+    transition: border $trans--300;
 
     &:hover {
       border: 2px solid rgba($color-default-black, 0.5);
@@ -81,7 +81,7 @@
     visibility: hidden;
     opacity: 0;
 
-    transition: visibility $default-transition-settings, opacity $default-transition-settings;
+    transition: visibility $trans--300, opacity $trans--300;
   }
 
   &__item {
@@ -90,7 +90,7 @@
     outline: none;
     cursor: pointer;
 
-    transition: background-color $default-transition-settings;
+    transition: background-color $trans--300;
 
     &[aria-selected='true'] {
       background-color: $color-pink-swan;
@@ -134,7 +134,7 @@
 
     opacity: 0;
 
-    transition: opacity $default-transition-settings 0.1s;
+    transition: opacity $trans--300 0.1s;
 
     br {
       display: none;
@@ -149,7 +149,7 @@
 
     background-color: $color-default-black;
 
-    transition: transform $default-transition-settings;
+    transition: transform $trans--300;
 
     clip-path: polygon(100% 0, 100% 20%, 50% 100%, 0 20%, 0 0, 50% 80%);
   }

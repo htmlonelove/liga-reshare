@@ -1,6 +1,6 @@
 import {ieFix} from './utils/ie-fix';
 
-import {initModals} from '../components/modal/init-modals';
+import {initModals} from '../components/modals/js/init-modals';
 import {initTabs} from '../components/tabs/js/init-tabs';
 import {initAccordions} from '../components/accordion/js/init-accordion';
 import '../components/custom-select/custom-select';

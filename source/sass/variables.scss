@@ -45,17 +45,20 @@ $font-family--plex:                 "plex", "Arial", sans-serif;
 // Animation
 //---------------------------------
 
-$default-transition-settings:       0.3s ease;
-$modal-transition-settings:         0.6s cubic-bezier(0.55, 0, 0.1, 1);
+$trans--300:                        0.3s ease;
+$trans--600:                        0.6s ease;
+$trans--1000:                       1s ease;
+$trans--modal:                      0.6s cubic-bezier(0.55, 0, 0.1, 1);
 
 // Viewports
 //---------------------------------
 
-$viewport--sm:                      320px;
-$viewport--md:                      768px;
-$viewport--lg:                      1024px;
-$viewport--xl:                      1440px;
-$viewport--xxl:                     1920px;
+$vp--375:                           375px;
+$vp--600:                           600px;
+$vp--768:                           768px;
+$vp--1024:                          1024px;
+$vp--1440:                          1440px;
+$vp--1920:                          1920px;
 
 // Retina
 //---------------------------------

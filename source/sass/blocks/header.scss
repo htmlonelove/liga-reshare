@@ -9,7 +9,7 @@
 
   &__logo[href],
   &__git {
-    transition: fill $default-transition-settings;
+    transition: fill $trans--300;
 
     @media (hover: hover), screen and (min-width: 0\0) {
       &:hover,

@@ -4,8 +4,8 @@ let tabs;
 
 const initTabs = () => {
   tabs = new Tabs();
-  // Раскомментировать только при запросе бэкэнда на вынос экземпляра класса в глобальную область видимости
-  // window.tabs = tabs;
+  // Используйте в разработке экспортируемую переменную tabs, window сделан для бэкэнда
+  window.tabs = tabs;
 };
 
 export {initTabs, tabs};

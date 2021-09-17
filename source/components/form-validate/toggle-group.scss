@@ -15,7 +15,7 @@
 
     opacity: 0;
 
-    transition: opacity $default-transition-settings;
+    transition: opacity $trans--300;
   }
 
   &.is-invalid {
