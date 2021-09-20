@@ -38,10 +38,14 @@
   }
 }
 
-.scroll-lock {
+.scroll-lock-ios {
   position: fixed;
 
-  overflow-y: auto;
+  overflow: hidden;
+}
+
+.scroll-lock {
+  overflow: hidden;
 }
 
 .btn-reset {

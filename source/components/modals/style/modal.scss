@@ -15,9 +15,7 @@
   visibility: hidden;
   opacity: 0;
 
-  transition: opacity $trans--modal,
-    transform $trans--modal,
-    visibility $trans--modal;
+  transition: opacity $trans--modal, transform $trans--modal, visibility $trans--modal;
 
   pointer-events: none;
 
@@ -99,10 +97,11 @@
     transition: none;
   }
 
-  &--active {
+  &.is-active {
     transform: scale(1);
     visibility: visible;
     opacity: 1;
+    transition: opacity $trans--modal, transform $trans--modal;
 
     pointer-events: auto;
   }

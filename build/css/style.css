@@ -1096,9 +1096,12 @@ button,
         -ms-flex-positive: 1;
             flex-grow: 1; }
 
-.scroll-lock {
+.scroll-lock-ios {
   position: fixed;
-  overflow-y: auto; }
+  overflow: hidden; }
+
+.scroll-lock {
+  overflow: hidden; }
 
 .btn-reset {
   padding: 0;
@@ -1836,11 +1839,15 @@ button,
   .modal--preload {
     -webkit-transition: none;
     transition: none; }
-  .modal--active {
+  .modal.is-active {
     -webkit-transform: scale(1);
             transform: scale(1);
     visibility: visible;
     opacity: 1;
+    -webkit-transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+    transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+    transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+    transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
     pointer-events: auto; }
 
 .tabs {

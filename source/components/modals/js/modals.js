@@ -9,13 +9,11 @@ export class Modals {
     this._modalOpenElements = document.querySelectorAll('[data-open-modal]');
     this._openedModalElement = null;
     this._modalName = null;
+    this._enableScrolling = true;
     this._settingKey = 'default';
 
     this._settings = settings;
     this._preventDefault = this._settings[this._settingKey].preventDefault;
-    this._openTimeout = this._settings[this._settingKey].openTimeout;
-    this._enableScrolling = this._settings[this._settingKey].enableScrolling;
-    this._disableScrolling = this._settings[this._settingKey].disableScrolling;
     this._enableScrollTimeout = this._settings[this._settingKey].enableScrollTimeout;
     this._stopPlay = this._settings[this._settingKey].stopPlay;
     this._lockFocus = this._settings[this._settingKey].lockFocus;
@@ -41,12 +39,9 @@ export class Modals {
     }
 
     this._preventDefault = typeof this._settings[settingKey].preventDefault === 'boolean' ? this._settings[settingKey].preventDefault : this._settings[this._settingKey].preventDefault;
-    this._enableScrolling = typeof this._settings[settingKey].enableScrolling === 'boolean' ? this._settings[settingKey].enableScrolling : this._settings[this._settingKey].enableScrolling;
-    this._disableScrolling = typeof this._settings[settingKey].disableScrolling === 'boolean' ? this._settings[settingKey].disableScrolling : this._settings[this._settingKey].disableScrolling;
     this._stopPlay = typeof this._settings[settingKey].stopPlay === 'boolean' ? this._settings[settingKey].stopPlay : this._settings[this._settingKey].stopPlay;
     this._lockFocus = typeof this._settings[settingKey].lockFocus === 'boolean' ? this._settings[settingKey].lockFocus : this._settings[this._settingKey].lockFocus;
 
-    this._openTimeout = typeof this._settings[settingKey].openTimeout === 'number' ? this._settings[settingKey].openTimeout : this._settings[this._settingKey].openTimeout;
     this._enableScrollTimeout = typeof this._settings[settingKey].enableScrollTimeout === 'number' ? this._settings[settingKey].enableScrollTimeout : this._settings[this._settingKey].enableScrollTimeout;
 
     this._openCallback = this._settings[settingKey].openCallback || this._settings[this._settingKey].openCallback;
@@ -70,7 +65,7 @@ export class Modals {
     const isEscKey = evt.key === 'Escape' || evt.key === 'Esc';
     if (isEscKey) {
       evt.preventDefault();
-      this.close(document.querySelector('.modal--active').dataset.modal);
+      this.close(document.querySelector('.modal.is-active').dataset.modal);
     }
   }
 
@@ -102,60 +97,62 @@ export class Modals {
   open(modalName = this._modalName) {
     const modal = document.querySelector(`[data-modal="${modalName}"]`);
 
-    if (!modal || modal.classList.contains('modal--active')) {
+    if (!modal || modal.classList.contains('is-active')) {
       return;
     }
 
-    this._openedModalElement = document.querySelector('.modal--active');
+    this._openedModalElement = document.querySelector('.modal.is-active');
 
     if (this._openedModalElement) {
       if (this._lockFocus) {
-        this._focusLock.unlock('.modal--active');
+        this._focusLock.unlock('.modal.is-active');
       }
-      this.close(this._openedModalElement.dataset.modal, false);
+      this._enableScrolling = false;
+      this.close(this._openedModalElement.dataset.modal);
     }
 
     this._setSettings(modalName);
-    setTimeout(() => {
-      modal.classList.add('modal--active');
-      this._addListeners(modal);
-      if (this._openCallback) {
-        this._openCallback();
-      }
-      if (this._disableScrolling) {
-        this._scrollLock.disableScrolling();
-      }
-      if (this._lockFocus) {
-        this._focusLock.lock('.modal--active');
-      }
-    }, this._openTimeout);
+    modal.classList.add('is-active');
+    this._addListeners(modal);
+
+    if (!this._openedModalElement) {
+      this._scrollLock.disableScrolling();
+    }
+
+    if (this._openCallback) {
+      this._openCallback();
+    }
+    if (this._lockFocus) {
+      this._focusLock.lock('.modal.is-active');
+    }
   }
 
-  close(modalName = this._modalName, enableScrolling = this._enableScrolling) {
+  close(modalName = this._modalName) {
     const modal = document.querySelector(`[data-modal="${modalName}"]`);
 
-    if (!modal || !modal.classList.contains('modal--active')) {
+    if (!modal || !modal.classList.contains('is-active')) {
       return;
     }
 
-    modal.classList.remove('modal--active');
+    modal.classList.remove('is-active');
     this._removeListeners(modal);
     this._stopInteractive(modal);
 
     if (this._lockFocus) {
-      this._focusLock.unlock('.modal--active');
-    }
-
-    if (enableScrolling) {
-      setTimeout(() => {
-        this._scrollLock.enableScrolling();
-      }, this._enableScrollTimeout);
+      this._focusLock.unlock('.modal.is-active');
     }
 
     if (this._closeCallback) {
       this._closeCallback();
     }
 
+    if (this._enableScrolling) {
+      setTimeout(() => {
+        this._scrollLock.enableScrolling();
+      }, this._enableScrollTimeout);
+    }
+
     this._setSettings('default');
+    this._enableScrolling = true;
   }
 }
