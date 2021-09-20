@@ -2,7 +2,7 @@ import {Modals} from './modals';
 
 let modals;
 
-// Сдесь реализован пример открытия модалки через колбэк закрытия
+// Здесь реализован пример открытия модалки через колбэк закрытия
 // const openModalInCloseCallback = (name, context) => {
 //   context._enableScrolling = false;
 //   context._setSettings('default');
@@ -18,15 +18,14 @@ const settings = {
     preventDefault: true,
     stopPlay: true,
     lockFocus: true,
-    eventTimeout: 600,
-    enableScrollTimeout: 500,
+    eventTimeout: 400,
     openCallback: false,
     closeCallback: false,
   },
   // modal-1 добавлен исключительно для примера при добавлении на проект ключь и обект записанный в нём нужно удалить
   'modal-1': {
-    openCallback: () => console.log('Я отработаю при открытии example-1'),
-    closeCallback: () => console.log('Я отработаю при закрытии example-1'),
+    openCallback: () => console.log('Я отработаю при открытии modal-1'),
+    closeCallback: () => console.log('Я отработаю при закрытии modal-1'),
   },
 };
 

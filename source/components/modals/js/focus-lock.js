@@ -24,11 +24,18 @@ export class FocusLock {
   }
 
   _documentKeydownHandler(evt) {
+    const activeElement = document.activeElement;
     if (!this._focusableElements.length) {
-      evt.preventDefault();
+      if (evt.key === 'Tab' && !evt.shiftKey) {
+        evt.preventDefault();
+      }
+      if (evt.key === 'Tab' && evt.shiftKey) {
+        evt.preventDefault();
+      }
+      return;
     }
 
-    const activeElement = document.activeElement;
+
     if (this._focusableElements.length === 1) {
       if (evt.key === 'Tab' && !evt.shiftKey) {
         evt.preventDefault();

@@ -5,7 +5,6 @@ export class ScrollLock {
     this._iosChecker = iosChecker;
     this._lockClass = this._iosChecker() ? 'scroll-lock-ios' : 'scroll-lock';
     this._scrollTop = null;
-    this._isBlocked = false;
   }
 
   _getScrollbarWidth() {
@@ -22,12 +21,11 @@ export class ScrollLock {
 
   disableScrolling() {
     this._scrollTop = document.body.dataset.scroll = document.body.dataset.scroll ? document.body.dataset.scroll : this._getBodyScrollTop();
-    if (!this._isBlocked && this._getScrollbarWidth()) {
+    if (this._getScrollbarWidth()) {
       document.body.style.paddingRight = `${this._getScrollbarWidth()}px`;
     }
     document.body.style.top = `-${this._scrollTop}px`;
     document.body.classList.add(this._lockClass);
-    this._isBlocked = true;
   }
 
   enableScrolling() {
@@ -35,7 +33,6 @@ export class ScrollLock {
     window.scrollTo(0, +document.body.dataset.scroll);
     document.body.style.paddingRight = null;
     document.body.style.top = null;
-    this._isBlocked = false;
     document.body.removeAttribute('data-scroll');
   }
 }

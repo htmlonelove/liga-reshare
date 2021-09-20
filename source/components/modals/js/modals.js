@@ -14,9 +14,9 @@ export class Modals {
 
     this._settings = settings;
     this._preventDefault = this._settings[this._settingKey].preventDefault;
-    this._enableScrollTimeout = this._settings[this._settingKey].enableScrollTimeout;
     this._stopPlay = this._settings[this._settingKey].stopPlay;
     this._lockFocus = this._settings[this._settingKey].lockFocus;
+    this._eventTimeout = this._settings[this._settingKey].eventTimeout;
     this._openCallback = this._settings[this._settingKey].openCallback;
     this._closeCallback = this._settings[this._settingKey].closeCallback;
 
@@ -42,7 +42,7 @@ export class Modals {
     this._stopPlay = typeof this._settings[settingKey].stopPlay === 'boolean' ? this._settings[settingKey].stopPlay : this._settings[this._settingKey].stopPlay;
     this._lockFocus = typeof this._settings[settingKey].lockFocus === 'boolean' ? this._settings[settingKey].lockFocus : this._settings[this._settingKey].lockFocus;
 
-    this._enableScrollTimeout = typeof this._settings[settingKey].enableScrollTimeout === 'number' ? this._settings[settingKey].enableScrollTimeout : this._settings[this._settingKey].enableScrollTimeout;
+    this._eventTimeout = typeof this._settings[settingKey].eventTimeout === 'number' ? this._settings[settingKey].eventTimeout : this._settings[this._settingKey].eventTimeout;
 
     this._openCallback = this._settings[settingKey].openCallback || this._settings[this._settingKey].openCallback;
     this._closeCallback = this._settings[settingKey].closeCallback || this._settings[this._settingKey].closeCallback;
@@ -96,6 +96,7 @@ export class Modals {
 
   open(modalName = this._modalName) {
     const modal = document.querySelector(`[data-modal="${modalName}"]`);
+    document.removeEventListener('click', this._documentClickHandler);
 
     if (!modal || modal.classList.contains('is-active')) {
       return;
@@ -113,7 +114,6 @@ export class Modals {
 
     this._setSettings(modalName);
     modal.classList.add('is-active');
-    this._addListeners(modal);
 
     if (!this._openedModalElement) {
       this._scrollLock.disableScrolling();
@@ -125,10 +125,16 @@ export class Modals {
     if (this._lockFocus) {
       this._focusLock.lock('.modal.is-active');
     }
+
+    setTimeout(() => {
+      this._addListeners(modal);
+      document.addEventListener('click', this._documentClickHandler);
+    }, this._eventTimeout);
   }
 
   close(modalName = this._modalName) {
     const modal = document.querySelector(`[data-modal="${modalName}"]`);
+    document.removeEventListener('click', this._documentClickHandler);
 
     if (!modal || !modal.classList.contains('is-active')) {
       return;
@@ -149,8 +155,12 @@ export class Modals {
     if (this._enableScrolling) {
       setTimeout(() => {
         this._scrollLock.enableScrolling();
-      }, this._enableScrollTimeout);
+      }, this._eventTimeout);
     }
+
+    setTimeout(() => {
+      document.addEventListener('click', this._documentClickHandler);
+    }, this._eventTimeout);
 
     this._setSettings('default');
     this._enableScrolling = true;
