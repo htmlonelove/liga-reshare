@@ -41,28 +41,32 @@ export class Modals {
     this._preventDefault = typeof this._settings[settingKey].preventDefault === 'boolean' ? this._settings[settingKey].preventDefault : this._settings[this._settingKey].preventDefault;
     this._stopPlay = typeof this._settings[settingKey].stopPlay === 'boolean' ? this._settings[settingKey].stopPlay : this._settings[this._settingKey].stopPlay;
     this._lockFocus = typeof this._settings[settingKey].lockFocus === 'boolean' ? this._settings[settingKey].lockFocus : this._settings[this._settingKey].lockFocus;
-
     this._eventTimeout = typeof this._settings[settingKey].eventTimeout === 'number' ? this._settings[settingKey].eventTimeout : this._settings[this._settingKey].eventTimeout;
-
     this._openCallback = this._settings[settingKey].openCallback || this._settings[this._settingKey].openCallback;
     this._closeCallback = this._settings[settingKey].closeCallback || this._settings[this._settingKey].closeCallback;
   }
 
   _documentClickHandler(evt) {
     const target = evt.target;
+
     if (!target.closest('[data-open-modal]')) {
       return;
     }
+
     evt.preventDefault();
+
     this._modalName = target.dataset.openModal;
+
     if (!this._modalName) {
       return;
     }
+
     this.open();
   }
 
   _documentKeydownHandler(evt) {
     const isEscKey = evt.key === 'Escape' || evt.key === 'Esc';
+
     if (isEscKey) {
       evt.preventDefault();
       this.close(document.querySelector('.modal.is-active').dataset.modal);
@@ -71,6 +75,7 @@ export class Modals {
 
   _modalClickHandler(evt) {
     const target = evt.target;
+
     if (!target.closest('[data-close-modal]')) {
       return;
     }
@@ -96,18 +101,16 @@ export class Modals {
 
   open(modalName = this._modalName) {
     const modal = document.querySelector(`[data-modal="${modalName}"]`);
-    document.removeEventListener('click', this._documentClickHandler);
 
     if (!modal || modal.classList.contains('is-active')) {
       return;
     }
 
+    document.removeEventListener('click', this._documentClickHandler);
+
     this._openedModalElement = document.querySelector('.modal.is-active');
 
     if (this._openedModalElement) {
-      if (this._lockFocus) {
-        this._focusLock.unlock('.modal.is-active');
-      }
       this._enableScrolling = false;
       this.close(this._openedModalElement.dataset.modal);
     }
@@ -122,6 +125,7 @@ export class Modals {
     if (this._openCallback) {
       this._openCallback();
     }
+
     if (this._lockFocus) {
       this._focusLock.lock('.modal.is-active');
     }
@@ -140,13 +144,13 @@ export class Modals {
       return;
     }
 
-    modal.classList.remove('is-active');
-    this._removeListeners(modal);
-    this._stopInteractive(modal);
-
     if (this._lockFocus) {
       this._focusLock.unlock('.modal.is-active');
     }
+
+    modal.classList.remove('is-active');
+    this._removeListeners(modal);
+    this._stopInteractive(modal);
 
     if (this._closeCallback) {
       this._closeCallback();

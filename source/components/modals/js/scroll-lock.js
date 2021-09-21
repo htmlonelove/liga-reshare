@@ -34,6 +34,7 @@ export class ScrollLock {
     document.body.style.paddingRight = null;
     document.body.style.top = null;
     document.body.removeAttribute('data-scroll');
+    this._scrollTop = null;
   }
 }
 

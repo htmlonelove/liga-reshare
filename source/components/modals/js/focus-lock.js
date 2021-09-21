@@ -29,12 +29,13 @@ export class FocusLock {
       if (evt.key === 'Tab' && !evt.shiftKey) {
         evt.preventDefault();
       }
+
       if (evt.key === 'Tab' && evt.shiftKey) {
         evt.preventDefault();
       }
+
       return;
     }
-
 
     if (this._focusableElements.length === 1) {
       if (evt.key === 'Tab' && !evt.shiftKey) {
@@ -46,9 +47,9 @@ export class FocusLock {
         evt.preventDefault();
         this._focusableElements[0].focus();
       }
+
       return;
     }
-
 
     if (evt.key === 'Tab' && !evt.shiftKey && activeElement === this._focusableElements[this._focusableElements.length - 1]) {
       evt.preventDefault();
@@ -61,15 +62,18 @@ export class FocusLock {
     }
   }
 
-  lock(lockedClass, startElement) {
+  lock(lockedClass) {
+    this.unlock();
     this._lockedElement = document.querySelector(lockedClass);
     this._focusableElements = this._lockedElement.querySelectorAll(this._selectors);
     this._endElement = document.activeElement;
-    this._startElement = startElement || this._lockedElement.querySelector('[data-focus]') || this._focusableElements[0] || false;
+    this._startElement = this._lockedElement.querySelector('[data-focus]') || this._focusableElements[0];
     this._endElement.blur();
+
     if (this._startElement) {
       this._startElement.focus();
     }
+
     document.addEventListener('keydown', this._documentKeydownHandler);
   }
 
@@ -77,10 +81,12 @@ export class FocusLock {
     if (this._endElement) {
       this._endElement.focus();
     }
+
     this._lockedElement = null;
     this._startElement = null;
     this._focusableElements = null;
     this._endElement = null;
+
     document.removeEventListener('keydown', this._documentKeydownHandler);
   }
 }
