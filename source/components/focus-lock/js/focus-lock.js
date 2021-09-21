@@ -14,6 +14,7 @@ const SELECTORS = [
 
 export class FocusLock {
   constructor() {
+    this._lockedSelector = null;
     this._focusableElements = null;
     this._endElement = null;
     this._selectors = SELECTORS;
@@ -26,6 +27,7 @@ export class FocusLock {
     if (evt.key === 'Tab') {
       if (!this._focusableElements.length) {
         evt.preventDefault();
+        activeElement.blur();
         return;
       }
       if (this._focusableElements.length === 1) {
@@ -33,8 +35,12 @@ export class FocusLock {
         this._focusableElements[0].focus();
         return;
       }
+      if (this._focusableElements.length > 1 && !activeElement.closest(this._lockedSelector)) {
+        evt.preventDefault();
+        this._focusableElements[0].focus();
+        return;
+      }
     }
-
     if (evt.key === 'Tab' && !evt.shiftKey && activeElement === this._focusableElements[this._focusableElements.length - 1]) {
       evt.preventDefault();
       this._focusableElements[0].focus();
@@ -47,10 +53,11 @@ export class FocusLock {
 
   lock(lockedSelector) {
     this.unlock();
-    const lockedElement = document.querySelector(lockedSelector);
-    this._focusableElements = lockedElement.querySelectorAll(this._selectors);
+    this._lockedSelector = lockedSelector;
+    const lockedElement = document.querySelector(this._lockedSelector);
+    this._focusableElements = lockedElement .querySelectorAll(this._selectors);
     this._endElement = document.activeElement;
-    const startElement = lockedElement.querySelector('[data-focus]') || this._focusableElements[0];
+    const startElement = lockedElement .querySelector('[data-focus]') || this._focusableElements[0];
     if (this._endElement) {
       this._endElement.blur();
     }
@@ -64,6 +71,7 @@ export class FocusLock {
     if (this._endElement && returnFocus) {
       this._endElement.focus();
     }
+    this._lockedSelector = null;
     this._focusableElements = null;
     this._endElement = null;
     document.removeEventListener('keydown', this._documentKeydownHandler);
