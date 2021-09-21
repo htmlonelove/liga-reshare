@@ -36,7 +36,7 @@ export class Accordions {
     this.updateAccordionsHeight();
   }
 
-  _closeAllAccordion(parent) {
+  closeAllAccordion(parent) {
     const elements = parent.querySelectorAll('[data-accordion="element"]');
     elements.forEach((element) => {
       const currentParent = element.closest('[data-accordion="parent"]');
@@ -89,7 +89,7 @@ export class Accordions {
     this._openHeight += contentElement.scrollHeight;
 
     if (parentElement.hasAttribute('data-single')) {
-      this._closeAllAccordion(parentElement);
+      this.closeAllAccordion(parentElement);
     }
 
     element.classList.add('is-active');
@@ -113,6 +113,9 @@ export class Accordions {
 
   closeAccordion(element, transition = true) {
     const contentElement = element.querySelector('[data-accordion="content"]');
+    if (!contentElement) {
+      return;
+    }
     element.classList.remove('is-active');
     if (transition) {
       contentElement.style.maxHeight = '0';

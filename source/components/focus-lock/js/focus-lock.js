@@ -14,8 +14,6 @@ const SELECTORS = [
 
 export class FocusLock {
   constructor() {
-    this._lockedElement = null;
-    this._startElement = null;
     this._focusableElements = null;
     this._endElement = null;
     this._selectors = SELECTORS;
@@ -24,52 +22,52 @@ export class FocusLock {
   }
 
   _documentKeydownHandler(evt) {
-    if (!this._focusableElements.length) {
-      return;
-    }
-
     const activeElement = document.activeElement;
-    if (this._focusableElements.length === 1) {
-      if (evt.key === 'Tab' && !evt.shiftKey) {
+    if (evt.key === 'Tab') {
+      if (!this._focusableElements.length) {
+        evt.preventDefault();
+        return;
+      }
+      if (this._focusableElements.length === 1) {
         evt.preventDefault();
         this._focusableElements[0].focus();
+        return;
       }
-
-      if (evt.key === 'Tab' && evt.shiftKey) {
-        evt.preventDefault();
-        this._focusableElements[0].focus();
-      }
-      return;
     }
 
     if (evt.key === 'Tab' && !evt.shiftKey && activeElement === this._focusableElements[this._focusableElements.length - 1]) {
       evt.preventDefault();
       this._focusableElements[0].focus();
     }
-
     if (evt.key === 'Tab' && evt.shiftKey && activeElement === this._focusableElements[0]) {
       evt.preventDefault();
       this._focusableElements[this._focusableElements.length - 1].focus();
     }
   }
 
-  lock(lockedClass, startElement) {
-    this._lockedElement = document.querySelector(lockedClass);
-    this._focusableElements = this._lockedElement.querySelectorAll(this._selectors);
-    this._startElement = startElement || this._lockedElement.querySelector('[data-focus]') || this._focusableElements[0] || false;
+  lock(lockedSelector) {
+    this.unlock();
+    const lockedElement = document.querySelector(lockedSelector);
+    this._focusableElements = lockedElement.querySelectorAll(this._selectors);
     this._endElement = document.activeElement;
-    this._startElement.focus();
+    const startElement = lockedElement.querySelector('[data-focus]') || this._focusableElements[0];
+    if (this._endElement) {
+      this._endElement.blur();
+    }
+    if (startElement) {
+      startElement.focus();
+    }
     document.addEventListener('keydown', this._documentKeydownHandler);
   }
 
-  unlock() {
-    if (this._endElement) {
+  unlock(returnFocus = true) {
+    if (this._endElement && returnFocus) {
       this._endElement.focus();
     }
-    this._lockedElement = null;
-    this._startElement = null;
     this._focusableElements = null;
     this._endElement = null;
     document.removeEventListener('keydown', this._documentKeydownHandler);
   }
 }
+
+window.focusLock = new FocusLock();
