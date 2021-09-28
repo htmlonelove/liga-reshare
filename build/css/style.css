@@ -1485,6 +1485,114 @@ button,
     .custom-input.is-valid input:focus, .custom-input.is-valid input:hover {
       border: 2px solid rgba(34, 178, 89, 0.5); }
 
+.custom-toggle {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 500px;
+  padding: 20px 0;
+  /*&.is-valid {
+    label span {
+      color: $color-eucalyptus;
+    }
+  }*/ }
+  .custom-toggle__error {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #b22222;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease; }
+  .custom-toggle input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0 0 0 0); }
+  .custom-toggle label {
+    position: relative;
+    padding-left: 26px;
+    cursor: pointer; }
+    .custom-toggle label span {
+      margin-bottom: 0;
+      margin-left: 0; }
+  .custom-toggle--checkbox label::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #22b259;
+    -webkit-transition: border 0.3s ease;
+    transition: border 0.3s ease; }
+  .custom-toggle--checkbox label::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0);
+    -webkit-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; }
+  .custom-toggle--radio label::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #22b259;
+    border-radius: 50%;
+    -webkit-transition: border 0.3s ease;
+    transition: border 0.3s ease; }
+  .custom-toggle--radio label::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 50%;
+    -webkit-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; }
+  .custom-toggle input:checked + label::after {
+    background-color: #22b259; }
+  .custom-toggle input:disabled + label::before {
+    opacity: 0.5; }
+  .custom-toggle.is-invalid label span {
+    color: #b22222; }
+  .custom-toggle.is-invalid .custom-toggle__error {
+    opacity: 1; }
+
+.toggle-group {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 500px;
+  padding: 20px 0; }
+  .toggle-group__error {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #b22222;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease; }
+  .toggle-group.is-invalid label span {
+    color: #b22222; }
+  .toggle-group.is-invalid .toggle-group__error {
+    opacity: 1; }
+
 .custom-select {
   position: relative;
   width: 200px;
@@ -1646,114 +1754,6 @@ button,
             transform: translateY(calc(-50% - 40px));
     opacity: 1; }
   .custom-select.slide-up.not-empty .custom-select__text, .custom-select.slide-up.is-open .custom-select__text {
-    opacity: 1; }
-
-.custom-toggle {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 500px;
-  padding: 20px 0;
-  /*&.is-valid {
-    label span {
-      color: $color-eucalyptus;
-    }
-  }*/ }
-  .custom-toggle__error {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    color: #b22222;
-    opacity: 0;
-    -webkit-transition: opacity 0.3s ease;
-    transition: opacity 0.3s ease; }
-  .custom-toggle input {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    clip: rect(0 0 0 0); }
-  .custom-toggle label {
-    position: relative;
-    padding-left: 26px;
-    cursor: pointer; }
-    .custom-toggle label span {
-      margin-bottom: 0;
-      margin-left: 0; }
-  .custom-toggle--checkbox label::before {
-    content: "";
-    position: absolute;
-    top: 2px;
-    left: 0;
-    width: 16px;
-    height: 16px;
-    border: 1px solid #22b259;
-    -webkit-transition: border 0.3s ease;
-    transition: border 0.3s ease; }
-  .custom-toggle--checkbox label::after {
-    content: "";
-    position: absolute;
-    top: 6px;
-    left: 4px;
-    width: 8px;
-    height: 8px;
-    background-color: rgba(255, 255, 255, 0);
-    -webkit-transition: background-color 0.3s ease;
-    transition: background-color 0.3s ease; }
-  .custom-toggle--radio label::before {
-    content: "";
-    position: absolute;
-    top: 2px;
-    left: 0;
-    width: 16px;
-    height: 16px;
-    border: 1px solid #22b259;
-    border-radius: 50%;
-    -webkit-transition: border 0.3s ease;
-    transition: border 0.3s ease; }
-  .custom-toggle--radio label::after {
-    content: "";
-    position: absolute;
-    top: 6px;
-    left: 4px;
-    width: 8px;
-    height: 8px;
-    background-color: rgba(255, 255, 255, 0);
-    border-radius: 50%;
-    -webkit-transition: background-color 0.3s ease;
-    transition: background-color 0.3s ease; }
-  .custom-toggle input:checked + label::after {
-    background-color: #22b259; }
-  .custom-toggle input:disabled + label::before {
-    opacity: 0.5; }
-  .custom-toggle.is-invalid label span {
-    color: #b22222; }
-  .custom-toggle.is-invalid .custom-toggle__error {
-    opacity: 1; }
-
-.toggle-group {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 500px;
-  padding: 20px 0; }
-  .toggle-group__error {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    color: #b22222;
-    opacity: 0;
-    -webkit-transition: opacity 0.3s ease;
-    transition: opacity 0.3s ease; }
-  .toggle-group.is-invalid label span {
-    color: #b22222; }
-  .toggle-group.is-invalid .toggle-group__error {
     opacity: 1; }
 
 .modal {

@@ -28,14 +28,15 @@
 
 @import "demos/autoresize-textarea";
 @import "demos/phone-mask";
-@import "demos/custom-input";
-@import "demos/custom-select";
-@import "demos/custom-toggle";
-@import "demos/toggle-group";
+
 
 // Components
 //---------------------------------
 
+@import "../components/form-validate/custom-input";
+@import "../components/form-validate/custom-toggle";
+@import "../components/form-validate/toggle-group";
+@import "../components/custom-select/style/custom-select";
 @import "../components/modals/style/modal";
 @import "../components/tabs/style/tabs";
 @import "../components/tabs/style/data-tabs";

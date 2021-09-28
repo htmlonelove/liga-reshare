@@ -1,5 +1,5 @@
 import FormsValidate from './form-validate';
-const formWrappers = [...document.querySelectorAll('[data-validate]')];
+const formWrappers = document.querySelectorAll('[data-validate]');
 
 const resetForm = (form) => {
   setTimeout(() => {
