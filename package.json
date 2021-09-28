@@ -53,8 +53,5 @@
     "stylelint-config-htmlacademy": "0.1.x",
     "webpack": "4.42.0",
     "webpack-stream": "5.2.1"
-  },
-  "engines": {
-    "node": "8.15"
   }
 }

@@ -93,7 +93,7 @@
   <div class="wrapper">
     <header class="header">
   <div class="container">
-    <a class="header__logo"  aria-label="Переход на главную">
+    <a class="header__logo"  href="index.html" aria-label="Переход на главную">
       <svg width="120" height="27">
         <use xlink:href="#icon-logo"></use>
       </svg>
@@ -109,63 +109,58 @@
 
     <main>
       <div class="container">
-        <div class="intro">
-          <div class="intro__wrapper">
-            <div class="intro__drako">
-              <svg width="190" height="215">
-                <use xlink:href="#icon-drako"></use>
-              </svg>
-            </div>
-            <h1 class="intro__title">
-              <span>Лига</span>
-              <span class="intro__title-pale">Решений</span>
-            </h1>
+        <div class="component">
+          <div class="component__heading">
+            <h1 class="component__title">Лок фокуса</h1>
+            <a class="component__download-link btn" href="components/scroll-lock.zip" download>Скачать компонент</a>
           </div>
-          <div class="intro__description">
-            <!-- <p>Мы написали и будем писать для Вас <em>все самое вкусное</em> и&nbsp;почти&nbsp;без плагинов.</p> -->
-          </div>
-        </div>
+          <div class="component__description">
+            <p>Лок фокуса состоит из одного файла scroll-lock.js он обязателен для переноса в проект, из файла экспортится класс FocusLock, в файле создаётся экземпляр класса и записывается в глобальную область видимости window.scrollLock = new ScrollLock();</p>
+            <p>Пример подключения
+              <pre>
+                <code>
+                  import '../components/scroll-lock/js/scroll-lock';
+                </code>
+              </pre>
+            </p>
+            <p>В проекте пользуйтесь глобальной переменной window.scrollLock</p>
+            <h2>В классе есть два публичных метода</h2>
+            <p><em>disableScrolling()</em> Блокирует скролл</p>
+            <p><em>enableScrolling()</em> Разблокирует скролл</p>
+          <div class="component__demo">
+            <p>
+  <p><button class="btn lock" type="button">Заблокировать скролл страницы</button></p>
+  <p><button class="btn unlock" type="button">Разблокировать скролл страницы</button></p>
+</p>
+<section class="lock-block">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+</section>
 
-        <nav class="components-nav">
-          <ul class="components-nav__list">
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="auto-resize-textarea.html">Автоизменение высоты textarea</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="custom-select.html">Кастомный селект</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="form-validate.html">Валидация формы</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="phone-mask.html">Легковесная телефонная маска</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="cookies.html">Cookie</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="tabs.html">Табы</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="accordion.html">Аккордеон</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="incline-word.html">Склонение слов</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="modals.html">Модальные окна</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="focus-lock.html">Лок фокуса</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="scroll-lock.html">Лок страницы</a>
-            </li>
-          </ul>
-        </nav>
+<script>
+  const lockBtnElement = document.querySelector('.lock');
+  const unlockBtnElement = document.querySelector('.unlock');
+
+  lockBtnElement.addEventListener('click', () => window.scrollLock.disableScrolling());
+  unlockBtnElement.addEventListener('click', () => window.scrollLock.enableScrolling());
+</script>
+
+          </div>
       </div>
     </main>
   </div>
 
+  <script src="js/vendor.min.js"></script>
+  <script src="js/main.min.js"></script>
 </body>
 </html>

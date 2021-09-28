@@ -115,18 +115,27 @@
             <a class="component__download-link btn" href="components/focus-lock.zip" download>Скачать компонент</a>
           </div>
           <div class="component__description">
-            <p>Лок фокуса состоит из одного файла focus-lock.js он обязателен для переноса в проект, из файла экспортится класс FocusLock, в файле создаётся экземпляр класса и записывается в глобальную область видимости, в проекте создавайте при необходимости экземпляры класса, в глобальную область видимости вынесено для бэкэнда</p>
+            <p>Лок фокуса состоит из одного файла focus-lock.js он обязателен для переноса в проект, из файла экспортится класс FocusLock, в файле создаётся экземпляр класса и записывается в глобальную область видимости window.focusLock = new FocusLock();</p>
+            <p>Пример подключения
+              <pre>
+                <code>
+                  import '../components/focus-lock/js/focus-lock';
+                </code>
+              </pre>
+            </p>
+            <p>В проекте пользуйтесь глобальной переменной window.focusLock</p>
             <h2>В классе есть два публичных метода</h2>
-            <p><em>lock(lockedSelector)</em> Принимает селектор родителя. Если внутри родителя нет фокусируемых элементов то при нажатии на клавишу tab или сочетание shift + tab действие по умолчанию будет отменено. Если внутри родителя есть только один фокусируемый элемент то при нажатии на клавишу tab или сочетание shift + tab фокус с него уходить не будет.</p>
+            <p><em>lock(lockedSelector)</em> Принимает селектор родителя. Если внутри родителя нет фокусируемых элементов то при нажатии на клавишу tab или сочетание shift + tab действие по умолчанию будет отменено. Если внутри родителя есть только один фокусируемый элемент то при нажатии на клавишу tab или сочетание shift + tab фокус с него уходить не будет. Нам не всегда нужно что бы при блоке фокуса в блокируемом блоке какой-либо жлемент сразу попадал в фокус, поэтому вторым параметром можно передать false lock(lockedSelector, false)</p>
             <p><em>unlock()</em> Возвращает стандартное поведение фокуса и возвращает его в тот элемент на котором он был до блокировки фокуса, если вам не требуется такое поведение то аргументом нужно передать false</p>
             <h2>Не обязательные дата атрибуты</h2>
             <p><em>data-focus</em> Устанавливается на элемент который должен попасть в фокус, если не установлен то в фокус попадает первый фокусируемый элемент в переданном родителе</p>
           </div>
           <div class="component__demo">
             <p>
-  <button class="btn lock" type="button">Заблокировать фокус в блоке ниже</button>
-  <button class="btn unlock" type="button">Разблокировать фокус по умолчанию</button>
-  <button class="btn unlock-false" type="button">Разблокировать фокус с передачей false</button>
+  <p><button class="btn lock" type="button">Заблокировать фокус в блоке ниже</button></p>
+  <p><button class="btn lock-false" type="button">Заблокировать фокус в блоке ниже с передачей false</button></p>
+  <p><button class="btn unlock" type="button">Разблокировать фокус по умолчанию</button></p>
+  <p><button class="btn unlock-false" type="button">Разблокировать фокус с передачей false</button></p>
 </p>
 <section class="lock-block">
   <h2>Блокируемая секция</h2>
@@ -138,12 +147,14 @@
 
 <script>
   const lockBtnElement = document.querySelector('.lock');
+  const lockFalseBtnElement = document.querySelector('.lock-false');
   const unlockBtnElement = document.querySelector('.unlock');
   const unlockFalseBtnElement = document.querySelector('.unlock-false');
 
-  lockBtnElement.addEventListener('click', () => window.focusLock.lock('.lock-block'))
-  unlockBtnElement.addEventListener('click', () => window.focusLock.unlock())
-  unlockFalseBtnElement.addEventListener('click', () => window.focusLock.unlock(false))
+  lockBtnElement.addEventListener('click', () => window.focusLock.lock('.lock-block'));
+  lockFalseBtnElement.addEventListener('click', () => window.focusLock.lock('.lock-block', false));
+  unlockBtnElement.addEventListener('click', () => window.focusLock.unlock());
+  unlockFalseBtnElement.addEventListener('click', () => window.focusLock.unlock(false));
 </script>
 
           </div>

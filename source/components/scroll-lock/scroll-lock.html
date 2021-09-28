@@ -1,0 +1,26 @@
+<p>
+  <p><button class="btn lock" type="button">Заблокировать скролл страницы</button></p>
+  <p><button class="btn unlock" type="button">Разблокировать скролл страницы</button></p>
+</p>
+<section class="lock-block">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
+</section>
+
+<script>
+  const lockBtnElement = document.querySelector('.lock');
+  const unlockBtnElement = document.querySelector('.unlock');
+
+  lockBtnElement.addEventListener('click', () => window.scrollLock.disableScrolling());
+  unlockBtnElement.addEventListener('click', () => window.scrollLock.enableScrolling());
+</script>

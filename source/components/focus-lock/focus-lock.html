@@ -1,7 +1,8 @@
 <p>
-  <button class="btn lock" type="button">Заблокировать фокус в блоке ниже</button>
-  <button class="btn unlock" type="button">Разблокировать фокус по умолчанию</button>
-  <button class="btn unlock-false" type="button">Разблокировать фокус с передачей false</button>
+  <p><button class="btn lock" type="button">Заблокировать фокус в блоке ниже</button></p>
+  <p><button class="btn lock-false" type="button">Заблокировать фокус в блоке ниже с передачей false</button></p>
+  <p><button class="btn unlock" type="button">Разблокировать фокус по умолчанию</button></p>
+  <p><button class="btn unlock-false" type="button">Разблокировать фокус с передачей false</button></p>
 </p>
 <section class="lock-block">
   <h2>Блокируемая секция</h2>
@@ -13,10 +14,12 @@
 
 <script>
   const lockBtnElement = document.querySelector('.lock');
+  const lockFalseBtnElement = document.querySelector('.lock-false');
   const unlockBtnElement = document.querySelector('.unlock');
   const unlockFalseBtnElement = document.querySelector('.unlock-false');
 
-  lockBtnElement.addEventListener('click', () => window.focusLock.lock('.lock-block'))
-  unlockBtnElement.addEventListener('click', () => window.focusLock.unlock())
-  unlockFalseBtnElement.addEventListener('click', () => window.focusLock.unlock(false))
+  lockBtnElement.addEventListener('click', () => window.focusLock.lock('.lock-block'));
+  lockFalseBtnElement.addEventListener('click', () => window.focusLock.lock('.lock-block', false));
+  unlockBtnElement.addEventListener('click', () => window.focusLock.unlock());
+  unlockFalseBtnElement.addEventListener('click', () => window.focusLock.unlock(false));
 </script>

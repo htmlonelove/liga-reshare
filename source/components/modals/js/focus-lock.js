@@ -51,7 +51,7 @@ export class FocusLock {
     }
   }
 
-  lock(lockedSelector) {
+  lock(lockedSelector, startFocus = true) {
     this.unlock();
     this._lockedSelector = lockedSelector;
     const lockedElement = document.querySelector(this._lockedSelector);
@@ -61,7 +61,7 @@ export class FocusLock {
     if (this._endElement) {
       this._endElement.blur();
     }
-    if (startElement) {
+    if (startElement && startFocus) {
       startElement.focus();
     }
     document.addEventListener('keydown', this._documentKeydownHandler);

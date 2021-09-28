@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+  @@include("source/html/base/head.html")
+  <title>Лига компонентов</title>
+
+</head>
+<body>
+
+  <div style="display: none;">
+    @@include("build/img/sprite_auto.svg")
+  </div>
+
+  <div class="wrapper">
+    @@include("source/html/base/header.html")
+
+    <main>
+      <div class="container">
+        <div class="component">
+          <div class="component__heading">
+            <h1 class="component__title">Лок фокуса</h1>
+            <a class="component__download-link btn" href="components/scroll-lock.zip" download>Скачать компонент</a>
+          </div>
+          <div class="component__description">
+            <p>Лок фокуса состоит из одного файла scroll-lock.js он обязателен для переноса в проект, из файла экспортится класс FocusLock, в файле создаётся экземпляр класса и записывается в глобальную область видимости window.scrollLock = new ScrollLock();</p>
+            <p>Пример подключения
+              <pre>
+                <code>
+                  import '../components/scroll-lock/js/scroll-lock';
+                </code>
+              </pre>
+            </p>
+            <p>В проекте пользуйтесь глобальной переменной window.scrollLock</p>
+            <h2>В классе есть два публичных метода</h2>
+            <p><em>disableScrolling()</em> Блокирует скролл</p>
+            <p><em>enableScrolling()</em> Разблокирует скролл</p>
+          <div class="component__demo">
+            @@include("source/components/scroll-lock/scroll-lock.html")
+          </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/vendor.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+</html>
