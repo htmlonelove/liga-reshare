@@ -115,7 +115,20 @@
             <a class="component__download-link btn" href="components/scroll-lock.zip" download>Скачать компонент</a>
           </div>
           <div class="component__description">
-            <p>Лок фокуса состоит из одного файла scroll-lock.js он обязателен для переноса в проект, из файла экспортится класс FocusLock, в файле создаётся экземпляр класса и записывается в глобальную область видимости window.scrollLock = new ScrollLock();</p>
+            <p>Лок фокуса состоит из из следующих файлов: ios-checker.js, scroll-lock.js он обязателен для переноса в проект, из файла экспортится класс FocusLock, в файле создаётся экземпляр класса и записывается в глобальную область видимости window.scrollLock = new ScrollLock();  Так же у вас в проекте должно находится два утилитарных класса для блокировки страницы:</p>
+            <pre>
+              <code>
+                .scroll-lock-ios {
+                  position: fixed;
+
+                  overflow: hidden;
+                }
+
+                .scroll-lock {
+                  overflow: hidden;
+                }
+              </code>
+            </pre>
             <p>Пример подключения
               <pre>
                 <code>
