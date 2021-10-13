@@ -93,7 +93,7 @@
   <div class="wrapper">
     <header class="header">
   <div class="container">
-    <a class="header__logo"  aria-label="Переход на главную">
+    <a class="header__logo"  href="index.html" aria-label="Переход на главную">
       <svg width="120" height="27">
         <use xlink:href="#icon-logo"></use>
       </svg>
@@ -109,69 +109,41 @@
 
     <main>
       <div class="container">
-        <div class="intro">
-          <div class="intro__wrapper">
-            <div class="intro__drako">
-              <svg width="190" height="215">
-                <use xlink:href="#icon-drako"></use>
-              </svg>
-            </div>
-            <h1 class="intro__title">
-              <span>Лига</span>
-              <span class="intro__title-pale">Решений</span>
-            </h1>
+        <div class="component">
+          <div class="component__heading">
+            <h1 class="component__title">Прогресс скролла</h1>
+            <a class="component__download-link btn" href="components/scroll-translator.zip" download>Скачать компонент</a>
           </div>
-          <div class="intro__description">
-            <!-- <p>Мы написали и будем писать для Вас <em>все самое вкусное</em> и&nbsp;почти&nbsp;без плагинов.</p> -->
-          </div>
-        </div>
+          <div class="component__description">
+            <p>Лок фокуса состоит из из следующих файлов: scroll-translator.js и scroll-translator.scss js обязателен для переноса в проект, из файла scroll-translator.js экспортится класс ScrollTranslator, в main создаётся экземпляр класса и у него вызывается метод init()</p>
+            <pre>
+              <code>
+                import {ScrollTranslator} from '../components/scroll-translator/js/scroll-translator';
+                const scrollTranslator = new ScrollTranslator();
+                scrollTranslator.init();
+              </code>
+            </pre>
+            <h2>Обязательные дата атрибуты</h2>
+            <p><em>data-translator="parent"</em> Добавляется к родителю</p>
+            <p><em>data-translator-type=""</em> Добавляется к родителю, отвечает за то как будет считаться изменение индикатора при скроле горизонтально или вертикально, может иметь два значения horizontal или vertical</p>
+            <p><em>data-translator="indicator"</em> Добавляется к индикатору</p>
+          <div class="component__demo">
+            <div class="vh-300">
+  <div class="scroll-translator scroll-translator--horizontal" data-translator="parent" data-translator-type="horizontal">
+    <div class="scroll-translator__indicator" data-translator="indicator"></div>
+  </div>
 
-        <nav class="components-nav">
-          <ul class="components-nav__list">
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="auto-resize-textarea.html">Автоизменение высоты textarea</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="custom-select.html">Кастомный селект</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="form-validate.html">Валидация формы</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="phone-mask.html">Легковесная телефонная маска</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="cookies.html">Cookie</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="tabs.html">Табы</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="accordion.html">Аккордеон</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="incline-word.html">Склонение слов</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="modals.html">Модальные окна</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="focus-lock.html">Лок фокуса</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="scroll-lock.html">Лок страницы</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="scroll-translator.html">Прогресс скролла</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="navigation-changer.html">Подсветка пунктов навигации при скроле</a>
-            </li>
-          </ul>
-        </nav>
+  <div class="scroll-translator scroll-translator--vertical" data-translator="parent"  data-translator-type="vertical">
+    <div class="scroll-translator__indicator" data-translator="indicator"></div>
+  </div>
+</div>
+
+          </div>
       </div>
     </main>
   </div>
 
+  <script src="js/vendor.min.js"></script>
+  <script src="js/main.min.js"></script>
 </body>
 </html>

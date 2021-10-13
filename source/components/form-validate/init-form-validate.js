@@ -7,23 +7,25 @@ const resetForm = (form) => {
   }, 1000);
 };
 
-const baseSuccessCallback = (e) => {
+const baseValidationSuccessCallback = (e) => {
   e.preventDefault();
+  // В данном колбеке бэкендер будет писать запрос на отправку формы на сервер и обрабатывать возможные ошибки при отправке
   resetForm(e.target);
 };
 
-const baseErrorCallback = (e) => {
+const baseValidationErrorCallback = (e) => {
   e.preventDefault();
 };
 
-const customExampleSuccessCallback = (e) => {
+const customExampleValidationSuccessCallback = (e) => {
   e.preventDefault();
+  // В данном колбеке бэкендер будет писать запрос на отправку формы на сервер и обрабатывать возможные ошибки при отправке
   resetForm(e.target);
   // eslint-disable-next-line no-console
   console.log('Ваша форма успешна отправлена');
 };
 
-const customExampleErrorCallback = (e) => {
+const customExampleValidationErrorCallback = (e) => {
   e.preventDefault();
   // eslint-disable-next-line no-console
   console.error('Отправка формы невозможна, заполните все обязательные поля');
@@ -31,12 +33,14 @@ const customExampleErrorCallback = (e) => {
 
 const callbacks = {
   base: {
-    successCallback: baseSuccessCallback,
-    errorCallback: baseErrorCallback,
+    // Колбек при успешной валидации формы при попытке её отправки
+    validationSuccessCallback: baseValidationSuccessCallback,
+    // Колбек при не успешной валидации формы при попытке её отправки, не связан с запросами на сервер
+    validationErrorCallback: baseValidationErrorCallback,
   },
   customExample: {
-    successCallback: customExampleSuccessCallback,
-    errorCallback: customExampleErrorCallback,
+    validationSuccessCallback: customExampleValidationSuccessCallback,
+    validationErrorCallback: customExampleValidationErrorCallback,
   },
 };
 
@@ -44,12 +48,12 @@ const initFormValidate = () => {
   if (formWrappers.length) {
     formWrappers.forEach((wrapper) => {
       let callback = wrapper.dataset.callback;
+
       if (!callback) {
         callback = 'base';
       }
 
       const formValidate = new FormsValidate(wrapper, callbacks[callback]);
-
       return formValidate.init();
     });
   }

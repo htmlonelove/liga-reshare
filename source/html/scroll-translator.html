@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+  @@include("source/html/base/head.html")
+  <title>Лига компонентов</title>
+
+</head>
+<body>
+
+  <div style="display: none;">
+    @@include("build/img/sprite_auto.svg")
+  </div>
+
+  <div class="wrapper">
+    @@include("source/html/base/header.html")
+
+    <main>
+      <div class="container">
+        <div class="component">
+          <div class="component__heading">
+            <h1 class="component__title">Прогресс скролла</h1>
+            <a class="component__download-link btn" href="components/scroll-translator.zip" download>Скачать компонент</a>
+          </div>
+          <div class="component__description">
+            <p>Лок фокуса состоит из из следующих файлов: scroll-translator.js и scroll-translator.scss js обязателен для переноса в проект, из файла scroll-translator.js экспортится класс ScrollTranslator, в main создаётся экземпляр класса и у него вызывается метод init()</p>
+            <pre>
+              <code>
+                import {ScrollTranslator} from '../components/scroll-translator/js/scroll-translator';
+                const scrollTranslator = new ScrollTranslator();
+                scrollTranslator.init();
+              </code>
+            </pre>
+            <h2>Обязательные дата атрибуты</h2>
+            <p><em>data-translator="parent"</em> Добавляется к родителю</p>
+            <p><em>data-translator-type=""</em> Добавляется к родителю, отвечает за то как будет считаться изменение индикатора при скроле горизонтально или вертикально, может иметь два значения horizontal или vertical</p>
+            <p><em>data-translator="indicator"</em> Добавляется к индикатору</p>
+          <div class="component__demo">
+            @@include("source/components/scroll-translator/scroll-translator.html")
+          </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/vendor.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+</html>

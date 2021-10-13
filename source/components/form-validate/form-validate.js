@@ -529,10 +529,10 @@ const formElementValidateAction = (formValidateElement) => {
 const onFormSubmit = (e, callback) => {
   const formElements = e.target.querySelectorAll('[aria-required="true"]');
   const groupsFormElement = e.target.querySelectorAll('[data-validate-type="toggle-group"]');
-  if (showErrors(formElements, groupsFormElement) && callback && callback.successCallback) {
-    callback.successCallback(e);
-  } else if (callback && callback.errorCallback) {
-    callback.errorCallback(e);
+  if (showErrors(formElements, groupsFormElement) && callback && callback.validationSuccessCallback) {
+    callback.validationSuccessCallback(e);
+  } else if (callback && callback.validationErrorCallback) {
+    callback.validationErrorCallback(e);
   } else {
     e.preventDefault();
   }
