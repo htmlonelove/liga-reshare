@@ -29,10 +29,10 @@ const simpleLimitations = (formElement, dataLimitations) => {
     formElement.addEventListener('input', () => {
       formElement.value = formElement.value.replace(RegEx, '');
     });
-  } else {
-    // eslint-disable-next-line no-console
-    console.error(`Переданный формат ограничения: ${dataLimitations}, не поддерживается. Проверьте корректность введённых значений в соответствии со спецификацией.`);
+    return;
   }
+  // eslint-disable-next-line no-console
+  console.error(`Переданный формат ограничения: ${dataLimitations}, не поддерживается. Проверьте корректность введённых значений в соответствии со спецификацией.`);
 };
 
 // Ограничения ввода для обычных полей с матрицей

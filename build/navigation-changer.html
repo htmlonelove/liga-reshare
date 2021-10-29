@@ -115,18 +115,24 @@
             <a class="component__download-link btn" href="components/navigation-changer.zip" download>Скачать компонент</a>
           </div>
           <div class="component__description">
-            <p>Лок фокуса состоит из из следующих файлов: scroll-translator.js и scroll-translator.scss js обязателен для переноса в проект, из файла scroll-translator.js экспортится класс ScrollTranslator, в main создаётся экземпляр класса и у него вызывается метод init()</p>
+            <p>Подсветка пунктов навигации состоит из из следующих файлов: navigation-changer.js js обязателен для переноса в проект, из файла navigation-changer.js экспортится класс NavigationChanger, в main создаётся экземпляр класса и у него вызывается метод init()</p>
             <pre>
               <code>
-                import {ScrollTranslator} from '../components/scroll-translator/js/scroll-translator';
-                const scrollTranslator = new ScrollTranslator();
-                scrollTranslator.init();
+                import {NavigationChanger} from '../components/navigation-changer/js/navigation-changer';
+                const navigationChanger = new NavigationChanger();
+                navigationChanger.init();
               </code>
             </pre>
             <h2>Обязательные дата атрибуты</h2>
-            <p><em>data-translator="parent"</em> Добавляется к родителю</p>
-            <p><em>data-translator-type=""</em> Добавляется к родителю, отвечает за то как будет считаться изменение индикатора при скроле горизонтально или вертикально, может иметь два значения horizontal или vertical</p>
-            <p><em>data-translator="indicator"</em> Добавляется к индикатору</p>
+            <p><em>data-navigation-link</em> Добавляется к ссылке</p>
+            <p>Так же обязательно связывать ссылки с блоками с помощью href в ссылке и id в секции</p>
+            <pre>
+              <code>
+                &lt;a href="#section-1" class="navigation__link" data-navigation-link>Секция 1&lt;/a>
+                &lt;section class="section-navigation" id="section-2">&lt;/section>
+              </code>
+            </pre>
+            <p>По умалчанию подключен MoveTo</p>
           <div class="component__demo">
             <nav class="navigation">
   <ul class="navigation__list">

@@ -59,7 +59,7 @@ export class Modals {
 
     evt.preventDefault();
 
-    this._modalName = target.dataset.openModal;
+    this._modalName = target.closest('[data-open-modal]').dataset.openModal;
 
     if (!this._modalName) {
       return;

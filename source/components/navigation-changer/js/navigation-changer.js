@@ -4,10 +4,9 @@ export class NavigationChanger {
       duration: 1000,
       easing: 'easeOutQuart',
     });
+    this._blockShift = 50;
     this._linkElements = document.querySelectorAll('[data-navigation-link]');
-
-    //this._documentClickHandler = this._documentClickHandler.bind(this);
-    this._windowScrollHandler = this._windowScrollHandler.bind(this);
+    this._documentScrollHandler = this._documentScrollHandler.bind(this);
   }
 
   init() {
@@ -16,48 +15,25 @@ export class NavigationChanger {
     }
     this._initMoveTo();
     this._changeLinksActiveState();
-    //document.addEventListener('click', this._documentClickHandler);
-    document.addEventListener('scroll', this._windowScrollHandler);
+    document.addEventListener('scroll', this._documentScrollHandler);
   }
 
-  _documentClickHandler(evt) {
-    if (evt.target.closest('[data-navigation-link')) {
-      evt.preventDefault();
-      const currentTargetElement = evt.target.closest('[data-navigation-link');
-      const activeLinkElement = document.querySelector('[data-navigation-link].is-active');
-
-      if (currentTargetElement === activeLinkElement) {
-        return;
-      }
-
-      if (!activeLinkElement) {
-        currentTargetElement.classList.add('is-active');
-        return;
-      }
-
-      activeLinkElement.classList.remove('is-active');
-      currentTargetElement.classList.add('is-active');
-    }
-  }
-
-  _windowScrollHandler() {
+  _documentScrollHandler() {
     this._changeLinksActiveState();
   }
 
-  _removeLinksActiveState() {
-    this._linkElements.forEach((link) => {
-      link.classList.remove('is-active');
-      document.activeElement.blur();
-    });
-  }
-
   _changeLinksActiveState() {
-    this._linkElements.forEach((link) => {
+    this._linkElements.forEach((link, index) => {
       const currentBlockElement = document.querySelector(`${link.getAttribute('href')}`);
-      if (currentBlockElement.getBoundingClientRect().top <= 0) {
+      if (currentBlockElement.getBoundingClientRect().bottom > this._blockShift && currentBlockElement.getBoundingClientRect().top <= this._blockShift) {
         link.classList.add('is-active');
       } else {
         link.classList.remove('is-active');
+      }
+
+      if (document.body.getBoundingClientRect().bottom - window.innerHeight < this._blockShift && currentBlockElement.getBoundingClientRect().top > this._blockShift) {
+        this._linkElements[index - 1].classList.remove('is-active');
+        link.classList.add('is-active');
       }
     });
   }
