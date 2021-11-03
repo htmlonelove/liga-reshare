@@ -44,8 +44,19 @@ const callbacks = {
   },
 };
 
+const setCustomPhoneInputsEvent = () => {
+  if (document.querySelectorAll('[data-validate-type="phone"] input').length) {
+    document.querySelector('html').addEventListener('input', ({target}) => {
+      if (target.closest('[data-validate-type="phone"]')) {
+        target.closest('[data-validate-type="phone"]').querySelector('input').dispatchEvent(new Event('input'));
+      }
+    });
+  }
+};
+
 const initFormValidate = () => {
   if (formWrappers.length) {
+    setCustomPhoneInputsEvent();
     formWrappers.forEach((wrapper) => {
       let callback = wrapper.dataset.callback;
 
