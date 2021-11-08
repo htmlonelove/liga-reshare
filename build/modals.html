@@ -187,90 +187,181 @@
                   // },
                 </code>
               </pre>
+            <h2 class="component__subtitle">Добавление Youtube видео</h2>
+            <p>Добавлена автоматическая остановка воспроизведения Youtube видео и при необходимости автозапуск воспроизведения при открытии</p>
+            <p>Для корректной работы <em>iframe</em> должен быть обёрнут в <em>div</em> с дата атрибутом <em>data-iframe</em>. <em>Важно!!!</em> в src iframe в конце должно быть дописано <em>?enablejsapi=1</em>. Полный пример src: src="https://www.youtube.com/embed/FmzHq3U0UFE?enablejsapi=1". Примеры в модальных окнах 4 и 5</p>
+            <p>Для автовоспроизведения <em>div</em> нужно добавить дата атрибут <em>data-auto-play</em>. Пример в модальном окне 5</p>
           </div>
           <h2 class="component__subtitle">Демо</h2>
           <div class="component__demo">
             <p><button class="btn" type="button" data-open-modal="modal-1">Вызов модального окна 1</button></p>
-            <p><button class="btn" type="button" data-open-modal="modal-2">Вызов модального окна 2</button></p>
-            <p><button class="btn" type="button" data-open-modal="modal-3">Вызов модального окна 3</button></p>
-            <p><button class="btn" type="button" data-open-modal="modal-4">Вызов модального окна 4</button></p>
-            <p><button class="btn" type="button" data-open-modal="modal-5">Вызов модального окна 5</button></p>
-            <section class="modal modal--preload" data-modal="modal-1">
-              <div class="modal__wrapper">
-                <div class="modal__overlay" data-close-modal></div>
-                <div class="modal__content">
-                  <section>
-                    <h2>example-1</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
-                    <p><button class="btn" type="button" data-open-modal="modal-2">Вызов модального окна 2</button></p>
-                    <p><button class="btn" type="button" data-open-modal="modal-3">Вызов модального окна 3</button></p>
-                    <p><button class="btn" type="button" data-open-modal="modal-4">Вызов модального окна 4</button></p>
-                    <p><button class="btn" type="button" data-open-modal="modal-5">Вызов модального окна 5</button></p>
-                  </section>
-                  <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>Закрыть</button>
-                </div>
-              </div>
-            </section>
-            <section class="modal modal--preload" data-modal="modal-2">
-              <div class="modal__wrapper">
-                <div class="modal__overlay" data-close-modal></div>
-                <div class="modal__content">
-                  <section>
-                    <h2>example-2</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
-                    <p><button class="btn" type="button" data-open-modal="modal-3">Вызов модального окна 3</button></p>
-                  </section>
-                  <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>Закрыть</button>
-                </div>
-              </div>
-            </section>
-            <section class="modal modal--preload" data-modal="modal-3">
-              <div class="modal__wrapper">
-                <div class="modal__overlay" data-close-modal></div>
-                <div class="modal__content">
-                  <section>
-                    <h2>example-3</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
-                  </section>
-                  <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>Закрыть</button>
-                </div>
-              </div>
-            </section>
-            <section class="modal modal--preload" data-modal="modal-4">
-              <div class="modal__wrapper">
-                <div class="modal__overlay" data-close-modal></div>
-                <div class="modal__content">
-                  <section>
-                    <h2>example-4</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
-                   <p> <button class="btn" type="button" data-open-modal="modal-5">Вызов модального окна 5</button></p>
-                  </section>
-                  <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>Закрыть</button>
-                </div>
-              </div>
-            </section>
-            <section class="modal modal--preload" data-modal="modal-5">
-              <div class="modal__wrapper">
-                <div class="modal__overlay" data-close-modal></div>
-                <div class="modal__content">
-                  <section>
-                    <h2>example-5</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
-                  </section>
-                </div>
-              </div>
-            </section>
-          </div>
+<p><button class="btn" type="button" data-open-modal="modal-2">Вызов модального окна 2</button></p>
+<p><button class="btn" type="button" data-open-modal="modal-3">Вызов модального окна 3</button></p>
+<p><button class="btn" type="button" data-open-modal="modal-4">Вызов модального окна 4</button></p>
+<p><button class="btn" type="button" data-open-modal="modal-5">Вызов модального окна 5</button></p>
+<section class="modal modal--preload" data-modal="modal-1">
+  <div class="modal__wrapper">
+    <div class="modal__overlay" data-close-modal></div>
+    <div class="modal__content">
+      <section>
+        <h2>example-1</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
+          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
+          Tenetur.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
+          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
+          Tenetur.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
+          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
+          Tenetur.
+        </p>
+        <p><button class="btn" type="button" data-open-modal="modal-2">Вызов модального окна 2</button></p>
+        <p><button class="btn" type="button" data-open-modal="modal-3">Вызов модального окна 3</button></p>
+        <p><button class="btn" type="button" data-open-modal="modal-4">Вызов модального окна 4</button></p>
+        <p><button class="btn" type="button" data-open-modal="modal-5">Вызов модального окна 5</button></p>
+      </section>
+      <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>
+        Закрыть
+      </button>
+    </div>
+  </div>
+</section>
+<section class="modal modal--preload" data-modal="modal-2">
+  <div class="modal__wrapper">
+    <div class="modal__overlay" data-close-modal></div>
+    <div class="modal__content">
+      <section>
+        <h2>example-2</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
+          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
+          Tenetur.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
+          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
+          Tenetur.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
+          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
+          Tenetur.
+        </p>
+        <p><button class="btn" type="button" data-open-modal="modal-3">Вызов модального окна 3</button></p>
+      </section>
+      <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>
+        Закрыть
+      </button>
+    </div>
+  </div>
+</section>
+<section class="modal modal--preload" data-modal="modal-3">
+  <div class="modal__wrapper">
+    <div class="modal__overlay" data-close-modal></div>
+    <div class="modal__content">
+      <section>
+        <h2>example-3</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
+          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
+          Tenetur.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
+          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
+          Tenetur.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
+          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
+          Tenetur.
+        </p>
+      </section>
+      <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>
+        Закрыть
+      </button>
+    </div>
+  </div>
+</section>
+<section class="modal modal--preload" data-modal="modal-4">
+  <div class="modal__wrapper">
+    <div class="modal__overlay" data-close-modal></div>
+    <div class="modal__content">
+      <section>
+        <h2>example-4</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
+          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
+          Tenetur.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
+          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
+          Tenetur.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
+          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
+          Tenetur.
+        </p>
+        <div data-iframe>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/FmzHq3U0UFE?enablejsapi=1"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p><button class="btn" type="button" data-open-modal="modal-5">Вызов модального окна 5</button></p>
+      </section>
+      <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>
+        Закрыть
+      </button>
+    </div>
+  </div>
+</section>
+<section class="modal modal--preload" data-modal="modal-5">
+  <div class="modal__wrapper">
+    <div class="modal__overlay" data-close-modal></div>
+    <div class="modal__content">
+      <section>
+        <h2>example-5</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
+          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
+          Tenetur.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
+          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
+          Tenetur.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
+          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
+          Tenetur.
+        </p>
+        <div data-iframe data-auto-play>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/FmzHq3U0UFE?enablejsapi=1"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
 
         </div>
       </div>

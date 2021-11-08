@@ -105,4 +105,9 @@
 
     pointer-events: auto;
   }
+
+  iframe {
+    max-width: 100%;
+    border: none;
+  }
 }

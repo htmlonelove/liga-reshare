@@ -40,12 +40,30 @@ export class Modals {
       return;
     }
 
-    this._preventDefault = typeof this._settings[settingKey].preventDefault === 'boolean' ? this._settings[settingKey].preventDefault : this._settings[this._settingKey].preventDefault;
-    this._stopPlay = typeof this._settings[settingKey].stopPlay === 'boolean' ? this._settings[settingKey].stopPlay : this._settings[this._settingKey].stopPlay;
-    this._lockFocus = typeof this._settings[settingKey].lockFocus === 'boolean' ? this._settings[settingKey].lockFocus : this._settings[this._settingKey].lockFocus;
-    this._startFocus = typeof this._settings[settingKey].startFocus === 'boolean' ? this._settings[settingKey].startFocus : this._settings[this._settingKey].startFocus;
-    this._focusBack = typeof this._settings[settingKey].lockFocus === 'boolean' ? this._settings[settingKey].focusBack : this._settings[this._settingKey].focusBack;
-    this._eventTimeout = typeof this._settings[settingKey].eventTimeout === 'number' ? this._settings[settingKey].eventTimeout : this._settings[this._settingKey].eventTimeout;
+    this._preventDefault =
+      typeof this._settings[settingKey].preventDefault === 'boolean'
+        ? this._settings[settingKey].preventDefault
+        : this._settings[this._settingKey].preventDefault;
+    this._stopPlay =
+      typeof this._settings[settingKey].stopPlay === 'boolean'
+        ? this._settings[settingKey].stopPlay
+        : this._settings[this._settingKey].stopPlay;
+    this._lockFocus =
+      typeof this._settings[settingKey].lockFocus === 'boolean'
+        ? this._settings[settingKey].lockFocus
+        : this._settings[this._settingKey].lockFocus;
+    this._startFocus =
+      typeof this._settings[settingKey].startFocus === 'boolean'
+        ? this._settings[settingKey].startFocus
+        : this._settings[this._settingKey].startFocus;
+    this._focusBack =
+      typeof this._settings[settingKey].lockFocus === 'boolean'
+        ? this._settings[settingKey].focusBack
+        : this._settings[this._settingKey].focusBack;
+    this._eventTimeout =
+      typeof this._settings[settingKey].eventTimeout === 'number'
+        ? this._settings[settingKey].eventTimeout
+        : this._settings[this._settingKey].eventTimeout;
     this._openCallback = this._settings[settingKey].openCallback || this._settings[this._settingKey].openCallback;
     this._closeCallback = this._settings[settingKey].closeCallback || this._settings[this._settingKey].closeCallback;
   }
@@ -100,7 +118,19 @@ export class Modals {
   _stopInteractive(modal) {
     if (this._stopPlay) {
       modal.querySelectorAll('video, audio').forEach((el) => el.pause());
+      modal.querySelectorAll('[data-iframe]').forEach((el) => {
+        el.querySelector('iframe').contentWindow.postMessage('{"event": "command", "func": "pauseVideo", "args": ""}', '*');
+      });
     }
+  }
+
+  _autoPlay(modal) {
+    modal.querySelectorAll('[data-iframe]').forEach((el) => {
+      const autoPlay = el.closest('[data-auto-play]');
+      if (autoPlay) {
+        el.querySelector('iframe').contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+      }
+    });
   }
 
   open(modalName = this._modalName) {
@@ -136,6 +166,7 @@ export class Modals {
 
     setTimeout(() => {
       this._addListeners(modal);
+      this._autoPlay(modal);
       document.addEventListener('click', this._documentClickHandler);
     }, this._eventTimeout);
   }
