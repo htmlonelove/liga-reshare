@@ -93,7 +93,7 @@
   <div class="wrapper">
     <header class="header">
   <div class="container">
-    <a class="header__logo"  aria-label="Переход на главную">
+    <a class="header__logo"  href="index.html" aria-label="Переход на главную">
       <svg width="120" height="27">
         <use xlink:href="#icon-logo"></use>
       </svg>
@@ -109,72 +109,85 @@
 
     <main>
       <div class="container">
-        <div class="intro">
-          <div class="intro__wrapper">
-            <div class="intro__drako">
-              <svg width="190" height="215">
-                <use xlink:href="#icon-drako"></use>
-              </svg>
-            </div>
-            <h1 class="intro__title">
-              <span>Лига</span>
-              <span class="intro__title-pale">Решений</span>
-            </h1>
+        <div class="component">
+          <div class="component__heading">
+            <h1 class="component__title">Гайд по Pug</h1>
           </div>
-          <div class="intro__description">
-            <!-- <p>Мы написали и будем писать для Вас <em>все самое вкусное</em> и&nbsp;почти&nbsp;без плагинов.</p> -->
-          </div>
-        </div>
+          <div class="component__description">
+            <h2 class="component__subtitle">Что такое Pug?</h2>
+            <p><b>Pug</b> — это шаблонизатор и html-препроцессор, написанный на javascript для платформы Node.js, с целью <b>ускорения верстки</b>. После интерпретации синтаксис Pug превращается в Нtml код. Старое название Pug — Jade. Так что, если встретите упоминание Jade, знайте, что речь идет о Pug.</p>
+            <h2 class="component__subtitle">Почему Pug?</h2>
+            <p>Давайте для начала разберёмся почему мы используем Pug и какие возможности он перед нами открывает в отличии от обычного Нtml.</p>
+            <ul>
+              <li>
+                Pug позволяет нам использовать шаблоны. В сборке на Pug которая использует Лига это layout.pug. Он включает в себя базовую разметку документа, подключение стилей и скриптов. Благодаря этому нам больше не приходится дублировать этот код на страницах, мы просто можем написать базовые настройки в блоке с переменными и начинать писать наш код. Ориентироваться в коде на таких страницах намного проще, ведь здесь находится только основное содержимое страницы. Огромным плюсом шаблонов является то, что мы теперь не долнжы бегать по всем страницам, что бы что-то поменять(подключить новый скрипт или стилевой файл, добавить шрифты и т.д.). Мы вносим изменения в шаблон и изменения произойдут на всех страницах куда подключен шаблон. Это ускоряет разработку и исключает возможные ошибки.
+              </li>
+              <li>
+                В Pug можно встраивать JavaScript код. Использование переменных, циклов, условий и других конструкций делают Pug очень вариативным инструментом в разработке.
+              </li>
+              <li>
+                Поддержка миксинов позволяет создавать переиспользуемые блоки. Это практически тоже самое, что и функция в языке программирования.
+              </li>
+              <li>
+                Pug лёгок в освоении и имеет простой синтаксис, любой человек уже спустя пару часов сможет им спокойно пользоваться. В нём нет закрывающих тегов, вместо этого он использует строгую табуляцию (или отступы) для определения вложености тегов. Классы css задаются через точку, идентификаторы — через решетку, атрибуты — в круглых скобках. Такие особенности Pug помогают ускорить разработку и исключить ошибки связанные например с неправильно закрытыми тегами.
+              </li>
+            </ul>
 
-        <nav class="components-nav">
-          <ul class="components-nav__list">
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="auto-resize-textarea.html">Автоизменение высоты textarea</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="custom-select.html">Кастомный селект</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="form-validate.html">Валидация формы</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="phone-mask.html">Легковесная телефонная маска</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="cookies.html">Cookie</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="tabs.html">Табы</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="accordion.html">Аккордеон</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="incline-word.html">Склонение слов</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="modals.html">Модальные окна</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="focus-lock.html">Лок фокуса</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="scroll-lock.html">Лок страницы</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="scroll-translator.html">Прогресс скролла</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="navigation-changer.html">Подсветка пунктов навигации при скроле</a>
-            </li>
-            <li class="components-nav__item">
-              <a class="components-nav__link" href="pug.html">Гайд по Pug</a>
-            </li>
-          </ul>
-        </nav>
+            <h2 class="component__subtitle">С чего начать?</h2>
+            <p>Для начала вам нужно принять неизбежное: <b>Лига А испоользует Pug</b>. Если вы находитесь в любой другой стадии (отрицание, гнев, торг, депрессия), поверьте неизбежного не избежать, не тратьте своё и чужое время <b>Лига А испоользует Pug</b>, просто примите это. Не важно что вас этому не учили в Академии, работаете вы один на проекте или нет, состоит проект из одной страницы или из одного блока. Поверьте это всё не имеет никакого значения <b>Лига А испоользует Pug</b>, а вы работаете или стажируетесь в Лиге.</p>
+            <p>Внимательно прочитайте данный гайд до конца.</p>
+            <p>Если, после прочтения гайда, ваши руки так и продолжат тянуться к написанию Нtml и вам будет сложно начать или вы продолжите думать что ничего не понимаете, ничего страшного. Пишите Нtml, но здесь <a href="https://html-to-pug.com/">https://html-to-pug.com/</a>, а потом вставляйте результат в вашу работу. Буквально через пару часов максимум вам уже не понадобится этот ресурс. Но на самом деле я до сих пор его использую если мне нужно конвертировать Нtml в Pug. Но у этого ресурса есть один маленький минус, он коверкает кирилицу)</p>
+
+            <h2 class="component__subtitle">Основные возможности Pug которые мы постоянно используем</h2>
+
+            <h2 class="component__subtitle">Особенности нашей сборки</h2>
+
+            <blockquote>
+              <p>Отладка кода вдвое сложнее, чем его написание. Так что если вы пишете код настолько умно, насколько можете, то вы по определению недостаточно сообразительны, чтобы его отлаживать.</p>
+              <cite>Brian W. Kernighan</cite>
+            </blockquote>
+            <blockquote>
+              <p> Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.</p>
+              <cite>Martin Golding</cite>
+            </blockquote>
+            <blockquote>
+              <p>Программы должны писаться для людей, которые будут их читать, а машины, которые будут эти программы исполнять — второстепенны.</p>
+              <cite>Harold Abelson</cite>
+            </blockquote>
+            <blockquote>
+              <p>Любой дурак сможет написать код, который поймет машина. Хорошие программисты пишут код, который сможет понять человек.</p>
+              <cite>Martin Fowler</cite>
+            </blockquote>
+            <blockquote>
+              <p>Программирование — это разбиение чего-то большого и невозможного на что-то маленькое и вполне реальное.</p>
+              <cite>Jazzwant</cite>
+            </blockquote>
+            <blockquote>
+              <p>Простота — залог надежности.</p>
+              <cite>Edsger W. Dijkstra</cite>
+            </blockquote>
+            <blockquote>
+              <p>Если вы хотите, чтобы код было легко и быстро писать — делайте его удобным для чтения.</p>
+              <cite>Robert C. Martin</cite>
+            </blockquote>
+            <blockquote>
+              <p>Насколько проще было бы писать программы, если бы не заказчики.</p>
+              <cite>Robert C. Martin</cite>
+            </blockquote>
+            <blockquote>
+              <p>Некоторые люди во время решения некой проблемы думают: «Почему бы мне не использовать регулярные выражения?». После этого у них уже две проблемы…</p>
+              <cite>Jamie Zawinski</cite>
+            </blockquote>
+            <blockquote>
+              <p>Некоторые проблемы лучше не решать, а избегать.</p>
+              <cite>Tony Hoare</cite>
+            </blockquote>
+          </div>
       </div>
     </main>
   </div>
 
+  <script src="js/vendor.min.js"></script>
+  <script src="js/main.min.js"></script>
 </body>
 </html>
