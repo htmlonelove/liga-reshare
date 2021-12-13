@@ -2,17 +2,6 @@ import {Modals} from './modals';
 
 let modals;
 
-// Здесь реализован пример открытия модалки через колбэк закрытия
-// const openModalInCloseCallback = (name, context = this) => {
-//   context._enableScrolling = false;
-//   context._setSettings('default');
-//   modals.open(name);
-// };
-
-// closeCallback() {
-//   openModalInCloseCallback('modal-5');
-// },
-
 const settings = {
   'default': {
     preventDefault: true,
