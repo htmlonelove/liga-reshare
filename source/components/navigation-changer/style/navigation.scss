@@ -63,6 +63,15 @@
       transform: translateX(-50%) scaleX(1);
       transform-origin: left;
     }
+
+    &.is-inactive::before {
+      display: none;
+    }
+
+    &.is-inactive {
+      color: #000000;
+      pointer-events: none;
+    }
   }
 }
 

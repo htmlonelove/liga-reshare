@@ -80,7 +80,7 @@ export class Tabs {
     tabElements.forEach((element) => {
       height.push(element.scrollHeight);
     });
-    height.sort();
+    height.sort((a, b) => a - b);
     return height[height.length - 1];
   }
 

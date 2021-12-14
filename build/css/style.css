@@ -2090,6 +2090,11 @@ button,
               transform: translateX(-50%) scaleX(1);
       -webkit-transform-origin: left;
               transform-origin: left; }
+    .navigation__link.is-inactive::before {
+      display: none; }
+    .navigation__link.is-inactive {
+      color: #000000;
+      pointer-events: none; }
 
 .section-navigation {
   height: 75vh;
