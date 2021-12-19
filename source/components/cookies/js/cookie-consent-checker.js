@@ -17,7 +17,7 @@ export const cookieConsentChecker = () => {
       evt.preventDefault();
       const cookieDuration = +cookieElement.dataset.cookiesDuration || BASE_DURATION;
       cookieElement.classList.remove('is-active');
-      consentCookie.set('has_cookie_consent', 'yes', cookieDuration);
+      consentCookie.set('yes', cookieDuration);
     });
   }
 };
