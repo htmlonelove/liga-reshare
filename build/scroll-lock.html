@@ -129,6 +129,7 @@
                 }
               </code>
             </pre>
+            <p>На данной странице размещено фиксированное окно, в скрол лок добавлен функционал для компенсации отступа у фиксированных элементов при локе страницы. Для этого у фиксированного элемента должен быть дата атрибут data-fix-block. Компенсация отступа происходит за счёт добавления padding-right фиксированному блоку. Будьте внимательны, не устанавливайте padding-right, так как он переопределится в js.</p>
             <p>Пример подключения
               <pre>
                 <code>
@@ -143,6 +144,9 @@
   <p><button class="btn lock" type="button">Заблокировать скролл страницы</button></p>
   <p><button class="btn unlock" type="button">Разблокировать скролл страницы</button></p>
 </p>
+<div class="fix-block" data-fix-block>
+  <p>Я фиксированное окно</p>
+</div>
 <section class="lock-block">
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat numquam recusandae sunt. Quidem sunt, animi suscipit pariatur tempora iste a velit at. Iure autem dolorum beatae id iusto earum!</p>
