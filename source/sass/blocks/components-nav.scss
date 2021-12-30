@@ -6,21 +6,17 @@
     display: flex;
     flex-wrap: wrap;
     width: calc(100% + 40px);
-    margin-bottom: -40px;
 
     @media (max-width: 1279px) {
       width: calc(100% + 30px);
-      margin-bottom: -30px;
     }
 
     @include vp--1023 {
       width: calc(100% + 30px);
-      margin-bottom: -30px;
     }
 
     @include vp--767 {
       width: calc(100% + 15px);
-      margin-bottom: -15px;
     }
   }
 

@@ -1080,7 +1080,7 @@ button,
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: 100vh;
-  overflow-x: hidden; }
+  overflow: hidden; }
   .wrapper--no-scrollbar {
     height: 100vh;
     -ms-overflow-style: none;
@@ -1283,20 +1283,16 @@ button,
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: calc(100% + 40px);
-  margin-bottom: -40px; }
+  width: calc(100% + 40px); }
   @media (max-width: 1279px) {
     .components-nav__list {
-      width: calc(100% + 30px);
-      margin-bottom: -30px; } }
+      width: calc(100% + 30px); } }
   @media (max-width: 1023px) {
     .components-nav__list {
-      width: calc(100% + 30px);
-      margin-bottom: -30px; } }
+      width: calc(100% + 30px); } }
   @media (max-width: 767px) {
     .components-nav__list {
-      width: calc(100% + 15px);
-      margin-bottom: -15px; } }
+      width: calc(100% + 15px); } }
 
 .components-nav__item {
   width: calc(25% - 40px);
