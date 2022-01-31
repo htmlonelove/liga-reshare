@@ -138,6 +138,8 @@ gulp.task(`copy`, function () {
     `source/img/**`,
     `source/*.php`,
     `source/video/**`, // учтите, что иногда git искажает видеофайлы, pdf и gif - проверяйте и если обнаруживаете баги - скидывайте тестировщику такие файлы напрямую
+    `source/gif/**`,
+    `source/pdf/**`,
     `source/downloads/**`,
   ], {
     base: `source`,
