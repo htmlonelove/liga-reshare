@@ -50,7 +50,7 @@ export class Tabs {
 
   _setTabStartState(tab, dataHeight, tabElements, tabContentElement, tabControlElements, dataDelay) {
     const activeIndex = this._returnActiveIndex(tabControlElements);
-    const blockHeight = dataHeight === 'max' ? this._returnMaxHeight(tabElements) : tabElements[activeIndex].scrollHeight;
+    const blockHeight = dataHeight === 'max' ? this._returnMaxHeight(tabElements) : tabElements[activeIndex].offsetHeight;
     this._removeAllActiveClasses(tabControlElements, tabElements);
     tab.classList.add('no-transition');
     tabControlElements[activeIndex].classList.add('is-active');
@@ -78,7 +78,7 @@ export class Tabs {
   _returnMaxHeight(tabElements) {
     let height = [];
     tabElements.forEach((element) => {
-      height.push(element.scrollHeight);
+      height.push(element.offsetHeight);
     });
     height.sort((a, b) => a - b);
     return height[height.length - 1];
@@ -133,7 +133,7 @@ export class Tabs {
     if (dataHeight === 'max') {
       contentElement.style.height = `${this._returnMaxHeight(tabElements)}px`;
     } else {
-      contentElement.style.height = `${this._returnScopeChild(parentElement.querySelectorAll('[data-tabs="element"].is-active'), parentElement).scrollHeight}px`;
+      contentElement.style.height = `${this._returnScopeChild(parentElement.querySelectorAll('[data-tabs="element"].is-active'), parentElement).offsetHeight}px`;
     }
 
     setTimeout(() => parentElement.classList.remove('no-transition'));
@@ -173,8 +173,8 @@ export class Tabs {
 
     const activeControl = this._returnScopeChild(parentElement.querySelectorAll('[data-tabs="control"].is-active'), parentElement);
     const activeElement = this._returnScopeChild(parentElement.querySelectorAll('[data-tabs="element"].is-active'), parentElement);
-    const currentHeight = contentElement.scrollHeight;
-    const newHeight = tabElements[currentIndex].scrollHeight;
+    const currentHeight = contentElement.offsetHeight;
+    const newHeight = tabElements[currentIndex].offsetHeight;
 
     parentElement.classList.add('no-action');
     document.activeElement.blur();
