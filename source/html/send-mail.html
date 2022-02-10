@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    @@include("source/html/base/head.html")
+    <title>Лига компонентов</title>
+  </head>
+  <body>
+    <div style="display: none">@@include("build/img/sprite_auto.svg")</div>
+
+    <div class="wrapper">
+      @@include("source/html/base/header.html")
+
+      <main>
+        <div class="container">
+          <div class="component">
+            <div class="component__heading">
+              <h1 class="component__title">Отправка данных формы на почту</h1>
+              <a class="component__download-link btn" href="components/send-mail.zip" download>Скачать компонент</a>
+            </div>
+            <div class="component__description">
+              <h2 class="component__subtitle">Описание</h2>
+              <p>В архиве лежат следующие файлы и папки:</p>
+              <p>
+                <em>PHPMailer</em> Папка с php библиотекой для отправки данных формы на почту. Папка переносится в
+                корень проекта. В неё не нужно вносить изменения
+              </p>
+              <p><em>send.php</em> Редактируемый файл, для настройки отправки данных формы</p>
+              <p>В папке js расположена кастомная валидация лиги. В неё добавлены файлы:</p>
+              <p><em>send-mail.js</em> запрос на отправку данных с формы. Редактировать не нужно</p>
+              <p><em>form-send-callbacks.js</em> колбеки успешной или не успешной отправки данных формы</p>
+
+              <h2 class="component__subtitle">Причины сбоя отправки писем</h2>
+              <ol>
+                <li>Проблемы на хостинге(возможно перезапускали сервер, возможно меняли конфигурации)</li>
+                <li>Спам(хостинг заблокировал возможность отправки писем посчитав что вы спамите)</li>
+                <li>
+                  Частые рассылки писем и уведомлений(сайт отправляет очень много уведомлений, очень часто для отправки
+                  используется стандартный системный транспорт и php функция mail, для отправки писаем используется
+                  почтовый сервер вашего хостинг провайдера, это не требует дополнительных настроек, но обычно почтовые
+                  хостинги провайдера не любят нагрузок как следствие письма могут попадать в спам, не отправляться)
+                </li>
+                <li>Конфликты на сайте(из-за установленных плагинов)</li>
+              </ol>
+
+              <h2 class="component__subtitle">Варианты решений</h2>
+              <ol>
+                <li>Деактивировать по очереди плагины если это WordPress</li>
+                <li>Обратиться в службу поддержки хостинга</li>
+                <li>Создать на хостинге корпоративную почту и указать её в настройках сайта</li>
+                <li>Настроить отправку писем через SMTP-сервер с авторизацией</li>
+              </ol>
+
+              <p>
+                Мы будем использовать 4 вариант, он является самым надёжным. Важно понимать, что тот адрес, на который
+                должны приходить письма не имеет никакого значения, он может быть любым. Все настройки осуществляются
+                для почтового сервера с которого будет отправляться письмо.
+              </p>
+              <p>
+                В зависимости от того с какого почтового сервера мы хотим отправлять письма, мы должны создать нужные
+                нам настройки.
+              </p>
+
+              <h2 class="component__subtitle">Пример для gmail</h2>
+              <ol>
+                <li>
+                  <p>SMTP сервер, зависит от почты отправки:</p>
+                  <p>$mail->Host = 'smtp.gmail.com';</p>
+                </li>
+                <li>
+                  <p>Включаем SMTP авторизацию:</p>
+                  <p>$mail->SMTPAuth = true;</p>
+                </li>
+                <li>
+                  <p>SMTP имя пользователя (почта с которой отправляем письмо):</p>
+                  <p>$mail->Username = 'ligamailtest@gmail.com';</p>
+                </li>
+                <li>
+                  <p>
+                    SMTP password (для яндех и мэйл ру генерируем по ссылке в инструкции, для gmail это пароль от
+                    почты):
+                  </p>
+                  <p>$mail->Password = 'ligamail';</p>
+                </li>
+                <li>
+                  <p>SMTP Шифрование в основном это ssl, если другое не указанно настройках сервера:</p>
+                  <p>$mail->SMTPSecure = 'ssl';</p>
+                </li>
+                <li>
+                  <p>Порт:</p>
+                  <p>$mail->Port = 465;</p>
+                </li>
+                <li>
+                  <p>Почта откуда отправляем:</p>
+                  <p>$mail->setFrom('ligamailtest@gmail.com');</p>
+                </li>
+                <li>
+                  <p>Почта на которую должны приходить письма:</p>
+                  <p>$mail->addAddress('ligaatest@yandex.ru');</p>
+                </li>
+              </ol>
+
+              <p>
+                От заказчика нам нужно узнать пункты 1, 3, 4, 7, 8 + он должен настроить почту по ссылкам ниже. Всю
+                остальную информацию мы можем найти сами.
+              </p>
+              <p>
+                Ссылка на настройки yandex.ru
+                <a href="https://yandex.ru/support/mail/mail-clients/others.html"
+                  >https://yandex.ru/support/mail/mail-clients/others.html</a
+                >
+              </p>
+              <p>
+                Ссылка на настройки mail.ru
+                <a href="https://help.mail.ru/mail/mailer/popsmtp">https://help.mail.ru/mail/mailer/popsmtp</a>
+              </p>
+              <p>
+                Ссылка на настройки gmail.com
+                <a href="https://support.google.com/mail/answer/7126229"
+                  >https://support.google.com/mail/answer/7126229</a
+                >
+              </p>
+              <p>
+                Для остальных почтовых серверов настройки легко гуглятся пример запроса “настройка smtp “название
+                почтового сервера””
+              </p>
+
+              <h2 class="component__subtitle">Есть две тестовые почты</h2>
+              <p>Yandex</p>
+              <dl>
+                <dt>Почта:</dt>
+                <dd>ligaatest@yandex.ru</dd>
+                <dt>Пароль:</dt>
+                <dd>ligaatestligaa</dd>
+                <dt>Пароль SMTP:</dt>
+                <dd>skfbddoaxyeiqglc</dd>
+              </dl>
+
+              <p>Gmail</p>
+              <dl>
+                <dt>Почта:</dt>
+                <dd>ligamailtest@gmail.com</dd>
+                <dt>Пароль:</dt>
+                <dd>ligamail</dd>
+                <dt>Пароль SMTP:</dt>
+                <dd>ligamail</dd>
+              </dl>
+
+              <ol>
+                <li>
+                  <p>
+                    Записать в переменные все используемые поля
+                    <a href="https://skr.sh/sCPP2dujZcN?a">https://skr.sh/sCPP2dujZcN?a</a>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Настроить сервер
+                    <a href="https://skr.sh/sCPN8dY1bPf?a">https://skr.sh/sCPN8dY1bPf?a</a>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Добавить адреса откуда приходят письма и куда
+                    <a href="https://skr.sh/sCPtrzrr3Oc?a">https://skr.sh/sCPtrzrr3Oc?a</a>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Настроить отображение письма
+                    <a href="https://skr.sh/sCPtrzrr3Oc?a">https://skr.sh/sCPtrzrr3Oc?a</a>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Добавить отправку в колбек успешной валидации
+                    <a href="https://skr.sh/sCPdDdYEhMI?a">https://skr.sh/sCPdDdYEhMI?a</a>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Добавить функции для реализации колбеков успешной отправки и ошибки отправки
+                    <a href="https://skr.sh/sCPLMiPbTXQ?a">https://skr.sh/sCPLMiPbTXQ?a</a>
+                  </p>
+                </li>
+              </ol>
+
+              <p>
+                Если требуется формировать письма с разных форм то мы просто создаём ещё php файлы с другими
+                настройками. Не забываем указывать эти файлы в атрибуте action формы
+                <a href="https://skr.sh/sCPLRkvPui6?a">https://skr.sh/sCPLRkvPui6?a</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
