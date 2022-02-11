@@ -156,7 +156,7 @@
               <ol>
                 <li>
                   <p>SMTP сервер, зависит от почты отправки:</p>
-                  <p>$mail->Host = 'smtp.gmail.com';</p>
+                  <p>$mail->Host = 'smtp.yandex.ru';</p>
                 </li>
                 <li>
                   <p>Включаем SMTP авторизацию:</p>
@@ -164,14 +164,14 @@
                 </li>
                 <li>
                   <p>SMTP имя пользователя (почта с которой отправляем письмо):</p>
-                  <p>$mail->Username = 'ligamailtest@gmail.com';</p>
+                  <p>$mail->Username = 'ligaatest@yandex.ru';</p>
                 </li>
                 <li>
                   <p>
                     SMTP password (для яндех и мэйл ру генерируем по ссылке в инструкции, для gmail это пароль от
                     почты):
                   </p>
-                  <p>$mail->Password = 'ligamail';</p>
+                  <p>$mail->Password = 'skfbddoaxyeiqglc';</p>
                 </li>
                 <li>
                   <p>SMTP Шифрование в основном это ssl, если другое не указанно настройках сервера:</p>
@@ -183,11 +183,11 @@
                 </li>
                 <li>
                   <p>Почта откуда отправляем:</p>
-                  <p>$mail->setFrom('ligamailtest@gmail.com');</p>
+                  <p>$mail->setFrom('ligaatest@yandex.ru');</p>
                 </li>
                 <li>
                   <p>Почта на которую должны приходить письма:</p>
-                  <p>$mail->addAddress('ligaatest@yandex.ru');</p>
+                  <p>$mail->addAddress('ligamailtest@gmail.com');</p>
                 </li>
               </ol>
 
@@ -215,28 +215,14 @@
                 Для остальных почтовых серверов настройки легко гуглятся пример запроса “настройка smtp “название
                 почтового сервера””
               </p>
+              <p>
+                Для тестирования нужно установить программу
+                <a href="https://ospanel.io/download/"
+                >https://ospanel.io/download/</a
+                >
+              </p>
 
-              <h2 class="component__subtitle">Есть две тестовые почты</h2>
-              <p>Yandex</p>
-              <dl>
-                <dt>Почта:</dt>
-                <dd>ligaatest@yandex.ru</dd>
-                <dt>Пароль:</dt>
-                <dd>ligaatestligaa</dd>
-                <dt>Пароль SMTP:</dt>
-                <dd>skfbddoaxyeiqglc</dd>
-              </dl>
-
-              <p>Gmail</p>
-              <dl>
-                <dt>Почта:</dt>
-                <dd>ligamailtest@gmail.com</dd>
-                <dt>Пароль:</dt>
-                <dd>ligamail</dd>
-                <dt>Пароль SMTP:</dt>
-                <dd>ligamail</dd>
-              </dl>
-
+              <h2 class="component__subtitle">Инструкция для разработчика</h2>
               <ol>
                 <li>
                   <p>

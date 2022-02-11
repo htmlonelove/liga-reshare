@@ -432,6 +432,42 @@
                   </code>
                 </pre>
                 <p>Но данный вариант свяжет ссылку с символами до и после неё.</p>
+                <h3>Добавление инлайн стилей и скриптов</h3>
+                <p>Для добавления инлайн стилей и скриптов используется блочный стиль.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    style.
+                      .some-section {
+                        color: red;
+                      }
+
+                    script.
+                      if (isSunnyDay) {
+                        alert('I am happy');
+                      } else {
+                        alert('I am sad');
+                      }
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;style>
+                      .some-section {
+                        color: red;
+                      }
+                    &lt;/style>
+
+                    &lt;script>
+                      if (isSunnyDay) {
+                        alert('I am happy');
+                      } else {
+                        alert('I am sad');
+                      }
+                    &lt;/script>
+                  </code>
+                </pre>
                 <h3>Комментарии</h3>
                 <p>Для добавлениия комментариев в Pug перед текстом комментария нужно добавить два слеша (//).</p>
                 <h4>Pug</h4>
@@ -473,42 +509,6 @@
                 <pre>
                   <code>
                     //- Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </code>
-                </pre>
-                <h3>Добавление инлайн стилей и скриптов</h3>
-                <p>Для добавления инлайн стилей и скриптов используется блочный стиль.</p>
-                <h4>Pug</h4>
-                <pre>
-                  <code>
-                    style.
-                      .some-section {
-                        color: red;
-                      }
-
-                    script.
-                      if (isSunnyDay) {
-                        alert('I am happy');
-                      } else {
-                        alert('I am sad');
-                      }
-                  </code>
-                </pre>
-                <h4>Html</h4>
-                <pre>
-                  <code>
-                    &lt;style>
-                      .some-section {
-                        color: red;
-                      }
-                    &lt;/style>
-
-                    &lt;script>
-                      if (isSunnyDay) {
-                        alert('I am happy');
-                      } else {
-                        alert('I am sad');
-                      }
-                    &lt;/script>
                   </code>
                 </pre>
               </section>
