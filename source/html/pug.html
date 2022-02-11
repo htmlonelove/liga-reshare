@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    @@include("source/html/base/head.html")
+    <title>Лига компонентов</title>
+  </head>
+  <body>
+    <div style="display: none">@@include("build/img/sprite_auto.svg")</div>
+
+    <div class="wrapper">
+      @@include("source/html/base/header.html")
+
+      <main>
+        <div class="container">
+          <div class="component">
+            <div class="component__heading">
+              <h1 class="component__title">Гайд по pug</h1>
+            </div>
+            <div class="component__description">
+              <section>
+                <h2 class="component__subtitle">Что такое Pug?</h2>
+                <p>
+                  Pug — это шаблонизатор и Html-препроцессор, написанный на JavaScript для платформы Node.js, с целью
+                  ускорения верстки.
+                </p>
+                <p>
+                  После интерпретации синтаксис Pug превращается в Нtml код. Старое название Pug — Jade. Так что, если
+                  встретите упоминание Jade, знайте, что речь идет о Pug. Pug — это инструмент который позволяет проще
+                  писать разметку, делить её на компоненты и связывать с данными.
+                </p>
+              </section>
+              <section>
+                <h2 class="component__subtitle">
+                  Проблемы, с которыми мы сталкиваемся в вёрстке и которые нам помогает решить Pug.
+                </h2>
+                <ol>
+                  <li>
+                    <p>
+                      Верстая на Html, мы постоянно сталкиваемся с необходимостью копировать определённые блоки на
+                      странице, будь то крупные такие как head, header, footer и т.д., в зависимости от проекта и не
+                      большие повторяющиеся блоки такие как кнопки, карточки товаров и т.д. Pug позволяет нам создавать
+                      шаблоны и компоненты и размешать их в нужно нам на проекте месте. Это позволит избежать ошибок при
+                      копировании.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Верстая на Html, при изменениях в каком-либо блоке (добавление или изменение шрифта в head,
+                      добавление, изменение или смена порядка пунктов меню в header или footer, добавление классов и
+                      т.д.) нам придётся менять их вручную на каждой странице, использование шаблонов и компонентов
+                      позволит нам внести изменение только в шаблоне или компоненте, и они применятся везде где они
+                      используются на проекте. Это очень сильно ускорит разработку и не даст нам возможности пропустить
+                      изменения в каком-либо месте на проекте.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Верстая на Html, наша разметка, при большом количестве контента очень сильно разрастается. Это
+                      усложняет чтение кода, поиск нужных нам элементов и как следствие усложняет его поддержку.
+                      Используя Pug, мы можем поделить наш код на шаблоны и компоненты, которые мы подключим к странице
+                      и которые находясь в отдельных файлах будет намного проще редактировать.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Синтаксис Pug очень прост, в нём нет открывающихся и закрывающихся тегов. Вложенность регулируется
+                      за счёт отступов. Это помогает исключить многие ошибки при разработке.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Используя Html мы ограничены в возможностях. В Pug можно встраивать JavaScript код. Использование
+                      переменных, циклов, условий и других конструкций делают Pug очень вариативным инструментом в
+                      разработке.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Используя Html, мы не можем разделить данные и представление. Pug даёт нам возможность это
+                      сделать.
+                    </p>
+                  </li>
+                </ol>
+              </section>
+              <section>
+                <h2 class="component__subtitle">Синтаксис Pug</h2>
+                <h3>Теги</h3>
+                <p>В Pug нет закрывающих тегов. Тег указывается только один раз и его не нужно экранировать.</p>
+                <p>Для определения вложенности тегов Pug использует строгую табуляцию (или отступы).</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    ul
+                      li
+                        p Lorem
+                      li
+                        p Lorem
+                      li
+                        p Lorem
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;ul>
+                      &lt;li>
+                        &lt;p>Lorem&lt;/p>
+                      &lt;/li>
+                      &lt;li>
+                        &lt;p>Lorem&lt;/p>
+                      &lt;/li>
+                      &lt;li>
+                        &lt;p>Lorem&lt;/p>
+                      &lt;/li>
+                    &lt;/ul>
+                  </code>
+                </pre>
+
+                <h3>Классы и идентификаторы</h3>
+                <p>Классы в Pug задаются через точку (.)</p>
+                <p>Идентификаторы в Pug задаются через решетку (#)</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    p.text-item#text Lorem
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;p class="text-item" id="text">Lorem&lt;/p>
+                  </code>
+                </pre>
+
+                <h3>Атрибуты</h3>
+                <p>Атрибуты в Pug задаются в круглых скобках ().</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    a(href="#") Lorem
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;a href="#">Lorem&lt;/a>
+                  </code>
+                </pre>
+                <p>Если необходимо указать несколько атрибутов, то они указываются через запятую или пробел.</p>
+                <p>В Лиге А принято указывать атрибуты через запятую, для лучшей читабельности.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    a(href="#", target="_blank") Lorem
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;a href="#" target="_blank">Lorem&lt;/a>
+                  </code>
+                </pre>
+                <p>Если атрибутов много, то их можно распределить по нескольким строкам.</p>
+                <pre>
+                  <code>
+                    a(
+                      href="#",
+                      target="_blank",
+                      aria-label="Ссылка",
+                      data-href="link"
+                    ) Lorem
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;a href="#" target="_blank" aria-label="Ссылка" data-href="link">Lorem&lt;/a>
+                  </code>
+                </pre>
+                <p>Если с атрибутами вам необходимо указать класс и/или индефикатор, то они указываются до атрибутов.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    a.link-item#link(href="#", target="_blank") Lorem
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;a class="link-item" id="link" href="#" target="_blank">Lorem&lt;/a>
+                  </code>
+                </pre>
+
+                <h3>Текст</h3>
+                <p>
+                  Для вложения контента внутрь тегов, существуют следующие варианты:
+                </p>
+                <p>Инлайн-стиль. Весь контент располагается сразу после обозначения тега.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit.&lt;/p>
+                  </code>
+                </pre>
+                <p>Pipe-стиль. Контент можно расположить в несколько строк. Каждая строка начинается с символа (|).</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    p
+                      | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      | Tempore suscipit possimus officia ea illo tempora doloremque
+                      | provident earum illum nemo ad excepturi similique,
+                      | repudiandae reiciendis beatae voluptates ducimus aperiam aspernatur!
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Tempore suscipit possimus officia ea illo tempora doloremque
+                      provident earum illum nemo ad excepturi similique,
+                      repudiandae reiciendis beatae voluptates ducimus aperiam aspernatur!
+                    &lt;/p>
+                  </code>
+                </pre>
+                <p>Блочный стиль. Контент можно располагать в несколько строк. Для этого сразу после тега указывается точка (.). Дополнительные символы (|) использовать не нужно.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    p.
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Tempore suscipit possimus officia ea illo tempora doloremque
+                      provident earum illum nemo ad excepturi similique,
+                      repudiandae reiciendis beatae voluptates ducimus aperiam aspernatur!
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Tempore suscipit possimus officia ea illo tempora doloremque
+                      provident earum illum nemo ad excepturi similique,
+                      repudiandae reiciendis beatae voluptates ducimus aperiam aspernatur!
+                    &lt;/p>
+                  </code>
+                </pre>
+                <h3>Интерполяция тегов</h3>
+                <p>Pug позволяет использовать внутри тега с текстом обычные Html теги.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    p Lorem ipsum dolor sit &lt;a href="#">amet consectetur&lt;/a> adipisicing elit.
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;p>Lorem ipsum dolor sit &lt;a href="#">amet consectetur&lt;/a> adipisicing elit.&lt;/p>
+                  </code>
+                </pre>
+                <p>Но в этом случае теряется смысловая семантика использования препроцессора. Ведь мы смешиваем обычный Html с синтаксисом Pug.</p>
+                <p>Избежать этого поможет конструкция #[тег контент].</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    p Lorem ipsum dolor sit #[a(href="#") amet consectetur] adipisicing elit.
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;p>Lorem ipsum dolor sit &lt;a href="#">amet consectetur&lt;/a> adipisicing elit.&lt;/p>
+                  </code>
+                </pre>
+                <p>Также можно использовать Pipe-стиль.</p>
+                <pre>
+                  <code>
+                    p
+                      | Lorem ipsum dolor sit
+                      a(href="#") amet consectetur
+                      | adipisicing elit.
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;p>Lorem ipsum dolor sit&lt;a href="#">amet consectetur&lt;/a>adipisicing elit.&lt;/p>
+                  </code>
+                </pre>
+                <p>Но мы сталкиваемся с проблемой удаления пробельных символов.</p>
+                <h3>Управление пробельными символами</h3>
+                <p>Удаления пробельных символов это самая частая проблема с которой встречаются разработчики. Но есть достаточно много простых вариантов её решения.</p>
+                <p>Использование инлайн стиля и конструкции #[тег контент].</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    p Lorem ipsum dolor sit #[a(href="#") amet consectetur] adipisicing elit.
+                  </code>
+                </pre>
+                <p>При использовании Pipe-стиля можно добавлять пустые строчки там где нам нужно.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    p
+                    | Lorem ipsum dolor sit
+                    |
+                    a(href="#") amet consectetur
+                    |
+                    | adipisicing elit.
+                  </code>
+                </pre>
+                <p>Так же можно добавить пустые строчки и другим способом.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    p
+                    | Lorem ipsum dolor sit
+                    =" "
+                    a(href="#") amet consectetur
+                    =" "
+                    | adipisicing elit.
+                  </code>
+                </pre>
+                <p>Можно использовать Html-мнемоник - неразрывный пробел &amp;nbsp;.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    p
+                    | Lorem ipsum dolor sit&amp;nbsp;
+                    a(href="#") amet consectetur
+                    | &amp;nbsp;adipisicing elit.
+                  </code>
+                </pre>
+                <p>Но данный вариант свяжет ссылку с символами до и после неё.</p>
+                <h3>Комментарии</h3>
+                <p>Для добавлениия комментариев в Pug перед текстом комментария нужно добавить два слеша (//).</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    // Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. -->
+                  </code>
+                </pre>
+                <p>Ниже приведён пример многострочного комментария.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    //
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Amet molestias accusamus ad porro voluptatum labore excepturi
+                      suscipit ex minus a quia, inventore, neque nemo aut, illum commodi.
+                      Itaque, facere rem.
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;!--
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Amet molestias accusamus ad porro voluptatum labore excepturi
+                      suscipit ex minus a quia, inventore, neque nemo aut, illum commodi.
+                      Itaque, facere rem.
+                    -->
+                  </code>
+                </pre>
+                <p>Что бы комментарии были только в Pug и не попадали в итоговый Html, нужно сразу после слешей нужно добавить дефис (//-).</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    //- Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </code>
+                </pre>
+                <h3>Добавление инлайн стилей и скриптов</h3>
+                <p>Для добавления инлайн стилей и скриптов используется блочный стиль.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    style.
+                      .some-section {
+                        color: red;
+                      }
+
+                    script.
+                      if (isSunnyDay) {
+                        alert('I am happy');
+                      } else {
+                        alert('I am sad');
+                      }
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;style>
+                      .some-section {
+                        color: red;
+                      }
+                    &lt;/style>
+
+                    &lt;script>
+                      if (isSunnyDay) {
+                        alert('I am happy');
+                      } else {
+                        alert('I am sad');
+                      }
+                    &lt;/script>
+                  </code>
+                </pre>
+              </section>
+              <section>
+                <h2 class="component__subtitle">Использование JavaScript в Pug</h2>
+                <h3>Переменные</h3>
+                <h3>Интерполяция переменных</h3>
+                <h3>Объекты и массивы</h3>
+                <h3>Условия</h3>
+                <h3>Циклы</h3>
+              </section>
+              <section>
+                <h2 class="component__subtitle">Инклюды и миксины в Pug</h2>
+                <h3>Инклюды</h3>
+                <h3>Mиксины</h3>
+              </section>
+              <section>
+                <h2 class="component__subtitle">Сборка Лиги А</h2>
+              </section>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
