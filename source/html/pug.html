@@ -18,6 +18,11 @@
             </div>
             <div class="component__description">
               <section>
+                <p>
+                  Данный гайд не описывает все возможности Pug и все варианты использования этих возможностей. Задача данного гайда дать необходимый минимум знаний для работы в Лиге, показать пример того как пишем мы и то как мы хотим что бы писали вы начиная работу у нас.
+                </p>
+              </section>
+              <section>
                 <h2 class="component__subtitle">Что такое Pug?</h2>
                 <p>
                   Pug — это шаблонизатор и Html-препроцессор, написанный на JavaScript для платформы Node.js, с целью
@@ -146,8 +151,7 @@
                     &lt;a href="#">Lorem&lt;/a>
                   </code>
                 </pre>
-                <p>Если необходимо указать несколько атрибутов, то они указываются через запятую или пробел.</p>
-                <p>В Лиге А принято указывать атрибуты через запятую, для лучшей читабельности.</p>
+                <p>Если необходимо указать несколько атрибутов, то они указываются через запятую.</p>
                 <h4>Pug</h4>
                 <pre>
                   <code>
@@ -423,25 +427,330 @@
               <section>
                 <h2 class="component__subtitle">Использование JavaScript в Pug</h2>
                 <h3>Переменные</h3>
+                <p>В Pug как и в JavaScript переменные обьявляются с помощью ключевого слова const. Но в Pug перед переменной нужно ставить символ дефиса (-).</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    - const text = "Text"
+                    - const number = 69
+                    - const array = ["Text", "One more text"]
+                    - const object = {
+                        page: "main",
+                        href: "#"
+                      }
+                  </code>
+                </pre>
                 <h3>Интерполяция переменных</h3>
-                <h3>Объекты и массивы</h3>
+                <p>В Pug есть различные способы вывода переменных.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    - const text = "Text"
+                    h1= text
+                    p Written with love by #{text}
+                  </code>
+                </pre>
+                <p>Такие варианты будут работать с экранированием и если нам понадобиться вставить теги или Html мнемоники мы получим нет тот результат который ожидали.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    - const textWithMnemonics = "text&amp;nbsp;text"
+                    - const textWithTags = "&lt;span>text&lt;/span>"
+                    h1= textWithMnemonics
+                    p Written with love by #{textWithTags}
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;h1>text&amp;amp;nbsp;text&lt;/h1>
+                    &lt;p>Written with love by &amp;lt;span&amp;gt;text&amp;lt;/span&amp;gt;&lt;/p>
+                  </code>
+                </pre>
+                <p>Что бы избежать экранирования нужно использовать символ восклицательного знака (!)</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    - const textWithMnemonics = "text&amp;nbsp;text"
+                    - const textWithTags = "&lt;span>text&lt;/span>"
+                    h1!= textWithMnemonics
+                    p Written with love by !{textWithTags}
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;h1>text&nbsp;text&lt;/h1>
+                    &lt;p>Written with love by <span>text&lt;/span>&lt;/p>
+                  </code>
+                </pre>
                 <h3>Условия</h3>
+                <p>Условный синтаксис Pug очень похож на Javascript, но в отличии от Javascript, в Pug при использовании условий что не нужны скобки.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    - const condition = true
+                    if condition
+                      p condition is true
+                    else
+                      p condition is false
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;p>condition is true&lt;/p>
+                  </code>
+                </pre>
+                <p>При использовании операторов сравнения с не числовым значением нужно использовать кавычки иначе Pug будет искать переменную с таким именем.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    - const page = "index"
+                    <p>Не верно</p>
+                    if page === index
+                    <p>В примере выше Pug будет искать переменную index, которой нет и это вызовет ошибку</p>
+                    <p>Верно</p>
+                    if page === "index"
+                  </code>
+                </pre>
                 <h3>Циклы</h3>
+                <p>Циклы используются для выполнения одинакового действия определённое количество раз. Pug поддерживает два вида итерации: each и while. Мы рассмотриц только each, так как мы не используем while.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    - const names = ["Иван", "Дмитрий", "Наталия"]
+                    ul
+                      each item in names
+                        li= item
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;ul>
+                      &lt;li>Иван&lt;/li>
+                      &lt;li>Дмитрий&lt;/li>
+                      &lt;li>Наталия&lt;/li>
+                    &lt;/ul>
+                  </code>
+                </pre>
+                <p>Так же мы можем использовать индекс элемента массива указав его через запятую.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    - const names = ["Иван", "Дмитрий", "Наталия"]
+                      ul
+                        each item, index in names
+                          li= `Под индексом ${index} в массиве расположено имя ${item}`
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;ul>
+                      &lt;li>Под индексом 0 в массиве расположено имя Иван&lt;/li>
+                      &lt;li>Под индексом 1 в массиве расположено имя Дмитрий&lt;/li>
+                      &lt;li>Под индексом 2 в массиве расположено имя Наталия&lt;/li>
+                    &lt;/ul>
+                  </code>
+                </pre>
+                <p>Обратите внимание на то что иы используем шаблонные строки, а не конкатенацию.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    li= `Под индексом ${index} в массиве расположено имя ${item}`
+                  </code>
+                  <p>Вместо:</p>
+                  <code>
+                    li= 'Под индексом ' + index + ' в массиве расположено имя ' + item
+                  </code>
+                </pre>
+                <p>Так же, с помощью цикла each мы можем перебирать и обьекты.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    -
+                      const users = {
+                        1: {
+                          name: "Иван",
+                          age: "30"
+                        },
+                        2: {
+                          name: "Дмитрий",
+                          age: "27"
+                        }
+                      }
+
+                    each value in users
+                      div
+                        p= `Имя пользователя: ${value.name}`
+                        p= `Возраст пользователя: ${value.age}`
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;div>
+                      &lt;p>Имя пользователя: Иван&lt;/p>
+                      &lt;p>Возраст пользователя: 30&lt;/p>
+                    &lt;/div>
+                    &lt;div>
+                      &lt;p>Имя пользователя: Дмитрий&lt;/p>
+                      &lt;p>Возраст пользователя: 27&lt;/p>
+                    &lt;/div>
+                  </code>
+                </pre>
+                <p>Мы можем получить и ключ обьекта указав его через запятую.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    -
+                      const users = {
+                        1: {
+                          name: "Иван",
+                          age: "30"
+                        },
+                        2: {
+                          name: "Дмитрий",
+                          age: "27"
+                        }
+                      }
+
+                    each value, key in users
+                      div
+                        p= `По ключу ${key} в обьекте users находиться обьект со следующими значениями:`
+                        p= `Имя пользователя: ${value.name}`
+                        p= `Возраст пользователя: ${value.age}`
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;div>
+                      &lt;p>По ключу 1 в обьекте users находиться обьект со следующими значениями:&lt;/p>
+                      &lt;p>Имя пользователя: Иван&lt;/p>
+                      &lt;p>Возраст пользователя: 30&lt;/p>
+                    &lt;/div>
+                    &lt;div>
+                      &lt;p>По ключу 2 в обьекте users находиться обьект со следующими значениями:&lt;/p>
+                      &lt;p>Имя пользователя: Дмитрий&lt;/p>
+                      &lt;p>Возраст пользователя: 27&lt;/p>
+                    &lt;/div>
+                  </code>
+                </pre>
               </section>
               <section>
-                <h2 class="component__subtitle">Инклюды и миксины в Pug</h2>
-                <h3>Инклюды</h3>
+                <h2 class="component__subtitle">Миксины в Pug</h2>
                 <h3>Mиксины</h3>
+                <p>Миксины позволяют создавать многократно повторяемые блоки кода. Это практически тоже самое, что и функция в языке программирования.</p>
+                <p>Обьявление миксина начинается с ключевого слова mixin, а затем через пробел указывается имя миксина и круглые скобки (), их мы указываем всегда, независимо от того будет ли принимать миксин какие-либо параметры или нет.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    mixin button()
+                      button.button(type="button") Button
+                  </code>
+                </pre>
+                <p>Вызов миксина начинается со знака плюс (+) затем имя миксина, затем уруглые скобки (), их мы указываем всегда, независимо от того передаём мы какие-либо параметры или нет.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    mixin button()
+                      button.button(type="button") Button
+                    +button()
+                    +button()
+                    +button()
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;button class="button" type="button">Button&lt;/button>
+                    &lt;button class="button" type="button">Button&lt;/button>
+                    &lt;button class="button" type="button">Button&lt;/button>
+                  </code>
+                </pre>
+                <p>При создании миксина в круглых скобках мы можем указать аргументы которые мы будем принимать.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    mixin button(text)
+                      button.button(type="button")= text
+
+                    +button(Button-1)
+                    +button(Button-2)
+                    +button(Button-3)
+                  </code>
+                </pre>
+                <h4>Html</h4>
+                <pre>
+                  <code>
+                    &lt;button class="button" type="button">Button-1&lt;/button>
+                    &lt;button class="button" type="button">Button-2&lt;/button>
+                    &lt;button class="button" type="button">Button-3&lt;/button>
+                  </code>
+                </pre>
+                <h3>Атрибуты в миксине (&attributes(attributes))</h3>
+                <p>Что бы не усложнять миксин передачей в него различных атрибутов в Pug существует конструкция &attributes(attributes). Она добавляется при создании миксина к тому тегу к которому нужно будет добавлять атрибуты при вызове миксина. Это позволит сделать миксин более универсальным и гибким, так как при создании мы не можем наверняка знать какие параметры нам могут понадобиться при вызове.</p>
+                <h4>Pug</h4>
+                <pre>
+                  <code>
+                    <p>Не верно:</p>
+                    mixin button(text, type, ariaLabel)
+
+                      button.button(type=type, aria-label=ariaLabel)= text
+                    +button("Button-1", "button", "Button-1")
+                    +button("Button-2", "submit", "Button-2")
+                    +button("Button-3", "reset", "Button-3")
+                    <p>Верно:</p>
+                    mixin button(text)
+                      button.button&attributes(attributes)= text
+
+                    +button("Button-1")(type="button", aria-label="Button-1")
+                    +button("Button-2")(type="submit", aria-label="Button-2")
+                    +button("Button-3")(type="reset", aria-label="Button-3")
+                  </code>
+                </pre>
+                <p>Обратите внимание что класс .button мы оставляем в миксине, так как он постоянный.</p>
+                <h3>Важно</h3>
+                <p>В разработке Лига использует миксины не только для повторяющихся частей кода, но и для крупных смысловых блоков. Это позволяет разбить код на более мелкие части, что улучшает читабельность и упращает поддержку кода.</p>
+                <p>В разработке мы пытаемся избежать сложных ветвлений в миксинах. Вот один из примеров переусложнения <a href="https://monosnap.com/file/9MF5eqZpuJIW69u7nd6yXlAI8ZkwvN" target="_blank">https://monosnap.com/file/9MF5eqZpuJIW69u7nd6yXlAI8ZkwvN</a>. Если миксины начинает выглядеть так как на скрине, то нужно подумать над тем что бы его разбить на несколько более простых. Не пытайтесь сделать один универсальный миксин, порой это превращеат ваш код в то, что крайне тяжело читать и поддерживать.</p>
+                <p>В разработке, мы стараемся создавать миксины принимающие параметрами именно обьект, а не просто строки например, так как некотрые параметры не всегда будут использоваться и вызов миксина может стать нечитаемым <a href="https://skr.sh/sCWmecxJ8f2?a" target="_blank">https://skr.sh/sCWmecxJ8f2?a</a>, такой код не только тяжело читать и поддерживать, нужно ещё время на понимание того что там происходит и велика вероятность ошибки при его использовании. Исключением являются миксины в которых все параметры передаются всегда(папка utils в сборке Лиги).</p>
+
               </section>
               <section>
                 <h2 class="component__subtitle">Сборка Лиги А</h2>
+                <p>Файловая структура Pug в сборке Лиги</p>
+                <pre>
+                  <code>
+                    pug
+                      components
+                        base
+                        blocks
+                        mixins
+                        modals
+                        utils
+                      pages
+                  </code>
+                </pre>
+                <p>В папке pug находятся две папки components и pages</p>
+                <p>В папке pages находятся все страницы проекта</p>
+                <p>В папке components находятся папки:</p>
+                <ul>
+                  <li><p>base папка с базовыми элементами</p></li>
+                  <li><p>blocks папка с крупными компонентами страницы(section)</p></li>
+                  <li><p>mixins папка с более мелкими переиспользуемыми компонентами</p></li>
+                  <li><p>modals папка с модальными окнами</p></li>
+                  <li><p>utils папка с вспомогательными миксинами</p></li>
+                </ul>
+                <p>Во всех папках присутствуют примеры кода. Эти примеры отражают стиль который использует Лига, старайтесь в работе придерживаться его. Не нужно создавать новые папки, не нужно эксперементировать, все проекты должны по структуре быть максимально похожими, это облегчает поддержку проектов.</p>
               </section>
             </div>
           </div>
         </div>
       </main>
     </div>
-
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>
   </body>
