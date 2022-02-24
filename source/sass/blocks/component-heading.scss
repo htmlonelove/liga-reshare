@@ -1,0 +1,9 @@
+.component-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  &__download-link {
+    flex-shrink: 0;
+  }
+}

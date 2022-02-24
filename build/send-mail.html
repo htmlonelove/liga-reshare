@@ -1,35 +1,26 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
+    <title>Лига решений</title>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-<!-- дописать мета-теги, опенграф, добавить счетчики,
-если изменится название - заменить и в favicon/site.webmanifest -->
-<meta name="description" content="Лига компонентов">
-
-<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-<link rel="manifest" href="favicon/site.webmanifest">
-<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="apple-mobile-web-app-title" content="Лига компонентов">
-<meta name="application-name" content="Лига компонентов">
-<meta name="msapplication-TileColor" content="#b91d47">
-<meta name="theme-color" content="#1f1f1f">
-
-<link rel="preload" href="fonts/IBMPlexSansLight.woff2" as="font" crossorigin="anonymous">
-<link rel="preload" href="fonts/IBMPlexSansSemiBold.woff2" as="font" crossorigin="anonymous">
-
-<link rel="stylesheet" href="css/style.min.css">
-
-
-
-    <title>Лига компонентов</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Лига компонентов">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="apple-mobile-web-app-title" content="Лига компонентов">
+    <meta name="application-name" content="Лига компонентов">
+    <meta name="msapplication-TileColor" content="#b91d47">
+    <meta name="theme-color" content="#1f1f1f">
+    <link rel="preload" href="fonts/IBMPlexSansLight.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/IBMPlexSansSemiBold.woff2" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
-    <div style="display: none"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="git-logo" viewBox="0 0 16 16">
+    <div class="visually-hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="git-logo" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
 </symbol><symbol id="icon-close" viewBox="0 0 20 20"><path d="M.293 18.291a1 1 0 101.414 1.414L10 11.413l8.292 8.292a1 1 0 101.414-1.414l-8.292-8.292 8.292-8.292A1 1 0 1018.291.293L9.999 8.585 1.707.293A1 1 0 10.293 1.707L8.585 10 .293 18.291z"/></symbol><symbol id="icon-drako" viewBox="0 0 190 215">
   <path d="M121.174 87.2449L75.6128 149.77L106.633 165.765L118.266 144.439L131.837 130.383L157.041 128.929L165.281 122.628L166.735 110.995L121.174 87.2449Z" fill="#ffffff"/>
@@ -83,80 +74,79 @@
   <path d="M85.263 26.996H91.3783L82.6026 0.0498047H79.7906L76.9682 0.0553549L68.2134 26.996H74.0569L75.5465 21.8964H83.7838L85.263 26.996ZM77.0257 16.8301L79.6808 7.74079L82.3151 16.8301H77.0257Z"/>
   <path d="M99.606 0.0217285V20.076L109.464 26.9069L119.321 20.076V0.0217285H99.606Z"/>
   <path fill="#ffffff" d="M115.156 15.3595C115.349 15.3595 115.564 15.3373 115.778 15.2652L115.757 17.4959C115.229 17.6846 114.555 17.8289 113.907 17.8233C112.731 17.8122 111.847 17.3628 111.377 16.4749C110.243 17.3683 108.92 17.8955 107.216 17.8844C105.058 17.8622 103.197 16.5748 103.218 14.2442C103.244 11.2532 106.009 10.3487 108.314 10.3709C109.223 10.382 110.232 10.5097 111.042 10.715L111.048 10.2988C111.058 9.12241 110.154 8.3067 108.356 8.29005C106.772 8.2734 105.356 8.70623 104.274 9.13351L104.3 6.19251C105.235 5.88176 106.992 5.43229 108.769 5.44894C112.224 5.48223 114.414 6.94718 114.382 10.8204L114.351 14.5716C114.34 15.182 114.722 15.354 115.156 15.3595ZM106.187 14.05C106.176 15.0211 107.044 15.6481 108.152 15.6592C109.182 15.6703 110.159 15.3817 111.011 14.6326L111.027 12.6128C110.473 12.474 109.631 12.302 108.868 12.2965C107.525 12.2798 106.202 12.7293 106.187 14.05Z"/>
-</symbol></svg></div>
-
+</symbol></svg>
+    </div>
     <div class="wrapper">
       <header class="header">
-  <div class="container">
-    <a class="header__logo"  href="index.html" aria-label="Переход на главную">
-      <svg width="120" height="27">
-        <use xlink:href="#icon-logo"></use>
-      </svg>
-    </a>
-    <a class="header__git" href="https://github.com/htmlonelove/liga-componentov" target="_blank">
-      <svg width="32" height="32">
-        <use xlink:href="#git-logo"></use>
-      </svg>
-    </a>
-  </div>
-</header>
-
-
+        <div class="container"><a class="header__logo" href="index.html" aria-label="Переход на главную">
+            <svg width="120" height="27" aria-hidden="true">
+              <use xlink:href="#icon-logo"></use>
+            </svg></a>
+          <nav class="main-nav"><a class="header__git" href="https://github.com/htmlonelove/liga-componentov" target="_blank" rel="nofollow noopener noreferrer" aria-label="Ссылка на репозиторий">
+              <svg width="32" height="32" aria-hidden="true">
+                <use xlink:href="#git-logo"></use>
+              </svg></a></nav>
+        </div>
+      </header>
       <main>
         <div class="container">
-          <div class="component">
-            <div class="component__heading">
-              <h1 class="component__title">Отправка данных формы на почту</h1>
-              <a class="component__download-link btn" href="components/send-mail.zip" download>Скачать компонент</a>
-            </div>
-            <div class="component__description">
-              <h2 class="component__subtitle">Описание</h2>
+          <section class="component">
+            <section class="component-heading">
+              <h1 class="component__title">Отправка данных формы на почту</h1><a class="component__download-link btn" href="zip-components/send-mail.zip" download>Скачать компонент</a>
+            </section>
+            <section class="component-description">
+              <h2 class="subtitle">Описание</h2>
               <p>В архиве лежат следующие файлы и папки:</p>
-              <p>
-                <em>PHPMailer</em> Папка с php библиотекой для отправки данных формы на почту. Папка переносится в
-                корень проекта. В неё не нужно вносить изменения
+              <p><em>PHPMailer</em>
+                 Папка с php библиотекой для отправки данных формы на почту. Папка переносится в корень проекта. В неё не нужно вносить изменения
               </p>
-              <p><em>send.php</em> Редактируемый файл, для настройки отправки данных формы</p>
+              <p><em>send.php</em>
+                Редактируемый файл, для настройки отправки данных формы
+              </p>
               <p>В папке js расположена кастомная валидация лиги. В неё добавлены файлы:</p>
-              <p><em>send-mail.js</em> запрос на отправку данных с формы. Редактировать не нужно</p>
-              <p><em>form-send-callbacks.js</em> колбеки успешной или не успешной отправки данных формы</p>
-
-              <h2 class="component__subtitle">Причины сбоя отправки писем</h2>
+              <p><em>send-mail.js</em>
+                 запрос на отправку данных с формы. Редактировать не нужно
+              </p>
+              <p><em>form-send-callbacks.js</em>
+                 колбеки успешной или не успешной отправки данных формы
+              </p>
+              <h2 class="subtitle">Причины сбоя отправки писем</h2>
               <ol>
-                <li>Проблемы на хостинге(возможно перезапускали сервер, возможно меняли конфигурации)</li>
-                <li>Спам(хостинг заблокировал возможность отправки писем посчитав что вы спамите)</li>
                 <li>
-                  Частые рассылки писем и уведомлений(сайт отправляет очень много уведомлений, очень часто для отправки
-                  используется стандартный системный транспорт и php функция mail, для отправки писаем используется
-                  почтовый сервер вашего хостинг провайдера, это не требует дополнительных настроек, но обычно почтовые
-                  хостинги провайдера не любят нагрузок как следствие письма могут попадать в спам, не отправляться)
+                  <p>Проблемы на хостинге(возможно перезапускали сервер, возможно меняли конфигурации)</p>
                 </li>
-                <li>Конфликты на сайте(из-за установленных плагинов)</li>
+                <li>
+                  <p>Спам(хостинг заблокировал возможность отправки писем посчитав что вы спамите)</p>
+                </li>
+                <li>
+                  <p>Частые рассылки писем и уведомлений(сайт отправляет очень много уведомлений, очень часто для отправки используется стандартный системный транспорт и php функция mail, для отправки писаем используется почтовый сервер вашего хостинг провайдера, это не требует дополнительных настроек, но обычно почтовые хостинги провайдера не любят нагрузок как следствие письма могут попадать в спам, не отправляться)</p>
+                </li>
+                <li>
+                  <p>Конфликты на сайте(из-за установленных плагинов)</p>
+                </li>
               </ol>
-
-              <h2 class="component__subtitle">Варианты решений</h2>
+              <h2 class="subtitle">Варианты решений</h2>
               <ol>
-                <li>Деактивировать по очереди плагины если это WordPress</li>
-                <li>Обратиться в службу поддержки хостинга</li>
-                <li>Создать на хостинге корпоративную почту и указать её в настройках сайта</li>
-                <li>Настроить отправку писем через SMTP-сервер с авторизацией</li>
+                <li>
+                  <p>Деактивировать по очереди плагины если это WordPress</p>
+                </li>
+                <li>
+                  <p>Обратиться в службу поддержки хостинга</p>
+                </li>
+                <li>
+                  <p>Создать на хостинге корпоративную почту и указать её в настройках сайта</p>
+                </li>
+                <li>
+                  <p>Настроить отправку писем через SMTP-сервер с авторизацией</p>
+                </li>
               </ol>
-
-              <p>
-                Мы будем использовать 4 вариант, он является самым надёжным. Важно понимать, что тот адрес, на который
-                должны приходить письма не имеет никакого значения, он может быть любым. Все настройки осуществляются
-                для почтового сервера с которого будет отправляться письмо.
-              </p>
-              <p>
-                В зависимости от того с какого почтового сервера мы хотим отправлять письма, мы должны создать нужные
-                нам настройки.
-              </p>
-
-              <h2 class="component__subtitle">Пример для gmail</h2>
+              <p>Мы будем использовать 4 вариант, он является самым надёжным. Важно понимать, что тот адрес, на который должны приходить письма не имеет никакого значения, он может быть любым. Все настройки осуществляются для почтового сервера с которого будет отправляться письмо.</p>
+              <p>В зависимости от того с какого почтового сервера мы хотим отправлять письма, мы должны создать нужные нам настройки.</p>
+              <h2 class="subtitle">Пример для gmail</h2>
               <ol>
                 <li>
                   <p>SMTP сервер, зависит от почты отправки:</p>
-                  <p>$mail->Host = 'smtp.yandex.ru';</p>
+                  <p>$mail->Host = "smtp.yandex.ru";</p>
                 </li>
                 <li>
                   <p>Включаем SMTP авторизацию:</p>
@@ -164,18 +154,15 @@
                 </li>
                 <li>
                   <p>SMTP имя пользователя (почта с которой отправляем письмо):</p>
-                  <p>$mail->Username = 'ligaatest@yandex.ru';</p>
+                  <p>$mail->Username = "ligaatest@yandex.ru";</p>
                 </li>
                 <li>
-                  <p>
-                    SMTP password (для яндех и мэйл ру генерируем по ссылке в инструкции, для gmail это пароль от
-                    почты):
-                  </p>
-                  <p>$mail->Password = 'skfbddoaxyeiqglc';</p>
+                  <p>SMTP password (для яндех и мэйл ру генерируем по ссылке в инструкции, для gmail это пароль от почты):</p>
+                  <p>$mail->Password = "skfbddoaxyeiqglc";</p>
                 </li>
                 <li>
                   <p>SMTP Шифрование в основном это ssl, если другое не указанно настройках сервера:</p>
-                  <p>$mail->SMTPSecure = 'ssl';</p>
+                  <p>$mail->SMTPSecure = "ssl";</p>
                 </li>
                 <li>
                   <p>Порт:</p>
@@ -183,96 +170,80 @@
                 </li>
                 <li>
                   <p>Почта откуда отправляем:</p>
-                  <p>$mail->setFrom('ligaatest@yandex.ru');</p>
+                  <p>$mail->setFrom("ligaatest@yandex.ru");</p>
                 </li>
                 <li>
                   <p>Почта на которую должны приходить письма:</p>
-                  <p>$mail->addAddress('ligamailtest@gmail.com');</p>
+                  <p>$mail->addAddress("ligamailtest@gmail.com");</p>
                 </li>
               </ol>
-
+              <p>От заказчика нам нужно узнать пункты 1, 3, 4, 7, 8 + он должен настроить почту по ссылкам ниже. Всю остальную информацию мы можем найти сами.</p>
               <p>
-                От заказчика нам нужно узнать пункты 1, 3, 4, 7, 8 + он должен настроить почту по ссылкам ниже. Всю
-                остальную информацию мы можем найти сами.
+                 Ссылка на настройки yandex.ru
+                <a href="https://yandex.ru/support/mail/mail-clients/others.html" target="_blank" rel="nofollow noopener noreferrer">https://yandex.ru/support/mail/mail-clients/others.html</a>
               </p>
               <p>
-                Ссылка на настройки yandex.ru
-                <a href="https://yandex.ru/support/mail/mail-clients/others.html"
-                  >https://yandex.ru/support/mail/mail-clients/others.html</a
-                >
+                 Ссылка на настройки mail.ru
+                <a href="https://help.mail.ru/mail/mailer/popsmtp" target="_blank" rel="nofollow noopener noreferrer">https://help.mail.ru/mail/mailer/popsmtp</a>
               </p>
               <p>
-                Ссылка на настройки mail.ru
-                <a href="https://help.mail.ru/mail/mailer/popsmtp">https://help.mail.ru/mail/mailer/popsmtp</a>
+                 Ссылка на настройки gmail.com
+                <a href="https://support.google.com/mail/answer/7126229" target="_blank" rel="nofollow noopener noreferrer">https://support.google.com/mail/answer/7126229</a>
               </p>
               <p>
-                Ссылка на настройки gmail.com
-                <a href="https://support.google.com/mail/answer/7126229"
-                  >https://support.google.com/mail/answer/7126229</a
-                >
+                Примите во внимание, что со включенной двухфакторной аутентификацией отправка работать не будет. В таком случае лучше создать новый почтовый ящик, важно не забыть дать к нему доступ сторонним приложениям. Прочитать как это сделать можно пройдя по ссылке
+                <a href="https://support.google.com/accounts/answer/6010255" target="_blank" rel="nofollow noopener noreferrer">https://support.google.com/accounts/answer/6010255</a>
               </p>
-              <p>
-                Для остальных почтовых серверов настройки легко гуглятся пример запроса “настройка smtp “название
-                почтового сервера””
-              </p>
-              <p>
-                Для тестирования нужно установить программу
-                <a href="https://ospanel.io/download/"
-                >https://ospanel.io/download/</a
-                >
-              </p>
-
-              <h2 class="component__subtitle">Инструкция для разработчика</h2>
+              <p>Для остальных почтовых серверов настройки легко гуглятся пример запроса “настройка smtp “название почтового сервера””</p>
+              <p> Для тестирования нужно установить программу<a href="https://ospanel.io/download/" target="_blank" rel="nofollow noopener noreferrer">https://ospanel.io/download/</a></p>
+              <h2 class="subtitle">Инструкция для разработчика</h2>
               <ol>
                 <li>
                   <p>
-                    Записать в переменные все используемые поля
-                    <a href="https://skr.sh/sCPP2dujZcN?a">https://skr.sh/sCPP2dujZcN?a</a>
+                     Записать в переменные все используемые поля
+                    <a href="https://skr.sh/sCPP2dujZcN?a" target="_blank" rel="nofollow noopener noreferrer">https://skr.sh/sCPP2dujZcN?a</a>
                   </p>
                 </li>
                 <li>
                   <p>
-                    Настроить сервер
-                    <a href="https://skr.sh/sCPN8dY1bPf?a">https://skr.sh/sCPN8dY1bPf?a</a>
+                     Настроить сервер
+                    <a href="https://skr.sh/sCPN8dY1bPf?a" target="_blank" rel="nofollow noopener noreferrer">https://skr.sh/sCPN8dY1bPf?a</a>
                   </p>
                 </li>
                 <li>
                   <p>
-                    Добавить адреса откуда приходят письма и куда
-                    <a href="https://skr.sh/sCPtrzrr3Oc?a">https://skr.sh/sCPtrzrr3Oc?a</a>
+                     Добавить адреса откуда приходят письма и куда
+                    <a href="https://skr.sh/sCPtrzrr3Oc?a" target="_blank" rel="nofollow noopener noreferrer">https://skr.sh/sCPtrzrr3Oc?a</a>
                   </p>
                 </li>
                 <li>
                   <p>
-                    Настроить отображение письма
-                    <a href="https://skr.sh/sCPtrzrr3Oc?a">https://skr.sh/sCPtrzrr3Oc?a</a>
+                     Настроить отображение письма
+                    <a href="https://skr.sh/sCPtrzrr3Oc?a" target="_blank" rel="nofollow noopener noreferrer">https://skr.sh/sCPtrzrr3Oc?a</a>
                   </p>
                 </li>
                 <li>
                   <p>
-                    Добавить отправку в колбек успешной валидации
-                    <a href="https://skr.sh/sCPdDdYEhMI?a">https://skr.sh/sCPdDdYEhMI?a</a>
+                     Добавить отправку в колбек успешной валидации
+                    <a href="https://skr.sh/sCPdDdYEhMI?a" target="_blank" rel="nofollow noopener noreferrer">https://skr.sh/sCPdDdYEhMI?a</a>
                   </p>
                 </li>
                 <li>
                   <p>
-                    Добавить функции для реализации колбеков успешной отправки и ошибки отправки
-                    <a href="https://skr.sh/sCPLMiPbTXQ?a">https://skr.sh/sCPLMiPbTXQ?a</a>
+                     Добавить функции для реализации колбеков успешной отправки и ошибки отправки
+                    <a href="https://skr.sh/sCPLMiPbTXQ?a" target="_blank" rel="nofollow noopener noreferrer">https://skr.sh/sCPLMiPbTXQ?a</a>
                   </p>
                 </li>
               </ol>
-
               <p>
-                Если требуется формировать письма с разных форм то мы просто создаём ещё php файлы с другими
-                настройками. Не забываем указывать эти файлы в атрибуте action формы
-                <a href="https://skr.sh/sCPLRkvPui6?a">https://skr.sh/sCPLRkvPui6?a</a>
+                 Если требуется формировать письма с разных форм то мы просто создаём ещё php файлы с другими настройками. Не забываем указывать эти файлы в атрибуте action формы
+                <a href="https://skr.sh/sCPLRkvPui6?a" target="_blank" rel="nofollow noopener noreferrer">https://skr.sh/sCPLRkvPui6?a</a>
               </p>
-            </div>
-          </div>
+            </section>
+          </section>
         </div>
       </main>
     </div>
-
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>
   </body>

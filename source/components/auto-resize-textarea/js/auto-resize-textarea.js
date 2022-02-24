@@ -1,15 +1,15 @@
-const textarea = document.querySelectorAll('.autoresize-textarea textarea');
+const textAreas = document.querySelectorAll('.auto-resize-textarea textarea');
 
 const getHeightWithoutBorder = (el) => {
-  let realscrollHeight = el.scrollHeight;
+  let realScrollHeight = el.scrollHeight;
 
   if (!el.value) {
     el.value = 0;
-    realscrollHeight = el.scrollHeight;
+    realScrollHeight = el.scrollHeight;
     el.value = '';
   }
 
-  return realscrollHeight + el.offsetHeight - el.clientHeight;
+  return realScrollHeight + el.offsetHeight - el.clientHeight;
 };
 
 const resizeHeight = (el) => {
@@ -18,11 +18,11 @@ const resizeHeight = (el) => {
 };
 
 const initAutoResizeTextarea = () => { // ВЫНЕСТИ В ВИНДОВ
-  if (!textarea.length) {
+  if (!textAreas.length) {
     return;
   }
 
-  textarea.forEach((el) => {
+  textAreas.forEach((el) => {
     el.classList.add('.is-initialized');
     el.style.overflow = 'hidden';
     el.style.resize = 'none';
@@ -42,7 +42,7 @@ const initAutoResizeTextarea = () => { // ВЫНЕСТИ В ВИНДОВ
   });
 
   window.addEventListener('resize', () => {
-    textarea.forEach((el) => {
+    textAreas.forEach((el) => {
       resizeHeight(el);
     });
   });

@@ -1,39 +1,26 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-<!-- дописать мета-теги, опенграф, добавить счетчики,
-если изменится название - заменить и в favicon/site.webmanifest -->
-<meta name="description" content="Лига компонентов">
-
-<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-<link rel="manifest" href="favicon/site.webmanifest">
-<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="apple-mobile-web-app-title" content="Лига компонентов">
-<meta name="application-name" content="Лига компонентов">
-<meta name="msapplication-TileColor" content="#b91d47">
-<meta name="theme-color" content="#1f1f1f">
-
-<link rel="preload" href="fonts/IBMPlexSansLight.woff2" as="font" crossorigin="anonymous">
-<link rel="preload" href="fonts/IBMPlexSansSemiBold.woff2" as="font" crossorigin="anonymous">
-
-<link rel="stylesheet" href="css/style.min.css">
-
-
-
-  <title>Лига компонентов</title>
-
-</head>
-<body>
-
-  <div style="display: none;">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="git-logo" viewBox="0 0 16 16">
+  <head>
+    <title>Лига решений</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Лига компонентов">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="apple-mobile-web-app-title" content="Лига компонентов">
+    <meta name="application-name" content="Лига компонентов">
+    <meta name="msapplication-TileColor" content="#b91d47">
+    <meta name="theme-color" content="#1f1f1f">
+    <link rel="preload" href="fonts/IBMPlexSansLight.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/IBMPlexSansSemiBold.woff2" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="visually-hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="git-logo" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
 </symbol><symbol id="icon-close" viewBox="0 0 20 20"><path d="M.293 18.291a1 1 0 101.414 1.414L10 11.413l8.292 8.292a1 1 0 101.414-1.414l-8.292-8.292 8.292-8.292A1 1 0 1018.291.293L9.999 8.585 1.707.293A1 1 0 10.293 1.707L8.585 10 .293 18.291z"/></symbol><symbol id="icon-drako" viewBox="0 0 190 215">
   <path d="M121.174 87.2449L75.6128 149.77L106.633 165.765L118.266 144.439L131.837 130.383L157.041 128.929L165.281 122.628L166.735 110.995L121.174 87.2449Z" fill="#ffffff"/>
@@ -88,287 +75,238 @@
   <path d="M99.606 0.0217285V20.076L109.464 26.9069L119.321 20.076V0.0217285H99.606Z"/>
   <path fill="#ffffff" d="M115.156 15.3595C115.349 15.3595 115.564 15.3373 115.778 15.2652L115.757 17.4959C115.229 17.6846 114.555 17.8289 113.907 17.8233C112.731 17.8122 111.847 17.3628 111.377 16.4749C110.243 17.3683 108.92 17.8955 107.216 17.8844C105.058 17.8622 103.197 16.5748 103.218 14.2442C103.244 11.2532 106.009 10.3487 108.314 10.3709C109.223 10.382 110.232 10.5097 111.042 10.715L111.048 10.2988C111.058 9.12241 110.154 8.3067 108.356 8.29005C106.772 8.2734 105.356 8.70623 104.274 9.13351L104.3 6.19251C105.235 5.88176 106.992 5.43229 108.769 5.44894C112.224 5.48223 114.414 6.94718 114.382 10.8204L114.351 14.5716C114.34 15.182 114.722 15.354 115.156 15.3595ZM106.187 14.05C106.176 15.0211 107.044 15.6481 108.152 15.6592C109.182 15.6703 110.159 15.3817 111.011 14.6326L111.027 12.6128C110.473 12.474 109.631 12.302 108.868 12.2965C107.525 12.2798 106.202 12.7293 106.187 14.05Z"/>
 </symbol></svg>
-  </div>
-
-  <div class="wrapper">
-    <header class="header">
-  <div class="container">
-    <a class="header__logo"  href="index.html" aria-label="Переход на главную">
-      <svg width="120" height="27">
-        <use xlink:href="#icon-logo"></use>
-      </svg>
-    </a>
-    <a class="header__git" href="https://github.com/htmlonelove/liga-componentov" target="_blank">
-      <svg width="32" height="32">
-        <use xlink:href="#git-logo"></use>
-      </svg>
-    </a>
-  </div>
-</header>
-
-
-    <main>
-      <div class="container">
-        <div class="component">
-          <div class="component__heading">
-            <h1 class="component__title">Модальные окна</h1>
-            <a class="component__download-link btn" href="components/modals.zip" download>Скачать компонент</a>
-          </div>
-          <div class="component__description">
-            <h2 class="component__subtitle">Описание</h2>
-            <p>Модальные окна полностью переписаны, сейчас используется делегирование как при открытии так и в самом модальном окне <em>=></em> как следствие отсутствуют проблемы с динамическим добавлением элементов: кнопок вызова и самих модальных окон</p>
-            <p>В файле init-modals.js создаётся экземпляр класса Modals который записывается в переменную modals, им вы можете пользоваться по проекту при необходимости, так же он записывается в window.modals. <em>Используйте в разработке экспортируемую переменную modals, window сделан для бэкэнда</em></p>
-            <p>Модальные окна состоят из следующих файлов: ios-checker.js, focus-lock.js, scroll-lock.js, modals.js, init-modals.js, и modal.scss все файлы обязательны к переносу в проект! Так же у вас в проекте должно находится два утилитарных класса для блокировки страницы:</p>
-            <pre>
-              <code>
-                .scroll-lock-ios {
-                  position: fixed;
-
-                  overflow: hidden;
-                }
-
-                .scroll-lock {
-                  overflow: hidden;
-                }
-              </code>
-            </pre>
-            <h2 class="component__subtitle">Обязательные data атрибуты</h2>
-            <p><em>data-open-modal="Имя модального окна"</em> Устанавливается на кнопке вызова модального окна</p>
-            <p><em>data-modal="Имя модального окна"</em> Устанавливается на модальном окне</p>
-            <p><em>data-close-modal</em> Устанавливается на элементе который должен закрыть модальное окно, по умолчанию установлен на оверлее и на кнопки закрытия, может добавлятся на любые элементы в модальном окне.</p>
-            <h2 class="component__subtitle">Не обязательные data атрибуты</h2>
-            <p><em>data-focus</em> Устанавливается на том элементе который при открытии модального окна должен попатсть в фокус, если не установить то в фокус попадёт первый интерактивный элемент в модальном окне. Данный data атрибут не относится к модулю модальных окон, он относится к модулю блокировки фокуса внутри модального окна</p>
-            <h2 class="component__subtitle">Настройки</h2>
-            <p>При создании экземпляра класса передаются настройки в формате ключ - "Имя модального окна" значение - обьект</p>
-            <p>По умолчанию работаю настройки по умолчанию</p>
-            <p><em>preventDefault</em> Отмена действия по умолчанию, по умолчанию true</p>
-            <p><em>stopPlay</em> Остановка проигрывание стандартных HTML элементов video и audio, по умолчанию true</p>
-            <p><em>lockFocus</em> Блокировка фокуса внутри модального окна, по умолчанию true. Если внутри модального окна нет фокусируемых элементов то при нажатии на клавишу tab или сочетание shift + tab действие по умолчанию будет отменено. Если внутри модального окна есть только один фокусируемый элемент то при нажатии на клавишу tab или сочетание shift + tab фокус с него уходить не будет.</p>
-            <p><em>startFocus</em> Блокировка фокуса внутри модального окна, по умолчанию true. Если поставить false то при открытии ни один из элементов модального окна не попадёт в фокус</p>
-            <p><em>focusBack</em> При закрытии модального окна возвращает фокус на тот элемент который находился в фокусе перед открытием модального окна, по умолчанию true</p>
-            <p><em>eventTimeout</em> Таймаут который отрабатывает при разблокировке скрола при закрытии, по умолчанию 400мс, добавлен для того что бы сгладить появление полосы прокрутки, убрать дёрганье модального окна + через данный таймаут снимаются и вешаются обработчики на модальное окно и документ это сделано для того что бы убрать баги связвнный с добавлением лока фокуса внутри модального окна так как при зажатой клафише enter и при фокусе кнопки закоытия в модальном окне оно начинает открываться и закрываться что приводит к багам с появлением полосы прокрутки и тд</p>
-            <p><em>openCallback</em> Callback при открытии, по умолчанию false</p>
-            <p><em>closeCallback</em> Callback при закрытии, по умолчанию false</p>
-            <pre>
-              <code>
-                const settings = {
-                  'default': {
-                    preventDefault: true,
-                    stopPlay: true,
-                    lockFocus: true,
-                    eventTimeout: 400,
-                    openCallback: false,
-                    closeCallback: false,
-                  },
-                  // modal-1 добавлен исключительно для примера при добавлении на проект ключ и обект записанный в нём нужно удалить
-                  'modal-1': {
-                    openCallback: () => console.log('Я отработаю при открытии modal-1'),
-                    closeCallback: () => console.log('Я отработаю при закрытии modal-1'),
-                  },
-                };
-              </code>
-            </pre>
-            <h2 class="component__subtitle">Методы</h2>
-            <p><em>modals.open("Имя модального окна")</em> Открывает переданное модальное окно</p>
-            <p><em>modals.close("Имя модального окна")</em> Закрывает переданное модальное окное</p>
-            <h2 class="component__subtitle">Дополнения</h2>
-            <p>Так же в файле инициализации есть закоменченый код. Он добавлен для открытия нового модального окна из колбэка закрытия. Судьба его пока не известна, так как кейс крайне редкий и все случаи которые пока были на практике перекрывает метод modals.open('Имя модального окна'), например показ модального окна с сообщением об успешной отправки формы в случае если сама форма находилась в модальном окне</p>
-              <pre>
-                <code>
-                  // Здесь реализован пример открытия модалки через колбэк закрытия
-                  // const openModalInCloseCallback = (name, context = this) => {
-                  //   context._enableScrolling = false;
-                  //   context._setSettings('default');
-                  //   modals.open(name);
-                  // };
-
-                  // closeCallback() {
-                  //   openModalInCloseCallback('modal-5');
-                  // },
-                </code>
-              </pre>
-            <h2 class="component__subtitle">Добавление Youtube видео</h2>
-            <p>Добавлена автоматическая остановка воспроизведения Youtube видео и при необходимости автозапуск воспроизведения при открытии</p>
-            <p>Для корректной работы <em>iframe</em> должен быть обёрнут в <em>div</em> с дата атрибутом <em>data-iframe</em>. <em>Важно!!!</em> в src iframe в конце должно быть дописано <em>?enablejsapi=1</em>. Полный пример src: src="https://www.youtube.com/embed/FmzHq3U0UFE?enablejsapi=1". Примеры в модальных окнах 4 и 5</p>
-            <p>Для автовоспроизведения <em>div</em> нужно добавить дата атрибут <em>data-auto-play</em>. Пример в модальном окне 5</p>
-          </div>
-          <h2 class="component__subtitle">Демо</h2>
-          <div class="component__demo">
-            <p><button class="btn" type="button" data-open-modal="modal-1">Вызов модального окна 1</button></p>
-<p><button class="btn" type="button" data-open-modal="modal-2">Вызов модального окна 2</button></p>
-<p><button class="btn" type="button" data-open-modal="modal-3">Вызов модального окна 3</button></p>
-<p><button class="btn" type="button" data-open-modal="modal-4">Вызов модального окна 4</button></p>
-<p><button class="btn" type="button" data-open-modal="modal-5">Вызов модального окна 5</button></p>
-<section class="modal modal--preload" data-modal="modal-1">
-  <div class="modal__wrapper">
-    <div class="modal__overlay" data-close-modal></div>
-    <div class="modal__content">
-      <section>
-        <h2>example-1</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
-          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
-          Tenetur.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
-          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
-          Tenetur.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
-          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
-          Tenetur.
-        </p>
-        <p><button class="btn" type="button" data-open-modal="modal-2">Вызов модального окна 2</button></p>
-        <p><button class="btn" type="button" data-open-modal="modal-3">Вызов модального окна 3</button></p>
-        <p><button class="btn" type="button" data-open-modal="modal-4">Вызов модального окна 4</button></p>
-        <p><button class="btn" type="button" data-open-modal="modal-5">Вызов модального окна 5</button></p>
-      </section>
-      <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>
-        Закрыть
-      </button>
     </div>
-  </div>
-</section>
-<section class="modal modal--preload" data-modal="modal-2">
-  <div class="modal__wrapper">
-    <div class="modal__overlay" data-close-modal></div>
-    <div class="modal__content">
-      <section>
-        <h2>example-2</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
-          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
-          Tenetur.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
-          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
-          Tenetur.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
-          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
-          Tenetur.
-        </p>
-        <p><button class="btn" type="button" data-open-modal="modal-3">Вызов модального окна 3</button></p>
-      </section>
-      <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>
-        Закрыть
-      </button>
-    </div>
-  </div>
-</section>
-<section class="modal modal--preload" data-modal="modal-3">
-  <div class="modal__wrapper">
-    <div class="modal__overlay" data-close-modal></div>
-    <div class="modal__content">
-      <section>
-        <h2>example-3</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
-          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
-          Tenetur.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
-          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
-          Tenetur.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
-          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
-          Tenetur.
-        </p>
-      </section>
-      <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>
-        Закрыть
-      </button>
-    </div>
-  </div>
-</section>
-<section class="modal modal--preload" data-modal="modal-4">
-  <div class="modal__wrapper">
-    <div class="modal__overlay" data-close-modal></div>
-    <div class="modal__content">
-      <section>
-        <h2>example-4</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
-          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
-          Tenetur.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
-          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
-          Tenetur.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
-          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
-          Tenetur.
-        </p>
-        <div data-iframe>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/FmzHq3U0UFE?enablejsapi=1"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container"><a class="header__logo" href="index.html" aria-label="Переход на главную">
+            <svg width="120" height="27" aria-hidden="true">
+              <use xlink:href="#icon-logo"></use>
+            </svg></a>
+          <nav class="main-nav"><a class="header__git" href="https://github.com/htmlonelove/liga-componentov" target="_blank" rel="nofollow noopener noreferrer" aria-label="Ссылка на репозиторий">
+              <svg width="32" height="32" aria-hidden="true">
+                <use xlink:href="#git-logo"></use>
+              </svg></a></nav>
         </div>
-        <p><button class="btn" type="button" data-open-modal="modal-5">Вызов модального окна 5</button></p>
-      </section>
-      <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>
-        Закрыть
-      </button>
-    </div>
-  </div>
-</section>
-<section class="modal modal--preload" data-modal="modal-5">
-  <div class="modal__wrapper">
-    <div class="modal__overlay" data-close-modal></div>
-    <div class="modal__content">
-      <section>
-        <h2>example-5</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
-          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
-          Tenetur.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
-          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
-          Tenetur.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto
-          sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro.
-          Tenetur.
-        </p>
-        <div data-iframe data-auto-play>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/FmzHq3U0UFE?enablejsapi=1"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </section>
-    </div>
-  </div>
-</section>
+      </header>
+      <main>
+        <div class="container">
+          <section class="component">
+            <section class="component-heading">
+              <h1 class="title">Модальные окна</h1><a class="component-heading__download-link btn" href="zip-components/modals.zip" download>Скачать компонент</a>
+            </section>
+            <section class="component-description">
+              <h2 class="subtitle">Описание</h2>
+              <p>
+                Модальные окна полностью переписаны, сейчас используется делегирование как при открытии так и в самом модальном окне
+                <em>=></em> как следствие отсутствуют проблемы с динамическим добавлением элементов: кнопок вызова и самих модальных окон
+              </p>
+              <p>В файле init-modals.js создаётся экземпляр класса Modals который записывается в переменную modals, им вы можете пользоваться по проекту при необходимости, так же он записывается в window.modals.<em>Используйте в разработке экспортируемую переменную modals, window сделан для бэкэнда</em></p>
+              <p>Модальные окна состоят из следующих файлов: ios-checker.js, focus-lock.js, scroll-lock.js, modals.js, init-modals.js, и modal.scss все файлы обязательны к переносу в проект! Так же у вас в проекте должно находится два утилитарных класса для блокировки страницы:</p>
+              <pre><code>.scroll-lock-ios {
+  position: fixed;
 
-        </div>
-      </div>
-    </main>
-  </div>
+  overflow: hidden;
+}
 
-  <script src="js/vendor.min.js"></script>
-  <script src="js/main.min.js"></script>
-</body>
+.scroll-lock {
+  overflow: hidden;
+}
+</code></pre>
+              <h2 class="component__subtitle">Обязательные data атрибуты</h2>
+              <p><em>data-open-modal="Имя модального окна"</em> Устанавливается на кнопке вызова модального окна</p>
+              <p><em>data-modal="Имя модального окна"</em> Устанавливается на модальном окне</p>
+              <p><em>data-close-modal</em> Устанавливается на элементе который должен закрыть модальное окно, по умолчанию установлен на оверлее и на кнопки закрытия, может добавлятся на любые элементы в модальном окне.</p>
+              <h2 class="component__subtitle">Не обязательные data атрибуты</h2>
+              <p><em>data-focus</em> Устанавливается на том элементе который при открытии модального окна должен попатсть в фокус, если не установить то в фокус попадёт первый интерактивный элемент в модальном окне. Данный data атрибут не относится к модулю модальных окон, он относится к модулю блокировки фокуса внутри модального окна</p>
+              <h2 class="component__subtitle">Настройки</h2>
+              <p>При создании экземпляра класса передаются настройки в формате ключ - "Имя модального окна" значение - обьект</p>
+              <p>По умолчанию работаю настройки по умолчанию</p>
+              <p><em>preventDefault</em> Отмена действия по умолчанию, по умолчанию true</p>
+              <p><em>stopPlay</em> Остановка проигрывание стандартных HTML элементов video и audio, по умолчанию true</p>
+              <p><em>lockFocus</em> Блокировка фокуса внутри модального окна, по умолчанию true. Если внутри модального окна нет фокусируемых элементов то при нажатии на клавишу tab или сочетание shift + tab действие по умолчанию будет отменено. Если внутри модального окна есть только один фокусируемый элемент то при нажатии на клавишу tab или сочетание shift + tab фокус с него уходить не будет.</p>
+              <p><em>startFocus</em> Блокировка фокуса внутри модального окна, по умолчанию true. Если поставить false то при открытии ни один из элементов модального окна не попадёт в фокус</p>
+              <p><em>focusBack</em> При закрытии модального окна возвращает фокус на тот элемент который находился в фокусе перед открытием модального окна, по умолчанию true</p>
+              <p><em>eventTimeout</em> Таймаут который отрабатывает при разблокировке скрола при закрытии, по умолчанию 400мс, добавлен для того что бы сгладить появление полосы прокрутки, убрать дёрганье модального окна + через данный таймаут снимаются и вешаются обработчики на модальное окно и документ это сделано для того что бы убрать баги связвнный с добавлением лока фокуса внутри модального окна так как при зажатой клафише enter и при фокусе кнопки закоытия в модальном окне оно начинает открываться и закрываться что приводит к багам с появлением полосы прокрутки и тд</p>
+              <p><em>openCallback</em> Callback при открытии, по умолчанию false</p>
+              <p><em>closeCallback</em> Callback при закрытии, по умолчанию false</p>
+              <pre><code>const settings = {
+  'default': {
+    preventDefault: true,
+    stopPlay: true,
+    lockFocus: true,
+    eventTimeout: 400,
+    openCallback: false,
+    closeCallback: false,
+  },
+  // modal-1 добавлен исключительно для примера при добавлении на проект ключ и обект записанный в нём нужно удалить
+  'modal-1': {
+    openCallback: () => console.log('Я отработаю при открытии modal-1'),
+    closeCallback: () => console.log('Я отработаю при закрытии modal-1'),
+  },
+};
+</code></pre>
+              <h2 class="component__subtitle">Методы</h2>
+              <p><em>modals.open("Имя модального окна")</em> Открывает переданное модальное окно</p>
+              <p><em>modals.close("Имя модального окна")</em> Закрывает переданное модальное окное</p>
+              <h2 class="component__subtitle">Дополнения</h2>
+              <p>Так же в файле инициализации есть закоменченый код. Он добавлен для открытия нового модального окна из колбэка закрытия. Судьба его пока не известна, так как кейс крайне редкий и все случаи которые пока были на практике перекрывает метод modals.open('Имя модального окна'), например показ модального окна с сообщением об успешной отправки формы в случае если сама форма находилась в модальном окне</p>
+              <pre><code>// Здесь реализован пример открытия модалки через колбэк закрытия
+// const openModalInCloseCallback = (name, context = this) => {
+//   context._enableScrolling = false;
+//   context._setSettings('default');
+//   modals.open(name);
+// };
+
+// closeCallback() {
+//   openModalInCloseCallback('modal-5');
+// },
+</code></pre>
+              <h2 class="component__subtitle">Добавление Youtube видео</h2>
+              <p>Добавлена автоматическая остановка воспроизведения Youtube видео и при необходимости автозапуск воспроизведения при открытии</p>
+              <p>
+                Для корректной работы
+                <em>iframe</em> должен быть обёрнут в
+                <em>div</em>
+                с дата атрибутом
+                <em>data-iframe</em>.
+                <em>Важно!!!</em> в src iframe в конце должно быть дописано
+                <em>?enablejsapi=1</em>. Полный пример src: src="https://www.youtube.com/embed/FmzHq3U0UFE?enablejsapi=1". Примеры в модальных окнах 4 и 5
+              </p>
+              <p>
+                Для автовоспроизведения
+                <em>div</em> нужно добавить дата атрибут
+                <em>data-auto-play</em>. Пример в модальном окне 5
+              </p>
+            </section>
+            <section class="component-demo">
+              <h2 class="subtitle">Демо</h2>
+              <p>
+                <button class="btn" type="button" data-open-modal="modal-1">Вызов модального окна 1</button>
+              </p>
+              <p>
+                <button class="btn" type="button" data-open-modal="modal-2">Вызов модального окна 2</button>
+              </p>
+              <p>
+                <button class="btn" type="button" data-open-modal="modal-3">Вызов модального окна 3</button>
+              </p>
+              <p>
+                <button class="btn" type="button" data-open-modal="modal-4">Вызов модального окна 4</button>
+              </p>
+              <p>
+                <button class="btn" type="button" data-open-modal="modal-5">Вызов модального окна 5</button>
+              </p>
+              <section class="modal modal--preload" data-modal="modal-1">
+                <div class="modal__wrapper">
+                  <div class="modal__overlay" data-close-modal></div>
+                  <div class="modal__content">
+                    <section>
+                      <h2>example-1</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                      <p>
+                        <button class="btn" type="button" data-open-modal="modal-2">Вызов модального окна 2</button>
+                      </p>
+                      <p>
+                        <button class="btn" type="button" data-open-modal="modal-3">Вызов модального окна 3</button>
+                      </p>
+                      <p>
+                        <button class="btn" type="button" data-open-modal="modal-4">Вызов модального окна 4</button>
+                      </p>
+                      <p>
+                        <button class="btn" type="button" data-open-modal="modal-5">Вызов модального окна 5</button>
+                      </p>
+                    </section>
+                    <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>
+                      Закрыть
+                      
+                    </button>
+                  </div>
+                </div>
+              </section>
+              <section class="modal modal--preload" data-modal="modal-2">
+                <div class="modal__wrapper">
+                  <div class="modal__overlay" data-close-modal></div>
+                  <div class="modal__content">
+                    <section>
+                      <h2>example-2</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                      <p>
+                        <button class="btn" type="button" data-open-modal="modal-3">Вызов модального окна 3</button>
+                      </p>
+                    </section>
+                    <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>
+                      Закрыть
+                      
+                    </button>
+                  </div>
+                </div>
+              </section>
+              <section class="modal modal--preload" data-modal="modal-3">
+                <div class="modal__wrapper">
+                  <div class="modal__overlay" data-close-modal></div>
+                  <div class="modal__content">
+                    <section>
+                      <h2>example-3</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                    </section>
+                    <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>
+                      Закрыть
+                      
+                    </button>
+                  </div>
+                </div>
+              </section>
+              <section class="modal modal--preload" data-modal="modal-4">
+                <div class="modal__wrapper">
+                  <div class="modal__overlay" data-close-modal></div>
+                  <div class="modal__content">
+                    <section>
+                      <h2>example-4</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                      <div data-iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/FmzHq3U0UFE?enablejsapi=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      </div>
+                      <p>
+                        <button class="btn" type="button" data-open-modal="modal-5">Вызов модального окна 5</button>
+                      </p>
+                    </section>
+                    <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal data-focus>
+                      Закрыть
+                      
+                    </button>
+                  </div>
+                </div>
+              </section>
+              <section class="modal modal--preload" data-modal="modal-5">
+                <div class="modal__wrapper">
+                  <div class="modal__overlay" data-close-modal></div>
+                  <div class="modal__content">
+                    <section>
+                      <h2>example-5</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.</p>
+                      <div data-iframe data-auto-play>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/FmzHq3U0UFE?enablejsapi=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </section>
+            </section>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
+    <script src="js/modals.min.js"></script>
+  </body>
 </html>

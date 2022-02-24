@@ -1,0 +1,39 @@
+section.component-description
+  h2.subtitle Описание
+  p В данной реализации используется нативный селект, что решает массу проблем которые были с инпутом.
+  p Базовая структура селекта. Это div в который вложен "лейбл", сообщение об ошибке, кнопка в которую вложен span под текст и span под иконку и список с элементами для выбора. Это базовая структура которая обязательна для соблюдению, исключением являются поля с лейблом, плейсхолдером и ошибкой! Всё остальное формируется на js.
+  pre
+    |
+    code.
+                    &lt;div class="select" data-select>
+                      &lt;span class="select__label">label-1&lt;/span>
+                      &lt;span class="select__error">some-error&lt;/span>
+                      &lt;span class="select__placeholder">some-placeholder&lt;/span>
+                      &lt;button class="select__button" type="button" aria-label="Выберите одну из опций">
+                        &lt;span class="select__text">&lt;/span>
+                        &lt;span class="select__icon">&lt;/span>
+                      &lt;/button>
+                      &lt;ul class="select__list">
+                        &lt;li class="select__item" tabindex="0" data-select-value="id-1">example-1&lt;/li>
+                        &lt;li class="select__item" tabindex="0" data-select-value="id-2">example-2&lt;/li>
+                        &lt;li class="select__item" tabindex="0" data-select-value="id-3">example-3&lt;/li>
+                        &lt;li class="select__item" tabindex="0" data-select-value="id-4">example-4&lt;/li>
+                        &lt;li class="select__item" tabindex="0" data-select-value="id-5">example-5&lt;/li>
+                        &lt;li class="select__item" tabindex="0" data-select-value="id-6">example-6&lt;/li>
+                      &lt;/ul>
+                    &lt;/div>
+
+  h2.subtitle Дополнительные data атрибуты которые прописываются непосредственно в родительском div:
+  p data-name="name-example" Устанавливает name нативному селекту
+  p data-id="id-example" Устанавливает id нативному селекту
+  p data-required="true" Устанавливает обязательное заполнение данного поля формы
+  p data-multiple="true" Устанавливает multiple выбор селекту
+  p data-insert="true" Отвечает за вставку выбранных опций в кнопку
+  p Если нужно что бы один из пунктов был выбран по умолчанию достаточно просто добавить класс active к классу select__item class="select__item active". Для мультиселекта можно выбирать любое количество пунктов. Если в обычном селекте по ошибке будет выбранно несколько пунктов то все классы active будут удалены со всех элементов кроме первого.
+  p Если селект расположен в самом низу страницы или в низу модального окна повести на родителя класс "custom-select--open-up". С этим классом селект будет открываться на верх. Реализовыать расчёт положения на js, не имеет смысла, так как селект может находится и в модалке, класс у которой может быть любой, как следствие проблемы с нахождением родителя относительно которого нужно расчитывать положение.
+  p Инициализация: В main.js импортите import './modules/select';
+  p Для повторной инициализации при динамическом добавлении без перезагрузки страницы нужно вызывать функцию window.selectInit();
+  p Обратите ВНИМАНИЕ! При динамическом добавлении без перезагрузки страницы на родительском диве не должно висеть класса "is-initialize", он добавляется при инициализации и является просто флагом по которому инициализации НЕ БУДЕТ.
+  p Нужно добавлять базовую разметку представленую выше.
+  h2.subtitle Дополнительные data атрибуты которые прописываются на элементе списка:
+  p data-select-value="id-6" Устанавливает value опции нативного селекта

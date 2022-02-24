@@ -1,0 +1,15 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Лига решений" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const currentUrl = "custom-select.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const pageJs = "js/customSelect.min.js"
+
+block main
+  main
+    .container
+      +custom-select()
+block modals

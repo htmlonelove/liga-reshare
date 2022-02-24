@@ -1,35 +1,46 @@
-import {ieFix} from './utils/ie-fix';
+import {iosVhFix} from './utils/ios-vh-fix';
 
-import {initModals} from '../components/modals/js/init-modals';
-import {initTabs} from '../components/tabs/js/init-tabs';
-import {initAccordions} from '../components/accordion/js/init-accordion';
-import '../components/focus-lock/js/focus-lock';
-import '../components/scroll-lock/js/scroll-lock';
-import '../components/custom-select/js/custom-select';
-import '../components/form-validate/init-form-validate';
-import {initAutoResizeTextarea} from '../components/auto-resize-textarea/js/auto-resize-textarea';
-import {initPhoneMask} from '../components/phone-mask/js/phone-mask';
-import {cookieConsentChecker} from '../components/cookies/js/cookie-consent-checker';
-import {ScrollTranslator} from '../components/scroll-translator/js/scroll-translator';
-import {NavigationChanger} from '../components/navigation-changer/js/navigation-changer';
 
-// Utils
 // ---------------------------------
 
-ieFix();
+window.addEventListener('DOMContentLoaded', () => {
 
-// Modules
+  // Utils
+  // ---------------------------------
+
+  iosVhFix();
+
+  // Modules
+  // ---------------------------------
+
+  // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
+  // в load следует добавить скрипты, не участвующие в работе первого экрана
+  window.addEventListener('load', () => {
+
+  });
+});
+
 // ---------------------------------
 
-initModals();
-initAutoResizeTextarea();
-initPhoneMask();
-initAccordions();
-initTabs();
-cookieConsentChecker();
+// ❗❗❗ обязательно установите плагины eslint, stylelint, editorconfig в редактор кода.
 
-const scrollTranslator = new ScrollTranslator();
-scrollTranslator.init();
+// привязывайте js не на классы, а на дата атрибуты (data-validate)
 
-const navigationChanger = new NavigationChanger();
-navigationChanger.init();
+// вместо модификаторов .block--active используем утилитарные классы
+// .is-active || .is-open || .is-invalid и прочие (обязателен нейминг в два слова)
+// .select.select--opened ❌ ---> [data-select].is-open ✔️
+
+// выносим все в дата атрибуты
+// url до иконок пинов карты, настройки автопрокрутки слайдера, url к json и т.д.
+
+// для адаптивного JS используейтся matchMedia и addListener
+// const breakpoint = window.matchMedia(`(min-width:1024px)`);
+// const breakpointChecker = () => {
+//   if (breakpoint.matches) {
+//   } else {
+//   }
+// };
+// breakpoint.addListener(breakpointChecker);
+// breakpointChecker();
+
+// используйте .closest(el)

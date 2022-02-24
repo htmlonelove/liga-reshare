@@ -1,0 +1,87 @@
+mixin custom-input(options = {})
+  - const inputLabel = options.inputLabel ? options.inputLabel : false
+  - const inputPlaceholder = options.inputPlaceholder ? options.inputPlaceholder : false
+  - const inputError = options.inputError ? options.inputError : false
+  - const inputType = options.inputType ? options.inputType : "text"
+  - const inputId = options.inputId ? options.inputId : false
+  - const inputName = options.inputName ? options.inputName : false
+  - const inputValue = options.inputValue ? options.inputValue : false
+  - const inputMinLength = options.inputMinLength ? options.inputMinLength : false
+  - const inputMaxLength = options.inputMaxLength ? options.inputMaxLength : false
+
+  .custom-input&attributes(attributes)
+    label
+      if inputLabel
+        span.custom-input__label!=inputLabel
+      input(type=inputType, id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder)
+    if inputError
+      .custom-input__error!=inputError
+
+mixin custom-textarea(options = {})
+  - const inputLabel = options.inputLabel ? options.inputLabel : false
+  - const inputPlaceholder = options.inputPlaceholder ? options.inputPlaceholder : false
+  - const inputError = options.inputError ? options.inputError : false
+  - const inputId = options.inputId ? options.inputId : false
+  - const inputName = options.inputName ? options.inputName : false
+  - const inputValue = options.inputValue ? options.inputValue : false
+  - const inputMinLength = options.inputMinLength ? options.inputMinLength : false
+  - const inputMaxLength = options.inputMaxLength ? options.inputMaxLength : false
+
+  .custom-textarea&attributes(attributes)
+    label
+      if inputLabel
+        span.custom-textarea__label!=inputLabel
+      textarea(id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder)
+    if inputError
+      .custom-textarea__error!=inputError
+
+mixin custom-toggle(options = {})
+  - const inputLabel = options.inputLabel ? options.inputLabel : false
+  - const inputType = options.inputType ? options.inputType : "checkbox"
+  - const inputError = options.inputError ? options.inputError : false
+  - const inputId = options.inputId ? options.inputId : false
+  - const inputChecked = options.inputChecked || false
+  - const inputName = options.inputName ? options.inputName : false
+
+  .custom-toggle&attributes(attributes)
+    label
+      input(type=inputType, id=inputId, name=inputName, checked=inputChecked)
+      span.custom-toggle__icon
+      if inputLabel
+        span.custom-toggle__label!=inputLabel
+    if inputError
+      .custom-toggle__error!=inputError
+
+mixin custom-select(options = {})
+  - const selectLabel = options.label ? options.label : false
+  - const selectError = options.error ? options.error : false
+  - const selectPlaceholder = options.placeholder ? options.placeholder : false
+  - const buttonAriaLabel = options.buttonAriaLabel ? options.buttonAriaLabel : "Выберите одну из опций"
+
+  div&attributes(attributes)
+    if selectLabel
+      span.custom-select__label=selectLabel
+    if selectError
+      span.custom-select__error=selectError
+    if selectPlaceholder
+      span.custom-select__placeholder=selectPlaceholder
+    button.custom-select__button(type="button", aria-label=buttonAriaLabel)
+      span.custom-select__text
+      span.custom-select__icon
+    ul.custom-select__list(role="listbox")
+      each item in options.optionsList
+        - const ariaSelected = item.isActive ? "true" : "false"
+        li.custom-select__item(class=itemClass, tabindex="0", data-select-value=item.value, aria-selected=ariaSelected, role="option")=item.text
+
+section.component-demo
+  h2.subtitle Демо
+  div(data-validate)
+    form(method="post")
+      +custom-input({inputLabel: "Введите ваше имя", inputError: "Не корректное имя", inputName: "user-name", inputMinLength: "2"})(data-validate-type="text", data-limitations="name")
+      +custom-input({inputType: "tel",inputLabel: "Введите ваш телефон", inputError: "Не корректный телефон", inputName: "user-phone"})(data-validate-type="phone")
+      +custom-input({inputType: "email", inputLabel: "Введите ваш email", inputError: "Не корректный email", inputName: "user-email"})(data-validate-type="email")
+      +custom-textarea({inputLabel: "Расскажите о себе", inputName: "user-info"})
+      +custom-select({error: "Выберите тему обращения", optionsList: [{text: "Тема 1", value: "id-1", isActive: true}, {text: "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5", value: "id-5"}, {text: "Тема 6", value: "id-6"}]})(data-select, data-validate-type="select", data-name="some-name", data-id="id-example").custom-select
+      +custom-toggle({inputLabel: "Подтвердите своё согласие", inputError: "Согласие является обязательным", inputName: "user-agreement", inputChecked: true})(data-validate-type="checkbox").custom-toggle--checkbox
+      button.btn(type="reset") Сбросить форму
+      button.btn(type="submit") Отправить форму

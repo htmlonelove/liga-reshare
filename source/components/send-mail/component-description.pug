@@ -1,0 +1,127 @@
+section.component-description
+  h2.subtitle Описание
+  p В архиве лежат следующие файлы и папки:
+  p
+    em PHPMailer
+    |
+    |  Папка с php библиотекой для отправки данных формы на почту. Папка переносится в корень проекта. В неё не нужно вносить изменения
+  p
+    em send.php
+    |
+    | Редактируемый файл, для настройки отправки данных формы
+  p В папке js расположена кастомная валидация лиги. В неё добавлены файлы:
+  p
+    em send-mail.js
+    |
+    |  запрос на отправку данных с формы. Редактировать не нужно
+  p
+    em form-send-callbacks.js
+    |
+    |  колбеки успешной или не успешной отправки данных формы
+  h2.subtitle Причины сбоя отправки писем
+  ol
+    li
+      p Проблемы на хостинге(возможно перезапускали сервер, возможно меняли конфигурации)
+    li
+      p Спам(хостинг заблокировал возможность отправки писем посчитав что вы спамите)
+    li
+      p Частые рассылки писем и уведомлений(сайт отправляет очень много уведомлений, очень часто для отправки используется стандартный системный транспорт и php функция mail, для отправки писаем используется почтовый сервер вашего хостинг провайдера, это не требует дополнительных настроек, но обычно почтовые хостинги провайдера не любят нагрузок как следствие письма могут попадать в спам, не отправляться)
+    li
+      p Конфликты на сайте(из-за установленных плагинов)
+  h2.subtitle Варианты решений
+  ol
+    li
+      p Деактивировать по очереди плагины если это WordPress
+    li
+      p Обратиться в службу поддержки хостинга
+    li
+      p Создать на хостинге корпоративную почту и указать её в настройках сайта
+    li
+      p Настроить отправку писем через SMTP-сервер с авторизацией
+  p Мы будем использовать 4 вариант, он является самым надёжным. Важно понимать, что тот адрес, на который должны приходить письма не имеет никакого значения, он может быть любым. Все настройки осуществляются для почтового сервера с которого будет отправляться письмо.
+  p В зависимости от того с какого почтового сервера мы хотим отправлять письма, мы должны создать нужные нам настройки.
+
+  h2.subtitle Пример для gmail
+  ol
+    li
+      p SMTP сервер, зависит от почты отправки:
+      p $mail->Host = "smtp.yandex.ru";
+    li
+      p Включаем SMTP авторизацию:
+      p $mail->SMTPAuth = true;
+    li
+      p SMTP имя пользователя (почта с которой отправляем письмо):
+      p $mail->Username = "ligaatest@yandex.ru";
+    li
+      p SMTP password (для яндех и мэйл ру генерируем по ссылке в инструкции, для gmail это пароль от почты):
+      p $mail->Password = "skfbddoaxyeiqglc";
+    li
+      p SMTP Шифрование в основном это ssl, если другое не указанно настройках сервера:
+      p $mail->SMTPSecure = "ssl";
+    li
+      p Порт:
+      p $mail->Port = 465;
+    li
+      p Почта откуда отправляем:
+      p $mail->setFrom("ligaatest@yandex.ru");
+    li
+      p Почта на которую должны приходить письма:
+      p $mail->addAddress("ligamailtest@gmail.com");
+  p От заказчика нам нужно узнать пункты 1, 3, 4, 7, 8 + он должен настроить почту по ссылкам ниже. Всю остальную информацию мы можем найти сами.
+
+  p
+    |  Ссылка на настройки yandex.ru
+    |
+    a(href="https://yandex.ru/support/mail/mail-clients/others.html", target="_blank", rel="nofollow noopener noreferrer") https://yandex.ru/support/mail/mail-clients/others.html
+  p
+    |  Ссылка на настройки mail.ru
+    |
+    a(href="https://help.mail.ru/mail/mailer/popsmtp", target="_blank", rel="nofollow noopener noreferrer") https://help.mail.ru/mail/mailer/popsmtp
+  p
+    |  Ссылка на настройки gmail.com
+    |
+    a(href="https://support.google.com/mail/answer/7126229", target="_blank", rel="nofollow noopener noreferrer") https://support.google.com/mail/answer/7126229
+  p
+    | Примите во внимание, что со включенной двухфакторной аутентификацией отправка работать не будет. В таком случае лучше создать новый почтовый ящик, важно не забыть дать к нему доступ сторонним приложениям. Прочитать как это сделать можно пройдя по ссылке
+    |
+    a(href="https://support.google.com/accounts/answer/6010255", target="_blank", rel="nofollow noopener noreferrer") https://support.google.com/accounts/answer/6010255
+  p Для остальных почтовых серверов настройки легко гуглятся пример запроса “настройка smtp “название почтового сервера””
+  p
+    |  Для тестирования нужно установить программу
+    a(href="https://ospanel.io/download/", target="_blank", rel="nofollow noopener noreferrer") https://ospanel.io/download/
+  h2.subtitle Инструкция для разработчика
+  ol
+    li
+      p
+        |  Записать в переменные все используемые поля
+        |
+        a(href="https://skr.sh/sCPP2dujZcN?a", target="_blank", rel="nofollow noopener noreferrer") https://skr.sh/sCPP2dujZcN?a
+    li
+      p
+        |  Настроить сервер
+        |
+        a(href="https://skr.sh/sCPN8dY1bPf?a", target="_blank", rel="nofollow noopener noreferrer") https://skr.sh/sCPN8dY1bPf?a
+    li
+      p
+        |  Добавить адреса откуда приходят письма и куда
+        |
+        a(href="https://skr.sh/sCPtrzrr3Oc?a", target="_blank", rel="nofollow noopener noreferrer") https://skr.sh/sCPtrzrr3Oc?a
+    li
+      p
+        |  Настроить отображение письма
+        |
+        a(href="https://skr.sh/sCPtrzrr3Oc?a", target="_blank", rel="nofollow noopener noreferrer") https://skr.sh/sCPtrzrr3Oc?a
+    li
+      p
+        |  Добавить отправку в колбек успешной валидации
+        |
+        a(href="https://skr.sh/sCPdDdYEhMI?a", target="_blank", rel="nofollow noopener noreferrer") https://skr.sh/sCPdDdYEhMI?a
+    li
+      p
+        |  Добавить функции для реализации колбеков успешной отправки и ошибки отправки
+        |
+        a(href="https://skr.sh/sCPLMiPbTXQ?a", target="_blank", rel="nofollow noopener noreferrer") https://skr.sh/sCPLMiPbTXQ?a
+  p
+    |  Если требуется формировать письма с разных форм то мы просто создаём ещё php файлы с другими настройками. Не забываем указывать эти файлы в атрибуте action формы
+    |
+    a(href="https://skr.sh/sCPLRkvPui6?a", target="_blank", rel="nofollow noopener noreferrer") https://skr.sh/sCPLRkvPui6?a

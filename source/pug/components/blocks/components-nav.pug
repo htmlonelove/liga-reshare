@@ -1,0 +1,26 @@
+mixin components-nav()
+  -
+    const navElements = [
+      {text: "Автоизменение высоты textarea", href: "auto-resize-textarea.html"},
+      {text: "Кастомный селект", href: "custom-select.html"},
+      {text: "Валидация формы", href: "form-validate.html"},
+      {text: "Легковесная телефонная маска", href: "phone-mask.html"},
+      {text: "Cookie", href: "cookies.html"},
+      {text: "Табы", href: "tabs.html"},
+      {text: "Аккордеон", href: "accordion.html"},
+      {text: "Склонение слов", href: "incline-word.html"},
+      {text: "Модальные окна", href: "modals.html"},
+      {text: "Лок фокуса", href: "focus-lock.html"},
+      {text: "Лок страницы", href: "scroll-lock.html"},
+      {text: "Прогресс скролла", href: "scroll-translator.html"},
+      {text: "Подсветка пунктов навигации при скроле", href: "navigation-changer.html"},
+      {text: "Файлы необходимые для поддержки на проекте ie", href: "ie-support.html"},
+      {text: "Отправка данных формы на почту", href: "send-mail.html"},
+      {text: "Гайд по pug", href: "pug.html"}
+    ]
+
+  nav.components-nav
+    ul.components-nav__list
+      each element in navElements
+        li.components-nav__item
+          a.components-nav__link(href=element.href)!=element.text

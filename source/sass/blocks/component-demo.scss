@@ -1,0 +1,27 @@
+.component-demo {
+  .subtitle {
+    font-size: 32px;
+    line-height: 36px;
+    margin: 20px 0 20px;
+
+    & + .component__code-snippet {
+      margin-top: -10px;
+    }
+
+    @include vp-767 {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  pre {
+    margin: 0;
+    display: flex;
+  }
+
+  code {
+    width: 100%;
+    padding-right: 32px;
+    background-color: $color-white-smoke;
+  }
+}

@@ -1,0 +1,15 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Лига решений" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const currentUrl = "focus-lock.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const pageJs = "js/focusLock.min.js"
+
+block main
+  main
+    .container
+      +focus-lock()
+block modals

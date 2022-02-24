@@ -1,115 +1,42 @@
 .component {
   margin: 60px 0;
+  .subtitle {
+    font-size: 32px;
+    line-height: 36px;
+    margin: 20px 0 20px;
 
-  &__heading {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
+    @include vp-767 {
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 
-  &__title {
+  .title {
     font-size: 40px;
     line-height: 44px;
     font-weight: 600;
-    margin: 0;
-    margin-bottom: 20px;
-    margin-right: 40px;
+    margin: 0 40px 0 0;
 
-    @include vp--767 {
+    @include vp-767 {
       font-size: 32px;
       line-height: 36px;
       word-break: break-word;
     }
   }
 
-  &__subtitle {
-    font-size: 32px;
-    line-height: 36px;
-    margin: 20px 0 20px;
+  .fix-block {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-    & + .component__code-snippet {
-      margin-top: -10px;
-    }
-
-    @include vp--767 {
-      font-size: 20px;
-      line-height: 24px;
-    }
-  }
-
-  &__download-link {
-    margin-bottom: 40px;
-  }
-
-  &__code-snippet {
-    margin: 20px 0;
-
-    pre {
-      margin: 0;
-      display: flex;
-    }
-
-    code {
-      width: 100%;
-      padding-right: 32px;
-      background-color: $color-gray-light;
-    }
-  }
-
-  &__description {
     p {
-      margin: 0 0 10px;
-      font-size: 20px;
-      line-height: 24px;
-
-      @include vp--767 {
-        font-size: 16px;
-        line-height: 20px;
-      }
-
-      em {
-        font-style: normal;
-        color: $color-pink;
-      }
-
-      code {
-        padding: 4px 8px;
-        background-color: $color-gray-light;
-        font-size: 0.8em;
-
-        @include vp--767 {
-          word-break: break-word;
-        }
-      }
-
-      a {
-        color: $color-blue;
-        transition: color $trans--300;
-
-        @media (hover: hover), screen and (min-width: 0\0) {
-          &:hover,
-          &:focus {
-            color: $color-pink;
-          }
-        }
-      }
+      background-color: royalblue;
+      padding: 20px 50px;
+      margin: 0;
     }
-  }
-}
-
-.fix-block {
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  p {
-    background-color: royalblue;
-    padding: 20px 50px;
-    margin: 0;
   }
 }

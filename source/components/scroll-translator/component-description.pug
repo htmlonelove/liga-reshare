@@ -1,0 +1,20 @@
+section.component-description
+  h2.subtitle Описание
+  p Прогресс скролла состоит из из следующих файлов: scroll-translator.js и scroll-translator.scss js обязателен для переноса в проект, из файла scroll-translator.js экспортится класс ScrollTranslator, в main создаётся экземпляр класса и у него вызывается метод init()
+  pre
+    code.
+
+                      import {ScrollTranslator} from '../components/scroll-translator/js/scroll-translator';
+                      const scrollTranslator = new ScrollTranslator();
+                      scrollTranslator.init();
+
+  h2 Обязательные дата атрибуты
+  p
+    em data-translator="parent"
+    |  Добавляется к родителю
+  p
+    em data-translator-type=""
+    |  Добавляется к родителю, отвечает за то как будет считаться изменение индикатора при скроле горизонтально или вертикально, может иметь два значения horizontal или vertical
+  p
+    em data-translator="indicator"
+    |  Добавляется к индикатору

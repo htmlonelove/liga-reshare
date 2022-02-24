@@ -1,0 +1,20 @@
+section.component-description
+  p Подсветка пунктов навигации состоит из из следующих файлов: navigation-changer.js js обязателен для переноса в проект, из файла navigation-changer.js экспортится класс NavigationChanger, в main создаётся экземпляр класса и у него вызывается метод init()
+  pre
+    code.
+
+                      import {NavigationChanger} from '../components/navigation-changer/js/navigation-changer';
+                      const navigationChanger = new NavigationChanger();
+                      navigationChanger.init();
+
+  h2 Обязательные дата атрибуты
+  p
+    em data-navigation-link
+    |  Добавляется к ссылке
+  p Так же обязательно связывать ссылки с блоками с помощью href в ссылке и id в секции
+  pre
+    code.
+
+                      &lt;a href="#section-1" class="navigation__link" data-navigation-link>Секция 1&lt;/a>
+                      &lt;section class="section-navigation" id="section-2">&lt;/section>
+  p По умалчанию подключен MoveTo

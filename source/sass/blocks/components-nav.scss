@@ -11,11 +11,11 @@
       width: calc(100% + 30px);
     }
 
-    @include vp--1023 {
+    @include vp-1023 {
       width: calc(100% + 30px);
     }
 
-    @include vp--767 {
+    @include vp-767 {
       width: calc(100% + 15px);
     }
   }
@@ -32,11 +32,11 @@
       margin-bottom: 30px;
     }
 
-    @include vp--1023 {
+    @include vp-1023 {
       width: calc(33.3333% - 30px);
     }
 
-    @include vp--767 {
+    @include vp-767 {
       margin-right: 15px;
       margin-bottom: 15px;
       width: calc(50% - 15px);
@@ -52,15 +52,16 @@
     text-align: center;
     align-items: center;
     height: 100%;
-    background-color: $color-blue;
+    background-color: $color-neon-blue;
     color: $color-default-white;
     font-weight: 600;
-    transition: background $trans--300;
+    transition: background $trans-default;
 
     @media (hover: hover), screen and (min-width: 0\0) {
       &:hover,
       &:focus {
-        background-color: $color-pink;
+        background-color: $color-torch-red;
+        ;
       }
     }
   }

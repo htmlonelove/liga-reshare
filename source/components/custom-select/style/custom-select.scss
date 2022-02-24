@@ -1,7 +1,7 @@
 .custom-select {
   position: relative;
 
-  width: 200px;
+  width: 250px;
   padding: 30px 0;
 
   &__label {
@@ -11,7 +11,7 @@
 
     transform: translateY(-50%);
 
-    transition: transform $trans--300, opacity $trans--300;
+    transition: transform 0.3s ease, opacity  0.3s ease;
 
     pointer-events: none;
   }
@@ -23,7 +23,7 @@
 
     transform: translateY(-50%);
 
-    transition: transform $trans--300, opacity $trans--300;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 
     pointer-events: none;
   }
@@ -52,20 +52,20 @@
     height: 40px;
     padding: 5px 10px;
 
-    background-color: $color-transparent;
-    border: 2px solid rgba($color-default-black, 0.2);
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     outline: none;
     cursor: pointer;
 
-    transition: border $trans--300;
+    transition: border 0.3s ease;
 
     &:hover {
-      border: 2px solid rgba($color-default-black, 0.5);
+      border: 2px solid rgba(0, 0, 0, 0.5);
     }
 
     &:focus {
-      border: 2px solid rgba($color-default-black, 0.8);
+      border: 2px solid rgba(0, 0, 0, 0.8);
     }
   }
 
@@ -82,13 +82,13 @@
 
     list-style: none;
 
-    background-color: $color-default-white;
-    border: 2px solid $color-default-black;
+    background-color: #ffffff;
+    border: 2px solid #000000;
     transform: translateY(100%);
     visibility: hidden;
     opacity: 0;
 
-    transition: visibility $trans--300, opacity $trans--300;
+    transition: visibility 0.3s ease, opacity 0.3s ease;
   }
 
   &__item {
@@ -97,15 +97,15 @@
     outline: none;
     cursor: pointer;
 
-    transition: background-color $trans--300;
+    transition: background-color 0.3s ease;
 
-    &[aria-selected='true'] {
-      background-color: $color-pink-swan;
+    &[aria-selected="true"] {
+      background-color: rgba(255, 255, 255, 0.2);
 
       @media (hover: hover), screen and (min-width: 0\0) {
         &:hover,
         &:focus {
-          background-color: $color-pink-swan;
+          background-color: rgba(255, 255, 255, 0.2);
         }
       }
     }
@@ -113,7 +113,7 @@
     @media (hover: hover), screen and (min-width: 0\0) {
       &:hover,
       &:focus {
-        background-color: $color-white-smoke;
+        background-color: rgba(255, 255, 255, 0.4);
       }
     }
   }
@@ -123,7 +123,7 @@
     bottom: 0;
     left: 0;
 
-    color: $color-fire-brick;
+    color: #ff1553;
 
     opacity: 0;
 
@@ -141,7 +141,7 @@
 
     opacity: 0;
 
-    transition: opacity $trans--300 0.1s;
+    transition: opacity 0.3s ease 0.1s;
 
     br {
       display: none;
@@ -154,9 +154,9 @@
     height: 10px;
     margin-left: auto;
 
-    background-color: $color-default-black;
+    background-color: #000000;
 
-    transition: transform $trans--300;
+    transition: transform 0.3s ease;
 
     clip-path: polygon(100% 0, 100% 20%, 50% 100%, 0 20%, 0 0, 50% 80%);
   }
@@ -204,16 +204,16 @@
     }
 
     .custom-select__button {
-      border: 2px solid $color-fire-brick;
+      border: 2px solid #ff1553;
 
       &:focus,
       &:hover {
-        border: 2px solid rgba($color-fire-brick, 0.5);
+        border: 2px solid rgba(#ff1553, 0.5);
       }
     }
   }
 
-  &.is-valid {
+  /* &.is-valid {
     .custom-select__button {
       border: 2px solid $color-eucalyptus;
 
@@ -222,7 +222,7 @@
         border: 2px solid rgba($color-eucalyptus, 0.5);
       }
     }
-  }
+  } */
 
   &--placeholder {
     .custom-select__label {

@@ -1,0 +1,43 @@
+doctype html
+
+include ../components
+
+block variables
+
+html(lang="ru")
+  head
+    title= title
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    meta(name='description', content='Лига компонентов')
+    link(rel='apple-touch-icon', sizes='180x180', href='favicon/apple-touch-icon.png')
+    link(rel='icon', type='image/png', sizes='32x32', href='favicon/favicon-32x32.png')
+    link(rel='icon', type='image/png', sizes='16x16', href='favicon/favicon-16x16.png')
+    link(rel='manifest', href='favicon/site.webmanifest')
+    link(rel='mask-icon', href='favicon/safari-pinned-tab.svg', color='#5bbad5')
+    meta(name='apple-mobile-web-app-title', content='Лига компонентов')
+    meta(name='application-name', content='Лига компонентов')
+    meta(name='msapplication-TileColor', content='#b91d47')
+    meta(name='theme-color', content='#1f1f1f')
+    link(rel='preload', href='fonts/IBMPlexSansLight.woff2', as='font', crossorigin='anonymous')
+    link(rel='preload', href='fonts/IBMPlexSansSemiBold.woff2', as='font', crossorigin='anonymous')
+    link(rel='stylesheet', href='css/style.min.css')
+
+  body
+    +sprite()
+    .wrapper(class=wrapperMods)
+      if (hasHeader)
+        +header(headerMods, currentUrl)
+
+      block main
+
+      if (hasFooter)
+        +footer(footerMods)
+
+    block modals
+
+    script(src="js/vendor.min.js")
+    script(src="js/main.min.js")
+    if pageJs
+      script(src=pageJs)

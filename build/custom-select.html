@@ -1,35 +1,26 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
+    <title>Лига решений</title>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-<!-- дописать мета-теги, опенграф, добавить счетчики,
-если изменится название - заменить и в favicon/site.webmanifest -->
-<meta name="description" content="Лига компонентов">
-
-<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-<link rel="manifest" href="favicon/site.webmanifest">
-<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="apple-mobile-web-app-title" content="Лига компонентов">
-<meta name="application-name" content="Лига компонентов">
-<meta name="msapplication-TileColor" content="#b91d47">
-<meta name="theme-color" content="#1f1f1f">
-
-<link rel="preload" href="fonts/IBMPlexSansLight.woff2" as="font" crossorigin="anonymous">
-<link rel="preload" href="fonts/IBMPlexSansSemiBold.woff2" as="font" crossorigin="anonymous">
-
-<link rel="stylesheet" href="css/style.min.css">
-
-
-
-    <title>Лига компонентов</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Лига компонентов">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="apple-mobile-web-app-title" content="Лига компонентов">
+    <meta name="application-name" content="Лига компонентов">
+    <meta name="msapplication-TileColor" content="#b91d47">
+    <meta name="theme-color" content="#1f1f1f">
+    <link rel="preload" href="fonts/IBMPlexSansLight.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/IBMPlexSansSemiBold.woff2" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
-    <div style="display: none"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="git-logo" viewBox="0 0 16 16">
+    <div class="visually-hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="git-logo" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
 </symbol><symbol id="icon-close" viewBox="0 0 20 20"><path d="M.293 18.291a1 1 0 101.414 1.414L10 11.413l8.292 8.292a1 1 0 101.414-1.414l-8.292-8.292 8.292-8.292A1 1 0 1018.291.293L9.999 8.585 1.707.293A1 1 0 10.293 1.707L8.585 10 .293 18.291z"/></symbol><symbol id="icon-drako" viewBox="0 0 190 215">
   <path d="M121.174 87.2449L75.6128 149.77L106.633 165.765L118.266 144.439L131.837 130.383L157.041 128.929L165.281 122.628L166.735 110.995L121.174 87.2449Z" fill="#ffffff"/>
@@ -83,326 +74,122 @@
   <path d="M85.263 26.996H91.3783L82.6026 0.0498047H79.7906L76.9682 0.0553549L68.2134 26.996H74.0569L75.5465 21.8964H83.7838L85.263 26.996ZM77.0257 16.8301L79.6808 7.74079L82.3151 16.8301H77.0257Z"/>
   <path d="M99.606 0.0217285V20.076L109.464 26.9069L119.321 20.076V0.0217285H99.606Z"/>
   <path fill="#ffffff" d="M115.156 15.3595C115.349 15.3595 115.564 15.3373 115.778 15.2652L115.757 17.4959C115.229 17.6846 114.555 17.8289 113.907 17.8233C112.731 17.8122 111.847 17.3628 111.377 16.4749C110.243 17.3683 108.92 17.8955 107.216 17.8844C105.058 17.8622 103.197 16.5748 103.218 14.2442C103.244 11.2532 106.009 10.3487 108.314 10.3709C109.223 10.382 110.232 10.5097 111.042 10.715L111.048 10.2988C111.058 9.12241 110.154 8.3067 108.356 8.29005C106.772 8.2734 105.356 8.70623 104.274 9.13351L104.3 6.19251C105.235 5.88176 106.992 5.43229 108.769 5.44894C112.224 5.48223 114.414 6.94718 114.382 10.8204L114.351 14.5716C114.34 15.182 114.722 15.354 115.156 15.3595ZM106.187 14.05C106.176 15.0211 107.044 15.6481 108.152 15.6592C109.182 15.6703 110.159 15.3817 111.011 14.6326L111.027 12.6128C110.473 12.474 109.631 12.302 108.868 12.2965C107.525 12.2798 106.202 12.7293 106.187 14.05Z"/>
-</symbol></svg></div>
-
+</symbol></svg>
+    </div>
     <div class="wrapper">
       <header class="header">
-  <div class="container">
-    <a class="header__logo"  href="index.html" aria-label="Переход на главную">
-      <svg width="120" height="27">
-        <use xlink:href="#icon-logo"></use>
-      </svg>
-    </a>
-    <a class="header__git" href="https://github.com/htmlonelove/liga-componentov" target="_blank">
-      <svg width="32" height="32">
-        <use xlink:href="#git-logo"></use>
-      </svg>
-    </a>
-  </div>
-</header>
-
-
+        <div class="container"><a class="header__logo" href="index.html" aria-label="Переход на главную">
+            <svg width="120" height="27" aria-hidden="true">
+              <use xlink:href="#icon-logo"></use>
+            </svg></a>
+          <nav class="main-nav"><a class="header__git" href="https://github.com/htmlonelove/liga-componentov" target="_blank" rel="nofollow noopener noreferrer" aria-label="Ссылка на репозиторий">
+              <svg width="32" height="32" aria-hidden="true">
+                <use xlink:href="#git-logo"></use>
+              </svg></a></nav>
+        </div>
+      </header>
       <main>
         <div class="container">
-          <div class="component">
-            <div class="component__heading">
-              <h1 class="component__title">Кастомный селект</h1>
-              <a class="component__download-link btn" href="components/custom-select.zip" download>Скачать компонент</a>
-            </div>
-            <div class="component__description">
+          <section class="component">
+            <section class="component-heading">
+              <h1 class="title">Кастомный селект</h1><a class="component-heading__download-link btn" href="zip-components/custom-select.zip" download>Скачать компонент</a>
+            </section>
+            <section class="component-description">
+              <h2 class="subtitle">Описание</h2>
               <p>В данной реализации используется нативный селект, что решает массу проблем которые были с инпутом.</p>
-              <p>
-                Базовая структура селекта. Это div в который вложен "лейбл", сообщение об ошибке, кнопка в которую
-                вложен span под текст и span под иконку и список с элементами для выбора. Это базовая структура которая
-                обязательна для соблюдению, исключением являются поля с лейблом, плейсхолдером и ошибкой! Всё остальное формируется на js.
-              </p>
-              <div class="component__code-snippet">
-                <pre>
-                  <code>
-                    &lt;div class="select" data-select&gt;<br />
-                        &lt;span class="select__label"&gt;label-1&lt;/span&gt;<br />
-                        &lt;span class="select__error"&gt;some-error&lt;/span&gt;<br />
-                        &lt;span class="select__placeholder"&gt;some-placeholder&lt;/span&gt;<br />
-                        &lt;button class="select__button" type="button" aria-label="Выберите одну из опций"&gt;<br />
-                            &lt;span class="select__text"&gt;&lt;/span&gt;<br />
-                            &lt;span class="select__icon"&gt;&lt;/span&gt;<br />
-                        &lt;/button&gt;<br />
-                        &lt;ul class="select__list"&gt;<br />
-                            &lt;li class="select__item" tabindex="0" data-select-value="id-1"&gt;example-1&lt;/li&gt;<br />
-                            &lt;li class="select__item" tabindex="0" data-select-value="id-2"&gt;example-2&lt;/li&gt;<br />
-                            &lt;li class="select__item" tabindex="0" data-select-value="id-3"&gt;example-3&lt;/li&gt;<br />
-                            &lt;li class="select__item" tabindex="0" data-select-value="id-4"&gt;example-4&lt;/li&gt;<br />
-                            &lt;li class="select__item" tabindex="0" data-select-value="id-5"&gt;example-5&lt;/li&gt;<br />
-                            &lt;li class="select__item" tabindex="0" data-select-value="id-6"&gt;example-6&lt;/li&gt;<br />
-                        &lt;/ul&gt;<br />
-                    &lt;/div&gt;
-                    </code>
-                </pre>
-              </div>
-              <h2 class="component__subtitle">Дополнительные data атрибуты которые прописываются непосредственно в родительском div:</h2>
+              <p>Базовая структура селекта. Это div в который вложен "лейбл", сообщение об ошибке, кнопка в которую вложен span под текст и span под иконку и список с элементами для выбора. Это базовая структура которая обязательна для соблюдению, исключением являются поля с лейблом, плейсхолдером и ошибкой! Всё остальное формируется на js.</p>
+              <pre><code>&lt;div class="select" data-select>
+  &lt;span class="select__label">label-1&lt;/span>
+  &lt;span class="select__error">some-error&lt;/span>
+  &lt;span class="select__placeholder">some-placeholder&lt;/span>
+  &lt;button class="select__button" type="button" aria-label="Выберите одну из опций">
+    &lt;span class="select__text">&lt;/span>
+    &lt;span class="select__icon">&lt;/span>
+  &lt;/button>
+  &lt;ul class="select__list">
+    &lt;li class="select__item" tabindex="0" data-select-value="id-1">example-1&lt;/li>
+    &lt;li class="select__item" tabindex="0" data-select-value="id-2">example-2&lt;/li>
+    &lt;li class="select__item" tabindex="0" data-select-value="id-3">example-3&lt;/li>
+    &lt;li class="select__item" tabindex="0" data-select-value="id-4">example-4&lt;/li>
+    &lt;li class="select__item" tabindex="0" data-select-value="id-5">example-5&lt;/li>
+    &lt;li class="select__item" tabindex="0" data-select-value="id-6">example-6&lt;/li>
+  &lt;/ul>
+&lt;/div>
+</code></pre>
+              <h2 class="subtitle">Дополнительные data атрибуты которые прописываются непосредственно в родительском div:</h2>
               <p>data-name="name-example" Устанавливает name нативному селекту</p>
               <p>data-id="id-example" Устанавливает id нативному селекту</p>
               <p>data-required="true" Устанавливает обязательное заполнение данного поля формы</p>
               <p>data-multiple="true" Устанавливает multiple выбор селекту</p>
               <p>data-insert="true" Отвечает за вставку выбранных опций в кнопку</p>
-              <p>
-                Если нужно что бы один из пунктов был выбран по умолчанию достаточно просто добавить класс active к
-                классу select__item class="select__item active". Для мультиселекта можно выбирать любое
-                количество пунктов. Если в обычном селекте по ошибке будет выбранно несколько пунктов то
-                все классы active будут удалены со всех элементов кроме первого
-              </p>
-              <p>
-                Если селект расположен в самом низу страницы или в низу модального окна повести на родителя класс "custom-select--open-up". С этим классом селект будет открываться на верх. Реализовыать расчёт положения на js, не имеет смысла, так как селект может находится и в модалке, класс у которой может быть любой, как следствие проблемы с нахождением родителя относительно которого нужно расчитывать положение.
-              </p>
+              <p>Если нужно что бы один из пунктов был выбран по умолчанию достаточно просто добавить класс active к классу select__item class="select__item active". Для мультиселекта можно выбирать любое количество пунктов. Если в обычном селекте по ошибке будет выбранно несколько пунктов то все классы active будут удалены со всех элементов кроме первого.</p>
+              <p>Если селект расположен в самом низу страницы или в низу модального окна повести на родителя класс "custom-select--open-up". С этим классом селект будет открываться на верх. Реализовыать расчёт положения на js, не имеет смысла, так как селект может находится и в модалке, класс у которой может быть любой, как следствие проблемы с нахождением родителя относительно которого нужно расчитывать положение.</p>
               <p>Инициализация: В main.js импортите import './modules/select';</p>
-              <p>
-                Для повторной инициализации при динамическом добавлении без перезагрузки страницы нужно вызывать функцию
-                window.selectInit();</p>
-              <p>Обратите ВНИМАНИЕ! При динамическом добавлении без перезагрузки страницы на
-                родительском диве не должно висеть класса "is-initialize", он добавляется при инициализации и является
-                просто флагом по которому инициализации НЕ БУДЕТ.</p>
+              <p>Для повторной инициализации при динамическом добавлении без перезагрузки страницы нужно вызывать функцию window.selectInit();</p>
+              <p>Обратите ВНИМАНИЕ! При динамическом добавлении без перезагрузки страницы на родительском диве не должно висеть класса "is-initialize", он добавляется при инициализации и является просто флагом по которому инициализации НЕ БУДЕТ.</p>
               <p>Нужно добавлять базовую разметку представленую выше.</p>
-              <h2 class="component__subtitle">Дополнительные data атрибуты которые прописываются на элементе списка:</h2>
+              <h2 class="subtitle">Дополнительные data атрибуты которые прописываются на элементе списка:</h2>
               <p>data-select-value="id-6" Устанавливает value опции нативного селекта</p>
-            </div>
-
-            <h2 class="component__subtitle">Демо</h2>
-            <div class="component__demo">
-              <form method="get" action="https://echo.htmlacademy.ru">
-  <h2 class="component__subtitle">Базовый селект</h2>
-  <div class="custom-select" data-select="" data-name="name-example-1" data-id="id-example-1">
-    <span class="custom-select__label">label-1</span><span class="custom-select__error">some-error</span>
-    <button class="custom-select__button" type="button" aria-label="Выберите одну из опций">
-      <span class="custom-select__text"></span><span class="custom-select__icon"></span>
-    </button>
-    <ul class="custom-select__list" role="listbox">
-      <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="false" role="option">
-        example-1
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">
-        example-2
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">
-        example-3
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">
-        example-4
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">
-        example-5
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">
-        example-6
-      </li>
-    </ul>
-  </div>
-  <p>Базовый селект с плейсхолдером</p>
-  <div
-    class="custom-select custom-select--placeholder"
-    data-select=""
-    data-name="name-example-1"
-    data-id="id-example-1"
-  >
-    <span class="custom-select__label">label-placeholder</span><span class="custom-select__error">some-error</span
-    ><span class="custom-select__placeholder">placeholder</span>
-    <button class="custom-select__button" type="button" aria-label="Выберите одну из опций">
-      <span class="custom-select__text"></span><span class="custom-select__icon"></span>
-    </button>
-    <ul class="custom-select__list" role="listbox">
-      <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="false" role="option">
-        example-1
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">
-        example-2
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">
-        example-3
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">
-        example-4
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">
-        example-5
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">
-        example-6
-      </li>
-    </ul>
-  </div>
-  <h2 class="component__subtitle">Базовый селект c выбранной опцией</h2>
-  <div class="custom-select slide-up" data-select="" data-name="name-example-2" data-id="id-example-2">
-    <span class="custom-select__label">label-2</span><span class="custom-select__error">some-error</span>
-    <button class="custom-select__button" type="button" aria-label="Выберите одну из опций">
-      <span class="custom-select__text"></span><span class="custom-select__icon"></span>
-    </button>
-    <ul class="custom-select__list" role="listbox">
-      <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="true" role="option">
-        example-1
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">
-        example-2
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">
-        example-3
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">
-        example-4
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">
-        example-5
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">
-        example-6
-      </li>
-    </ul>
-  </div>
-  <h2 class="component__subtitle">Селект с мультивыбором без вставки текста в кнопку</h2>
-  <div
-    class="custom-select"
-    data-select=""
-    data-name="name-example-3"
-    data-multiple="true"
-    data-id="id-example-3"
-  >
-    <span class="custom-select__label">label-3</span><span class="custom-select__error">some-error</span>
-    <button class="custom-select__button" type="button" aria-label="Выберите одну из опций">
-      <span class="custom-select__text"></span><span class="custom-select__icon"></span>
-    </button>
-    <ul class="custom-select__list" role="listbox">
-      <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="false" role="option">
-        example-1
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">
-        example-2
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">
-        example-3
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">
-        example-4
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">
-        example-5
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">
-        example-6
-      </li>
-    </ul>
-  </div>
-  <h2 class="component__subtitle">Селект с мультивыбором без вставки текста в кнопку c выбранной опцией</h2>
-  <div
-    class="custom-select"
-    data-select=""
-    data-name="name-example-4"
-    data-multiple="true"
-    data-id="id-example-4"
-  >
-    <span class="custom-select__label">label-4</span><span class="custom-select__error">some-error</span>
-    <button class="custom-select__button" type="button" aria-label="Выберите одну из опций">
-      <span class="custom-select__text"></span>
-      <span class="custom-select__icon"></span>
-    </button>
-    <ul class="custom-select__list" role="listbox">
-      <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="true" role="option">
-        example-1
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">
-        example-2
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="true" role="option">
-        example-3
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">
-        example-4
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">
-        example-5
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">
-        example-6
-      </li>
-    </ul>
-  </div>
-  <h2 class="component__subtitle">Селект с мультивыбором и вставкой текста в кнопку</h2>
-  <div
-    class="custom-select slide-up"
-    data-select=""
-    data-name="name-example-5"
-    data-multiple="true"
-    data-id="id-example-5"
-    data-insert="true"
-  >
-    <span class="custom-select__label">label-5</span><span class="custom-select__error">some-error</span>
-    <button class="custom-select__button" type="button" aria-label="Выберите одну из опций">
-      <span class="custom-select__text"></span>
-      <span class="custom-select__icon"></span>
-    </button>
-    <ul class="custom-select__list" role="listbox">
-      <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="false" role="option">
-        example-1
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">
-        example-2
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">
-        example-3
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">
-        example-4
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">
-        example-5
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">
-        example-6
-      </li>
-    </ul>
-  </div>
-  <h2 class="component__subtitle">Селект с мультивыбором и вставкой текста в кнопку c выбранной опцией. Если селект находится внизу страницы или внизу модального окна и не хватает высоты для его открытия, повесте на него класс "open-up"</h2>
-  <div
-    class="custom-select slide-up open-up"
-    data-select=""
-    data-name="name-example-6"
-    data-multiple="true"
-    data-id="id-example-6"
-    data-insert="true"
-  >
-    <span class="custom-select__label">label-6</span><span class="custom-select__error">some-error</span>
-    <button class="custom-select__button" type="button" aria-label="Выберите одну из опций">
-      <span class="custom-select__text"></span>
-      <span class="custom-select__icon"></span>
-    </button>
-    <ul class="custom-select__list" role="listbox">
-      <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="false" role="option">
-        example-1
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="true" role="option">
-        example-2
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="true" role="option">
-        example-3
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">
-        example-4
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">
-        example-5
-      </li>
-      <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">
-        example-6
-      </li>
-    </ul>
-  </div>
-  <button class="btn btn--blue" type="submit">Отправить</button>
-</form>
-
-            </div>
-          </div>
+            </section>
+            <section class="component-demo">
+              <h2 class="subtitle">Демо</h2>
+              <form action="#">
+                <p>Базовый селект</p>
+                  <div class="custom-select" data-select data-validate-type="select" data-name="some-name" data-id="id-example"><span class="custom-select__error">Выберите тему обращения</span>
+                    <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon"></span></button>
+                    <ul class="custom-select__list" role="listbox">
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="false" role="option">Тема 1</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">Тема 2</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">Тема 3</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">Тема 4</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">Тема 5</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">Тема 6</li>
+                    </ul>
+                  </div>
+                <p>Базовый селект c выбранной опцией</p>
+                  <div class="custom-select" data-select data-validate-type="select" data-name="some-name" data-id="id-example"><span class="custom-select__error">Выберите тему обращения</span>
+                    <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon"></span></button>
+                    <ul class="custom-select__list" role="listbox">
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="true" role="option">Тема 1</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">Тема 2</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">Тема 3</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">Тема 4</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">Тема 5</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">Тема 6</li>
+                    </ul>
+                  </div>
+                <p>Селект с мультивыбором без вставки текста в кнопку</p>
+                  <div class="custom-select slide-up" data-select data-validate-type="select" data-name="some-name" data-id="id-example" data-multiple="true"><span class="custom-select__error">Выберите тему обращения</span>
+                    <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon"></span></button>
+                    <ul class="custom-select__list" role="listbox">
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="true" role="option">Тема 1</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">Тема 2</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">Тема 3</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">Тема 4</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">Тема 5</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">Тема 6</li>
+                    </ul>
+                  </div>
+                <p>Селект с мультивыбором со вставкой текста в кнопку</p>
+                  <div class="custom-select slide-up" data-select data-validate-type="select" data-name="some-name" data-id="id-example" data-multiple="true" data-insert="true"><span class="custom-select__error">Выберите тему обращения</span>
+                    <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon"></span></button>
+                    <ul class="custom-select__list" role="listbox">
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="true" role="option">Тема 1</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">Тема 2</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">Тема 3</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">Тема 4</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">Тема 5</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">Тема 6</li>
+                    </ul>
+                  </div>
+              </form>
+            </section>
+          </section>
         </div>
       </main>
     </div>
-
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>
+    <script src="js/customSelect.min.js"></script>
   </body>
 </html>

@@ -1,0 +1,105 @@
+.intro-heading {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+  margin-bottom: 80px;
+
+  @media (max-width: 1279px) {
+    margin-bottom: 60px;
+  }
+
+  @include vp-767 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+
+    @include vp-767 {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__drako {
+    @include vp-767 {
+      margin: 0 auto;
+
+      svg {
+        width: 170px;
+        height: 192px;
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    font-size: 70px;
+    line-height: 70px;
+    font-weight: 600;
+    margin: 0;
+    margin-left: 60px;
+    text-transform: uppercase;
+    opacity: 0.9;
+
+    @include vp-1023 {
+      margin-left: 40px;
+      font-size: 60px;
+      line-height: 60px;
+    }
+
+    @include vp-767 {
+      font-size: 38px;
+      line-height: 42px;
+      margin-left: 0;
+      margin-top: 30px;
+    }
+  }
+
+  &__description {
+    margin: 40px 0 0;
+    font-size: 40px;
+    line-height: 48px;
+
+    @media (max-width: 1279px) {
+      margin-top: 30px;
+    }
+
+    @include vp-1023 {
+      font-size: 32px;
+      line-height: 36px;
+    }
+
+    @include vp-767 {
+      margin-top: 15px;
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    em {
+      font-style: normal;
+      color: $color-torch-red;
+    }
+  }
+
+  &__title-pale {
+    color: $color-default-white;
+    text-shadow:
+      #2c39f2 1px 0,
+      #2c39f2 1px 1px,
+      #2c39f2 0 1px,
+      #2c39f2 -1px 1px,
+      #2c39f2 -1px 0,
+      #2c39f2 -1px -1px,
+      #2c39f2 0 -1px,
+      #2c39f2 1px -1px;
+  }
+}

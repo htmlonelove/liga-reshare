@@ -1,0 +1,12 @@
+mixin header(headerMods, currentUrl)
+  header.header(class=headerMods)
+    .container
+      if(currentUrl === "index.html")
+        span.header__logo
+          +icon("icon-logo", 120, 27)
+      else
+        a.header__logo(href="index.html", aria-label="Переход на главную")
+          +icon("icon-logo", 120, 27)
+      nav.main-nav
+        a.header__git(href="https://github.com/htmlonelove/liga-componentov", target="_blank", rel="nofollow noopener noreferrer", aria-label="Ссылка на репозиторий")
+          +icon("git-logo", 32, 32)

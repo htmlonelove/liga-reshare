@@ -9,12 +9,12 @@
 
   &__logo[href],
   &__git {
-    transition: fill $trans--300;
+    transition: fill $trans-default;
 
     @media (hover: hover), screen and (min-width: 0\0) {
       &:hover,
       &:focus {
-        fill: $color-blue;
+        fill: $color-neon-blue;
       }
     }
   }
