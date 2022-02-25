@@ -125,3 +125,30 @@ section.component-description
     |  Если требуется формировать письма с разных форм то мы просто создаём ещё php файлы с другими настройками. Не забываем указывать эти файлы в атрибуте action формы
     |
     a(href="https://skr.sh/sCPLRkvPui6?a", target="_blank", rel="nofollow noopener noreferrer") https://skr.sh/sCPLRkvPui6?a
+  h2.subtitle Создание шаблона письма, добавление скрытых инпутов
+  p В компонент был добавлен файл send-template.php
+  p Периодически возникает задача, как-либо кастомизировать письма в зависимости от формы из которой они отправлены. Для этого мы используем скрытые инпуты (input type="hidden"). Для него так же обязательно указание атрибута name="" по которому осуществляется поиск в php файле. В атрибуте value="" мы указываем нужную нам информацию которую будем добавлять при формировании тела письма. Ссылки на изображения должны быть исключительно абсолютными.
+
+  pre
+    code.
+      pug
+      input(type="hidden", name="user-hidden-img", value="https://wallbox.ru/resize/1024x1024/wallpapers/main/201627/934e473b906f243.jpg")
+      input(type="hidden", name="user-hidden-text", value="Скрытый текст с тестового сайта")
+      php
+      $userHiddenImg = $_POST['user-hidden-img'];
+      $userHiddenText = $_POST['user-hidden-text'];
+
+  p Стили в отправляемом писме можно только инлайнить.
+
+  pre
+    code.
+      //Шаблон письма
+      $mailTemplate = "
+                        &lt;div style='background-color: darkgray;'>
+                          &lt;img src='$userHiddenImg' style='width: 200px; height: 200px;  object-fit: cover;'>
+                          &lt;p>$userHiddenText.&lt;/p>
+                          &lt;p style='color: red; font-family: arial, helvetica, sans-serif; font-size: 30px; line-height: 120%;'>Имя: $userName.&lt;/p>
+                          &lt;p>Телефон: $userPhone.&lt;/p>
+                          &lt;p>Почта: $userEmail.&lt;/p>
+                        &lt;/div>
+                      ";
