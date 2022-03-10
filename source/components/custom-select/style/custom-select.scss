@@ -67,6 +67,11 @@
     &:focus {
       border: 2px solid rgba(0, 0, 0, 0.8);
     }
+
+    &:disabled {
+      pointer-events: none;
+      opacity: 0.3;
+    }
   }
 
   &__list {
@@ -100,12 +105,12 @@
     transition: background-color 0.3s ease;
 
     &[aria-selected="true"] {
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(0, 0, 0, 0.2);
 
       @media (hover: hover), screen and (min-width: 0\0) {
         &:hover,
         &:focus {
-          background-color: rgba(255, 255, 255, 0.2);
+          background-color: rgba(0, 0, 0, 0.2);
         }
       }
     }
@@ -113,7 +118,7 @@
     @media (hover: hover), screen and (min-width: 0\0) {
       &:hover,
       &:focus {
-        background-color: rgba(255, 255, 255, 0.4);
+        background-color: rgba(0, 0, 0, 0.4);
       }
     }
   }
@@ -159,6 +164,14 @@
     transition: transform 0.3s ease;
 
     clip-path: polygon(100% 0, 100% 20%, 50% 100%, 0 20%, 0 0, 50% 80%);
+  }
+
+  &.is-disabled {
+    pointer-events: none;
+
+    .custom-select__list {
+      display: none;
+    }
   }
 
   &.open-up {

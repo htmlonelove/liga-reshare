@@ -1146,6 +1146,11 @@ button,
   border: 2px solid rgba(0, 0, 0, 0.8);
 }
 
+.custom-select__button:disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
 .custom-select__list {
   position: absolute;
   bottom: 32px;
@@ -1178,7 +1183,7 @@ button,
 }
 
 .custom-select__item[aria-selected="true"] {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .custom-select__error {
@@ -1225,6 +1230,14 @@ button,
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   -webkit-clip-path: polygon(100% 0, 100% 20%, 50% 100%, 0 20%, 0 0, 50% 80%);
   clip-path: polygon(100% 0, 100% 20%, 50% 100%, 0 20%, 0 0, 50% 80%);
+}
+
+.custom-select.is-disabled {
+  pointer-events: none;
+}
+
+.custom-select.is-disabled .custom-select__list {
+  display: none;
 }
 
 .custom-select.open-up .custom-select__list {
@@ -1942,12 +1955,12 @@ button,
 
   .custom-select__item[aria-selected="true"]:hover,
   .custom-select__item[aria-selected="true"]:focus {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
   }
 
   .custom-select__item:hover,
   .custom-select__item:focus {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(0, 0, 0, 0.4);
   }
 }
 

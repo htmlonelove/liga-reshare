@@ -3,6 +3,7 @@ mixin custom-select(options = {})
   - const selectError = options.error ? options.error : false
   - const selectPlaceholder = options.placeholder ? options.placeholder : false
   - const buttonAriaLabel = options.buttonAriaLabel ? options.buttonAriaLabel : "Выберите одну из опций"
+  - const disabledState = options.disabled ? true : false
 
   div&attributes(attributes)
     if selectLabel
@@ -11,7 +12,7 @@ mixin custom-select(options = {})
       span.custom-select__error=selectError
     if selectPlaceholder
       span.custom-select__placeholder=selectPlaceholder
-    button.custom-select__button(type="button", aria-label=buttonAriaLabel)
+    button.custom-select__button(type="button", aria-label=buttonAriaLabel, disabled=disabledState)
       span.custom-select__text
       span.custom-select__icon
     ul.custom-select__list(role="listbox")
@@ -23,10 +24,12 @@ section.component-demo
   h2.subtitle Демо
   form(action="#")
     p Базовый селект
-    +custom-select({error: "Выберите тему обращения", optionsList: [{text: "Тема 1", value: "id-1"}, {text: "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5", value: "id-5"}, {text: "Тема 6", value: "id-6"}]})(data-select, data-validate-type="select", data-name="some-name", data-id="id-example").custom-select
+    +custom-select({label: "Выберите одну из опций", error: "Выберите тему обращения", optionsList: [{text: "Тема 1", value: "id-1"}, {text: "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5", value: "id-5"}, {text: "Тема 6", value: "id-6"}]})(data-select, data-validate-type="select", data-name="some-name", data-id="id-example").custom-select
+    p Базовый селект с атрибутом disabled на кнопке
+    +custom-select({label: "Выберите одну из опций", error: "Выберите тему обращения", disabled: true, optionsList: [{text: "Тема 1", value: "id-1"}, {text: "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5", value: "id-5"}, {text: "Тема 6", value: "id-6"}]})(data-select, data-validate-type="select", data-name="some-name", data-id="id-example").custom-select
     p Базовый селект c выбранной опцией
     +custom-select({error: "Выберите тему обращения", optionsList: [{text: "Тема 1", value: "id-1", isActive: true}, {text: "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5", value: "id-5"}, {text: "Тема 6", value: "id-6"}]})(data-select, data-validate-type="select", data-name="some-name", data-id="id-example").custom-select
     p Селект с мультивыбором без вставки текста в кнопку
     +custom-select({error: "Выберите тему обращения", optionsList: [{text: "Тема 1", value: "id-1", isActive: true}, {text: "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5", value: "id-5"}, {text: "Тема 6", value: "id-6"}]})(data-select, data-validate-type="select", data-name="some-name", data-id="id-example").custom-select.slide-up(data-multiple="true")
     p Селект с мультивыбором со вставкой текста в кнопку
-    +custom-select({error: "Выберите тему обращения", optionsList: [{text: "Тема 1", value: "id-1", isActive: true}, {text: "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5", value: "id-5"}, {text: "Тема 6", value: "id-6"}]})(data-select, data-validate-type="select", data-name="some-name", data-id="id-example").custom-select.slide-up(data-multiple="true", data-insert="true")
+    +custom-select({error: "Выберите тему обращения", optionsList: [{text: "Тема 1", value: "id-1", isActive: true}, {text: "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5", value: "id-5"}, {text: "Тема 6", value: "id-6"}]})(data-select, data-validate-type="select", data-name="some-name", data-id="id-example").custom-select.open-up(data-multiple="true", data-insert="true")
