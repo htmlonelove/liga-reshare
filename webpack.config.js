@@ -23,6 +23,7 @@ module.exports = {
     tabs: './components/tabs/js/',
     cookies: './components/cookies/js/',
     formValidate: './components/form-validate/js/',
+    inlineVideo: './components/inline-video/js/',
   },
   devtool: isDev ? 'source-map' : false,
   output: {

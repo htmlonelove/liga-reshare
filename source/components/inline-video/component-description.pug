@@ -1,0 +1,22 @@
+section.component-description
+  p
+    | Во избежании багов на iphone связанных с воспроизведением фонового видео, мы используем библиотеку
+    |
+    a(href="https://github.com/fregante/iphone-inline-video", target="_blank", rel="nofollow noopener noreferrer") iphone-inline-video
+  p Вам достаточно добавить её в папку vendor и импортировать в файл vendor.js
+  p Пример видео файла с необходимыми атрибутами:
+  pre
+    code.
+                    &lt;video preload="auto" autoplay muted playsinline loop src="video.mp4">&lt;/video>
+
+  p Пример инициализации
+  pre
+    code.
+                  import './iphone-inline-video';
+
+                  window.addEventListener('DOMContentLoaded', () => {
+                    window.addEventListener('load', () => {
+                      const videos = document.querySelectorAll('video');
+                      videos.forEach((video) => window.enableInlineVideo(video));
+                    });
+                  });
