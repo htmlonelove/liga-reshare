@@ -78,10 +78,10 @@
     </div>
     <div class="wrapper">
       <header class="header">
-        <div class="container"><span class="header__logo">
+        <div class="container"><a class="header__logo" href="index.html" aria-label="Переход на главную">
             <svg width="120" height="27" aria-hidden="true">
               <use xlink:href="#icon-logo"></use>
-            </svg></span>
+            </svg></a>
           <nav class="main-nav"><a class="header__git" href="https://github.com/htmlonelove/liga-componentov" target="_blank" rel="nofollow noopener noreferrer" aria-label="Ссылка на репозиторий">
               <svg width="32" height="32" aria-hidden="true">
                 <use xlink:href="#git-logo"></use>
@@ -90,43 +90,69 @@
       </header>
       <main>
         <div class="container">
-          <div class="intro-heading">
-            <div class="intro-heading__wrapper">
-              <div class="intro-heading__drako">
-                <svg width="190" height="215" aria-hidden="true">
-                  <use xlink:href="#icon-drako"></use>
-                </svg>
+          <section class="component">
+            <section class="component-heading">
+              <h1 class="title">Динамический адаптив</h1><a class="component-heading__download-link btn" href="zip-components/dynamic-adaptive.zip" download>Скачать компонент</a>
+            </section>
+            <section class="component-description">
+              <h2 class="subtitle">Описание</h2>
+              <p>При работе над адаптивом сайта мы часто сталкиваемся в проблемой, что некоторые блоки находятся совершенно в разным местах и зачастую имеют совершенно другой порядок, не такой, как был к примеру на десктопном разрешении.<em> Одна из частых проблем - это когда при адаптиве сайта нам нужно перенести блок контактов из шапки сайта в бургерное меню.</em> Данную задачу средствами CSS решить крайне сложно, приходится при адаптиве переопределять порядок элементов, писать много дополнительный свойств, что бы разместить элементы согласно макету.
+                 Но порой даже такие манипуляции не приводят к должному результату и нам приходится каждый раз под такие элементы писать на JS код, который при адаптиве будет перемещаться блоки в нужные нам места.
+                 Это занимает много времени и добавляется много лишнего кода.
+              </p>
+              <p>
+                 Компонент динамического адаптива позволит работать с компонентами страницы при адаптиве проще, удобнее и быстрее.
+                 Функционал динамического адаптива позволяет перемещать необходимые блоки, на заданных разрешениях в другие блоки и обратно. При этом не создаются дублирующие элементы, а именно нужный нам элемент перемещается в другой блок, без необходимости перезагружать страницу, а прямо через resize в реальном времени.
+              </p>
+              <p>В файле<em> init-dynamic-adaptive.js</em> создаётся объект DynamicAdaptive который записывается в переменную da, после чего динамический адаптив инициализируется.</p>
+              <p>Динамический адаптив состоит из следующих файлов: dynamic-adaptive.js и init-dynamic-adaptive.js все файлы обязательны к переносу в проект! Файл dynamic-adaptive.scss добавлен только для демонстрации работы компонента, в проект переносить его не нужно</p>
+              <p>В файле<em> init-dynamic-adaptive.js</em> при инициализации в переменной <em>da</em> в скобках нужно указать тип медиа запроса при котором будет срабатывать данный компонент:
+                 указать <em>min</em> если вам нужно, что бы срабатывал компонент по принципу min-width либо <em>max</em>, если по принципу max-width.
+                 По умолчанию компонент настроен на max-width.
+              </p>
+              <h2 class="component__subtitle">Обязательные data атрибуты</h2>
+              <p><em>data-da=".block, when, where"</em> Данный атрибут устанавливается на том элементе, который мы хотим переносить в другое место при адаптиве.</p>
+              <p><em>.block</em> - сюда мы записываем селектор родительского блока в который хотим переместить наш компонент. При этом селектор может быть любым, но обязательно условие в том, что должен быть символ обозначение селектора.
+                 К примеру: по классу - <em>.block</em>, по id - <em>#block</em>, по data атрибуту - <em>[data-when</em>] и так же можно использовать составные селекторы - <em>.foo .bar [data-buzz</em>]
+              </p>
+              <p><em>when</em> - когда мы хотим переместить данный блок. В данное место мы записываем разрешение экрана, при котором должен переместить блок. Момент медиа запроса в данном случае будет зависить от того параметра, который вы укажите при инициализации данного компонента.
+                 К примеру: <em>767</em> - так как по умолчание при инициализации у нас указан тип <em>max</em>, то в этом случа элемент переместиться тогда, когда сработает медиа запрос max-width(767px)
+              </p>
+              <p><em>where</em> - на какую позицию внутри указанного блока переместиться элемент. Если не указать данный параметр, то по умолчанию элемент переместиться в конец родителя, на позицию last.
+                Доступные значения: first, last или номер позиции начиная с 0.
+                 К примеру: <em>data-da=".block, 767, first"</em> - так элемент переместиться в блок с классом .block при разрешении ниже 768px на первое место в этом родителе. Запятые между значениями ОБЯЗАТЕЛЬНЫ!
+              </p>
+            </section>
+            <section class="component-demo">
+              <h2 class="subtitle">Демо</h2>
+              <h2 class="component__subtitle">Пример работы динамического адаптива</h2>
+              <p>*Для того что бы увидеть результат работы данного компонента измените ширину окна браузера</p>
+              <div class="dynamic-adaptive">
+                <header class="dynamic-adaptive__header">
+                  <p class="dynamic-adaptive__note">Шапка сайта</p>
+                  <ul class="dynamic-adaptive__list" data-da=".dynamic-adaptive__footer, 1280, last">
+                    <li class="dynamic-adaptive__item">
+                      <p class="dynamic-adaptive__element">Элемент меню 1</p>
+                    </li>
+                    <li class="dynamic-adaptive__item">
+                      <p class="dynamic-adaptive__element">Элемент меню 2</p>
+                    </li>
+                    <li class="dynamic-adaptive__item">
+                      <p class="dynamic-adaptive__element">Элемент меню 3</p>
+                    </li>
+                  </ul>
+                </header>
+                <footer class="dynamic-adaptive__footer">
+                  <p class="dynamic-adaptive__note">Подвал сайта</p>
+                </footer>
               </div>
-              <h1 class="intro-heading__title"><span>Лига</span><span class="intro-heading__title-pale">Решений</span></h1>
-            </div>
-            <div class="intro-heading__description"></div>
-          </div>
-          <nav class="components-nav">
-            <ul class="components-nav__list">
-              <li class="components-nav__item"><a class="components-nav__link" href="auto-resize-textarea.html">Автоизменение высоты textarea</a></li>
-              <li class="components-nav__item"><a class="components-nav__link" href="custom-select.html">Кастомный селект</a></li>
-              <li class="components-nav__item"><a class="components-nav__link" href="form-validate.html">Валидация формы</a></li>
-              <li class="components-nav__item"><a class="components-nav__link" href="phone-mask.html">Легковесная телефонная маска</a></li>
-              <li class="components-nav__item"><a class="components-nav__link" href="cookies.html">Cookie</a></li>
-              <li class="components-nav__item"><a class="components-nav__link" href="tabs.html">Табы</a></li>
-              <li class="components-nav__item"><a class="components-nav__link" href="accordion.html">Аккордеон</a></li>
-              <li class="components-nav__item"><a class="components-nav__link" href="incline-word.html">Склонение слов</a></li>
-              <li class="components-nav__item"><a class="components-nav__link" href="modals.html">Модальные окна</a></li>
-              <li class="components-nav__item"><a class="components-nav__link" href="focus-lock.html">Лок фокуса</a></li>
-              <li class="components-nav__item"><a class="components-nav__link" href="scroll-lock.html">Лок страницы</a></li>
-              <li class="components-nav__item"><a class="components-nav__link" href="scroll-translator.html">Прогресс скролла</a></li>
-              <li class="components-nav__item"><a class="components-nav__link" href="navigation-changer.html">Подсветка пунктов навигации при скроле</a></li>
-              <li class="components-nav__item"><a class="components-nav__link" href="ie-support.html">Файлы необходимые для поддержки на проекте ie</a></li>
-              <li class="components-nav__item"><a class="components-nav__link" href="send-mail.html">Отправка данных формы на почту</a></li>
-              <li class="components-nav__item"><a class="components-nav__link" href="pug.html">Гайд по pug</a></li>
-              <li class="components-nav__item"><a class="components-nav__link" href="inline-video.html">Фоновое видео</a></li>
-              <li class="components-nav__item"><a class="components-nav__link" href="dynamic-adaptive.html">Динамический адаптив</a></li>
-            </ul>
-          </nav>
+            </section>
+          </section>
         </div>
       </main>
     </div>
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>
+    <script src="js/dynamicAdaptive.min.js"></script>
   </body>
 </html>
