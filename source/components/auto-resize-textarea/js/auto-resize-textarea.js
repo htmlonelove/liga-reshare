@@ -23,7 +23,7 @@ const initAutoResizeTextarea = () => { // ВЫНЕСТИ В ВИНДОВ
   }
 
   textAreas.forEach((el) => {
-    el.classList.add('.is-initialized');
+    el.classList.add('is-initialized');
     el.style.overflow = 'hidden';
     el.style.resize = 'none';
     resizeHeight(el);
