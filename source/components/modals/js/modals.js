@@ -19,6 +19,7 @@ export class Modals {
     this._startFocus = this._settings[this._settingKey].startFocus;
     this._focusBack = this._settings[this._settingKey].focusBack;
     this._eventTimeout = this._settings[this._settingKey].eventTimeout;
+    this._resetScrollPos = this._settings[this._settingKey].resetScrollPos;
     this._openCallback = this._settings[this._settingKey].openCallback;
     this._closeCallback = this._settings[this._settingKey].closeCallback;
 
@@ -60,6 +61,10 @@ export class Modals {
       typeof this._settings[settingKey].lockFocus === 'boolean'
         ? this._settings[settingKey].focusBack
         : this._settings[this._settingKey].focusBack;
+    this._resetScrollPos =
+      typeof this._settings[settingKey].resetScrollPos === 'boolean'
+        ? this._settings[settingKey].resetScrollPos
+        : this._settings[this._settingKey].resetScrollPos;
     this._eventTimeout =
       typeof this._settings[settingKey].eventTimeout === 'number'
         ? this._settings[settingKey].eventTimeout
@@ -162,6 +167,10 @@ export class Modals {
 
     if (this._lockFocus) {
       this._focusLock.lock('.modal.is-active', this._startFocus);
+    }
+
+    if (this._resetScrollPos) {
+      modal.scrollTo(0, 0);
     }
 
     setTimeout(() => {
