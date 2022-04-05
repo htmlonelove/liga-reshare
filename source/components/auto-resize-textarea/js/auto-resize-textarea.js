@@ -1,4 +1,5 @@
 const initializedTextAreas = [];
+let isResizeEventSet = false;
 
 const getHeightWithoutBorder = (el) => {
   let realScrollHeight = el.scrollHeight;
@@ -43,8 +44,6 @@ const initAutoResizeTextarea = () => {
       });
     }
   });
-
-  let isResizeEventSet = false;
 
   if (!isResizeEventSet) {
     isResizeEventSet = true;
