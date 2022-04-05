@@ -9,6 +9,7 @@ const settings = {
     lockFocus: true,
     startFocus: true,
     focusBack: true,
+    resetScrollPos: false,
     eventTimeout: 400,
     openCallback: false,
     closeCallback: false,
@@ -17,10 +18,6 @@ const settings = {
   'modal-1': {
     openCallback: () => console.log('Я отработаю при открытии modal-1'),
     closeCallback: () => console.log('Я отработаю при закрытии modal-1'),
-  },
-  // пример сброса скрола при повторном открытии модалки
-  'modal-6': {
-    resetScrollPos: true,
   },
 };
 
