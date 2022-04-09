@@ -1,7 +1,7 @@
-import {DynamicAdapt} from './dynamic-adaptive';
+import {DynamicAdaptive} from './dynamic-adaptive';
 
 const initDynamicAdaptive = () => {
-  const da = new DynamicAdapt('max');
+  const da = new DynamicAdaptive('max');
   da.init();
 };
 
