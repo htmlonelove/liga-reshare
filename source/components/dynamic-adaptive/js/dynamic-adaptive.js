@@ -1,13 +1,12 @@
-const BASE_WINDOW_WIDTH = '767';
-
 export class DynamicAdaptive {
   constructor(type) {
     this.type = type;
+    this._baseWindowWidth = '767';
   }
 
   init() {
     // массив объектов
-    this._objects = [];
+    this._objectsArray = [];
     this._daClassName = 'dynamic-adaptive';
     // массив DOM-элементов
     this._nodes = document.querySelectorAll('[data-da]');
@@ -20,16 +19,16 @@ export class DynamicAdaptive {
       object.element = node;
       object.parent = node.parentNode;
       object.destination = document.querySelector(dataArray[0].trim());
-      object.breakpoint = dataArray[1] ? dataArray[1].trim() : BASE_WINDOW_WIDTH;
+      object.breakpoint = dataArray[1] ? dataArray[1].trim() : this._baseWindowWidth;
       object.place = dataArray[2] ? dataArray[2].trim() : 'last';
       object.index = this._indexInParent(object.parent, object.element);
-      this._objects.push(object);
+      this._objectsArray.push(object);
     });
 
     this._arraySort();
 
     // массив уникальных медиа-запросов
-    this._mediaQueries = this._objects.map((item) => {
+    this._mediaQueries = this._objectsArray.map((item) => {
       return `(${this.type}-width: ${item.breakpoint}px),${item.breakpoint}`;
     });
     this._mediaQueries = this._mediaQueries.filter((item, index) => {
@@ -44,7 +43,7 @@ export class DynamicAdaptive {
       const mediaBreakpoint = mediaSplit[1];
 
       // массив объектов с подходящим брейкпоинтом
-      const objectsFilter = this._objects.filter((item) => {
+      const objectsFilter = this._objectsArray.filter((item) => {
         return item.breakpoint === mediaBreakpoint;
       });
       matchMedia.addListener(() => {
@@ -60,13 +59,13 @@ export class DynamicAdaptive {
         object.index = this._indexInParent(object.parent, object.element);
         this._moveTo(object.place, object.element, object.destination);
       });
-    } else {
-      objects.forEach((object) => {
-        if (object.element.classList.contains(this._daClassName)) {
-          this._moveBack(object.parent, object.element, object.index);
-        }
-      });
+      return;
     }
+    objects.forEach((object) => {
+      if (object.element.classList.contains(this._daClassName)) {
+        this._moveBack(object.parent, object.element, object.index);
+      }
+    });
   }
 
   // Функция перемещения
@@ -88,9 +87,9 @@ export class DynamicAdaptive {
     element.classList.remove(this._daClassName);
     if (parent.children[index]) {
       parent.children[index].before(element);
-    } else {
-      parent.append(element);
+      return;
     }
+    parent.append(element);
   }
 
   // Функция получения индекса внутри родителя
@@ -104,7 +103,7 @@ export class DynamicAdaptive {
   // по убыванию для this.type = max
   _arraySort() {
     if (this.type === 'min') {
-      this._objects.sort((a, b) => {
+      this._objectsArray.sort((a, b) => {
         if (a.breakpoint === b.breakpoint) {
           if (a.place === b.place) {
             return 0;
@@ -125,7 +124,7 @@ export class DynamicAdaptive {
       });
     }
     if (this.type === 'max') {
-      this._objects.sort((a, b) => {
+      this._objectsArray.sort((a, b) => {
         if (a.breakpoint === b.breakpoint) {
           if (a.place === b.place) {
             return 0;
