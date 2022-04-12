@@ -49,3 +49,13 @@
     background-color: rgb(255, 187, 204);
   }
 }
+
+.tabs--unset .tabs__content {
+  height: 100px;
+}
+
+.tabs--unset .tabs__element {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
