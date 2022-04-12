@@ -55,7 +55,9 @@ export class Tabs {
     tab.classList.add('no-transition');
     tabControlElements[activeIndex].classList.add('is-active');
     tabElements[activeIndex].classList.add('is-active');
-    tabContentElement.style.height = `${blockHeight}px`;
+    if (dataHeight !== 'unset') {
+      tabContentElement.style.height = `${blockHeight}px`;
+    }
     setTimeout(() => {
       if (dataDelay) {
         tab.classList.remove('no-transition');
@@ -132,6 +134,8 @@ export class Tabs {
 
     if (dataHeight === 'max') {
       contentElement.style.height = `${this._returnMaxHeight(tabElements)}px`;
+    } else if (dataHeight === 'unset') {
+      contentElement.style.height = null;
     } else {
       contentElement.style.height = `${this._returnScopeChild(parentElement.querySelectorAll('[data-tabs="element"].is-active'), parentElement).offsetHeight}px`;
     }
@@ -146,9 +150,11 @@ export class Tabs {
     const tabControlElements = this._returnScopeList(tab.querySelectorAll('[data-tabs="control"]'), tab);
     const tabElements = this._returnScopeList(tab.querySelectorAll('[data-tabs="element"]'), tab);
     this._setTabStartState(tab, dataHeight, tabElements, tabContentElement, tabControlElements, dataDelay);
-    tabElements.forEach((element) => {
-      this._resizeObserver().observe(element);
-    });
+    if (dataHeight !== 'unset') {
+      tabElements.forEach((element) => {
+        this._resizeObserver().observe(element);
+      });
+    }
     setTimeout(() => {
       tab.classList.remove('no-transition-global');
     });
@@ -189,7 +195,7 @@ export class Tabs {
 
     if (currentHeight > newHeight) {
       setTimeout(() => {
-        if (dataHeight !== 'max') {
+        if (dataHeight !== 'max' && dataHeight !== 'unset') {
           contentElement.style.height = newHeight + 'px';
         }
         control.classList.add('is-active');
@@ -197,7 +203,7 @@ export class Tabs {
         parentElement.classList.remove('no-action');
       }, dataDelay);
     } else {
-      if (dataHeight !== 'max') {
+      if (dataHeight !== 'max' && dataHeight !== 'unset') {
         contentElement.style.height = newHeight + 'px';
       }
       setTimeout(() => {
