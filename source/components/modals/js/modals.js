@@ -7,6 +7,7 @@ export class Modals {
     this._focusLock = new FocusLock();
 
     this._modalOpenElements = document.querySelectorAll('[data-open-modal]');
+    this._stackModalElements = [];
     this._openedModalElement = null;
     this._modalName = null;
     this._enableScrolling = true;
@@ -107,7 +108,12 @@ export class Modals {
       return;
     }
 
-    this.close(target.closest('[data-modal]').dataset.modal);
+    if (target.closest('[data-close-modal="back"]')) {
+      this.back();
+    } else {
+      this.close(target.closest('[data-modal]').dataset.modal);
+      this._stackModalElements = [];
+    }
   }
 
   _addListeners(modal) {
@@ -157,6 +163,10 @@ export class Modals {
     this._setSettings(modalName);
     modal.classList.add('is-active');
 
+    if (modalName !== this._stackModalElements[this._stackModalElements.length - 1]) {
+      this._stackModalElements.push(modalName);
+    }
+
     if (!this._openedModalElement) {
       this._scrollLock.disableScrolling();
     }
@@ -178,6 +188,26 @@ export class Modals {
       this._autoPlay(modal);
       document.addEventListener('click', this._documentClickHandler);
     }, this._eventTimeout);
+  }
+
+  back() {
+    if (!this._stackModalElements.length) {
+      return;
+    }
+
+    const activeModal = this._stackModalElements[this._stackModalElements.length - 1];
+    const prevModal = this._stackModalElements[this._stackModalElements.length - 2];
+
+    if (this._stackModalElements.length === 1) {
+      this._stackModalElements = [];
+    }
+
+    if (prevModal) {
+      this._stackModalElements.pop();
+      this.open(prevModal);
+    }
+
+    this.close(activeModal);
   }
 
   close(modalName = this._modalName) {
