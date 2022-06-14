@@ -1918,6 +1918,35 @@ button,
   opacity: 1;
 }
 
+.dynamic-adaptive__header,
+.dynamic-adaptive__footer {
+  border: 1px solid #000000;
+  min-height: 200px;
+  margin: 0 0 40px 0;
+}
+
+.dynamic-adaptive__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dynamic-adaptive__note {
+  margin: 0 0 20px 0;
+  padding: 20px 0 0 20px;
+}
+
+.dynamic-adaptive__item {
+  padding: 20px;
+}
+
+.dynamic-adaptive__element {
+  margin: 0;
+}
+
 /* @media (hover: hover), screen and (min-width: 0\0) {
   &:hover,
   &:focus {

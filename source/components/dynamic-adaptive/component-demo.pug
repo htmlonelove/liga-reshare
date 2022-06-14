@@ -1,0 +1,16 @@
+section.component-demo
+  h2.subtitle Демо
+  h2.component__subtitle Пример работы динамического адаптива
+  p *Для того что бы увидеть результат работы данного компонента измените ширину окна браузера
+  .dynamic-adaptive
+    header.dynamic-adaptive__header
+      p.dynamic-adaptive__note(data-da=".dynamic-adaptive__footer, 1270, 0") Шапка сайта
+      ul.dynamic-adaptive__list(data-da=".dynamic-adaptive__footer, 1280, last")
+        li.dynamic-adaptive__item
+          p.dynamic-adaptive__element Элемент меню 1
+        li.dynamic-adaptive__item
+          p.dynamic-adaptive__element Элемент меню 2
+        li.dynamic-adaptive__item
+          p.dynamic-adaptive__element Элемент меню 3
+    footer.dynamic-adaptive__footer
+      p.dynamic-adaptive__note Подвал сайта

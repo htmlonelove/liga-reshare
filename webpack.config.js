@@ -24,6 +24,7 @@ module.exports = {
     cookies: './components/cookies/js/',
     formValidate: './components/form-validate/js/',
     inlineVideo: './components/inline-video/js/',
+    dynamicAdaptive: './components/dynamic-adaptive/js/',
   },
   devtool: isDev ? 'source-map' : false,
   output: {
