@@ -1,0 +1,110 @@
+.main-nav {
+  @include vp-1023 {
+    background-color: $color-neon-blue;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    opacity: 0;
+    margin: 0;
+    padding: 123px 20px 20px;
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    transition: all $trans-default;
+    right: 0;
+    visibility: hidden;
+    z-index: 20;
+  }
+
+  &.is-active {
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+
+    .main-nav__item {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .search {
+      opacity: 1;
+      transition: opacity $trans-default 0.5s;
+    }
+
+    .search__input {
+      background-color: $color-transparent;
+      border: 1.5px solid $color-default-white;
+      color: $color-default-white;
+    }
+
+    .search__button {
+      color: $color-default-white;
+    }
+  }
+
+  &__list {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    max-width: 400px;
+    padding: 0;
+
+    @include vp-1023 {
+      flex-direction: column;
+      margin: 0 0 70px 0;
+      max-width: unset;
+    }
+
+    @include vp-767 {
+      align-items: flex-start;
+      margin: 0 0 62px 0;
+    }
+  }
+
+  &__item {
+    @include vp-1023 {
+      opacity: 0;
+      transition: all ease-out 0.15s;
+      transform: translateX(-15px);
+    }
+
+    &:not(:last-child) {
+      margin: 0 55px 0 0;
+
+      @include vp-1279 {
+        margin: 0 35px 0 0;
+      }
+
+      @include vp-1023 {
+        margin: 0 0 40px 0;
+      }
+
+      @include vp-767 {
+        margin: 0 0 36px 0;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 25px;
+    transition: color $trans-default;
+
+    @include vp-1023 {
+      color: $color-default-white;
+      font-size: 20px;
+      line-height: 25px;
+    }
+
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        color: $color-neon-blue;
+      }
+    }
+  }
+}

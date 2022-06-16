@@ -1,5 +1,12 @@
 .header {
+  background-color: $color-default-white;
+  border: 2px solid $color-ghost-white;
   padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 30;
 
   .container {
     display: flex;
@@ -7,14 +14,13 @@
     justify-content: space-between;
   }
 
-  &__logo[href],
-  &__git {
-    transition: fill $trans-default;
+  &__logo[href] {
+    transition: opacity $trans-default;
 
-    @media (hover: hover), screen and (min-width: 0\0) {
+    @media (hover: hover) {
       &:hover,
       &:focus {
-        fill: $color-neon-blue;
+        opacity: 0.5;
       }
     }
   }
@@ -22,9 +28,42 @@
   &__logo {
     margin-right: 40px;
     display: flex;
+
+    @include vp-1279 {
+      flex-direction: column;
+      transform: scale(0.85);
+    }
+
+    @include vp-1023 {
+      flex-direction: row;
+      transform: scale(1);
+    }
+
+    &.is-active {
+      position: relative;
+      z-index: 25;
+    }
+
+    .logo__second-part {
+      @include vp-1279 {
+        margin: 0;
+      }
+
+      @include vp-1023 {
+        margin: 0 0 0 9px;
+      }
+
+      @include vp-767 {
+        margin: 0;
+      }
+    }
   }
 
-  &__git {
+  &__git-link {
     display: flex;
+
+    @include vp-1023 {
+      margin: 0 24px 0 auto;
+    }
   }
 }

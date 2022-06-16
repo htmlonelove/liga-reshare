@@ -1,0 +1,12 @@
+mixin breadcrumbs(options = {})
+
+  .breadcrumbs&attributes(attributes)
+    ul.breadcrumbs__list
+      each item in options.links
+        if (item.link)
+          li.breadcrumbs__item
+            a.breadcrumbs__link(href=item.link)!=item.title
+             +icon("icon-chevrone", 4, 7)
+        else
+          li.breadcrumbs__item
+            span.breadcrumbs__link!=item.title

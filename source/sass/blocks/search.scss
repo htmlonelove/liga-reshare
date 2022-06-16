@@ -1,0 +1,63 @@
+.search {
+  display: flex;
+  margin: 0 48px 0 auto;
+  position: relative;
+
+  @include vp-1023 {
+    margin: 0 auto;
+    opacity: 0;
+    transition: opacity $trans-default;
+    width: 50%;
+  }
+
+  @include vp-767 {
+    margin: 0;
+    width: 100%;
+  }
+
+  &__input {
+    border: 1.5px solid $color-ghost-white;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 21px;
+    min-width: 306px;
+    padding: 11px 40px 11px 14px;
+    transition: all $trans-default;
+
+    @include vp-1279 {
+      min-width: unset;
+    }
+
+    @include vp-1023 {
+      width: 100%;
+    }
+  }
+
+  &__button {
+    background-color: $color-transparent;
+    border: none;
+    cursor: pointer;
+    height: 20px;
+    color: $color-default-black;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    right: 17px;
+    transform: translate3d(0, -50%, 0);
+    width: 20px;
+
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        svg {
+          fill: $color-neon-blue;
+        }
+      }
+    }
+
+    svg {
+      fill: currentColor;
+      transition: fill $trans-default;
+    }
+  }
+}

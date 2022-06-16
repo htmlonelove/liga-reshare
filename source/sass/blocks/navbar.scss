@@ -1,0 +1,77 @@
+.navbar {
+  height: 100%;
+  left: 0;
+  min-height: 500px;
+  padding: 50px 0;
+  position: absolute;
+  top: 0;
+  width: 287px;
+
+  &__element {
+    &:not(:last-child) {
+      margin: 0 0 30px 0;
+    }
+
+    &.is-active {
+      .navbar__button-icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__button {
+    background-color: $color-transparent;
+    border: none;
+    cursor: pointer;
+    font-family: $ff-neue-machina;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+    padding: 0 20px 0 56px;
+    position: relative;
+    transition: opacity $trans-default;
+    text-align: left;
+    width: 100%;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__button-icon {
+    height: 9px;
+    left: 32px;
+    position: absolute;
+    top: 5px;
+    transition: transform $trans-default;
+    width: 16px;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  &__link {
+    display: flex;
+    font-size: 18px;
+    line-height: 27px;
+    padding: 10px 20px 10px 56px;
+    transition: background-color $trans-default;
+
+    &.is-active {
+      background-color: $color-ghost-white;
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        background-color: $color-ghost-white;
+      }
+    }
+  }
+}

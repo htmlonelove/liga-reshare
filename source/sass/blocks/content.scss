@@ -1,0 +1,9 @@
+.content {
+  display: flex;
+  flex-direction: column;
+
+  &__wrapper {
+    flex: 1 0 auto;
+    position: relative;
+  }
+}

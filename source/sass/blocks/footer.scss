@@ -1,5 +1,48 @@
 .footer {
-  padding: 40px 0;
+  padding: 24px 0;
+  border-top: 2px solid $color-ghost-white;
 
-  background-color: $color-neon-blue;
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    align-items: center;
+
+    @include vp-767 {
+      gap: 25px;
+    }
+  }
+
+  &__address {
+    justify-self: start;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 150%;
+
+    @include vp-767 {
+      font-size: 8px;
+    }
+  }
+
+  &__logo {
+    justify-self: center;
+
+    @include vp-767 {
+      .logo__first-part {
+        height: 13px;
+        width: 58px;
+      }
+
+      .logo__second-part {
+        height: 20px;
+        margin: 0;
+        width: 84px;
+      }
+    }
+  }
+
+  &__git-link {
+    justify-self: end;
+  }
 }

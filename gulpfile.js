@@ -76,7 +76,7 @@ const css = () => {
       .pipe(server.stream());
 };
 
-const componentsСss = () => {
+const componentsCss = () => {
   return gulp.src('source/components/**/*.scss')
       .pipe(plumber())
       .pipe(sourcemap.init())
@@ -178,6 +178,7 @@ const cleanComponents = () => {
 const syncServer = () => {
   server.init({
     server: 'build/',
+    index: 'sitemap.html',
     notify: false,
     open: true,
     cors: true,
@@ -206,7 +207,7 @@ const refresh = (done) => {
   done();
 };
 
-const baseSeries = gulp.series(clean, svgo, componentsToHtml, componentsСss, copy, css, sprite, js, pugToHtml, optimizeImages, zipFiles, cleanComponents);
+const baseSeries = gulp.series(clean, svgo, componentsToHtml, componentsCss, copy, css, sprite, js, pugToHtml, optimizeImages, zipFiles, cleanComponents);
 const start = gulp.series(baseSeries, syncServer);
 const build = gulp.series(baseSeries);
 

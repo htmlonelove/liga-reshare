@@ -1,0 +1,48 @@
+.sandwich {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  display: none;
+  padding: 0;
+  position: relative;
+  z-index: 25;
+
+  @include vp-1023 {
+    display: flex;
+    position: relative;
+    transition: all $trans-default;
+  }
+
+  &.is-active {
+    .sandwich__text {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity $trans-default 0s;
+    }
+
+    .sandwich__icon {
+      opacity: 1;
+      pointer-events: all;
+      transition: opacity $trans-default 0.2s;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    font-family: $ff-neue-machina;
+    font-weight: 700;
+    line-height: 1;
+    transition: opacity $trans-default 0.1s;
+  }
+
+  &__icon {
+    stroke: $color-default-white;
+    opacity: 0;
+    transition: opacity $trans-default;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

@@ -2,11 +2,19 @@ mixin header(headerMods, currentUrl)
   header.header(class=headerMods)
     .container
       if(currentUrl === "index.html")
-        span.header__logo
-          +icon("icon-logo", 120, 27)
+        +logo().header__logo(data-header-logo)
       else
-        a.header__logo(href="index.html", aria-label="Переход на главную")
-          +icon("icon-logo", 120, 27)
-      nav.main-nav
-        a.header__git(href="https://github.com/htmlonelove/liga-componentov", target="_blank", rel="nofollow noopener noreferrer", aria-label="Ссылка на репозиторий")
-          +icon("git-logo", 32, 32)
+        +logo({href: "index.html"}).header__logo(data-header-logo)
+      nav.header__nav.main-nav(data-main-nav)
+        ul.main-nav__list
+          li.main-nav__item(data-nav-item)
+            a.main-nav__link(href="https://ligaa.agency/") Лига А.
+          li.main-nav__item(data-nav-item)
+            a.main-nav__link(href="https://testim.agency/") Тестировошная
+          li.main-nav__item(data-nav-item)
+            a.main-nav__link(href="https://ligaa.agency/portfolio.html") Портфолио
+      +search().header__search
+      +git-link().header__git-link
+      button.header__sandwich.sandwich(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-sandwich)
+        span.sandwich__text Меню
+        +icon("icon-close", 20, 20).sandwich__icon
