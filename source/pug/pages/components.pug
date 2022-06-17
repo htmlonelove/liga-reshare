@@ -9,12 +9,23 @@ block variables
   - const currentUrl = "components.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
 
 block main
-  main.content
+  main.content(id="content")
     +hero({
-      title: "Компоненты"
+      title: "Компоненты",
+      links: [
+        {
+          title: "Главная",
+          link: "index.html"
+        },
+        {
+          title: "Компоненты"
+        }
+      ]
     })
     .content__wrapper
       +navbar()
       .content__inner
+        +components()
+        +up-button()
 
 block modals

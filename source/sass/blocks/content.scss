@@ -3,7 +3,15 @@
   flex-direction: column;
 
   &__wrapper {
+    display: flex;
     flex: 1 0 auto;
     position: relative;
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 100%;
+  }
+
+  &__inner {
+    border-left: 2px solid $color-ghost-white;
   }
 }

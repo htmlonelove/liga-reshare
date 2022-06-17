@@ -4,6 +4,10 @@ import {ScrollLock} from './utils/scroll-lock';
 import {initDynamicAdaptive} from './modules/init-dynamic-adaptive';
 import {initMainPadding} from './modules/init-main-padding';
 import {initAccordions} from './modules/init-accordion';
+// import {initFixedNavbar} from './modules/init-fixed-navbar';
+import {initUpButton} from './modules/init-up-button';
+import {initMoveTo} from './modules/init-move-to';
+import {initStickyNavbar} from './modules/init-sticky-navbar';
 
 
 // ---------------------------------
@@ -25,6 +29,10 @@ window.addEventListener('DOMContentLoaded', () => {
     initSandwichMenu();
     initMainPadding();
     initAccordions();
+    // initFixedNavbar();
+    initUpButton();
+    initMoveTo();
+    initStickyNavbar();
   });
 });
 

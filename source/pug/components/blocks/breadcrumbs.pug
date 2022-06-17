@@ -1,8 +1,8 @@
-mixin breadcrumbs(options = {})
+mixin breadcrumbs(links)
 
   .breadcrumbs&attributes(attributes)
     ul.breadcrumbs__list
-      each item in options.links
+      each item in links
         if (item.link)
           li.breadcrumbs__item
             a.breadcrumbs__link(href=item.link)!=item.title

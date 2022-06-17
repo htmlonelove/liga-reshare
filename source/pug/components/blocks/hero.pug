@@ -2,15 +2,5 @@ mixin hero(options = {})
 
   section.hero
     .container
-      +breadcrumbs({
-        links: [
-          {
-            title: "Главная",
-            link: "index.html"
-          },
-          {
-            title: "Компоненты"
-          }
-        ]
-      }).hero__breadcrumbs
+      +breadcrumbs(options.links).hero__breadcrumbs
       h1.hero__title!=options.title
