@@ -1,5 +1,7 @@
 mixin navbar()
   aside.navbar&attributes(attributes)
+    button.navbar__close(type="button", aria-label="Закрыть меню", data-navbar-close)
+      +icon("icon-close", 20, 20)
     .navbar__wrapper
       .navbar__accordion(data-accordion="parent",data-single, data-close-inner)
         .navbar__element.is-active(data-accordion="element")

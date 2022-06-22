@@ -2,12 +2,12 @@ import {iosVhFix} from './utils/ios-vh-fix';
 import {initSandwichMenu} from './modules/init-sandwich-menu';
 import {ScrollLock} from './utils/scroll-lock';
 import {initDynamicAdaptive} from './modules/init-dynamic-adaptive';
-import {initMainPadding} from './modules/init-main-padding';
 import {initAccordions} from './modules/init-accordion';
-// import {initFixedNavbar} from './modules/init-fixed-navbar';
 import {initUpButton} from './modules/init-up-button';
 import {initMoveTo} from './modules/init-move-to';
-import {initStickyNavbar} from './modules/init-sticky-navbar';
+import {initNavbarMenu} from './modules/init-navbar-menu';
+import {initHeaderObserver} from './modules/init-header-observer';
+import {initTabs} from './modules/init-tabs';
 
 
 // ---------------------------------
@@ -27,12 +27,12 @@ window.addEventListener('DOMContentLoaded', () => {
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     initSandwichMenu();
-    initMainPadding();
+    initHeaderObserver();
     initAccordions();
-    // initFixedNavbar();
     initUpButton();
     initMoveTo();
-    initStickyNavbar();
+    initNavbarMenu();
+    initTabs();
   });
 });
 

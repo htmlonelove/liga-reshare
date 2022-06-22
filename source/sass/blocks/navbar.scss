@@ -7,24 +7,59 @@
   top: 0;
   width: 287px;
 
-  &::after {
-    background: linear-gradient(180deg, rgba(255,255,255,1) 37%, rgba(255,255,255,0) 100%);
-    content: "";
-    height: 50px;
+  @include vp-1023 {
+    background-color: $color-default-white;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
     left: 0;
-    position: absolute;
+    opacity: 0;
+    margin: 0;
+    padding: 68px 0 40px;
+    position: fixed;
+    pointer-events: none;
     top: 0;
+    transition: all $trans-default;
+    right: 0;
+    visibility: hidden;
     width: 100%;
+    z-index: 30;
   }
 
-  &::before {
-    background: linear-gradient(0deg, rgba(255,255,255,1) 37%, rgba(255,255,255,0) 100%);
-    bottom: 0;
-    content: "";
-    height: 50px;
-    left: 0;
-    position: absolute;
-    width: 100%;
+  &.is-active {
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+  }
+
+  &__close {
+    background-color: $color-transparent;
+    border: none;
+    color: $color-default-black;
+    display: none;
+    height: 20px;
+    padding: 0;
+    position: fixed;
+    right: 20px;
+    top: 30px;
+    width: 20px;
+
+    &::before {
+      content: "";
+      height: 40px;
+      left: -10px;
+      position: absolute;
+      top: -10px;
+      width: 40px;
+    }
+
+    @include vp-1023 {
+      display: flex;
+    }
+
+    svg {
+      stroke: currentColor;
+    }
   }
 
   &__element {
@@ -44,6 +79,10 @@
     overflow-y: auto;
     padding: 50px 0;
     width: 100%;
+
+    @include vp-1023 {
+      padding: 0;
+    }
   }
 
   &__button {
@@ -54,13 +93,13 @@
     font-size: 20px;
     font-weight: 700;
     line-height: 25px;
-    padding: 0 20px 0 56px;
+    padding: 0 20px 0 63px;
     position: relative;
     transition: opacity $trans-default;
     text-align: left;
     width: 100%;
 
-    @media (hover: hover), screen and (min-width: 0\0) {
+    @media (hover: hover) {
       &:hover {
         opacity: 0.5;
       }
@@ -86,14 +125,14 @@
     display: flex;
     font-size: 18px;
     line-height: 27px;
-    padding: 10px 20px 10px 56px;
+    padding: 10px 20px 10px 63px;
     transition: background-color $trans-default;
 
     &.is-active {
       background-color: $color-ghost-white;
     }
 
-    @media (hover: hover), screen and (min-width: 0\0) {
+    @media (hover: hover) {
       &:hover,
       &:focus {
         background-color: $color-ghost-white;

@@ -3,8 +3,8 @@
   position: relative;
 
   display: flex;
-  width: 500px;
-  padding: 20px 0;
+  width: 530px;
+  padding: 14px 0 58px;
 
   label {
     display: flex;
@@ -14,8 +14,9 @@
     input,
     textarea {
       flex-grow: 1;
-      min-height: 40px;
-      margin-left: 30px;
+      max-width: 300px;
+      min-height: 48px;
+      margin-left: auto;
       padding: 10px;
 
       border: 2px solid rgba(#000000, 0.2);
@@ -37,7 +38,7 @@
   &__error {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 35px;
 
     color: #ff1553;
 

@@ -1,6 +1,6 @@
 const initUpButton = () => {
-  const upButton = document.querySelector('.up-button');
-  const buttonWrapper = document.querySelector('.content__inner');
+  const upButton = document.querySelector('.up-button__inner');
+  const innerContent = document.querySelector('.content__inner');
   const header = document.querySelector('.header');
 
   if (!upButton) {
@@ -8,7 +8,7 @@ const initUpButton = () => {
   }
 
   document.addEventListener('scroll', () => {
-    const wrapperPosition = buttonWrapper.getBoundingClientRect().top;
+    const wrapperPosition = innerContent.getBoundingClientRect().top;
     if (wrapperPosition < header.clientHeight) {
       upButton.classList.add('is-active');
     } else {

@@ -1,30 +1,44 @@
 .components {
-  padding: 20px 60px 150px 70px;
-
   &__about {
-    font-size: 18px;
-    line-height: 27px;
+    font-size: 16px;
+    line-height: 21px;
     margin: 0 0 40px 0;
+    max-width: 950px;
+    width: 100%;
   }
 
   &__list {
     display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(3, 1fr);
-    list-style: none;
+
     margin: 0;
     padding: 0;
+
+    list-style: none;
+
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+
+    @media screen and (max-width: 1150px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include vp-767 {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__link {
-    align-items: center;
-    display: flex;
     font-size: 18px;
     font-weight: 500;
     line-height: 25px;
+
+    display: flex;
+
     transition: color $trans-default;
 
-    @media (hover: hover), screen and (min-width: 0\0) {
+    align-items: center;
+
+    @media (hover: hover) {
       &:hover,
       &:focus {
         color: $color-neon-blue;
@@ -33,8 +47,10 @@
   }
 
   &__link-icon {
-    fill: currentColor;
     margin: 0 0 0 15px;
+
     transform: rotate(90deg);
+
+    fill: currentColor;
   }
 }

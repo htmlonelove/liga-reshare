@@ -35,7 +35,7 @@ const closeMenu = (unlock) => {
 const breakpointChecker = () => {
   if (breakpointMd.matches) {
     if (nav.classList.contains('is-active')) {
-      closeMenu();
+      closeMenu(true);
     }
   }
   breakpointMd.addListener(breakpointChecker);

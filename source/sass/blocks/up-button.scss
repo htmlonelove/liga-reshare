@@ -1,18 +1,38 @@
 .up-button {
-  bottom: 90px;
-  opacity: 0;
-  position: fixed;
-  transition: all $trans-default;
-  transform: translate3d(0, 100px, 0);
-  right: 20px;
+  bottom: 0;
+  position: absolute;
+  right: 110px;
 
-  &.is-active {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+  @include vp-1023 {
+    right: 50px;
+  }
+
+  @include vp-767 {
+    right: 50px;
+  }
+
+  &__inner {
+    bottom: 90px;
+    opacity: 0;
+    position: fixed;
+    transition: all $trans-default;
+    transform: translate3d(0, 100px, 0);
+    //right: 20px;
+    z-index: 20;
+
+    @include vp-767 {
+      bottom: 110px;
+    }
+
+    &.is-active {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
   }
 
   &__link {
     align-items: center;
+    background-color: $color-default-white;
     border: 1px solid $color-neon-blue;
     border-radius: 50%;
     color: $color-neon-blue;

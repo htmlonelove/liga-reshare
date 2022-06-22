@@ -1,7 +1,44 @@
 .component-heading {
+  border-bottom: 2px solid $color-ghost-white;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
+  padding: 0 0 17px 0;
+
+  &__tabs {
+    align-items: center;
+    display: flex;
+  }
+
+  &__tab-control {
+    background-color: $color-transparent;
+    border: none;
+    color: $color-neon-blue;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 26px;
+    padding: 0;
+    transition: all $trans-default;
+
+    &.is-active {
+      color: $color-default-black;
+      text-decoration: underline;
+      text-decoration-color: $color-neon-blue;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 5px;
+    }
+
+    &:not(:last-child) {
+      margin: 0 55px 0 0;
+    }
+
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        opacity: 0.8;
+      }
+    }
+  }
 
   &__download-link {
     flex-shrink: 0;

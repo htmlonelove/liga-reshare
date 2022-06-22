@@ -1,8 +1,11 @@
 .component-description {
+  padding: 34px 0 0 0;
+  width: 100%;
+
   p {
-    margin: 0 0 10px;
-    font-size: 20px;
-    line-height: 24px;
+    margin: 0 0 20px;
+    font-size: 18px;
+    line-height: 27px;
 
     @include vp-767 {
       font-size: 16px;
@@ -24,6 +27,48 @@
       &:focus {
         color: $color-torch-red;
       }
+    }
+  }
+
+  table {
+    display: flex;
+    margin: 48px 0 58px;
+    text-align: left;
+    width: 100%;
+
+    &:first-child {
+      margin: 0 0 58px;
+    }
+
+    &:last-child {
+      margin: 48px 0 0;
+    }
+
+    p {
+      margin: 0;
+
+      &:not(:last-child) {
+        margin: 0 0 20px 0;
+      }
+    }
+
+    tbody {
+      width: 100%;
+    }
+
+    tr {
+      display: grid;
+      gap: 40px 30px;
+      grid-template-columns: 1fr 62%;
+      padding: 0;
+
+      &:not(:last-child) {
+        margin: 0 0 40px 0;
+      }
+    }
+
+    td, th {
+      padding: 0;
     }
   }
 
