@@ -3,6 +3,7 @@
   width: 100%;
 
   p {
+    word-break: break-word;
     margin: 0 0 20px;
     font-size: 18px;
     line-height: 27px;
@@ -61,6 +62,11 @@
       gap: 40px 30px;
       grid-template-columns: 1fr 62%;
       padding: 0;
+
+      @include vp-767 {
+        gap: 18px;
+        grid-template-columns: 1fr;
+      }
 
       &:not(:last-child) {
         margin: 0 0 40px 0;

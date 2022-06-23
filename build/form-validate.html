@@ -200,9 +200,9 @@
                   <div class="navbar__content" data-accordion="content">
                     <div class="navbar__inner">
                       <ul class="navbar__list">
-                        <li class="navbar__item"><a class="navbar__link is-active" href="#">О Разделе</a></li>
-                        <li class="navbar__item"><a class="navbar__link" href="#">Валидация формы</a></li>
-                        <li class="navbar__item"><a class="navbar__link" href="#">Кастомный селект</a></li>
+                        <li class="navbar__item"><a class="navbar__link" href="components.html">О разделе</a></li>
+                        <li class="navbar__item"><a class="navbar__link is-active" href="form-validate.html">Валидация формы</a></li>
+                        <li class="navbar__item"><a class="navbar__link" href="custom-select.html">Кастомный селект</a></li>
                         <li class="navbar__item"><a class="navbar__link" href="#">Компонент</a></li>
                         <li class="navbar__item"><a class="navbar__link" href="#">Компонент</a></li>
                         <li class="navbar__item"><a class="navbar__link" href="#">Компонент</a></li>
@@ -467,14 +467,14 @@
                             </label>
                             <div class="custom-input__error">Не корректное имя</div>
                           </div>
-                      <p>Инпут <b>data-validate-type="matrix" data-matrix="____ ______" data-matrix-limitations="digit"</b> с предустановленным некорректным value. (ЗАЧЕМ ЭТО?)</p>
+                      <p>Инпут <b>data-validate-type="matrix" data-matrix="____ ______" data-matrix-limitations="digit"</b> с предустановленным некорректным value.</p>
                           <div class="custom-input" data-validate-type="matrix" data-matrix-limitations="digit" data-matrix="____ ______">
                             <label><span class="custom-input__label">Введите номер паспорта</span>
                               <input type="text" name="user-passport" value="123123123312312" minlength="10">
                             </label>
                             <div class="custom-input__error">Не корректное имя</div>
                           </div>
-                      <p>Инпут <b>data-validate-type="matrix" data-matrix="____ ______" data-matrix-limitations="digit"</b> с предустановленным корректным value. (ЗАЧЕМ ЭТО?)</p>
+                      <p>Инпут <b>data-validate-type="matrix" data-matrix="____ ______" data-matrix-limitations="digit"</b> с предустановленным корректным value.</p>
                           <div class="custom-input" data-validate-type="matrix" data-matrix-limitations="digit" data-matrix="____ ______">
                             <label><span class="custom-input__label">Введите номер паспорта</span>
                               <input type="text" name="user-passport" value="1234123456" minlength="10">
@@ -490,7 +490,7 @@
                             <div class="custom-input__error">Не корректный телефон</div>
                           </div>
                       <p>Инпут <b>data-validate-type="phone"</b> с предустановленным некорректным value.</p>
-                          <div class="custom-input is-invalid" data-validate-type="phone">
+                          <div class="custom-input" data-validate-type="phone">
                             <label><span class="custom-input__label">Введите ваш телефон</span>
                               <input type="text" name="user-phone" value="123123">
                             </label>
@@ -553,120 +553,147 @@
                       <div>
                             <div class="custom-toggle custom-toggle--checkbox" data-validate-type="checkbox">
                               <label>
+                                <input type="checkbox" name="user-agreement"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Чекбокс</span>
+                              </label>
+                              <div class="custom-toggle__error">Согласие является обязательным</div>
+                            </div>
+                      </div>
+                      <p>Чекбокс выбран <b>data-validate-type="checkbox"</b>.</p>
+                      <div>
+                            <div class="custom-toggle custom-toggle--checkbox" data-validate-type="checkbox">
+                              <label>
                                 <input type="checkbox" name="user-agreement" checked><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Чекбокс</span>
                               </label>
                               <div class="custom-toggle__error">Согласие является обязательным</div>
                             </div>
                       </div>
                       <p>Группа чекбоксов <b>data-validate-type="toggle-group"</b>.</p>
-                      <div data-validate-type="toggle-group">
-                            <div class="custom-toggle custom-toggle--checkbox" data-validate-type="checkbox">
+                      <div class="toggle-group" data-validate-type="toggle-group">
+                            <div class="custom-toggle custom-toggle--checkbox">
                               <label>
                                 <input type="checkbox" name="user-agreement"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Чекбокс</span>
                               </label>
                               <div class="custom-toggle__error">Выберите хотя бы один вариант</div>
                             </div>
-                            <div class="custom-toggle custom-toggle--checkbox" data-validate-type="checkbox">
+                            <div class="custom-toggle custom-toggle--checkbox">
                               <label>
                                 <input type="checkbox" name="user-agreement"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Чекбокс</span>
                               </label>
                               <div class="custom-toggle__error">Выберите хотя бы один вариант</div>
                             </div>
-                            <div class="custom-toggle custom-toggle--checkbox" data-validate-type="checkbox">
+                            <div class="custom-toggle custom-toggle--checkbox">
                               <label>
                                 <input type="checkbox" name="user-agreement"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Чекбокс</span>
                               </label>
                               <div class="custom-toggle__error">Выберите хотя бы один вариант</div>
                             </div>
-                            <div class="custom-toggle custom-toggle--checkbox" data-validate-type="checkbox">
+                            <div class="custom-toggle custom-toggle--checkbox">
                               <label>
                                 <input type="checkbox" name="user-agreement"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Чекбокс</span>
                               </label>
                               <div class="custom-toggle__error">Выберите хотя бы один вариант</div>
-                            </div>
+                            </div><span class="toggle-group__error">Выберите хотя бы один вариант</span>
                       </div>
                       <p>Группа чекбоксов <b>data-validate-type="toggle-group"</b> с выбранным чекбоксом по умолчанию</p>
-                      <div data-validate-type="toggle-group">
-                            <div class="custom-toggle custom-toggle--checkbox" data-validate-type="checkbox">
+                      <div class="toggle-group" data-validate-type="toggle-group">
+                            <div class="custom-toggle custom-toggle--checkbox">
                               <label>
                                 <input type="checkbox" name="user-agreement" checked><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Чекбокс</span>
                               </label>
                               <div class="custom-toggle__error">Выберите хотя бы один вариант</div>
                             </div>
-                            <div class="custom-toggle custom-toggle--checkbox" data-validate-type="checkbox">
+                            <div class="custom-toggle custom-toggle--checkbox">
                               <label>
                                 <input type="checkbox" name="user-agreement"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Чекбокс</span>
                               </label>
                               <div class="custom-toggle__error">Выберите хотя бы один вариант</div>
                             </div>
-                            <div class="custom-toggle custom-toggle--checkbox" data-validate-type="checkbox">
+                            <div class="custom-toggle custom-toggle--checkbox">
                               <label>
                                 <input type="checkbox" name="user-agreement"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Чекбокс</span>
                               </label>
                               <div class="custom-toggle__error">Выберите хотя бы один вариант</div>
                             </div>
-                            <div class="custom-toggle custom-toggle--checkbox" data-validate-type="checkbox">
+                            <div class="custom-toggle custom-toggle--checkbox">
                               <label>
                                 <input type="checkbox" name="user-agreement"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Чекбокс</span>
                               </label>
                               <div class="custom-toggle__error">Выберите хотя бы один вариант</div>
-                            </div>
+                            </div><span class="toggle-group__error">Выберите хотя бы один вариант</span>
                       </div>
                       <hr>
                       <h2 class="subtitle">Радио кнопки</h2>
-                      <p>Группа радио кнопок <b>data-validate-type="toggle-group"</b>.</p>
-                      <div data-validate-type="toggle-group">
+                      <p>Радио кнопка <b>data-validate-type="radio"</b>.</p>
+                      <div>
                             <div class="custom-toggle custom-toggle--radio" data-validate-type="radio">
                               <label>
-                                <input type="radio" name="user-choose"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Радиокнопка</span>
+                                <input type="radio" name="user-radio-1"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Радио кнопка</span>
                               </label>
-                              <div class="custom-toggle__error">Выберите один вариант</div>
-                            </div>
-                            <div class="custom-toggle custom-toggle--radio" data-validate-type="radio">
-                              <label>
-                                <input type="radio" name="user-choose"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Радиокнопка</span>
-                              </label>
-                              <div class="custom-toggle__error">Выберите один вариант</div>
-                            </div>
-                            <div class="custom-toggle custom-toggle--radio" data-validate-type="radio">
-                              <label>
-                                <input type="radio" name="user-choose"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Радиокнопка</span>
-                              </label>
-                              <div class="custom-toggle__error">Выберите один вариант</div>
-                            </div>
-                            <div class="custom-toggle custom-toggle--radio" data-validate-type="radio">
-                              <label>
-                                <input type="radio" name="user-choose"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Радиокнопка</span>
-                              </label>
-                              <div class="custom-toggle__error">Выберите один вариант</div>
+                              <div class="custom-toggle__error">Согласие является обязательным</div>
                             </div>
                       </div>
-                      <p>Группа радио кнопок <b>data-validate-type="toggle-group"</b> с выбранной по умолчанию.</p>
-                      <div data-validate-type="toggle-group">
+                      <p>Радио кнопка выбрана <b>data-validate-type="radio"</b>.</p>
+                      <div>
                             <div class="custom-toggle custom-toggle--radio" data-validate-type="radio">
+                              <label>
+                                <input type="radio" name="user-radio-2" checked><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Радио кнопка</span>
+                              </label>
+                              <div class="custom-toggle__error">Согласие является обязательным</div>
+                            </div>
+                      </div>
+                      <p>Группа радио кнопок <b>data-validate-type="toggle-group"</b>.</p>
+                      <div class="toggle-group" data-validate-type="toggle-group">
+                            <div class="custom-toggle custom-toggle--radio">
+                              <label>
+                                <input type="radio" name="user-choose"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Радиокнопка</span>
+                              </label>
+                              <div class="custom-toggle__error">Выберите один вариант</div>
+                            </div>
+                            <div class="custom-toggle custom-toggle--radio">
+                              <label>
+                                <input type="radio" name="user-choose"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Радиокнопка</span>
+                              </label>
+                              <div class="custom-toggle__error">Выберите один вариант</div>
+                            </div>
+                            <div class="custom-toggle custom-toggle--radio">
+                              <label>
+                                <input type="radio" name="user-choose"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Радиокнопка</span>
+                              </label>
+                              <div class="custom-toggle__error">Выберите один вариант</div>
+                            </div>
+                            <div class="custom-toggle custom-toggle--radio">
+                              <label>
+                                <input type="radio" name="user-choose"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Радиокнопка</span>
+                              </label>
+                              <div class="custom-toggle__error">Выберите один вариант</div>
+                            </div><span class="toggle-group__error">Выберите один вариант</span>
+                      </div>
+                      <p>Группа радио кнопок <b>data-validate-type="toggle-group"</b> с выбранной по умолчанию.</p>
+                      <div class="toggle-group" data-validate-type="toggle-group">
+                            <div class="custom-toggle custom-toggle--radio">
                               <label>
                                 <input type="radio" name="user-choose" checked><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Радиокнопка</span>
                               </label>
                               <div class="custom-toggle__error">Выберите один вариант</div>
                             </div>
-                            <div class="custom-toggle custom-toggle--radio" data-validate-type="radio">
+                            <div class="custom-toggle custom-toggle--radio">
                               <label>
                                 <input type="radio" name="user-choose"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Радиокнопка</span>
                               </label>
                               <div class="custom-toggle__error">Выберите один вариант</div>
                             </div>
-                            <div class="custom-toggle custom-toggle--radio" data-validate-type="radio">
+                            <div class="custom-toggle custom-toggle--radio">
                               <label>
                                 <input type="radio" name="user-choose"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Радиокнопка</span>
                               </label>
                               <div class="custom-toggle__error">Выберите один вариант</div>
                             </div>
-                            <div class="custom-toggle custom-toggle--radio" data-validate-type="radio">
+                            <div class="custom-toggle custom-toggle--radio">
                               <label>
                                 <input type="radio" name="user-choose"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Радиокнопка</span>
                               </label>
                               <div class="custom-toggle__error">Выберите один вариант</div>
-                            </div>
+                            </div><span class="toggle-group__error">Выберите один вариант</span>
                       </div>
                       <hr>
                       <h2 class="subtitle">Селекты</h2>

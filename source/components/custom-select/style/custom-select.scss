@@ -4,6 +4,11 @@
   width: 300px;
   padding: 14px 0 58px;
 
+  @media screen and (max-width: 767px) {
+    padding: 4px 0 58px;
+    width: 100%;
+  }
+
   &__label {
     position: absolute;
     top: 50%;
@@ -125,7 +130,7 @@
 
   &__error {
     position: absolute;
-    bottom: 0;
+    bottom: 30px;
     left: 0;
 
     color: #ff1553;

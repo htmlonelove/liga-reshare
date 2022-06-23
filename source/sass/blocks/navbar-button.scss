@@ -19,6 +19,10 @@
     top: 30px;
   }
 
+  @include vp-767 {
+    right: 20px;
+  }
+
   &.is-active {
     position: fixed;
   }

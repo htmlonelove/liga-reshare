@@ -17,8 +17,9 @@
     margin: 0 0 13px 0;
 
     @include vp-767 {
-      font-size: 32px;
-      line-height: 36px;
+      font-size: 28px;
+      line-height: 28px;
+      margin: 0 0 18px 0;
       word-break: break-word;
     }
   }

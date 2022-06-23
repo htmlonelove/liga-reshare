@@ -100,7 +100,7 @@ section.component-demo(data-tabs='element')
         inputName: "user-passport",
         inputMinLength: "2"
       })(data-validate-type="matrix", data-matrix-limitations="digit", data-matrix="____ ______")
-      p Инпут #[b data-validate-type="matrix" data-matrix="____ ______" data-matrix-limitations="digit"] с предустановленным некорректным value. (ЗАЧЕМ ЭТО?)
+      p Инпут #[b data-validate-type="matrix" data-matrix="____ ______" data-matrix-limitations="digit"] с предустановленным некорректным value.
       +custom-input({
         inputLabel: "Введите номер паспорта",
         inputError: "Не корректное имя",
@@ -108,7 +108,7 @@ section.component-demo(data-tabs='element')
         inputMinLength: "10",
         inputValue: "123123123312312"
       })(data-validate-type="matrix", data-matrix-limitations="digit", data-matrix="____ ______")
-      p Инпут #[b data-validate-type="matrix" data-matrix="____ ______" data-matrix-limitations="digit"] с предустановленным корректным value. (ЗАЧЕМ ЭТО?)
+      p Инпут #[b data-validate-type="matrix" data-matrix="____ ______" data-matrix-limitations="digit"] с предустановленным корректным value.
       +custom-input({
         inputLabel: "Введите номер паспорта",
         inputError: "Не корректное имя",
@@ -129,7 +129,7 @@ section.component-demo(data-tabs='element')
         inputError: "Не корректный телефон",
         inputName: "user-phone",
         inputValue: "123123"
-      })(data-validate-type="phone").is-invalid
+      })(data-validate-type="phone")
       p Инпут #[b data-validate-type="phone"] с предустановленным корректным value.
       +custom-input({
         inputLabel: "Введите ваш телефон",
@@ -185,122 +185,152 @@ section.component-demo(data-tabs='element')
           inputLabel: "Чекбокс",
           inputError: "Согласие является обязательным",
           inputName: "user-agreement",
+          inputChecked: false
+        })(data-validate-type="checkbox").custom-toggle--checkbox
+      p Чекбокс выбран #[b data-validate-type="checkbox"].
+      div
+        +custom-toggle({
+          inputLabel: "Чекбокс",
+          inputError: "Согласие является обязательным",
+          inputName: "user-agreement",
           inputChecked: true
         })(data-validate-type="checkbox").custom-toggle--checkbox
       p Группа чекбоксов #[b data-validate-type="toggle-group"].
-      div(data-validate-type="toggle-group")
+      div.toggle-group(data-validate-type="toggle-group")
         +custom-toggle({
           inputLabel: "Чекбокс",
           inputError: "Выберите хотя бы один вариант",
           inputName: "user-agreement",
           inputChecked: false
-        })(data-validate-type="checkbox").custom-toggle--checkbox
+        }).custom-toggle--checkbox
         +custom-toggle({
           inputLabel: "Чекбокс",
           inputError: "Выберите хотя бы один вариант",
           inputName: "user-agreement",
           inputChecked: false
-        })(data-validate-type="checkbox").custom-toggle--checkbox
+        }).custom-toggle--checkbox
         +custom-toggle({
           inputLabel: "Чекбокс",
           inputError: "Выберите хотя бы один вариант",
           inputName: "user-agreement",
           inputChecked: false
-        })(data-validate-type="checkbox").custom-toggle--checkbox
+        }).custom-toggle--checkbox
         +custom-toggle({
           inputLabel: "Чекбокс",
           inputError: "Выберите хотя бы один вариант",
           inputName: "user-agreement",
           inputChecked: false
-        })(data-validate-type="checkbox").custom-toggle--checkbox
+        }).custom-toggle--checkbox
+        span.toggle-group__error Выберите хотя бы один вариант
       p Группа чекбоксов #[b data-validate-type="toggle-group"] с выбранным чекбоксом по умолчанию
-      div(data-validate-type="toggle-group")
+      div.toggle-group(data-validate-type="toggle-group")
         +custom-toggle({
           inputLabel: "Чекбокс",
           inputError: "Выберите хотя бы один вариант",
           inputName: "user-agreement",
           inputChecked: true
-        })(data-validate-type="checkbox").custom-toggle--checkbox
+        }).custom-toggle--checkbox
         +custom-toggle({
           inputLabel: "Чекбокс",
           inputError: "Выберите хотя бы один вариант",
           inputName: "user-agreement",
           inputChecked: false
-        })(data-validate-type="checkbox").custom-toggle--checkbox
+        }).custom-toggle--checkbox
         +custom-toggle({
           inputLabel: "Чекбокс",
           inputError: "Выберите хотя бы один вариант",
           inputName: "user-agreement",
           inputChecked: false
-        })(data-validate-type="checkbox").custom-toggle--checkbox
+        }).custom-toggle--checkbox
         +custom-toggle({
           inputLabel: "Чекбокс",
           inputError: "Выберите хотя бы один вариант",
           inputName: "user-agreement",
           inputChecked: false
-        })(data-validate-type="checkbox").custom-toggle--checkbox
+        }).custom-toggle--checkbox
+        span.toggle-group__error Выберите хотя бы один вариант
       hr
       h2.subtitle Радио кнопки
+      p Радио кнопка #[b data-validate-type="radio"].
+      div
+        +custom-toggle({
+          inputType: "radio",
+          inputLabel: "Радио кнопка",
+          inputError: "Согласие является обязательным",
+          inputName: "user-radio-1",
+          inputChecked: false
+        })(data-validate-type="radio").custom-toggle--radio
+      p Радио кнопка выбрана #[b data-validate-type="radio"].
+      div
+        +custom-toggle({
+          inputType: "radio",
+          inputLabel: "Радио кнопка",
+          inputError: "Согласие является обязательным",
+          inputName: "user-radio-2",
+          inputChecked: true
+        })(data-validate-type="radio").custom-toggle--radio
       p Группа радио кнопок #[b data-validate-type="toggle-group"].
-      div(data-validate-type="toggle-group")
+      div.toggle-group(data-validate-type="toggle-group")
         +custom-toggle({
           inputType: "radio",
           inputLabel: "Радиокнопка",
           inputError: "Выберите один вариант",
           inputName: "user-choose",
           inputChecked: false
-        })(data-validate-type="radio").custom-toggle--radio
+        }).custom-toggle--radio
         +custom-toggle({
           inputType: "radio",
           inputLabel: "Радиокнопка",
           inputError: "Выберите один вариант",
           inputName: "user-choose",
           inputChecked: false
-        })(data-validate-type="radio").custom-toggle--radio
+        }).custom-toggle--radio
         +custom-toggle({
           inputType: "radio",
           inputLabel: "Радиокнопка",
           inputError: "Выберите один вариант",
           inputName: "user-choose",
           inputChecked: false
-        })(data-validate-type="radio").custom-toggle--radio
+        }).custom-toggle--radio
         +custom-toggle({
           inputType: "radio",
           inputLabel: "Радиокнопка",
           inputError: "Выберите один вариант",
           inputName: "user-choose",
           inputChecked: false
-        })(data-validate-type="radio").custom-toggle--radio
+        }).custom-toggle--radio
+        span.toggle-group__error Выберите один вариант
       p Группа радио кнопок #[b data-validate-type="toggle-group"] с выбранной по умолчанию.
-      div(data-validate-type="toggle-group")
+      div.toggle-group(data-validate-type="toggle-group")
         +custom-toggle({
           inputType: "radio",
           inputLabel: "Радиокнопка",
           inputError: "Выберите один вариант",
           inputName: "user-choose",
           inputChecked: true
-        })(data-validate-type="radio").custom-toggle--radio
+        }).custom-toggle--radio
         +custom-toggle({
           inputType: "radio",
           inputLabel: "Радиокнопка",
           inputError: "Выберите один вариант",
           inputName: "user-choose",
           inputChecked: false
-        })(data-validate-type="radio").custom-toggle--radio
+        }).custom-toggle--radio
         +custom-toggle({
           inputType: "radio",
           inputLabel: "Радиокнопка",
           inputError: "Выберите один вариант",
           inputName: "user-choose",
           inputChecked: false
-        })(data-validate-type="radio").custom-toggle--radio
+        }).custom-toggle--radio
         +custom-toggle({
           inputType: "radio",
           inputLabel: "Радиокнопка",
           inputError: "Выберите один вариант",
           inputName: "user-choose",
           inputChecked: false
-        })(data-validate-type="radio").custom-toggle--radio
+        }).custom-toggle--radio
+        span.toggle-group__error Выберите один вариант
       hr
       h2.subtitle Селекты
       p Селект простой #[b data-validate-type="select"].

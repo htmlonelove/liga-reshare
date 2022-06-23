@@ -1,3 +1,7 @@
+mixin navbar-item(href, text)
+  li.navbar__item
+    a.navbar__link(href=href, class= currentUrl === href ? "is-active" : "")!=text
+
 mixin navbar()
   aside.navbar&attributes(attributes)
     button.navbar__close(type="button", aria-label="Закрыть меню", data-navbar-close)
@@ -10,54 +14,36 @@ mixin navbar()
           .navbar__content(data-accordion="content")
             .navbar__inner
               ul.navbar__list
-                li.navbar__item
-                  a.navbar__link.is-active(href="#") О Разделе
-                li.navbar__item
-                  a.navbar__link(href="#") Валидация формы
-                li.navbar__item
-                  a.navbar__link(href="#") Кастомный селект
-                li.navbar__item
-                  a.navbar__link(href="#") Компонент
-                li.navbar__item
-                  a.navbar__link(href="#") Компонент
-                li.navbar__item
-                  a.navbar__link(href="#") Компонент
+                +navbar-item("components.html", "О разделе")
+                +navbar-item("form-validate.html", "Валидация формы")
+                +navbar-item("custom-select.html", "Кастомный селект")
+                +navbar-item("#", "Компонент")
+                +navbar-item("#", "Компонент")
+                +navbar-item("#", "Компонент")
         .navbar__element(data-accordion="element")
           button.navbar__button(type="button", data-accordion="button") Кейсы
             +icon("icon-accordion", 16, 9).navbar__button-icon
           .navbar__content(data-accordion="content")
             .navbar__inner
               ul.navbar__list
-                li.navbar__item
-                  a.navbar__link(href="#") Кейс - 1
-                li.navbar__item
-                  a.navbar__link(href="#") Кейс - 2
-                li.navbar__item
-                  a.navbar__link(href="#") Кейс - 3
-                li.navbar__item
-                  a.navbar__link(href="#") Кейс - 4
-                li.navbar__item
-                  a.navbar__link(href="#") Кейс - 5
-                li.navbar__item
-                  a.navbar__link(href="#") Кейс - 6
+                +navbar-item("#", "Кейс - 1")
+                +navbar-item("#", "Кейс - 2")
+                +navbar-item("#", "Кейс - 3")
+                +navbar-item("#", "Кейс - 4")
+                +navbar-item("#", "Кейс - 5")
+                +navbar-item("#", "Кейс - 6")
         .navbar__element(data-accordion="element")
           button.navbar__button(type="button", data-accordion="button") Гайды
             +icon("icon-accordion", 16, 9).navbar__button-icon
           .navbar__content(data-accordion="content")
             .navbar__inner
               ul.navbar__list
-                li.navbar__item
-                  a.navbar__link(href="#") Гайд - 1
-                li.navbar__item
-                  a.navbar__link(href="#") Гайд - 2
-                li.navbar__item
-                  a.navbar__link(href="#") Гайд - 3
-                li.navbar__item
-                  a.navbar__link(href="#") Гайд - 4
-                li.navbar__item
-                  a.navbar__link(href="#") Гайд - 5
-                li.navbar__item
-                  a.navbar__link(href="#") Гайд - 6
+                +navbar-item("#", "Гайд - 1")
+                +navbar-item("#", "Гайд - 2")
+                +navbar-item("#", "Гайд - 3")
+                +navbar-item("#", "Гайд - 4")
+                +navbar-item("#", "Гайд - 5")
+                +navbar-item("#", "Гайд - 6")
 
 
 
