@@ -1,17 +1,30 @@
-section.component-description
-  h2.subtitle Описание
+section.component-description(data-tabs='element')
   p Cookie состоят из следующих файлов: cookie.js, cookie-consent-checker.js, они обязательны к переносу в проект! Файл стилей представлен как пример для визуального отоброжения блока. При нажатии на кнопку OK блок исчезнет на 30 дней
-  h2.component__subtitle Обязательные data атрибуты
-  p data-cookies Устанавливается на родителе
-  p data-cookies-consent Устанавливается на кнопке подтверждения
-  h2.component__subtitle Не обязательные data атрибуты
-  p data-cookies-duration="30" Устанавливается на родителе, записывается количество дней время действия согласия. Если не установлено то вступает в силу значение по умолчанию const BASE_DURATION = 30;
+  h2.subtitle Обязательные data атрибуты
+  table
+    tr
+      th
+        p data-cookies
+      td
+        p Устанавливается на родителе
+    tr
+      th
+        p data-cookies-consent
+      td
+        p Устанавливается на кнопке подтверждения
+  h2.subtitle Не обязательные data атрибуты
+  table
+    tr
+      th
+        p data-cookies-duration="30"
+      td
+        p Устанавливается на родителе, записывается количество дней время действия согласия. Если не установлено то вступает в силу значение по умолчанию #[b const BASE_DURATION = 30;]
   pre
-    code.
-
-                    &lt;div class="cookies is-active" data-cookies data-cookies-duration="30">
-                      &lt;div> class="cookies__text">
-                        &lt;span>Мы используем куки&lt;/span>
-                      &lt;/div>
-                      &lt;button class="cookies__btn" type="button" data-cookies-consent>OK&lt;/button>
-                    &lt;/div>
+    |
+    code(class="language-html").
+      &lt;div class="cookies is-active" data-cookies data-cookies-duration="30">
+        &lt;div> class="cookies__text">
+          &lt;span>Мы используем куки&lt;/span>
+        &lt;/div>
+        &lt;button class="cookies__btn" type="button" data-cookies-consent>OK&lt;/button>
+      &lt;/div>
