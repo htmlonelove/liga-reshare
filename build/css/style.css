@@ -2805,7 +2805,6 @@ button,
 }
 
 .tabs {
-  margin-top: 50px;
   max-width: 100%;
 }
 
@@ -2813,6 +2812,9 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   width: 100%;
   margin-bottom: 40px;
 }
@@ -2820,9 +2822,12 @@ button,
 .tabs__control {
   text-transform: uppercase;
   cursor: pointer;
-  margin-right: 40px;
+  margin: 0 20px;
   opacity: 0.5;
   min-width: auto;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 25%;
 }
 
@@ -2839,8 +2844,16 @@ button,
 }
 
 .tabs__element {
-  padding: 10px;
+  padding: 25px;
   width: 100%;
+}
+
+.tabs__element p {
+  margin: 0;
+}
+
+.tabs__element p:not(:last-child) {
+  margin: 0 0 20px 0;
 }
 
 .tabs__element:nth-child(1) {
@@ -3439,11 +3452,19 @@ button,
     display: flex;
     position: absolute;
     right: 30px;
-    top: 30px;
+    top: 34px;
   }
 
   .component-heading {
     padding: 20px 60px 17px 0;
+    top: 73px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .tabs__control {
+    margin: 0 10px;
+    padding: 15px;
   }
 }
 
@@ -3484,7 +3505,7 @@ button,
   }
 
   .content__inner {
-    padding: 16px 0 50px;
+    padding: 0 0 50px;
   }
 
   .logo {
@@ -3605,6 +3626,7 @@ button,
 
   .navbar-button {
     right: 20px;
+    top: 30px;
   }
 
   .component-heading {
@@ -3616,6 +3638,7 @@ button,
     -ms-flex-direction: column;
     flex-direction: column;
     padding: 20px 0 34px 0;
+    top: 89px;
   }
 
   .component-heading--not-demo {
@@ -3734,6 +3757,21 @@ button,
     -webkit-transform: translateY(calc(-50% - 5px));
     -ms-transform: translateY(calc(-50% - 5px));
     transform: translateY(calc(-50% - 5px));
+  }
+
+  .tabs__controls {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .tabs__control {
+    margin: 10px 2% 0;
+    padding: 10px;
+    width: 45%;
+  }
+
+  .tabs__element {
+    padding: 15px;
   }
 
   .custom-input,

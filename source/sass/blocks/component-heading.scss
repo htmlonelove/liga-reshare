@@ -11,12 +11,14 @@
 
   @include vp-1023 {
     padding: 20px 60px 17px 0;
+    top: 73px;
   }
 
   @include vp-767 {
     align-items: flex-start;
     flex-direction: column;
     padding: 20px 0 34px 0;
+    top: 89px;
   }
 
   &--not-demo {
