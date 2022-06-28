@@ -22,6 +22,8 @@
   <body>
     <div class="visually-hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-accordion" viewBox="0 0 16 10">
 <path d="M13.5551 9.07397L7.99957 3.51842L2.44401 9.07397L0.221787 7.96286L7.99957 0.185086L15.7773 7.96286L13.5551 9.07397Z"/>
+</symbol><symbol id="icon-arrow" viewBox="0 0 16 8">
+<path d="M2.65436 -0.229004L8.06467 5.18131L13.475 -0.229004L15.6391 0.853058L8.06467 8.42749L0.490234 0.853058L2.65436 -0.229004Z"/>
 </symbol><symbol id="icon-chevrone" viewBox="0 0 5 7">
 <path d="M0.666016 6L3.16602 3.5L0.666016 1L1.16602 0L4.66602 3.5L1.16602 7L0.666016 6Z" fill="black"/>
 </symbol><symbol id="icon-close-modal" viewBox="0 0 20 20"><path d="M.293 18.291a1 1 0 101.414 1.414L10 11.413l8.292 8.292a1 1 0 101.414-1.414l-8.292-8.292 8.292-8.292A1 1 0 1018.291.293L9.999 8.585 1.707.293A1 1 0 10.293 1.707L8.585 10 .293 18.291z"/></symbol><symbol id="icon-close" viewBox="0 0 20 20">
@@ -158,214 +160,216 @@
           </button>
         </div>
       </header>
-      <main class="content" id="content">
-        <section class="hero">
-          <div class="container">
-            <div class="breadcrumbs hero__breadcrumbs">
-              <ul class="breadcrumbs__list">
-                <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Главная
-                    <svg width="4" height="7" aria-hidden="true">
-                      <use xlink:href="#icon-chevrone"></use>
-                    </svg></a></li>
-                <li class="breadcrumbs__item"><span class="breadcrumbs__link">Компоненты</span></li>
-              </ul>
+      <main>
+        <div class="content" id="content">
+          <section class="hero">
+            <div class="container">
+              <div class="breadcrumbs hero__breadcrumbs">
+                <ul class="breadcrumbs__list">
+                  <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Главная
+                      <svg width="4" height="7" aria-hidden="true">
+                        <use xlink:href="#icon-chevrone"></use>
+                      </svg></a></li>
+                  <li class="breadcrumbs__item"><span class="breadcrumbs__link">Компоненты</span></li>
+                </ul>
+              </div>
+              <h1 class="hero__title">Компоненты</h1>
             </div>
-            <h1 class="hero__title">Компоненты</h1>
-          </div>
-        </section>
-        <div class="content__wrapper">
-          <button class="navbar-button" type="button" aria-label="Открыть список" data-navbar-open>
-            <svg width="25" height="20" aria-hidden="true">
-              <use xlink:href="#icon-menu"></use>
-            </svg>
-          </button>
-          <aside class="navbar">
-            <button class="navbar__close" type="button" aria-label="Закрыть меню" data-navbar-close>
-              <svg width="20" height="20" aria-hidden="true">
-                <use xlink:href="#icon-close"></use>
+          </section>
+          <div class="content__wrapper">
+            <button class="navbar-button" type="button" aria-label="Открыть список" data-navbar-open>
+              <svg width="25" height="20" aria-hidden="true">
+                <use xlink:href="#icon-menu"></use>
               </svg>
             </button>
-            <div class="navbar__wrapper">
-              <div class="navbar__accordion" data-accordion="parent" data-single data-close-inner>
-                <div class="navbar__element is-active" data-accordion="element">
-                  <button class="navbar__button" type="button" data-accordion="button">Компоненты
-                    <svg class="navbar__button-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg>
-                  </button>
-                  <div class="navbar__content" data-accordion="content">
-                    <div class="navbar__inner">
-                      <ul class="navbar__list">
-                        <li class="navbar__item"><a class="navbar__link is-active" href="components.html">О разделе</a></li>
-                        <li class="navbar__item"><a class="navbar__link" href="form-validate.html">Валидация формы</a></li>
-                        <li class="navbar__item"><a class="navbar__link" href="custom-select.html">Кастомный селект</a></li>
-                        <li class="navbar__item"><a class="navbar__link" href="#">Компонент</a></li>
-                        <li class="navbar__item"><a class="navbar__link" href="#">Компонент</a></li>
-                        <li class="navbar__item"><a class="navbar__link" href="#">Компонент</a></li>
-                      </ul>
+            <aside class="navbar">
+              <button class="navbar__close" type="button" aria-label="Закрыть меню" data-navbar-close>
+                <svg width="20" height="20" aria-hidden="true">
+                  <use xlink:href="#icon-close"></use>
+                </svg>
+              </button>
+              <div class="navbar__wrapper">
+                <div class="navbar__accordion" data-accordion="parent" data-single data-close-inner>
+                  <div class="navbar__element is-active" data-accordion="element">
+                    <button class="navbar__button" type="button" data-accordion="button">Компоненты
+                      <svg class="navbar__button-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg>
+                    </button>
+                    <div class="navbar__content" data-accordion="content">
+                      <div class="navbar__inner">
+                        <ul class="navbar__list">
+                          <li class="navbar__item"><a class="navbar__link is-active" href="components.html">О разделе</a></li>
+                          <li class="navbar__item"><a class="navbar__link" href="form-validate.html">Валидация формы</a></li>
+                          <li class="navbar__item"><a class="navbar__link" href="custom-select.html">Кастомный селект</a></li>
+                          <li class="navbar__item"><a class="navbar__link" href="#">Компонент</a></li>
+                          <li class="navbar__item"><a class="navbar__link" href="#">Компонент</a></li>
+                          <li class="navbar__item"><a class="navbar__link" href="#">Компонент</a></li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="navbar__element" data-accordion="element">
-                  <button class="navbar__button" type="button" data-accordion="button">Кейсы
-                    <svg class="navbar__button-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg>
-                  </button>
-                  <div class="navbar__content" data-accordion="content">
-                    <div class="navbar__inner">
-                      <ul class="navbar__list">
-                        <li class="navbar__item"><a class="navbar__link" href="#">Кейс - 1</a></li>
-                        <li class="navbar__item"><a class="navbar__link" href="#">Кейс - 2</a></li>
-                        <li class="navbar__item"><a class="navbar__link" href="#">Кейс - 3</a></li>
-                        <li class="navbar__item"><a class="navbar__link" href="#">Кейс - 4</a></li>
-                        <li class="navbar__item"><a class="navbar__link" href="#">Кейс - 5</a></li>
-                        <li class="navbar__item"><a class="navbar__link" href="#">Кейс - 6</a></li>
-                      </ul>
+                  <div class="navbar__element" data-accordion="element">
+                    <button class="navbar__button" type="button" data-accordion="button">Кейсы
+                      <svg class="navbar__button-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg>
+                    </button>
+                    <div class="navbar__content" data-accordion="content">
+                      <div class="navbar__inner">
+                        <ul class="navbar__list">
+                          <li class="navbar__item"><a class="navbar__link" href="#">Кейс - 2</a></li>
+                          <li class="navbar__item"><a class="navbar__link" href="#">Кейс - 2</a></li>
+                          <li class="navbar__item"><a class="navbar__link" href="#">Кейс - 3</a></li>
+                          <li class="navbar__item"><a class="navbar__link" href="#">Кейс - 4</a></li>
+                          <li class="navbar__item"><a class="navbar__link" href="#">Кейс - 5</a></li>
+                          <li class="navbar__item"><a class="navbar__link" href="#">Кейс - 6</a></li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="navbar__element" data-accordion="element">
-                  <button class="navbar__button" type="button" data-accordion="button">Гайды
-                    <svg class="navbar__button-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg>
-                  </button>
-                  <div class="navbar__content" data-accordion="content">
-                    <div class="navbar__inner">
-                      <ul class="navbar__list">
-                        <li class="navbar__item"><a class="navbar__link" href="#">Гайд - 1</a></li>
-                        <li class="navbar__item"><a class="navbar__link" href="#">Гайд - 2</a></li>
-                        <li class="navbar__item"><a class="navbar__link" href="#">Гайд - 3</a></li>
-                        <li class="navbar__item"><a class="navbar__link" href="#">Гайд - 4</a></li>
-                        <li class="navbar__item"><a class="navbar__link" href="#">Гайд - 5</a></li>
-                        <li class="navbar__item"><a class="navbar__link" href="#">Гайд - 6</a></li>
-                      </ul>
+                  <div class="navbar__element" data-accordion="element">
+                    <button class="navbar__button" type="button" data-accordion="button">Гайды
+                      <svg class="navbar__button-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg>
+                    </button>
+                    <div class="navbar__content" data-accordion="content">
+                      <div class="navbar__inner">
+                        <ul class="navbar__list">
+                          <li class="navbar__item"><a class="navbar__link" href="scaling.html">Скейлинг</a></li>
+                          <li class="navbar__item"><a class="navbar__link" href="#">Гайд - 2</a></li>
+                          <li class="navbar__item"><a class="navbar__link" href="#">Гайд - 3</a></li>
+                          <li class="navbar__item"><a class="navbar__link" href="#">Гайд - 4</a></li>
+                          <li class="navbar__item"><a class="navbar__link" href="#">Гайд - 5</a></li>
+                          <li class="navbar__item"><a class="navbar__link" href="#">Гайд - 6</a></li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </aside>
-          <div class="content__inner">
-            <section class="components">
-              <p class="components__about">Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.</p>
-              <ul class="components__list">
-                <li class="components__item"><a class="components__link" href="#">Кастомный селект
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Кастомный селект
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Кастомный селект
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Кастомный селект
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Валидация формы
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Валидация формы
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Валидация формы
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Аккордион
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Аккордион
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Табы
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Табы
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Табы
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Склонение слов
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Склонение слов
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Склонение слов
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Компонент
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Компонент
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Компонент
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Компонент
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Компонент
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Компонент
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Компонент
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Компонент
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Компонент
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Компонент
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Компонент
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-                <li class="components__item"><a class="components__link" href="#">Компонент
-                    <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></a></li>
-              </ul>
-            </section>
-            <div class="up-button">
-              <div class="up-button__inner"><a class="up-button__link" href="#content" aria-label="Прокрутить страницу наверх" data-trigger>
-                  <svg width="17" height="14" aria-hidden="true">
-                    <use xlink:href="#icon-two-arrow"></use>
-                  </svg></a></div>
+            </aside>
+            <div class="content__inner">
+              <section class="components">
+                <p class="components__about">Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.</p>
+                <ul class="components__list">
+                  <li class="components__item"><a class="components__link" href="custom-select.html">Кастомный селект
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="form-validate.html">Валидация формы
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Кастомный селект
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Кастомный селект
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Валидация формы
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Валидация формы
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Валидация формы
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Аккордион
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Аккордион
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Табы
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Табы
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Табы
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Склонение слов
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Склонение слов
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Склонение слов
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Компонент
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Компонент
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Компонент
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Компонент
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Компонент
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Компонент
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Компонент
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Компонент
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Компонент
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Компонент
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Компонент
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                  <li class="components__item"><a class="components__link" href="#">Компонент
+                      <svg class="components__link-icon" width="16" height="9" aria-hidden="true">
+                        <use xlink:href="#icon-accordion"></use>
+                      </svg></a></li>
+                </ul>
+              </section>
+              <div class="up-button">
+                <div class="up-button__inner"><a class="up-button__link" href="#content" aria-label="Прокрутить страницу наверх" data-trigger>
+                    <svg width="17" height="14" aria-hidden="true">
+                      <use xlink:href="#icon-two-arrow"></use>
+                    </svg></a></div>
+              </div>
             </div>
           </div>
         </div>

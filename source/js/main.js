@@ -8,6 +8,8 @@ import {initMoveTo} from './modules/init-move-to';
 import {initNavbarMenu} from './modules/init-navbar-menu';
 import {initHeaderObserver} from './modules/init-header-observer';
 import {initTabs} from './modules/init-tabs';
+import {initNavigationChanger} from './modules/init-navigation-changer';
+import {initArticleMenu} from './modules/init-article-menu';
 
 
 // ---------------------------------
@@ -33,6 +35,8 @@ window.addEventListener('DOMContentLoaded', () => {
     initMoveTo();
     initNavbarMenu();
     initTabs();
+    initNavigationChanger();
+    initArticleMenu();
   });
 });
 

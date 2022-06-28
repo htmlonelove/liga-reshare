@@ -7,11 +7,12 @@ block variables
   - const headerMods = ""
   - const hasFooter = true
   - const currentUrl = "form-validate.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const pageType = "component"
   - const pageJs = "js/formValidate.min.js"
 
 block main
-  main.content(id="content")
-    +hero({
+  main
+    +content({
       title: "Компоненты",
       links: [
         {
@@ -27,10 +28,5 @@ block main
         }
       ]
     })
-    .content__wrapper
-      +navbar-button()
-      +navbar()
-      .content__inner
-        +form-validate()
-        +up-button()
+      +form-validate-component()
 block modals

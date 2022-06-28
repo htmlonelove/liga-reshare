@@ -1,18 +1,34 @@
 .component-heading {
   border-bottom: 2px solid $color-ghost-white;
+  background-color: $color-default-white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 0 17px 0;
+  padding: 20px 0 17px 0;
+  position: sticky;
+  top: 89px;
+  z-index: 10;
 
   @include vp-1023 {
-    padding: 0 60px 17px 0;
+    padding: 20px 60px 17px 0;
   }
 
   @include vp-767 {
     align-items: flex-start;
     flex-direction: column;
-    padding: 0 0 34px 0;
+    padding: 20px 0 34px 0;
+  }
+
+  &--not-demo {
+    @include vp-767 {
+      padding: 16px 0;
+    }
+
+    .component-heading__head {
+      @include vp-767 {
+        margin: 0;
+      }
+    }
   }
 
   &__head {
@@ -25,6 +41,7 @@
   &__tabs {
     align-items: center;
     display: flex;
+    margin: 13px 0 0 0;
   }
 
   &__tab-control {

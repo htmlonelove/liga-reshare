@@ -2,6 +2,16 @@
   padding: 34px 0 0 0;
   width: 100%;
 
+  h2.subtitle {
+    margin: 58px 0 34px;
+  }
+
+  h3 {
+    font-size: 18px;
+    line-height: 27px;
+    margin: 58px 0 33px;
+  }
+
   p {
     word-break: break-word;
     margin: 0 0 20px;
@@ -11,11 +21,6 @@
     @include vp-767 {
       font-size: 16px;
       line-height: 20px;
-    }
-
-    em {
-      font-style: normal;
-      color: $color-torch-red;
     }
   }
 
@@ -29,6 +34,69 @@
         color: $color-torch-red;
       }
     }
+  }
+
+  ul {
+    list-style: none;
+    font-size: 18px;
+    line-height: 27px;
+    margin: 34px 0;
+    padding: 0 0 0 34px;
+
+    @media screen and (max-width: 767px) {
+      padding: 0;
+    }
+
+    li {
+      position: relative;
+
+      &::after {
+        background-color: $color-default-black;
+        border-radius: 50%;
+        content: "";
+        height: 9px;
+        left: -25px;
+        position: absolute;
+        top: 10px;
+        width: 9px;
+
+        @media screen and (max-width: 767px) {
+          height: 7px;
+          left: 0;
+          width: 7px;
+        }
+      }
+
+      p {
+        @media screen and (max-width: 767px) {
+          padding: 0 0 0 15px;
+        }
+      }
+    }
+
+    .component-description__img {
+      padding-left: 0;
+    }
+  }
+
+  ul ul {
+    list-style: disc;
+    margin: 0;
+    padding: 0 0 0 15px;
+
+    li {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  blockquote {
+    background-color: $color-ghost-white;
+    font-size: 18px;
+    line-height: 27px;
+    margin: 34px 0;
+    padding: 30px 75px 30px 40px;
   }
 
   table {
@@ -80,16 +148,38 @@
 
   pre {
     display: flex;
-    background-color: $color-white-smoke;
+    background-color: $color-ghost-white;
+    margin: 48px 0 58px;
+    padding: 2rem;
   }
 
   code {
-    padding: 20px;
-
     font-size: 0.8em;
 
     @include vp-767 {
       word-break: break-word;
     }
+  }
+
+  &__img {
+    margin: 34px 0;
+    padding: 0 40px;
+
+    @media screen and (max-width: 767px) {
+      padding: 0;
+    }
+  }
+
+  &__video {
+    margin: 34px 0;
+    padding: 0 40px;
+
+    @media screen and (max-width: 767px) {
+      padding: 0;
+    }
+  }
+
+  video {
+    width: 100%;
   }
 }

@@ -8,7 +8,7 @@ mixin navbar()
       +icon("icon-close", 20, 20)
     .navbar__wrapper
       .navbar__accordion(data-accordion="parent",data-single, data-close-inner)
-        .navbar__element.is-active(data-accordion="element")
+        .navbar__element(class=pageType==="component" ? "is-active" : "", data-accordion="element")
           button.navbar__button(type="button", data-accordion="button") Компоненты
             +icon("icon-accordion", 16, 9).navbar__button-icon
           .navbar__content(data-accordion="content")
@@ -20,25 +20,25 @@ mixin navbar()
                 +navbar-item("#", "Компонент")
                 +navbar-item("#", "Компонент")
                 +navbar-item("#", "Компонент")
-        .navbar__element(data-accordion="element")
+        .navbar__element(class=pageType==="case" ? "is-active" : "", data-accordion="element")
           button.navbar__button(type="button", data-accordion="button") Кейсы
             +icon("icon-accordion", 16, 9).navbar__button-icon
           .navbar__content(data-accordion="content")
             .navbar__inner
               ul.navbar__list
-                +navbar-item("#", "Кейс - 1")
+                +navbar-item("#", "Кейс - 2")
                 +navbar-item("#", "Кейс - 2")
                 +navbar-item("#", "Кейс - 3")
                 +navbar-item("#", "Кейс - 4")
                 +navbar-item("#", "Кейс - 5")
                 +navbar-item("#", "Кейс - 6")
-        .navbar__element(data-accordion="element")
+        .navbar__element(class=pageType==="guide" ? "is-active" : "", data-accordion="element")
           button.navbar__button(type="button", data-accordion="button") Гайды
             +icon("icon-accordion", 16, 9).navbar__button-icon
           .navbar__content(data-accordion="content")
             .navbar__inner
               ul.navbar__list
-                +navbar-item("#", "Гайд - 1")
+                +navbar-item("scaling.html", "Скейлинг")
                 +navbar-item("#", "Гайд - 2")
                 +navbar-item("#", "Гайд - 3")
                 +navbar-item("#", "Гайд - 4")

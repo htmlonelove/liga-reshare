@@ -46,8 +46,8 @@ const initNavbarMenu = () => {
       closeNavbar(true);
     });
     document.addEventListener('scroll', stickyNavbarHandler);
+    breakpointChecker();
   }
-  breakpointChecker();
 };
 
 export {initNavbarMenu};

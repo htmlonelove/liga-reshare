@@ -2,10 +2,11 @@
   position: relative;
 
   width: 300px;
-  padding: 14px 0 58px;
+  padding: 14px 0 14px;
+  margin: 0 0 44px 0;
 
   @media screen and (max-width: 767px) {
-    padding: 4px 0 58px;
+    padding: 4px 0 14px;
     width: 100%;
   }
 
@@ -19,6 +20,10 @@
     transition: transform 0.3s ease, opacity  0.3s ease;
 
     pointer-events: none;
+
+    @media screen and (max-width: 767px) {
+      transform: translateY(calc(-50% - 5px));
+    }
   }
 
   &__placeholder {
@@ -31,6 +36,10 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
 
     pointer-events: none;
+
+    @media screen and (max-width: 767px) {
+      transform: translateY(calc(-50% - 5px));
+    }
   }
 
   select {
@@ -81,7 +90,7 @@
 
   &__list {
     position: absolute;
-    bottom: 32px;
+    bottom: 10px;
     z-index: 1;
 
     width: 100%;
@@ -130,7 +139,7 @@
 
   &__error {
     position: absolute;
-    bottom: 30px;
+    bottom: -15px;
     left: 0;
 
     color: #ff1553;
@@ -185,7 +194,7 @@
     .custom-select__list {
       bottom: auto;
       top: 0;
-      transform: translateY(calc(-100% + 30px));
+      transform: translateY(calc(-100% + 10px));
     }
   }
 
