@@ -3,6 +3,8 @@
 const BASE_COUNTRY_CODE = '+7';
 const BASE_MATRIX = '(___) ___ __ __';
 const phoneLength = BASE_COUNTRY_CODE.length + BASE_MATRIX.length;
+const MAX_PHONE_LENGTH = 18;
+const MIN_PHONE_LENGTH = 6;
 
 // Ограничения ввода для обычных полей
 
@@ -10,6 +12,8 @@ const returnLimitationsRegEx = (dataLimitations) => {
   switch (dataLimitations) {
     case 'digit':
       return /[^\d]/g;
+    case 'simple-phone':
+      return /[^+\d]/g;
     case 'name':
       return /[^a-zA-Zа-яёА-ЯЁ\-\s]/g;
     case 'letters':
@@ -289,6 +293,21 @@ const validatePhoneInput = (input) => {
   return flag;
 };
 
+const validateSimplePhoneInput = (input) => {
+  const parent = input.closest('[data-validate-type]');
+  let flag = true;
+  if (input.value.length < MAX_PHONE_LENGTH && input.value.length > MIN_PHONE_LENGTH && input.value.match(/^\+[0-9]+$/)) {
+    parent.classList.remove('is-invalid');
+    parent.classList.add('is-valid');
+    input.setAttribute('aria-invalid', 'false');
+  } else {
+    parent.classList.remove('is-valid');
+    input.setAttribute('aria-invalid', 'true');
+    flag = false;
+  }
+  return flag;
+};
+
 const validateEmailInput = (input) => {
   const parent = input.closest('[data-validate-type]');
   let flag = true;
@@ -371,6 +390,8 @@ const validateInputs = (type, input) => {
       return validateTextInput(input);
     case 'phone':
       return validatePhoneInput(input);
+    case 'simple-phone':
+      return validateSimplePhoneInput(input);
     case 'email':
       return validateEmailInput(input);
     case 'matrix':

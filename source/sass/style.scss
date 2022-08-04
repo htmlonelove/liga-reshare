@@ -2,6 +2,7 @@
 // ---------------------------------
 
 @import "vendor/normalize";
+@import "vendor/prism";
 // Swiper 7.4.1
 // @import "vendor/swiper";
 
@@ -22,13 +23,33 @@
 @import "blocks/btn";
 @import "blocks/header";
 @import "blocks/footer";
+@import "blocks/content";
+@import "blocks/logo";
+@import "blocks/git-link";
+@import "blocks/navbar";
+@import "blocks/main-nav";
+@import "blocks/sandwich";
+@import "blocks/search";
+@import "blocks/breadcrumbs";
+@import "blocks/hero";
+@import "blocks/intro";
+@import "blocks/site-navigation";
+@import "blocks/last-added";
+@import "blocks/achievements";
+@import "blocks/about";
 @import "blocks/intro-heading";
 @import "blocks/components-nav";
+@import "blocks/components";
 @import "blocks/component";
+@import "blocks/up-button";
+@import "blocks/navbar-button";
 @import "blocks/component-heading";
 @import "blocks/component-description";
 @import "blocks/component-demo";
 @import "blocks/footer";
+@import "blocks/data-accordion";
+@import "blocks/data-tabs";
+@import "blocks/article-menu";
 
 // Components
 // ---------------------------------
@@ -43,7 +64,7 @@
 @import "../components/accordion/style/accordion";
 @import "../components/accordion/style/data-accordion";
 @import "../components/tabs/style/tabs";
-@import "../components/tabs/style/data-tabs";
+//@import "../components/tabs/style/data-tabs";
 @import "../components/form-validate/style/custom-input";
 @import "../components/form-validate/style/custom-toggle";
 @import "../components/form-validate/style/toggle-group";

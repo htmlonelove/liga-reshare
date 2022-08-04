@@ -1,20 +1,25 @@
-section.component-description
-  h2.subtitle Описание
-  p Прогресс скролла состоит из из следующих файлов: scroll-translator.js и scroll-translator.scss js обязателен для переноса в проект, из файла scroll-translator.js экспортится класс ScrollTranslator, в main создаётся экземпляр класса и у него вызывается метод init()
+section.component-description(data-tabs='element')
+  p Прогресс скролла состоит из&nbsp;из&nbsp;следующих файлов: #[b scroll-translator.js] и&nbsp;#[b scroll-translator.scss js]&nbsp;обязателен для переноса в&nbsp;проект, из&nbsp;файла #[b scroll-translator.js] экспортируется класс #[b ScrollTranslator], в&nbsp;main создаётся экземпляр класса и&nbsp;у&nbsp;него вызывается метод #[b init()]
   pre
-    code.
+    code.language-js.
+      import {ScrollTranslator} from '../components/scroll-translator/js/scroll-translator';
+      const scrollTranslator = new ScrollTranslator();
+      scrollTranslator.init();
 
-                      import {ScrollTranslator} from '../components/scroll-translator/js/scroll-translator';
-                      const scrollTranslator = new ScrollTranslator();
-                      scrollTranslator.init();
-
-  h2 Обязательные дата атрибуты
-  p
-    em data-translator="parent"
-    |  Добавляется к родителю
-  p
-    em data-translator-type=""
-    |  Добавляется к родителю, отвечает за то как будет считаться изменение индикатора при скроле горизонтально или вертикально, может иметь два значения horizontal или vertical
-  p
-    em data-translator="indicator"
-    |  Добавляется к индикатору
+  h3 Обязательные дата атрибуты
+  table
+    tr
+      th
+        p data-translator="parent"
+      td
+        p Добавляется к родителю
+    tr
+      th
+        p data-translator-type=""
+      td
+        p Добавляется к&nbsp;родителю, отвечает за&nbsp;то&nbsp;как будет считаться изменение индикатора при скроле горизонтально или вертикально, может иметь два значения horizontal или vertical
+    tr
+      th
+        p data-translator="indicator"
+      td
+        p Добавляется к индикатору

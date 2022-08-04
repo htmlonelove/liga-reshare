@@ -5,12 +5,15 @@ block variables
   - const wrapperMods = ""
   - const hasHeader = true
   - const headerMods = ""
+  - const hasFooter = true
   - const currentUrl = "index.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
 
 block main
   main
-    .container
-      +intro-heading()
-      +components-nav()
+    +intro()
+    +site-navigation()
+    +last-added()
+    //+achievements()
+    +about()
 
 block modals

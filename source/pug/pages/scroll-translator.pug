@@ -1,15 +1,32 @@
 extends ../components/base/layout
 
 block variables
-  - const title = "Лига решений" //- на страницах кроме главной используйте О нас — ProjectName
+  - const title = "Лига решений. Прогресс скрола" //- на страницах кроме главной используйте О нас — ProjectName
   - const wrapperMods = ""
   - const hasHeader = true
   - const headerMods = ""
+  - const hasFooter = true
   - const currentUrl = "scroll-translator.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const pageType = "component"
   - const pageJs = "js/scrollTranslator.min.js"
 
 block main
   main
-    .container
+    +content({
+      title: "Компоненты",
+      links: [
+        {
+          title: "Главная",
+          link: "index.html"
+        },
+        {
+          title: "Компоненты",
+          link: "components.html"
+        },
+        {
+          title: "Прогресс скрола",
+        }
+      ]
+    })
       +scroll-translator()
 block modals

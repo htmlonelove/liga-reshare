@@ -1,24 +1,30 @@
-section.component-description
-  h2.subtitle Описание
+section.component-description(data-tabs='element')
   p В архиве лежат следующие файлы:
-  p
-    em ie-fix.js
-    |  файл с различными полифилами, при необходимости закинуть файл в парку utils вашего проекта. Пример подключения:
-    a(href="https://skr.sh/sCAPulmJkcT?a", target="_blank", rel="nofollow noopener noreferrer") https://skr.sh/sCAPulmJkcT?a
-  p
-    em polyfill-object-fit.js
-    |  файл с полифилом object-fit, при необходимости закинуть файл в парку utils вашего проекта. Пример подключения:
-    a(href="https://skr.sh/sCAJMSpibqr?a", target="_blank", rel="nofollow noopener noreferrer") https://skr.sh/sCAJMSpibqr?a
-  p
-    em swiper.js
-    |  файл с Swiper версии 5.3.6
-  p
-    em swiper.scss
-    |  scss файл для Swiper версии 5.3.6
-  p
-    | При необходимости нужно заменить оба файла и scss и js. Пример подключения: в файле swiper.scss меняем всё содержимое
-    a(href="https://skr.sh/sCAASBKH5hs", target="_blank", rel="nofollow noopener noreferrer") https://skr.sh/sCAASBKH5hs
-    |  в файле swiper.js меняем всё содержимое
-    a(href="https://skr.sh/sCA8E4UxeZQ?a", target="_blank", rel="nofollow noopener noreferrer") https://skr.sh/sCA8E4UxeZQ?a
-    |  и не забываем указывать версию пакета
-    a(href="https://skr.sh/sCAKDupGwj1?a", target="_blank", rel="nofollow noopener noreferrer") https://skr.sh/sCAKDupGwj1?a
+  table
+    tr
+      th
+        p ie-fix.js
+      td
+        p файл с&nbsp;различными полифилами, при необходимости закинуть файл в&nbsp;парку #[b utils] вашего проекта. Пример подключения: #[a(href="https://skr.sh/sCAPulmJkcT?a", target="_blank", rel="nofollow noopener noreferrer") Скриншот]
+    tr
+      th
+        p polyfill-object-fit.js
+      td
+        p файл с&nbsp;полифилом #[b object-fit], при необходимости закинуть файл в&nbsp;парку #[b utils] вашего проекта. Пример подключения: #[a(href="https://skr.sh/sCAJMSpibqr?a", target="_blank", rel="nofollow noopener noreferrer") Скриншот]
+  h3 Swiper.js
+  table
+    tr
+      th
+        p swiper.js
+      td
+        p файл с Swiper версии 5.3.6
+    tr
+      th
+        p swiper.scss
+      td
+        p scss файл для Swiper версии 5.3.6
+  p При необходимости нужно заменить оба файла и scss и js.
+  p Пример подключения:
+  p В файле #[b swiper.scss] меняем всё содержимое #[a(href="https://skr.sh/sCAASBKH5hs", target="_blank", rel="nofollow noopener noreferrer") Скриншот]
+  p В файле #[b swiper.js] меняем всё содержимое #[a(href="https://skr.sh/sCA8E4UxeZQ?a", target="_blank", rel="nofollow noopener noreferrer") Скриншот]
+  p Так же в package.json нужно поменять версию пакета #[a(href="https://skr.sh/sCAKDupGwj1?a", target="_blank", rel="nofollow noopener noreferrer") Скриншот]

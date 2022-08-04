@@ -22,6 +22,28 @@
 
 @font-face {
   font-style: normal;
+  font-weight: 400;
+  font-family: "Plex";
+
+  font-display: swap;
+  src:
+    url("../fonts/IBMPlexSans.woff2") format("woff2"),
+    url("../fonts/IBMPlexSans.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 500;
+  font-family: "Plex";
+
+  font-display: swap;
+  src:
+    url("../fonts/IBMPlexSans-Medium.woff2") format("woff2"),
+    url("../fonts/IBMPlexSans-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
   font-weight: 600;
   font-family: "Plex";
 
@@ -29,4 +51,59 @@
   src:
     url("../fonts/IBMPlexSansSemiBold.woff2") format("woff2"),
     url("../fonts/IBMPlexSansSemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 300;
+  font-family: "Neue Machina";
+
+  font-display: swap;
+  src:
+    url("../fonts/neuemachina-light.woff2") format("woff2"),
+    url("../fonts/neuemachina-light.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Neue Machina";
+
+  font-display: swap;
+  src:
+    url("../fonts/neuemachina-regular.woff2") format("woff2"),
+    url("../fonts/neuemachina-regular.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 500;
+  font-family: "Neue Machina";
+
+  font-display: swap;
+  src:
+    url("../fonts/neuemachina-medium.woff2") format("woff2"),
+    url("../fonts/neuemachina-medium.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "Neue Machina";
+
+  font-display: swap;
+  src:
+    url("../fonts/neuemachina-bold.woff2") format("woff2"),
+    url("../fonts/neuemachina-bold.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 900;
+  font-family: "Neue Machina";
+
+  font-display: swap;
+  src:
+    url("../fonts/neuemachina-ultrabold.woff2") format("woff2"),
+    url("../fonts/neuemachina-ultrabold.woff") format("woff");
 }

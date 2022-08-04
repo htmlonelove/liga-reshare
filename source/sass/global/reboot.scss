@@ -31,6 +31,27 @@ body {
   height: 100%;
 
   background-color: $color-default-white;
+
+  scrollbar-color: rgba($color-neon-blue, 0.5) rgba($color-neon-blue, 0.2);
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track-piece {
+    background-color: rgba($color-neon-blue, 0.2);
+    border-radius: 10px;
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:vertical {
+    height: 30px;
+    background-color: rgba($color-neon-blue, 0.5);
+    border-radius: 10px;
+  }
 }
 
 a {

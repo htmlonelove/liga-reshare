@@ -1,5 +1,6 @@
 mixin auto-resize-textarea()
-  section.component
+  section.component(data-tabs='parent', data-delay='300')
     include ./component-heading
-    include ./component-description
-    include ./component-demo
+    .component__content(data-tabs='content')
+      include ./component-description
+      include ./component-demo

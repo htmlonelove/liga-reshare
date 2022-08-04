@@ -1,0 +1,48 @@
+.up-button {
+  bottom: 20px;
+  position: sticky;
+  margin: 0 0 -50px 0;
+  z-index: 10;
+  @include vp-767 {
+    margin: 0 0 -30px 0;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    transition: all $trans-default;
+    transform: translate3d(0, 100px, 0);
+    //z-index: 20;
+
+    &.is-active {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &__link {
+    align-items: center;
+    background-color: $color-default-white;
+    border: 1px solid $color-neon-blue;
+    border-radius: 50%;
+    color: $color-neon-blue;
+    display: flex;
+    justify-content: center;
+    transition: background-color $trans-default;
+    height: 50px;
+    width: 50px;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover {
+        background-color: $color-neon-blue;
+        color: $color-default-white;
+      }
+    }
+
+    svg {
+      fill: currentColor;
+      transition: fill $trans-default;
+    }
+  }
+}

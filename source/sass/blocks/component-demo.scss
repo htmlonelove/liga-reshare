@@ -1,8 +1,11 @@
 .component-demo {
+  padding: 34px 0 0 0;
+  width: 100%;
+
   .subtitle {
-    font-size: 32px;
+    font-size: 24px;
     line-height: 36px;
-    margin: 20px 0 20px;
+    margin: 0 0 34px;
 
     & + .component__code-snippet {
       margin-top: -10px;
@@ -14,14 +17,42 @@
     }
   }
 
+  p {
+    margin: 0 0 20px;
+    font-size: 18px;
+    line-height: 27px;
+
+    @include vp-767 {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  hr {
+    border: 1px solid $color-ghost-white;
+    margin: 0 0 58px;
+
+    @include vp-767 {
+      margin: 0 0 34px;
+    }
+  }
+
   pre {
-    margin: 0;
     display: flex;
+    background-color: $color-ghost-white;
+    margin: 48px 0 58px;
+    padding: 2rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   code {
-    width: 100%;
-    padding-right: 32px;
-    background-color: $color-white-smoke;
+    font-size: 0.8em;
+
+    @include vp-767 {
+      word-break: break-word;
+    }
   }
 }

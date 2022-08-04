@@ -1,0 +1,12 @@
+mixin article-menu(options = {})
+
+  nav.article-menu
+    .article-menu__button-wrapper
+      button.article-menu__button
+        +icon("icon-arrow", "15", "9").article-menu__button-icon
+        span.visually-hidden Переключить состояние навигационного меню
+    p.article-menu__point!=options.firstPoint
+    ul.article-menu__list
+      each link in options.links
+        li.article-menu__item
+          a.article-menu__link(href=link.href, data-navigation-link)= link.text

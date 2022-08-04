@@ -1,8 +1,14 @@
 .custom-select {
   position: relative;
 
-  width: 250px;
-  padding: 30px 0;
+  width: 300px;
+  padding: 14px 0 14px;
+  margin: 0 0 44px 0;
+
+  @media screen and (max-width: 767px) {
+    padding: 4px 0 14px;
+    width: 100%;
+  }
 
   &__label {
     position: absolute;
@@ -14,6 +20,10 @@
     transition: transform 0.3s ease, opacity  0.3s ease;
 
     pointer-events: none;
+
+    @media screen and (max-width: 767px) {
+      transform: translateY(calc(-50% - 5px));
+    }
   }
 
   &__placeholder {
@@ -26,6 +36,10 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
 
     pointer-events: none;
+
+    @media screen and (max-width: 767px) {
+      transform: translateY(calc(-50% - 5px));
+    }
   }
 
   select {
@@ -49,7 +63,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    height: 40px;
+    height: 48px;
     padding: 5px 10px;
 
     background-color: rgba(255, 255, 255, 0);
@@ -76,7 +90,7 @@
 
   &__list {
     position: absolute;
-    bottom: 32px;
+    bottom: 10px;
     z-index: 1;
 
     width: 100%;
@@ -125,7 +139,7 @@
 
   &__error {
     position: absolute;
-    bottom: 0;
+    bottom: -15px;
     left: 0;
 
     color: #ff1553;
@@ -136,6 +150,8 @@
   }
 
   &__text {
+    font-size: 20px;
+    line-height: 24px;
     flex-shrink: 0;
     width: 80%;
     overflow: hidden;
@@ -178,7 +194,7 @@
     .custom-select__list {
       bottom: auto;
       top: 0;
-      transform: translateY(calc(-100% + 30px));
+      transform: translateY(calc(-100% + 10px));
     }
   }
 

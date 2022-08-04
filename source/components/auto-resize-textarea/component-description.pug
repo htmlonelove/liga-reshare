@@ -1,13 +1,12 @@
-section.component-description
-  h2.subtitle Описание
-  p Высота подстраивается под контент, но с учетом атрибута rows. Rows задает минимальную высоту, которую скрипт не переопределяет. Отсутствие атрибута rows === rows="2".
+section.component-description(data-tabs='element')
+  p Высота подстраивается под контент, но с учетом атрибута #[b rows]. Rows задает минимальную высоту, которую скрипт не переопределяет. Отсутствие атрибута #[b rows === rows="2"].
   p В большинстве случаев вам понадобится rows="1".
-  p
-    em Если вы изменяете value у textarea через js - нужно повторно вызвать resizeHeight(el).
-  h2 Интересная деталь
+  p Если вы изменяете value у textarea через js - нужно повторно вызвать #[b resizeHeight(el)].
+  h3 Интересная деталь
   .component__code-snippet
     pre
-      code.
+      |
+      code(class="language-js").
         let realscrollHeight = el.scrollHeight;
 
         if (!el.value) {

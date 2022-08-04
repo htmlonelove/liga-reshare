@@ -1,0 +1,172 @@
+.last-added {
+  margin: 0 0 160px 0;
+
+  @include vp-1023 {
+    margin: 0 0 100px 0;
+  }
+
+  &__title {
+    font-size: 34px;
+    line-height: 45px;
+    margin: 0 0 92px 0;
+
+    @include vp-1023 {
+      font-size: 28px;
+      line-height: 32px;
+      margin: 0 0 50px 0;
+    }
+
+    @include vp-767 {
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include vp-767 {
+      gap: 30px;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    display: flex;
+    padding: 0 20px 0 0;
+  }
+
+  &__inner {
+    border: 1px solid $color-neon-blue;
+    background-color: $color-default-white;
+    display: flex;
+    flex-direction: column;
+    padding: 14% 5% 18px;
+    position: relative;
+
+    &::after {
+      background-color: $color-ghost-white;
+      border: 1px solid $color-neon-blue;
+      content: "";
+      height: 100%;
+      position: absolute;
+      top: -6px;
+      right: -11px;
+      transition: transform $trans-default;
+      width: calc(100% - 5px);
+      z-index: -1;
+    }
+
+    &::before {
+      background-color: $color-default-white;
+      border: 1px solid $color-neon-blue;
+      content: "";
+      height: 100%;
+      position: absolute;
+      top: -11px;
+      right: -20px;
+      transition: transform $trans-default;
+      width: calc(100% - 12px);
+      transform-origin: bottom right;
+      z-index: -1;
+    }
+
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        &::after {
+          transform: translate3d(5px, -4px, 0) rotate(2deg);
+        }
+
+        &::before {
+          transform: translate3d(-5px, 5px, 0) scaleY(1.05) scaleX(1.12) rotate(-2deg);
+        }
+      }
+    }
+  }
+
+  &__heading {
+    font-size: 26px;
+    line-height: 30px;
+    margin: 0 0 18px 0;
+
+    @include vp-1023 {
+      font-size: 20px;
+      line-height: 24px;
+      margin: 0 0 15px 0;
+    }
+
+    @include vp-767 {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+
+  &__description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 16px;
+    line-height: 22px;
+    overflow: hidden;
+    margin: 0 0 16px 0;
+
+    @include vp-1023 {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    @include vp-767 {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  &__link {
+    align-items: center;
+    display: inline-flex;
+    font-size: 16px;
+    line-height: 21px;
+    margin: auto 0 18px 0;
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  &__link-icon {
+    fill: currentColor;
+    margin: 0 0 0 25px;
+    transform: translate3d(0, 0, 0) rotate(90deg);
+    transition: fill $trans-default;
+
+    @include vp-1023 {
+      margin: 0 0 0 10px;
+    }
+  }
+
+  &__hashtag {
+    color: $color-neon-blue;
+    font-family: $ff-neue-machina;
+    font-weight: 500;
+    margin: 0 0 0 auto;
+  }
+
+  &__shadow-link {
+    &::before {
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+    }
+  }
+}

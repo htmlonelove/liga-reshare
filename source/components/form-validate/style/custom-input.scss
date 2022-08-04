@@ -3,19 +3,30 @@
   position: relative;
 
   display: flex;
-  width: 500px;
-  padding: 20px 0;
+  width: 530px;
+  padding: 14px 0 58px;
+
+  @media screen and (max-width: 767px) {
+    padding: 4px 0 48px;
+    width: 100%;
+  }
 
   label {
     display: flex;
     align-items: center;
     width: 100%;
 
+    @media screen and (max-width: 767px) {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
     input,
     textarea {
       flex-grow: 1;
-      min-height: 40px;
-      margin-left: 30px;
+      max-width: 300px;
+      min-height: 48px;
+      margin-left: auto;
       padding: 10px;
 
       border: 2px solid rgba(#000000, 0.2);
@@ -23,6 +34,11 @@
       outline: none;
 
       transition: border 0.3s ease;
+
+      @media screen and (max-width: 767px) {
+        max-width: unset;
+        width: 100%;
+      }
 
       &:hover {
         border: 2px solid rgba(#000000, 0.5);
@@ -34,16 +50,26 @@
     }
   }
 
+  &__label {
+    @media screen and (max-width: 767px) {
+      margin: 0 0 18px 0;
+    }
+  }
+
   &__error {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 35px;
 
     color: #ff1553;
 
     opacity: 0;
 
     transition: opacity 0.3s ease;
+
+    @media screen and (max-width: 767px) {
+      bottom: 20px;
+    }
   }
 
   &.is-invalid {
