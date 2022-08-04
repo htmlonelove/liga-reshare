@@ -36,12 +36,21 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 25px;
-
     display: flex;
-
     transition: color $trans-default;
-
     align-items: center;
+    position: relative;
+    padding: 0 0 0 20px;
+
+    &::before {
+      content: "";
+      height: 10px;
+      width: 10px;
+      background-color: $color-neon-blue;
+      position: absolute;
+      top: 7px;
+      left: 0;
+    }
 
     @media (hover: hover) {
       &:hover,

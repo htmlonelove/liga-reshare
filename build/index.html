@@ -385,19 +385,14 @@
           <nav class="header__nav main-nav" data-main-nav>
             <ul class="main-nav__list">
               <li class="main-nav__item" data-nav-item><a class="main-nav__link" href="components.html">Компоненты</a></li>
-              <li class="main-nav__item" data-nav-item><span class="main-nav__link">Кейсы</span></li>
+              <!--li.main-nav__item(data-nav-item)-->
+              <!--  span.main-nav__link Кейсы-->
               <li class="main-nav__item" data-nav-item><a class="main-nav__link" href="guides.html">Гайды</a></li>
               <li class="main-nav__item" data-nav-item><a class="main-nav__link main-nav__link--blue" href="https://ligaa.agency/">Лига А.</a></li>
             </ul>
           </nav>
-          <form class="search" data-da=".main-nav,1023,last">
-            <input class="search__input" type="text" name="headerSearchInput" aria-label="Поиск по сайту">
-            <button class="search__button" type="submit" aria-label="Найти">
-              <svg width="20" height="20" aria-hidden="true">
-                <use xlink:href="#icon-search"></use>
-              </svg>
-            </button>
-          </form><a class="git-link header__git-link" href="https://github.com/htmlonelove/liga-componentov" target="_blank" rel="nofollow noopener noreferrer" aria-label="Ссылка на репозиторий">
+          <!-- Миксин поиска-->
+          <!--+search().header__search--><a class="git-link header__git-link" href="https://github.com/htmlonelove/liga-componentov" target="_blank" rel="nofollow noopener noreferrer" aria-label="Ссылка на репозиторий">
             <svg width="35" height="35" aria-hidden="true">
               <use xlink:href="#icon-git"></use>
             </svg></a>
@@ -434,22 +429,14 @@
               <ul class="site-nav__list">
                 <li class="site-nav__item"><a class="site-nav__heading" href="components.html">Компоненты</a>
                   <ul class="site-nav__links-list">
-                    <li class="site-nav__links-item"><a class="site-nav__link" href="custom-select.html"><span class="site-nav__links-text">Кастомный селект</span>
-                        <svg class="site-nav__links-icon" width="14" height="8" aria-hidden="true">
-                          <use xlink:href="#icon-accordion"></use>
-                        </svg></a></li>
-                    <li class="site-nav__links-item"><a class="site-nav__link" href="form-validate.html"><span class="site-nav__links-text">Валидация формы</span>
-                        <svg class="site-nav__links-icon" width="14" height="8" aria-hidden="true">
-                          <use xlink:href="#icon-accordion"></use>
-                        </svg></a></li>
-                    <li class="site-nav__links-item"><a class="site-nav__link" href="accordion.html"><span class="site-nav__links-text">Аккордеон</span>
-                        <svg class="site-nav__links-icon" width="14" height="8" aria-hidden="true">
-                          <use xlink:href="#icon-accordion"></use>
-                        </svg></a></li>
+                    <li class="site-nav__links-item"><a class="site-nav__link" href="dynamic-adaptive.html"><span class="site-nav__links-text">Динамический адаптив</span>
+                        <!--+icon("icon-accordion", 14, 8).site-nav__links-icon--></a></li>
+                    <li class="site-nav__links-item"><a class="site-nav__link" href="send-mail.html"><span class="site-nav__links-text">Отправка данных формы на почту</span>
+                        <!--+icon("icon-accordion", 14, 8).site-nav__links-icon--></a></li>
+                    <li class="site-nav__links-item"><a class="site-nav__link" href="navigation-changer.html"><span class="site-nav__links-text">Подсветка пунктов навигации при скролле</span>
+                        <!--+icon("icon-accordion", 14, 8).site-nav__links-icon--></a></li>
                     <li class="site-nav__links-item"><a class="site-nav__link site-nav__link--all" href="components.html"><span class="site-nav__links-text">Смотреть всё</span>
-                        <svg class="site-nav__links-icon" width="14" height="8" aria-hidden="true">
-                          <use xlink:href="#icon-accordion"></use>
-                        </svg></a></li>
+                        <!--+icon("icon-accordion", 14, 8).site-nav__links-icon--></a></li>
                   </ul>
                 </li>
                 <li class="site-nav__item"><span class="site-nav__heading">Кейсы</span>
@@ -465,17 +452,11 @@
                 <li class="site-nav__item"><a class="site-nav__heading" href="guides.html">Гайды</a>
                   <ul class="site-nav__links-list">
                     <li class="site-nav__links-item"><a class="site-nav__link" href="scaling.html"><span class="site-nav__links-text">Скейлинг</span>
-                        <svg class="site-nav__links-icon" width="14" height="8" aria-hidden="true">
-                          <use xlink:href="#icon-accordion"></use>
-                        </svg></a></li>
+                        <!--+icon("icon-accordion", 14, 8).site-nav__links-icon--></a></li>
                     <li class="site-nav__links-item"><a class="site-nav__link" href="pug.html"><span class="site-nav__links-text">Шаблонизатор PUG</span>
-                        <svg class="site-nav__links-icon" width="14" height="8" aria-hidden="true">
-                          <use xlink:href="#icon-accordion"></use>
-                        </svg></a></li>
+                        <!--+icon("icon-accordion", 14, 8).site-nav__links-icon--></a></li>
                     <li class="site-nav__links-item"><a class="site-nav__link site-nav__link--all" href="guides.html"><span class="site-nav__links-text">Смотреть всё</span>
-                        <svg class="site-nav__links-icon" width="14" height="8" aria-hidden="true">
-                          <use xlink:href="#icon-accordion"></use>
-                        </svg></a></li>
+                        <!--+icon("icon-accordion", 14, 8).site-nav__links-icon--></a></li>
                   </ul>
                 </li>
               </ul>
@@ -488,52 +469,43 @@
             <ul class="last-added__list">
               <li class="last-added__item">
                 <div class="last-added__inner">
-                  <h3 class="last-added__heading">Кастомный селект</h3>
-                  <p class="last-added__description">В данной реализации используется нативный селект, что решает массу проблем, которые были с инпутом.</p><span class="last-added__link"><span class="last-added__link-text">Смотреть</span>
+                  <h3 class="last-added__heading">Гайд по PUG</h3>
+                  <p class="last-added__description">Данный гайд не описывает все возможности Pug и все варианты использования этих возможностей. Задача данного гайда дать необходимый минимум знаний для работы в Лиге А, показать пример того, как пишем мы и то, как мы хотим, чтобы писали вы, начиная работу в нашей команде.</p><span class="last-added__link"><span class="last-added__link-text">Смотреть</span>
                     <svg class="last-added__link-icon" width="14" height="8" aria-hidden="true">
                       <use xlink:href="#icon-accordion"></use>
-                    </svg></span><span class="last-added__hashtag">#Компоненты</span><a class="last-added__shadow-link" href="custom-select.html" aria-label="Перейти к компоненту"></a>
-                </div>
-              </li>
-              <li class="last-added__item">
-                <div class="last-added__inner">
-                  <h3 class="last-added__heading">Табы</h3>
-                  <p class="last-added__description">В данной реализации используется нативный селект, что решает массу проблем, которые были с инпутом.</p><span class="last-added__link"><span class="last-added__link-text">Смотреть</span>
-                    <svg class="last-added__link-icon" width="14" height="8" aria-hidden="true">
-                      <use xlink:href="#icon-accordion"></use>
-                    </svg></span><span class="last-added__hashtag">#Компоненты</span><a class="last-added__shadow-link" href="tabs.html" aria-label="Перейти к компоненту"></a>
+                    </svg></span><span class="last-added__hashtag">#Гайды</span><a class="last-added__shadow-link" href="pug.html" aria-label="Перейти к компоненту"></a>
                 </div>
               </li>
               <li class="last-added__item">
                 <div class="last-added__inner">
                   <h3 class="last-added__heading">Скейлинг</h3>
-                  <p class="last-added__description">В данной реализации используется нативный селект, что решает массу проблем, которые были с инпутом.</p><span class="last-added__link"><span class="last-added__link-text">Смотреть</span>
+                  <p class="last-added__description"><b>Ремы, скейлинг, масштабирование</b> - прием в верстке, когда на определенных разрешениях интерфейс выглядит одинаково, все элементы уменьшаются/увеличиваются пропорционально ширине экрана (на видео для разрешений выше 1920px включены ремы).</p><span class="last-added__link"><span class="last-added__link-text">Смотреть</span>
                     <svg class="last-added__link-icon" width="14" height="8" aria-hidden="true">
                       <use xlink:href="#icon-accordion"></use>
                     </svg></span><span class="last-added__hashtag">#Гайды</span><a class="last-added__shadow-link" href="scaling.html" aria-label="Перейти к компоненту"></a>
                 </div>
               </li>
+              <li class="last-added__item">
+                <div class="last-added__inner">
+                  <h3 class="last-added__heading">Динамический адаптив</h3>
+                  <p class="last-added__description">При работе над адаптивом сайта мы часто сталкиваемся в проблемой, что некоторые блоки находятся совершенно в разным местах и зачастую имеют совершенно другой порядок, не такой, как был к примеру на десктопном разрешении.</p><span class="last-added__link"><span class="last-added__link-text">Смотреть</span>
+                    <svg class="last-added__link-icon" width="14" height="8" aria-hidden="true">
+                      <use xlink:href="#icon-accordion"></use>
+                    </svg></span><span class="last-added__hashtag">#Компоненты</span><a class="last-added__shadow-link" href="dynamic-adaptive.html" aria-label="Перейти к компоненту"></a>
+                </div>
+              </li>
             </ul>
           </div>
         </section>
-        <section class="achievements">
-          <div class="container">
-            <ul class="achievements__list">
-              <li class="achievements__item"><span class="achievements__number" data-number-to="3">0</span><span class="achievements__name">года опыта</span></li>
-              <li class="achievements__item"><span class="achievements__number" data-number-to="468">0</span><span class="achievements__name">проектов</span></li>
-              <li class="achievements__item"><span class="achievements__number" data-number-to="30">0</span><span class="achievements__name">компонентов</span></li>
-              <li class="achievements__item"><span class="achievements__number" data-number-to="20">0</span><span class="achievements__name">кейсов</span></li>
-              <li class="achievements__item"><span class="achievements__number" data-number-to="50">0</span><span class="achievements__name">гайдов</span></li>
-            </ul>
-          </div>
-        </section>
+        <!--+achievements()-->
         <section class="about">
           <div class="container">
             <div class="about__content">
               <h2 class="about__title">О проекте</h2>
               <div class="about__text">
-                <p>Тут было&nbsp;бы здорово написать вступительное слово с&nbsp;мини инструкцией, что, где и&nbsp;почему надо искать =)</p>
-                <p>Я просто текст, жду, когда здесь появится то-то более важное. Я просто текст, жду, когда здесь появится то-то более важное. Я просто текст, жду, когда здесь появится то-то более важное. Я просто текст, жду, когда здесь появится то-то более важное. Я просто текст, жду, когда здесь появится то-то более важное. Я просто текст, жду, когда здесь появится то-то более важное. Я просто текст, жду, когда здесь появится то-то более важное. Я просто текст, жду, когда здесь появится то-то более важное.</p>
+                <p>Каждый год Лига&nbsp;А. разрабатывает сотни проектов на&nbsp;которых есть повторяющиеся задачи или интересные и&nbsp;сложные решения о&nbsp;которых хочется рассказать.</p>
+                <p>Так и&nbsp;появилась &laquo;Лига решений&raquo;. Это пространство в&nbsp;котором разработчики делятся опытом и&nbsp;решениями, подталкивая друг друга познать мир веб-разработки чуточку глубже.</p>
+                <p>Мы рады инициативе каждого разработчика вне зависимости от его уровня умений и места работы. Больше вопросов, больше issue и pull request, больше историй о ваших победах и поражениях, больше решений.</p>
               </div>
             </div>
             <div class="about__img-wrapper"><img class="about__img" src="img/svg/dino-table.svg" width="519" height="357" alt="Изображение динозавра"></div>

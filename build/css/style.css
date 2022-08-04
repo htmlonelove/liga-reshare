@@ -929,6 +929,7 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 0 0 0 auto;
 }
 
 .footer {
@@ -1086,7 +1087,6 @@ button,
   flex: 0 0 auto;
   height: 100%;
   left: 0;
-  min-height: 500px;
   top: 0;
   width: 287px;
   background-color: #ffffff;
@@ -1999,6 +1999,18 @@ button,
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  position: relative;
+  padding: 0 0 0 20px;
+}
+
+.components__link::before {
+  content: "";
+  height: 10px;
+  width: 10px;
+  background-color: #2c39f2;
+  position: absolute;
+  top: 7px;
+  left: 0;
 }
 
 .components__link-icon {
@@ -2142,7 +2154,7 @@ button,
   justify-content: space-between;
   padding: 20px 0 17px 0;
   position: sticky;
-  top: 89px;
+  top: 79px;
   z-index: 10;
 }
 
@@ -3777,6 +3789,10 @@ button,
     width: calc(25% - 30px);
     margin-right: 30px;
     margin-bottom: 30px;
+  }
+
+  .component-heading {
+    top: 82px;
   }
 }
 

@@ -6,8 +6,12 @@
   justify-content: space-between;
   padding: 20px 0 17px 0;
   position: sticky;
-  top: 89px;
+  top: 79px;
   z-index: 10;
+
+  @include vp-1279 {
+    top: 82px;
+  }
 
   @include vp-1023 {
     padding: 20px 60px 17px 0;
