@@ -49,7 +49,7 @@
     flex-wrap: wrap;
     list-style: none;
     margin: 0;
-    max-width: 400px;
+    max-width: 450px;
     padding: 0;
 
     @include vp-1023 {
@@ -89,7 +89,7 @@
   }
 
   &__link {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     line-height: 25px;
     transition: color $trans-default;
@@ -101,9 +101,20 @@
     }
 
     @media (hover: hover) {
-      &:hover,
-      &:focus {
+      &:not(span):hover,
+      &:not(span):focus {
         color: $color-neon-blue;
+      }
+    }
+
+    &--blue {
+      color: $color-neon-blue;
+
+      @media (hover: hover) {
+        &:not(span):hover,
+        &:not(span):focus {
+          color: $color-torch-red;
+        }
       }
     }
   }

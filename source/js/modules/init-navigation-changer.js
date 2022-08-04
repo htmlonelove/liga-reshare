@@ -2,7 +2,9 @@ import {NavigationChanger} from '../utils/navigation-changer';
 
 const initNavigationChanger = () => {
   const navigationChanger = new NavigationChanger();
-  navigationChanger.init();
+  setTimeout(() => {
+    navigationChanger.init();
+  }, 300);
 };
 
 export {initNavigationChanger};

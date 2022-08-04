@@ -1,0 +1,150 @@
+.site-nav {
+  margin: 0 0 140px 0;
+
+  @include vp-1023 {
+    margin: 0 0 80px 0;
+  }
+
+  &__title {
+    font-size: 52px;
+    font-family: $ff-neue-machina;
+    line-height: 54px;
+    margin: 0 0 60px 0;
+    text-align: center;
+
+    @include vp-1023 {
+      font-size: 45px;
+      line-height: 48px;
+      margin: 0 0 40px 0;
+    }
+
+    @include vp-767 {
+      font-size: 35px;
+      line-height: 38px;
+    }
+
+    &--blue {
+      color: $color-neon-blue;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include vp-1023 {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 30px;
+    }
+
+    @include vp-767 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    min-width: 0;
+    padding: 90px 30px 30px;
+    position: relative;
+
+    &::before {
+      background-color: $color-neon-blue;
+      content: "";
+      height: 21px;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%) skewX(-70deg);
+      top: 32px;
+      width: calc(100% - 60px);
+    }
+  }
+
+  &__heading {
+    display: block;
+    font-weight: 700;
+    font-family: $ff-neue-machina;
+    font-size: 48px;
+    line-height: 1;
+    margin: 0 0 28px 0;
+    transition: color $trans-default;
+
+    @media screen and (max-width: 1300px) {
+      font-size: 40px;
+    }
+
+    @media screen and (max-width: 1150px) {
+      font-size: 35px;
+    }
+
+    @include vp-767 {
+      font-size: 28px;
+      line-height: 32px;
+    }
+
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        color: $color-neon-blue;
+      }
+    }
+  }
+
+  &__links-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__links-item {
+    &:not(:last-child) {
+      margin: 0 0 28px 0;
+    }
+  }
+
+  &__link {
+    align-items: center;
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25px;
+    transition: color $trans-default;
+
+    @include vp-767 {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        color: $color-neon-blue;
+      }
+    }
+
+    &--all {
+      color: $color-neon-blue;
+
+      @media (hover: hover) {
+        &:hover,
+        &:focus {
+          color: $color-amaranth;
+        }
+      }
+    }
+  }
+
+  &__links-icon {
+    fill: currentColor;
+    margin: 0 0 0 35px;
+    transform: translate3d(0, 0, 0) rotate(90deg);
+    transition: fill $trans-default;
+
+    @include vp-767 {
+      margin: 0 0 0 15px;
+    }
+  }
+}

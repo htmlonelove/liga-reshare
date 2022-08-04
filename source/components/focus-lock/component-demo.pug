@@ -1,5 +1,4 @@
-section.component-demo
-  h2.subtitle Демо
+section.component-demo(data-tabs='element')
   p
     button.btn.lock(type='button') Заблокировать фокус в блоке ниже
   p
@@ -10,7 +9,7 @@ section.component-demo
     button.btn.unlock-false(type='button') Разблокировать фокус с передачей false
   p
   section.lock-block
-    h2 Блокируемая секция
+    h2.subtitle Блокируемая секция
     p
       button.btn(type='button') Я кнопка
     p
@@ -20,13 +19,12 @@ section.component-demo
     p
       button.btn(type='button') Я кнопка
   script.
-
     const lockBtnElement = document.querySelector('.lock');
-      const lockFalseBtnElement = document.querySelector('.lock-false');
-      const unlockBtnElement = document.querySelector('.unlock');
-      const unlockFalseBtnElement = document.querySelector('.unlock-false');
+    const lockFalseBtnElement = document.querySelector('.lock-false');
+    const unlockBtnElement = document.querySelector('.unlock');
+    const unlockFalseBtnElement = document.querySelector('.unlock-false');
 
-      lockBtnElement.addEventListener('click', () => window.focusLock.lock('.lock-block'));
-      lockFalseBtnElement.addEventListener('click', () => window.focusLock.lock('.lock-block', false));
-      unlockBtnElement.addEventListener('click', () => window.focusLock.unlock());
-      unlockFalseBtnElement.addEventListener('click', () => window.focusLock.unlock(false));
+    lockBtnElement.addEventListener('click', () => window.focusLock.lock('.lock-block'));
+    lockFalseBtnElement.addEventListener('click', () => window.focusLock.lock('.lock-block', false));
+    unlockBtnElement.addEventListener('click', () => window.focusLock.unlock());
+    unlockFalseBtnElement.addEventListener('click', () => window.focusLock.unlock(false));

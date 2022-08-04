@@ -3,11 +3,12 @@ export class NavigationChanger {
     this._scrollDuration = 1000;
     this._currentIndex = 0;
     this._newCurrentIndex = null;
-    // this._blockShift = 200;
     this._linkElements = document.querySelectorAll('[data-navigation-link]');
     this._header = document.querySelector('.header');
     this._heading = document.querySelector('.component-heading');
-    this._blockShift = this._header.clientHeight + this._heading.clientHeight + 20;
+    if (this._heading) {
+      this._blockShift = this._header.clientHeight + this._heading.clientHeight + 20;
+    }
 
     this._moveTo = new window.MoveTo({
       tolerance: this._blockShift - 10,

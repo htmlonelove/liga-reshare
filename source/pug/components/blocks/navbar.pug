@@ -1,13 +1,16 @@
 mixin navbar-item(href, text)
   li.navbar__item
-    a.navbar__link(href=href, class= currentUrl === href ? "is-active" : "")!=text
+    if href
+      a.navbar__link(href=href, class= currentUrl === href ? "is-active" : "")!=text
+    else
+      span.navbar__link!=text
 
 mixin navbar()
   aside.navbar&attributes(attributes)
     button.navbar__close(type="button", aria-label="Закрыть меню", data-navbar-close)
       +icon("icon-close", 20, 20)
     .navbar__wrapper
-      .navbar__accordion(data-accordion="parent",data-single, data-close-inner)
+      .navbar__accordion(data-accordion="parent", data-single, data-close-inner)
         .navbar__element(class=pageType==="component" ? "is-active" : "", data-accordion="element")
           button.navbar__button(type="button", data-accordion="button") Компоненты
             +icon("icon-accordion", 16, 9).navbar__button-icon
@@ -22,32 +25,33 @@ mixin navbar()
                 +navbar-item("cookies.html", "Cookies")
                 +navbar-item("tabs.html", "Табы")
                 +navbar-item("accordion.html", "Аккордеон")
-                +navbar-item("#", "Компонент")
-                +navbar-item("#", "Компонент")
+                +navbar-item("incline-word.html", "Склонение слов")
+                +navbar-item("modals.html", "Модальные окна")
+                +navbar-item("focus-lock.html", "Лок фокуса")
+                +navbar-item("scroll-lock.html", "Блокировка скрола")
+                +navbar-item("scroll-translator.html", "Прогресс скрола")
+                +navbar-item("navigation-changer.html", "Подсветка пунктов навигации при скроле")
+                +navbar-item("ie-support.html", "Файлы необходимые для поддержки на проекте ie")
+                +navbar-item("send-mail.html", "Отправка данных формы на почту")
+                +navbar-item("inline-video.html", "Фоновое видео")
+                +navbar-item("dynamic-adaptive.html", "Динамический адаптив")
         .navbar__element(class=pageType==="case" ? "is-active" : "", data-accordion="element")
           button.navbar__button(type="button", data-accordion="button") Кейсы
             +icon("icon-accordion", 16, 9).navbar__button-icon
           .navbar__content(data-accordion="content")
             .navbar__inner
               ul.navbar__list
-                +navbar-item("#", "Кейс - 2")
-                +navbar-item("#", "Кейс - 2")
-                +navbar-item("#", "Кейс - 3")
-                +navbar-item("#", "Кейс - 4")
-                +navbar-item("#", "Кейс - 5")
-                +navbar-item("#", "Кейс - 6")
+                +navbar-item("", "Раздел в разработке")
+                //+navbar-item("#", "Кейс - 2")
         .navbar__element(class=pageType==="guide" ? "is-active" : "", data-accordion="element")
           button.navbar__button(type="button", data-accordion="button") Гайды
             +icon("icon-accordion", 16, 9).navbar__button-icon
           .navbar__content(data-accordion="content")
             .navbar__inner
               ul.navbar__list
+                +navbar-item("guides.html", "О разделе")
                 +navbar-item("scaling.html", "Скейлинг")
-                +navbar-item("#", "Гайд - 2")
-                +navbar-item("#", "Гайд - 3")
-                +navbar-item("#", "Гайд - 4")
-                +navbar-item("#", "Гайд - 5")
-                +navbar-item("#", "Гайд - 6")
+                +navbar-item("pug.html", "PUG")
 
 
 

@@ -18,7 +18,8 @@
     align-items: flex-start;
     flex-direction: column;
     padding: 20px 0 34px 0;
-    top: 89px;
+    position: relative;
+    top: 0;
   }
 
   &--not-demo {
@@ -34,6 +35,8 @@
   }
 
   &__head {
+    max-width: 70%;
+
     @include vp-767 {
       margin: 0 0 35px 0;
       max-width: 80%;
@@ -49,7 +52,7 @@
   &__tab-control {
     background-color: $color-transparent;
     border: none;
-    color: $color-neon-blue;
+    color: $color-default-black;
     cursor: pointer;
     font-size: 18px;
     line-height: 26px;
@@ -57,7 +60,6 @@
     transition: all $trans-default;
 
     &.is-active {
-      color: $color-default-black;
       text-decoration: underline;
       text-decoration-color: $color-neon-blue;
       text-decoration-thickness: 3px;
@@ -75,6 +77,7 @@
     @media (hover: hover) {
       &:hover,
       &:focus {
+        color: $color-neon-blue;
         opacity: 0.8;
       }
     }

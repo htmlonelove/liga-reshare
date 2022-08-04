@@ -1,0 +1,52 @@
+mixin site-navigation()
+
+  section.site-nav
+    .container
+      .site-nav__content
+        h2.site-nav__title Эталонные #[span.site-nav__title.site-nav__title--blue решения] Лиги А.
+        ul.site-nav__list
+          li.site-nav__item
+            a.site-nav__heading(href="components.html") Компоненты
+            ul.site-nav__links-list
+              li.site-nav__links-item
+                a.site-nav__link(href="custom-select.html")
+                  span.site-nav__links-text Кастомный селект
+                  +icon("icon-accordion", 14, 8).site-nav__links-icon
+              li.site-nav__links-item
+                a.site-nav__link(href="form-validate.html")
+                  span.site-nav__links-text Валидация формы
+                  +icon("icon-accordion", 14, 8).site-nav__links-icon
+              li.site-nav__links-item
+                a.site-nav__link(href="accordion.html")
+                  span.site-nav__links-text Аккордеон
+                  +icon("icon-accordion", 14, 8).site-nav__links-icon
+              li.site-nav__links-item
+                a.site-nav__link.site-nav__link--all(href="components.html")
+                  span.site-nav__links-text Смотреть всё
+                  +icon("icon-accordion", 14, 8).site-nav__links-icon
+          li.site-nav__item
+            span.site-nav__heading Кейсы
+            ul.site-nav__links-list
+              li.site-nav__links-item
+                span.site-nav__link
+                  span.site-nav__links-text Раздел в разработке
+                  //+icon("icon-accordion", 14, 8).site-nav__links-icon
+              //li.site-nav__links-item
+              //  a.site-nav__link(href="#")
+              //    span.site-nav__links-text Кастомный селект
+              //    +icon("icon-accordion", 14, 8).site-nav__links-icon
+          li.site-nav__item
+            a.site-nav__heading(href="guides.html") Гайды
+            ul.site-nav__links-list
+              li.site-nav__links-item
+                a.site-nav__link(href="scaling.html")
+                  span.site-nav__links-text Скейлинг
+                  +icon("icon-accordion", 14, 8).site-nav__links-icon
+              li.site-nav__links-item
+                a.site-nav__link(href="pug.html")
+                  span.site-nav__links-text Шаблонизатор PUG
+                  +icon("icon-accordion", 14, 8).site-nav__links-icon
+              li.site-nav__links-item
+                a.site-nav__link.site-nav__link--all(href="guides.html")
+                  span.site-nav__links-text Смотреть всё
+                  +icon("icon-accordion", 14, 8).site-nav__links-icon

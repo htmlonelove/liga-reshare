@@ -1,14 +1,31 @@
 extends ../components/base/layout
 
 block variables
-  - const title = "Лига решений" //- на страницах кроме главной используйте О нас — ProjectName
+  - const title = "Лига решений. Шаблонизатор PUG" //- на страницах кроме главной используйте О нас — ProjectName
   - const wrapperMods = ""
   - const hasHeader = true
   - const headerMods = ""
+  - const hasFooter = true
   - const currentUrl = "pug.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const pageType = "guide"
 
 block main
   main
-    .container
+    +content({
+      title: "Гайды",
+      links: [
+        {
+          title: "Главная",
+          link: "index.html"
+        },
+        {
+          title: "Гайды",
+          link: "pug.html"
+        },
+        {
+          title: "Скейлинг"
+        }
+      ]
+    })
       +pug()
 block modals

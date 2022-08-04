@@ -19,6 +19,10 @@
     gap: 30px;
     grid-template-columns: repeat(3, 1fr);
 
+    &:first-child {
+      padding: 40px 0 0 0;
+    }
+
     @media screen and (max-width: 1150px) {
       grid-template-columns: 1fr 1fr;
     }

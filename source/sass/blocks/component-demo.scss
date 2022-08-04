@@ -38,13 +38,21 @@
   }
 
   pre {
-    margin: 0;
     display: flex;
+    background-color: $color-ghost-white;
+    margin: 48px 0 58px;
+    padding: 2rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   code {
-    width: 100%;
-    padding-right: 32px;
-    background-color: $color-white-smoke;
+    font-size: 0.8em;
+
+    @include vp-767 {
+      word-break: break-word;
+    }
   }
 }

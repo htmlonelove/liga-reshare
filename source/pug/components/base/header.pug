@@ -1,5 +1,5 @@
 mixin header(headerMods, currentUrl)
-  header.header(class=headerMods)
+  header.header(class=headerMods, data-fix-block)
     .container
       if(currentUrl === "index.html")
         +logo().header__logo(data-header-logo)
@@ -8,11 +8,13 @@ mixin header(headerMods, currentUrl)
       nav.header__nav.main-nav(data-main-nav)
         ul.main-nav__list
           li.main-nav__item(data-nav-item)
-            a.main-nav__link(href="https://ligaa.agency/") Лига А.
+            a.main-nav__link(href="components.html") Компоненты
           li.main-nav__item(data-nav-item)
-            a.main-nav__link(href="https://testim.agency/") Тестировошная
+            span.main-nav__link Кейсы
           li.main-nav__item(data-nav-item)
-            a.main-nav__link(href="https://ligaa.agency/portfolio.html") Портфолио
+            a.main-nav__link(href="guides.html") Гайды
+          li.main-nav__item(data-nav-item)
+            a.main-nav__link.main-nav__link--blue(href="https://ligaa.agency/") Лига А.
       +search().header__search
       +git-link().header__git-link
       button.header__sandwich.sandwich(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-sandwich)

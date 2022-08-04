@@ -8,13 +8,13 @@ const initHeaderObserver = () => {
       const headerHeight = entry.borderBoxSize[0].blockSize;
       main.style.paddingTop = `${headerHeight}px`;
 
-      if (navbar) {
-        if (breakpointMd.matches) {
-          navbar.style.top = `${headerHeight}px`;
-        } else {
-          navbar.style.top = '0';
-        }
-      }
+      // if (navbar) {
+      //   if (breakpointMd.matches) {
+      //     navbar.style.top = `${headerHeight}px`;
+      //   } else {
+      //     navbar.style.top = '0';
+      //   }
+      // }
 
     }
   });

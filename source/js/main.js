@@ -10,6 +10,8 @@ import {initHeaderObserver} from './modules/init-header-observer';
 import {initTabs} from './modules/init-tabs';
 import {initNavigationChanger} from './modules/init-navigation-changer';
 import {initArticleMenu} from './modules/init-article-menu';
+import {initChangeNumber} from './modules/init-change-number';
+import {initFixedNavbar} from './modules/init-fixed-navbar';
 
 
 // ---------------------------------
@@ -37,6 +39,8 @@ window.addEventListener('DOMContentLoaded', () => {
     initTabs();
     initNavigationChanger();
     initArticleMenu();
+    initChangeNumber();
+    initFixedNavbar();
   });
 });
 

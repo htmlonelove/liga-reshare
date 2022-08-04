@@ -1,0 +1,32 @@
+mixin last-added()
+  section.last-added
+    .container
+      h2.last-added__title Последние добавленные:
+      ul.last-added__list
+        li.last-added__item
+          .last-added__inner
+            h3.last-added__heading Кастомный селект
+            p.last-added__description В данной реализации используется нативный селект, что решает массу проблем, которые были с инпутом.
+            span.last-added__link
+              span.last-added__link-text Смотреть
+              +icon("icon-accordion", 14, 8).last-added__link-icon
+            span.last-added__hashtag #Компоненты
+            a.last-added__shadow-link(href="custom-select.html", aria-label="Перейти к компоненту")
+        li.last-added__item
+          .last-added__inner
+            h3.last-added__heading Табы
+            p.last-added__description В данной реализации используется нативный селект, что решает массу проблем, которые были с инпутом.
+            span.last-added__link
+              span.last-added__link-text Смотреть
+              +icon("icon-accordion", 14, 8).last-added__link-icon
+            span.last-added__hashtag #Компоненты
+            a.last-added__shadow-link(href="tabs.html", aria-label="Перейти к компоненту")
+        li.last-added__item
+          .last-added__inner
+            h3.last-added__heading Скейлинг
+            p.last-added__description В данной реализации используется нативный селект, что решает массу проблем, которые были с инпутом.
+            span.last-added__link
+              span.last-added__link-text Смотреть
+              +icon("icon-accordion", 14, 8).last-added__link-icon
+            span.last-added__hashtag #Гайды
+            a.last-added__shadow-link(href="scaling.html", aria-label="Перейти к компоненту")

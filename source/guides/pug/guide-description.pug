@@ -1,20 +1,14 @@
 section.component-description
-  section
-  p.
+  section(id="introduction")
+    p Данный гайд не описывает все возможности Pug и все варианты использования этих возможностей. Задача данного гайда дать необходимый минимум знаний для работы в Лиге А, показать пример того, как пишем мы и то, как мы хотим, чтобы писали вы, начиная работу в нашей команде.
 
-    Данный гайд не описывает все возможности Pug и все варианты использования этих возможностей. Задача данного гайда дать необходимый минимум знаний для работы в Лиге А, показать пример того, как пишем мы и то, как мы хотим, чтобы писали вы, начиная работу в нашей команде.
-
-  section
+  section(id="what")
     h2.subtitle Что такое Pug?
     p Pug — это шаблонизатор и Html-препроцессор, написанный на JavaScript для платформы Node.js с целью ускорения верстки.
-
     p После интерпретации синтаксис Pug превращается в Нtml-код. Старое название Pug — Jade. Так что, если вы встретите упоминание Jade, знайте, что речь идет о Pug. Pug — это инструмент, который позволяет проще писать разметку, делить её на компоненты и связывать с данными.
 
-  section
-    h2.subtitle.
-
-      Проблемы, с которыми мы сталкиваемся в вёрстке и которые нам помогает решить Pug.
-
+  section(id="problems")
+    h2.subtitle Проблемы, с которыми мы сталкиваемся в вёрстке и которые нам помогает решить Pug.
     ol
       li
         p Верстая на Html, мы постоянно сталкиваемся с необходимостью копировать определённые блоки на странице, будь то крупные, такие как head, header, footer и т.д., в зависимости от проекта, и небольшие повторяющиеся блоки, такие как кнопки, карточки товаров и т.д. Pug дает нам возможность создавать шаблоны и компоненты и размещать их в нужном месте на проекте. Это позволяет избегать ошибок при копировании.
@@ -34,7 +28,7 @@ section.component-description
       li
         p Используя Html, мы не можем разделить данные и представление. Pug даёт нам возможность это сделать.
 
-  section
+  section(id="syntax")
     h2.subtitle Синтаксис Pug
     h3 Теги
     p В Pug нет закрывающих тегов. Тег указывается только один раз и его не нужно экранировать.
@@ -42,36 +36,31 @@ section.component-description
     h4 Pug
     pre
       |
-      code.
+      code.language-pug.
 
-                            ul
-                              li
-                                p Lorem
-                              li
-                                p Lorem
-                              li
-                                p Lorem
-
-      |
+        ul
+          li
+            p Lorem
+          li
+            p Lorem
+          li
+            p Lorem
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;ul>
-                              &lt;li>
-                                &lt;p>Lorem&lt;/p>
-                              &lt;/li>
-                              &lt;li>
-                                &lt;p>Lorem&lt;/p>
-                              &lt;/li>
-                              &lt;li>
-                                &lt;p>Lorem&lt;/p>
-                              &lt;/li>
-                            &lt;/ul>
-
-      |
+      code.language-html.
+        &lt;ul>
+          &lt;li>
+            &lt;p>Lorem&lt;/p>
+          &lt;/li>
+          &lt;li>
+            &lt;p>Lorem&lt;/p>
+          &lt;/li>
+          &lt;li>
+            &lt;p>Lorem&lt;/p>
+          &lt;/li>
+        &lt;/ul>
 
     h3 Классы и идентификаторы
     p Классы в Pug задаются через точку (.)
@@ -79,101 +68,71 @@ section.component-description
     h4 Pug
     pre
       |
-      code.
-
-                            p.text-item#text Lorem
-
-      |
-
+      code.language-pug.
+        p.text-item#text Lorem
     h4 Html
     pre
       |
-      code.
-
-                            &lt;p class="text-item" id="text">Lorem&lt;/p>
-
-      |
+      code.language-html.
+        &lt;p class="text-item" id="text">Lorem&lt;/p>
 
     h3 Атрибуты
     p Атрибуты в Pug задаются в круглых скобках ().
     h4 Pug
     pre
       |
-      code.
-
-                            a(href="#") Lorem
-
-      |
+      code.language-pug.
+        a(href="#") Lorem
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;a href="#">Lorem&lt;/a>
-
-      |
+      code.language-html.
+        &lt;a href="#">Lorem&lt;/a>
 
     p Если необходимо указать несколько атрибутов, то они указываются через запятую.
     h4 Pug
     pre
       |
-      code.
-
-                            a(href="#", target="_blank") Lorem
-
-      |
+      code.language-pug.
+        a(href="#", target="_blank") Lorem
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;a href="#" target="_blank">Lorem&lt;/a>
-
-      |
+      code.language-html.
+        &lt;a href="#" target="_blank">Lorem&lt;/a>
 
     p Если атрибутов много, то их можно распределить по нескольким строкам.
+    h4 Pug
     pre
       |
-      code.
-
-                            a(
-                              href="#",
-                              target="_blank",
-                              aria-label="Ссылка",
-                              data-href="link"
-                            ) Lorem
-
-      |
+      code.language-pug.
+        a(
+          href="#",
+          target="_blank",
+          aria-label="Ссылка",
+          data-href="link"
+        ) Lorem
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;a href="#" target="_blank" aria-label="Ссылка" data-href="link">Lorem&lt;/a>
-
-      |
+      code.language-html.
+        &lt;a href="#" target="_blank" aria-label="Ссылка" data-href="link">Lorem&lt;/a>
 
     p Если с атрибутами вам необходимо указать класс и/или идентификатор, то они указываются до атрибутов.
     h4 Pug
     pre
       |
-      code.
-
-                            a.link-item#link(href="#", target="_blank") Lorem
-
-      |
+      code.language-pug.
+        a.link-item#link(href="#", target="_blank") Lorem
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;a class="link-item" id="link" href="#" target="_blank">Lorem&lt;/a>
-
-      |
+      code.language-html.
+        &lt;a class="link-item" id="link" href="#" target="_blank">Lorem&lt;/a>
 
     h3 Текст
     p Для вложения контента внутрь тегов существуют следующие варианты:
@@ -181,137 +140,102 @@ section.component-description
     h4 Pug
     pre
       |
-      code.
-
-                            p Lorem ipsum dolor sit amet consectetur adipisicing elit.
-
-      |
+      code.language-pug.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit.&lt;/p>
-
-      |
+      code.language-html.
+        &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit.&lt;/p>
 
     p Pipe-стиль. Контент можно располагать в несколько строк. Каждая строка начинается с символа (|). Этот стиль является основным в Лиге.
     h4 Pug
     pre
       |
-      code.
-
-                            p
-                              | Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                              | Tempore suscipit possimus officia ea illo tempora doloremque
-                              | provident earum illum nemo ad excepturi similique,
-                              | repudiandae reiciendis beatae voluptates ducimus aperiam aspernatur!
-
-      |
+      code.language-pug.
+        p
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          | Tempore suscipit possimus officia ea illo tempora doloremque
+          | provident earum illum nemo ad excepturi similique,
+          | repudiandae reiciendis beatae voluptates ducimus aperiam aspernatur!
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;p>
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                              Tempore suscipit possimus officia ea illo tempora doloremque
-                              provident earum illum nemo ad excepturi similique,
-                              repudiandae reiciendis beatae voluptates ducimus aperiam aspernatur!
-                            &lt;/p>
-
-      |
+      code.language-html.
+        &lt;p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Tempore suscipit possimus officia ea illo tempora doloremque
+          provident earum illum nemo ad excepturi similique,
+          repudiandae reiciendis beatae voluptates ducimus aperiam aspernatur!
+        &lt;/p>
 
     p Блочный стиль. Контент можно располагать в несколько строк. Для этого сразу после тега указывается точка (.). Дополнительные символы (|) использовать не нужно.
     h4 Pug
     pre
       |
-      code.
-
-                            p.
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                              Tempore suscipit possimus officia ea illo tempora doloremque
-                              provident earum illum nemo ad excepturi similique,
-                              repudiandae reiciendis beatae voluptates ducimus aperiam aspernatur!
-
-      |
+      code.language-pug.
+        p.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Tempore suscipit possimus officia ea illo tempora doloremque
+          provident earum illum nemo ad excepturi similique,
+          repudiandae reiciendis beatae voluptates ducimus aperiam aspernatur!
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;p>
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                              Tempore suscipit possimus officia ea illo tempora doloremque
-                              provident earum illum nemo ad excepturi similique,
-                              repudiandae reiciendis beatae voluptates ducimus aperiam aspernatur!
-                            &lt;/p>
-
-      |
+      code.language-html.
+        &lt;p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Tempore suscipit possimus officia ea illo tempora doloremque
+          provident earum illum nemo ad excepturi similique,
+          repudiandae reiciendis beatae voluptates ducimus aperiam aspernatur!
+        &lt;/p>
 
     h3 Интерполяция тегов
     p Pug позволяет использовать внутри тега с текстом обычные Html-теги.
     h4 Pug
     pre
       |
-      code.
-
-                            p Lorem ipsum dolor sit &lt;a href="#">amet consectetur&lt;/a> adipisicing elit.
-
-      |
+      code.language-pug.
+        p Lorem ipsum dolor sit &lt;a href="#">amet consectetur&lt;/a> adipisicing elit.
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;p>Lorem ipsum dolor sit &lt;a href="#">amet consectetur&lt;/a> adipisicing elit.&lt;/p>
-
-      |
+      code.language-html.
+        &lt;p>Lorem ipsum dolor sit &lt;a href="#">amet consectetur&lt;/a> adipisicing elit.&lt;/p>
 
     p Но в этом случае теряется смысловая семантика использования препроцессора. Ведь мы смешиваем обычный Html с синтаксисом Pug.
     p Избежать этого поможет конструкция &num;[тег контент].
     h4 Pug
     pre
       |
-      code.
-
-                            p Lorem ipsum dolor sit &num;[a(href="#") amet consectetur] adipisicing elit.
-
-      |
+      code.language-pug.
+        p Lorem ipsum dolor sit &num;[a(href="#") amet consectetur] adipisicing elit.
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;p>Lorem ipsum dolor sit &lt;a href="#">amet consectetur&lt;/a> adipisicing elit.&lt;/p>
-
-      |
+      code.language-html.
+        &lt;p>Lorem ipsum dolor sit &lt;a href="#">amet consectetur&lt;/a> adipisicing elit.&lt;/p>
 
     p Также можно использовать Pipe-стиль.
+    h4 Pug
     pre
       |
-      code.
-
-                            p
-                              | Lorem ipsum dolor sit
-                              a(href="#") amet consectetur
-                              | adipisicing elit.
-
-      |
+      code.language-pug.
+        p
+          | Lorem ipsum dolor sit
+          a(href="#") amet consectetur
+          | adipisicing elit.
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;p>Lorem ipsum dolor sit&lt;a href="#">amet consectetur&lt;/a>adipisicing elit.&lt;/p>
-
-      |
+      code.language-html.
+        &lt;p>Lorem ipsum dolor sit&lt;a href="#">amet consectetur&lt;/a>adipisicing elit.&lt;/p>
 
     p Но мы сталкиваемся с проблемой удаления пробельных символов.
     h3 Управление пробельными символами
@@ -320,54 +244,42 @@ section.component-description
     h4 Pug
     pre
       |
-      code.
-
-                            p Lorem ipsum dolor sit &num;[a(href="#") amet consectetur] adipisicing elit.
-
-      |
+      code.language-pug.
+        p Lorem ipsum dolor sit &num;[a(href="#") amet consectetur] adipisicing elit.
 
     p При использовании Pipe-стиля можно добавлять пробельные символы там, где это необходимо.
     h4 Pug
     pre
       |
-      code.
-
-                            p
-                            | Lorem ipsum dolor sit
-                            |
-                            a(href="#") amet consectetur
-                            |
-                            | adipisicing elit.
-
-      |
+      code.language-pug.
+        p
+        | Lorem ipsum dolor sit
+        |
+        a(href="#") amet consectetur
+        |
+        | adipisicing elit.
 
     p Также можно добавить пробельные символы и другим способом.
     h4 Pug
     pre
       |
-      code.
-
-                            p
-                            | Lorem ipsum dolor sit
-                            =" "
-                            a(href="#") amet consectetur
-                            =" "
-                            | adipisicing elit.
-
-      |
+      code.language-pug.
+        p
+        | Lorem ipsum dolor sit
+        =" "
+        a(href="#") amet consectetur
+        =" "
+        | adipisicing elit.
 
     p Можно использовать Html-мнемоник - неразрывный пробел &nbsp;.
     h4 Pug
     pre
       |
-      code.
-
-                            p
-                            | Lorem ipsum dolor sit&nbsp;
-                            a(href="#") amet consectetur
-                            | &nbsp;adipisicing elit.
-
-      |
+      code.language-pug.
+        p
+        | Lorem ipsum dolor sit&nbsp;
+        a(href="#") amet consectetur
+        | &nbsp;adipisicing elit.
 
     p Но данный вариант свяжет ссылку с символами до и после неё.
     h3 Добавление инлайн стилей и скриптов
@@ -375,372 +287,305 @@ section.component-description
     h4 Pug
     pre
       |
-      code.
+      code.language-pug.
+        style.
+          .some-section {
+            color: red;
+          }
 
-                            style.
-                              .some-section {
-                                color: red;
-                              }
-
-                            script.
-                              if (isSunnyDay) {
-                                alert("I am happy");
-                              } else {
-                                alert("I am sad");
-                              }
-
-      |
+        script.
+          if (isSunnyDay) {
+            alert("I am happy");
+          } else {
+            alert("I am sad");
+          }
 
     h4 Html
     pre
       |
-      code.
+      code.language-html.
+        &lt;style>
+          .some-section {
+            color: red;
+          }
+        &lt;/style>
 
-                            &lt;style>
-                              .some-section {
-                                color: red;
-                              }
-                            &lt;/style>
-
-                            &lt;script>
-                              if (isSunnyDay) {
-                                alert("I am happy");
-                              } else {
-                                alert("I am sad");
-                              }
-                            &lt;/script>
-
-      |
+        &lt;script>
+          if (isSunnyDay) {
+            alert("I am happy");
+          } else {
+            alert("I am sad");
+          }
+        &lt;/script>
 
     h3 Комментарии
     p Для добавления комментариев в Pug перед текстом комментария надо добавить два слеша (//).
     h4 Pug
     pre
       |
-      code.
-
-                            // Lorem ipsum dolor sit amet consectetur adipisicing elit.
-
-      |
+      code.language-pug.
+        // Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. -->
-
-      |
+      code.language-html.
+        &lt;!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. -->
 
     p Ниже приведён пример многострочного комментария.
     h4 Pug
     pre
       |
-      code.
-
-                            //
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                              Amet molestias accusamus ad porro voluptatum labore excepturi
-                              suscipit ex minus a quia, inventore, neque nemo aut, illum commodi.
-                              Itaque, facere rem.
-
-      |
+      code.language-pug.
+        //
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Amet molestias accusamus ad porro voluptatum labore excepturi
+          suscipit ex minus a quia, inventore, neque nemo aut, illum commodi.
+          Itaque, facere rem.
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;!--
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                              Amet molestias accusamus ad porro voluptatum labore excepturi
-                              suscipit ex minus a quia, inventore, neque nemo aut, illum commodi.
-                              Itaque, facere rem.
-                            -->
-
-      |
+      code.language-html.
+        &lt;!--
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Amet molestias accusamus ad porro voluptatum labore excepturi
+          suscipit ex minus a quia, inventore, neque nemo aut, illum commodi.
+          Itaque, facere rem.
+        -->
 
     p Чтобы комментарии были только в Pug и не попадали в итоговый Html, сразу после слешей надо добавить дефис (//-).
     h4 Pug
     pre
       |
-      code.
+      code.language-pug.
+        //- Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
-                            //- Lorem ipsum dolor sit amet consectetur adipisicing elit.
-
-      |
-
-  section
+  section(id="pugjs")
     h2.subtitle Использование JavaScript в Pug
     h3 Переменные
-    p В Pug, как и в JavaScript, переменные объявляются с помощью ключевого слова const. Но в Pug перед переменной необходимо ставить символ дефиса (-).
+    p В Pug, как и в JavaScript, переменные объявляются с помощью ключевого слова #[b const]. Но в Pug перед переменной необходимо ставить символ дефиса #[b (-)].
     h4 Pug
     pre
       |
-      code.
-
-                            - const text = "Text"
-                            - const number = 69
-                            - const array = ["Text", "One more text"]
-                            - const object = {
-                                page: "main",
-                                href: "#"
-                              }
-
-      |
+      code.language-pug.
+        - const text = "Text"
+        - const number = 69
+        - const array = ["Text", "One more text"]
+        - const object = {
+            page: "main",
+            href: "#"
+          }
 
     h3 Интерполяция переменных
     p В Pug есть различные способы вывода переменных.
     h4 Pug
     pre
       |
-      code.
-
-                            - const text = "Text"
-                            h1= text
-                            p Written with love by &num;{text}
-
-      |
+      code.language-pug.
+        - const text = "Text"
+        h1= text
+        p Written with love by &num;{text}
 
     p Такие варианты будут работать с экранированием. Поэтому если нам понадобится вставить теги или Html-мнемоники, мы получим нет тот результат, который ожидали.
     h4 Pug
     pre
       |
-      code.
-
-                            - const textWithMnemonics = "text&nbsp;text"
-                            - const textWithTags = "&lt;span>text&lt;/span>"
-                            h1= textWithMnemonics
-                            p Written with love by &num;{textWithTags}
-
-      |
+      code.language-pug.
+        - const textWithMnemonics = "text&nbsp;text"
+        - const textWithTags = "&lt;span>text&lt;/span>"
+        h1= textWithMnemonics
+        p Written with love by &num;{textWithTags}
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;h1>text&amp;nbsp;text&lt;/h1>
-                            &lt;p>Written with love by &lt;span&gt;text&lt;/span&gt;&lt;/p>
-
-      |
+      code.language-html.
+        &lt;h1>text&amp;nbsp;text&lt;/h1>
+        &lt;p>Written with love by &lt;span&gt;text&lt;/span&gt;&lt;/p>
 
     p Чтобы избежать экранирования, необходимо использовать символ восклицательного знака (!)
     h4 Pug
     pre
       |
-      code.
-
-                            - const textWithMnemonics = "text&nbsp;text"
-                            - const textWithTags = "&lt;span>text&lt;/span>"
-                            h1!= textWithMnemonics
-                            p Written with love by &excl;{textWithTags}
-
-      |
+      code.language-pug.
+        - const textWithMnemonics = "text&nbsp;text"
+        - const textWithTags = "&lt;span>text&lt;/span>"
+        h1!= textWithMnemonics
+        p Written with love by &excl;{textWithTags}
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;h1>text text&lt;/h1>
-                            &lt;p>Written with love by <span>text</span>&lt;/p>
-
-      |
+      code.language-html.
+        &lt;h1>text text&lt;/h1>
+        &lt;p>Written with love by <span>text</span>&lt;/p>
 
     h3 Условия
     p Условный синтаксис Pug очень похож на Javascript, но в отличие от Javascript в Pug при использовании условий не нужны скобки.
     h4 Pug
     pre
       |
-      code.
-
-                            - const condition = true
-                            if condition
-                              p condition is true
-                            else
-                              p condition is false
-
-      |
+      code.language-pug.
+        - const condition = true
+        if condition
+          p condition is true
+        else
+          p condition is false
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;p>condition is true&lt;/p>
-
-      |
+      code.language-html.
+        &lt;p>condition is true&lt;/p>
 
     p При использовании операторов сравнения с нечисловым значением необходимо применять кавычки, иначе Pug будет искать переменную с таким именем.
     h4 Pug
     pre
       |
-      code.
-                      - const page = "index"
+      code.language-pug.
+        - const page = "index"
 
-        p Неверно
-                      if page === index
+    p Неверно
+    pre
+      |
+      code.language-pug.
+        if page === index
 
-        p В примере выше Pug будет искать переменную index, которой нет, и это вызовет ошибку
+    p В примере выше Pug будет искать переменную index, которой нет, и это вызовет ошибку
 
-        p Верно
-                      if page === "index"
-
+    p Верно
+    pre
+      |
+      code.language-pug.
+        if page === "index"
 
     h3 Циклы
     p Циклы используются для выполнения одинакового действия определённое количество раз. Pug поддерживает два вида итерации: each и while. Мы рассмотрим только each, так как while не используем.
     h4 Pug
     pre
       |
-      code.
-
-                            - const names = ["Иван", "Дмитрий", "Наталия"]
-                            ul
-                              each item in names
-                                li= item
-
-      |
+      code.language-pug.
+        - const names = ["Иван", "Дмитрий", "Наталия"]
+        ul
+          each item in names
+            li= item
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;ul>
-                              &lt;li>Иван&lt;/li>
-                              &lt;li>Дмитрий&lt;/li>
-                              &lt;li>Наталия&lt;/li>
-                            &lt;/ul>
-
-      |
+      code.language-html.
+        &lt;ul>
+          &lt;li>Иван&lt;/li>
+          &lt;li>Дмитрий&lt;/li>
+          &lt;li>Наталия&lt;/li>
+        &lt;/ul>
 
     p Также мы можем использовать индекс элемента массива, указав его через запятую.
     h4 Pug
     pre
       |
-      code.
-
-                            - const names = ["Иван", "Дмитрий", "Наталия"]
-                              ul
-                                each item, index in names
-                                  li= `Под индексом ${index} в массиве расположено имя ${item}`
-
-      |
+      code.language-pug.
+        - const names = ["Иван", "Дмитрий", "Наталия"]
+          ul
+            each item, index in names
+              li= `Под индексом ${index} в массиве расположено имя ${item}`
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;ul>
-                              &lt;li>Под индексом 0 в массиве расположено имя Иван&lt;/li>
-                              &lt;li>Под индексом 1 в массиве расположено имя Дмитрий&lt;/li>
-                              &lt;li>Под индексом 2 в массиве расположено имя Наталия&lt;/li>
-                            &lt;/ul>
-
-      |
+      code.language-html.
+        &lt;ul>
+          &lt;li>Под индексом 0 в массиве расположено имя Иван&lt;/li>
+          &lt;li>Под индексом 1 в массиве расположено имя Дмитрий&lt;/li>
+          &lt;li>Под индексом 2 в массиве расположено имя Наталия&lt;/li>
+        &lt;/ul>
 
     p Обратите внимание на то, что мы используем шаблонные строки, а не конкатенацию.
     h4 Pug
     pre
       |
-      code.
+      code.language-pug.
+        li= `Под индексом ${index} в массиве расположено имя ${item}`
 
-                            li= `Под индексом ${index} в массиве расположено имя ${item}`
+        // Вместо:
 
-                            Вместо:
-
-                            li= "Под индексом " + index + " в массиве расположено имя " + item
-
-      |
+        li= "Под индексом " + index + " в массиве расположено имя " + item
 
     p Также с помощью цикла each мы можем перебирать и объекты.
     h4 Pug
     pre
       |
-      code.
+      code.language-pug.
+        -
+          const users = {
+            1: {
+              name: "Иван",
+              age: "30"
+            },
+            2: {
+              name: "Дмитрий",
+              age: "27"
+            }
+          }
 
-                            -
-                              const users = {
-                                1: {
-                                  name: "Иван",
-                                  age: "30"
-                                },
-                                2: {
-                                  name: "Дмитрий",
-                                  age: "27"
-                                }
-                              }
-
-                            each value in users
-                              div
-                                p= `Имя пользователя: ${value.name}`
-                                p= `Возраст пользователя: ${value.age}`
-
-      |
+        each value in users
+          div
+            p= `Имя пользователя: ${value.name}`
+            p= `Возраст пользователя: ${value.age}`
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;div>
-                              &lt;p>Имя пользователя: Иван&lt;/p>
-                              &lt;p>Возраст пользователя: 30&lt;/p>
-                            &lt;/div>
-                            &lt;div>
-                              &lt;p>Имя пользователя: Дмитрий&lt;/p>
-                              &lt;p>Возраст пользователя: 27&lt;/p>
-                            &lt;/div>
-
-      |
+      code.language-html.
+        &lt;div>
+          &lt;p>Имя пользователя: Иван&lt;/p>
+          &lt;p>Возраст пользователя: 30&lt;/p>
+        &lt;/div>
+        &lt;div>
+          &lt;p>Имя пользователя: Дмитрий&lt;/p>
+          &lt;p>Возраст пользователя: 27&lt;/p>
+        &lt;/div>
 
     p Мы можем получить и ключ объекта, указав его через запятую.
     h4 Pug
     pre
       |
-      code.
+      code.language-pug.
+        -
+          const users = {
+            1: {
+              name: "Иван",
+              age: "30"
+            },
+            2: {
+              name: "Дмитрий",
+              age: "27"
+            }
+          }
 
-                            -
-                              const users = {
-                                1: {
-                                  name: "Иван",
-                                  age: "30"
-                                },
-                                2: {
-                                  name: "Дмитрий",
-                                  age: "27"
-                                }
-                              }
-
-                            each value, key in users
-                              div
-                                p= `По ключу ${key} в объекте users находится объект со следующими значениями:`
-                                p= `Имя пользователя: ${value.name}`
-                                p= `Возраст пользователя: ${value.age}`
-
-      |
+        each value, key in users
+          div
+            p= `По ключу ${key} в объекте users находится объект со следующими значениями:`
+            p= `Имя пользователя: ${value.name}`
+            p= `Возраст пользователя: ${value.age}`
 
     h4 Html
     pre
       |
-      code.
+      code.language-html.
+        &lt;div>
+          &lt;p>По ключу 1 в объекте users находится объект со следующими значениями:&lt;/p>
+          &lt;p>Имя пользователя: Иван&lt;/p>
+          &lt;p>Возраст пользователя: 30&lt;/p>
+        &lt;/div>
+        &lt;div>
+          &lt;p>По ключу 2 в объекте users находится объект со следующими значениями:&lt;/p>
+          &lt;p>Имя пользователя: Дмитрий&lt;/p>
+          &lt;p>Возраст пользователя: 27&lt;/p>
+        &lt;/div>
 
-                            &lt;div>
-                              &lt;p>По ключу 1 в объекте users находится объект со следующими значениями:&lt;/p>
-                              &lt;p>Имя пользователя: Иван&lt;/p>
-                              &lt;p>Возраст пользователя: 30&lt;/p>
-                            &lt;/div>
-                            &lt;div>
-                              &lt;p>По ключу 2 в объекте users находится объект со следующими значениями:&lt;/p>
-                              &lt;p>Имя пользователя: Дмитрий&lt;/p>
-                              &lt;p>Возраст пользователя: 27&lt;/p>
-                            &lt;/div>
-
-      |
-
-  section
+  section(id="mixin")
     h2.subtitle Миксины в Pug
     h3 Mиксины
     p Миксины позволяют создавать многократно повторяемые блоки кода. Это практически тоже самое, что и функция в языке программирования.
@@ -748,86 +593,70 @@ section.component-description
     h4 Pug
     pre
       |
-      code.
-
-                            mixin button()
-                              button.button(type="button") Button
-
-      |
+      code.language-pug.
+        mixin button()
+          button.button(type="button") Button
 
     p Вызов миксина начинается со знака плюс (+), затем имя миксина, затем круглые скобки (). Их мы указываем всегда, независимо от того, передаём мы какие-либо параметры или нет.
     h4 Pug
     pre
       |
-      code.
-
-                            mixin button()
-                              button.button(type="button") Button
-                            +button()
-                            +button()
-                            +button()
-
-      |
+      code.language-pug.
+        mixin button()
+          button.button(type="button") Button
+        +button()
+        +button()
+        +button()
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;button class="button" type="button">Button&lt;/button>
-                            &lt;button class="button" type="button">Button&lt;/button>
-                            &lt;button class="button" type="button">Button&lt;/button>
-
-      |
+      code.language-html.
+        &lt;button class="button" type="button">Button&lt;/button>
+        &lt;button class="button" type="button">Button&lt;/button>
+        &lt;button class="button" type="button">Button&lt;/button>
 
     p При создании миксина в круглых скобках мы можем указать аргументы которые будет принимать в себя миксин. И с помощью интерполяции мы сможем использовать переданные аргументы как значение для элементов внутри миксина.
     h4 Pug
     pre
       |
-      code.
+      code.language-pug.
+        mixin button(text)
+          button.button(type="button")= text
 
-                            mixin button(text)
-                              button.button(type="button")= text
-
-                            +button(Button-1)
-                            +button(Button-2)
-                            +button(Button-3)
-
-      |
+        +button(Button-1)
+        +button(Button-2)
+        +button(Button-3)
 
     h4 Html
     pre
       |
-      code.
-
-                            &lt;button class="button" type="button">Button-1&lt;/button>
-                            &lt;button class="button" type="button">Button-2&lt;/button>
-                            &lt;button class="button" type="button">Button-3&lt;/button>
-
-      |
+      code.language-html.
+        &lt;button class="button" type="button">Button-1&lt;/button>
+        &lt;button class="button" type="button">Button-2&lt;/button>
+        &lt;button class="button" type="button">Button-3&lt;/button>
 
     h3 Атрибуты в миксине (&attributes(attributes))
     p Чтобы не усложнять миксин передачей в него различных атрибутов, в Pug существует конструкция &attributes(attributes). Она добавляется при создании миксина к тому тегу, к которому необходимо будет добавлять атрибуты при вызове миксина. Это позволяет сделать миксин более универсальным и гибким, так как при создании мы не можем точно знать, какие параметры нам могут понадобиться при вызове в будущем.
     h4 Pug
     pre
       |
-      code.
+      code.language-pug.
+        // Неверно:
+        mixin button(text, type, ariaLabel)
 
-        Неверно:
-                      mixin button(text, type, ariaLabel)
+        button.button(type=type, aria-label=ariaLabel)= text
+        +button("Button-1", "button", "Button-1")
+        +button("Button-2", "submit", "Button-2")
+        +button("Button-3", "reset", "Button-3")
 
-                      button.button(type=type, aria-label=ariaLabel)= text
-                      +button("Button-1", "button", "Button-1")
-                      +button("Button-2", "submit", "Button-2")
-                      +button("Button-3", "reset", "Button-3")
+        // Верно:
+        mixin button(text)
+          button.button&attributes(attributes)= text
 
-        Верно:
-                      mixin button(text)
-                        button.button&attributes(attributes)= text
-
-                      +button("Button-1")(type="button", aria-label="Button-1")
-                      +button("Button-2")(type="submit", aria-label="Button-2")
-                      +button("Button-3")(type="reset", aria-label="Button-3")
+        +button("Button-1")(type="button", aria-label="Button-1")
+        +button("Button-2")(type="submit", aria-label="Button-2")
+        +button("Button-3")(type="reset", aria-label="Button-3")
 
 
     p Обратите внимание, что класс .button мы оставляем в миксине, так как он постоянный.
@@ -847,23 +676,20 @@ section.component-description
       |.
       |
       | Такой код не только тяжело читать и поддерживать, нужно ещё время на понимание того, что там происходит, и велика вероятность ошибки при его использовании. Исключением являются миксины, в которых все параметры передаются всегда (папка utils в сборке Лиги).
-  section
+  section(id="build")
     h2.subtitle Сборка Лиги А
     p Файловая структура Pug в сборке Лиги
     pre
       |
-      code.
-
-                            pug
-                              components
-                                base
-                                blocks
-                                mixins
-                                modals
-                                utils
-                              pages
-
-      |
+      code.language-.
+        pug
+          components
+            base
+            blocks
+            mixins
+            modals
+            utils
+          pages
 
     p В папке pug находятся две папки components и pages
     p В папке pages находятся все страницы проекта
