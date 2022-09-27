@@ -1,0 +1,34 @@
+.navbar-button {
+  align-items: center;
+  background-color: $color-transparent;
+  border: 1px solid $color-neon-blue;
+  border-radius: 50%;
+  display: none;
+  color: $color-neon-blue;
+  justify-content: center;
+  height: 50px;
+  padding: 0;
+  width: 50px;
+  z-index: 25;
+
+  @include vp-1023 {
+    background-color: $color-default-white;
+    display: flex;
+    position: absolute;
+    right: 30px;
+    top: 34px;
+  }
+
+  @include vp-767 {
+    right: 20px;
+    top: 30px;
+  }
+
+  &.is-active {
+    position: fixed;
+  }
+
+  svg {
+    fill: currentColor;
+  }
+}

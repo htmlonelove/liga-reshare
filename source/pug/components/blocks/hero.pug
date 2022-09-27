@@ -1,0 +1,6 @@
+mixin hero(options = {})
+
+  section.hero
+    .container
+      +breadcrumbs(options.links).hero__breadcrumbs
+      h1.hero__title!=options.title

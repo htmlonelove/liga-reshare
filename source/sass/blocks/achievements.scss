@@ -1,0 +1,87 @@
+.achievements {
+  margin: 0 0 148px 0;
+
+  @include vp-1023 {
+    margin: 0 0 100px 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0 -35px;
+    padding: 0;
+
+    @media screen and (max-width: 1300px) {
+      margin: -30px -35px 0;
+    }
+
+    @include vp-1023 {
+      margin: -30px -30px 0;
+    }
+
+    @include vp-767 {
+      margin: -60px -10px 0;
+    }
+  }
+
+  &__item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-width: 207px;
+    padding: 0 35px;
+    width: 20%;
+
+    @media screen and (max-width: 1300px) {
+      padding: 30px 35px 0;
+      width: 33.33%;
+    }
+
+    @include vp-767 {
+      min-width: unset;
+      padding: 60px 10px 0;
+      width: 50%;
+    }
+  }
+
+  &__number {
+    color: $color-neon-blue;
+    font-family: $ff-neue-machina;
+    font-size: 88px;
+    font-weight: 700;
+    opacity: 0;
+    line-height: 132px;
+    text-align: center;
+    transform: translate3d(0, 100px, 0);
+    transition: all $trans-default;
+
+    @include vp-1023 {
+      font-size: 70px;
+      line-height: 1;
+    }
+
+    @include vp-767 {
+      font-size: 60px;
+    }
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+
+  &__name {
+    font-family: $ff-neue-machina;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+
+    @include vp-767 {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+}

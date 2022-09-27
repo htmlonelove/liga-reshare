@@ -1,0 +1,28 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Гайды" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const currentUrl = "guides.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const pageType = "guide"
+
+block main
+  main
+    +content({
+      title: "Гайды",
+      links: [
+        {
+          title: "Главная",
+          link: "index.html"
+        },
+        {
+          title: "Гайды"
+        }
+      ]
+    })
+      +guides()
+
+block modals

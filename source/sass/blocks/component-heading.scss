@@ -1,7 +1,91 @@
 .component-heading {
+  border-bottom: 2px solid $color-ghost-white;
+  background-color: $color-default-white;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
+  padding: 20px 0 17px 0;
+  position: sticky;
+  top: 79px;
+  z-index: 10;
+
+  @include vp-1279 {
+    top: 82px;
+  }
+
+  @include vp-1023 {
+    padding: 20px 60px 17px 0;
+    top: 73px;
+  }
+
+  @include vp-767 {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px 0 34px 0;
+    position: relative;
+    top: 0;
+  }
+
+  &--not-demo {
+    @include vp-767 {
+      padding: 16px 0;
+    }
+
+    .component-heading__head {
+      @include vp-767 {
+        margin: 0;
+      }
+    }
+  }
+
+  &__head {
+    max-width: 70%;
+
+    @include vp-767 {
+      margin: 0 0 35px 0;
+      max-width: 80%;
+    }
+  }
+
+  &__tabs {
+    align-items: center;
+    display: flex;
+    margin: 13px 0 0 0;
+  }
+
+  &__tab-control {
+    background-color: $color-transparent;
+    border: none;
+    color: $color-default-black;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 26px;
+    padding: 0;
+    transition: all $trans-default;
+
+    &.is-active {
+      text-decoration: underline;
+      text-decoration-color: $color-neon-blue;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 5px;
+    }
+
+    &:not(:last-child) {
+      margin: 0 55px 0 0;
+    }
+
+    @include vp-767 {
+      line-height: 23px;
+    }
+
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        color: $color-neon-blue;
+        opacity: 0.8;
+      }
+    }
+  }
 
   &__download-link {
     flex-shrink: 0;

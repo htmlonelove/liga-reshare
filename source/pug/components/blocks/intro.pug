@@ -1,0 +1,19 @@
+mixin intro()
+
+  section.intro
+    picture.intro__kraken-top
+      source(media='(max-width: 767px)', srcset="img/svg/kraken-top-mobile.svg")
+      img(src="img/svg/kraken-top-desktop.svg", width="1440", height="290")
+    picture.intro__kraken-bottom
+      source(media='(max-width: 767px)', srcset="img/svg/kraken-bottom-mobile.svg")
+      img(src="img/svg/kraken-bottom-desktop.svg", width="1440", height="290")
+    //+icon("kraken-top-desktop", "1440", "290").intro__kraken-top
+    //+icon("kraken-bottom-desktop", "1440", "290").intro__kraken-bottom
+    //+icon("kraken-top-mobile", "375", "228").intro__kraken-top
+    //+icon("kraken-bottom-mobile", "1440", "290").intro__kraken-bottom
+    .container
+      .intro__description
+        h1.intro__title
+          span Лига
+          span.intro__title.intro__title--blue Решений
+        p.intro__slogan Изучай. Внедряй. Создавай.

@@ -1,18 +1,34 @@
 .btn {
-  display: inline-flex;
-  margin: 10px 0;
-  padding: 10px 20px;
-
-  color: $color-default-white;
-
-  background-color: $color-neon-blue;
   border: none;
+  background-color: $color-neon-blue;
+  color: $color-default-white;
   cursor: pointer;
-
-  transition: opacity $trans-default;
+  display: inline-flex;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 600;
+  margin: 0;
+  padding: 17px 35px;
+  transition: background-color $trans-default;
 
   &--red {
     background-color: $color-torch-red;
+  }
+
+  &--form {
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 24px;
+    display: flex;
+    justify-content: center;
+    margin: 34px 0 58px;
+    max-width: 300px;
+    padding: 10px 30px;
+    width: 100%;
+
+    @media screen and (max-width: 767px) {
+      margin: 18px 0 58px;
+    }
   }
 
   &:disabled {
@@ -24,7 +40,7 @@
   @media (hover: hover), screen and (min-width: 0\0) {
     &:hover,
     &:focus {
-      opacity: 0.8;
+      background-color: $color-amaranth;
     }
   }
 }

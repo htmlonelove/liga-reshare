@@ -1,37 +1,34 @@
-section.component-description
-  p Лок страницы состоит из из следующих файлов: ios-checker.js, scroll-lock.js он обязателен для переноса в проект, из файла экспортится класс FocusLock, в файле создаётся экземпляр класса и записывается в глобальную область видимости window.scrollLock = new ScrollLock();  Так же у вас в проекте должно находится два утилитарных класса для блокировки страницы:
+section.component-description(data-tabs='element')
+  p Лок страницы состоит из из следующих файлов: #[b ios-checker.js], #[b scroll-lock.js] они обязательны для переноса в проект.
+  p Из файла #[b scroll-lock.js] экспортируется класс #[bFocusLock], в файле создаётся экземпляр класса и записывается в глобальную область видимости #[b window.scrollLock = new ScrollLock();]
+  p Так же у вас в проекте должно находится два утилитарных класса для блокировки страницы:
   pre
     |
-    code.
+    code.language-css.
+      .scroll-lock-ios {
+        position: fixed;
 
-                      .scroll-lock-ios {
-                        position: fixed;
+        overflow: hidden;
+      }
 
-                        overflow: hidden;
-                      }
-
-                      .scroll-lock {
-                        overflow: hidden;
-                      }
-
-    |
-
-  p На данной странице размещено фиксированное окно, в скрол лок добавлен функционал для компенсации отступа у фиксированных элементов при локе страницы. Для этого у фиксированного элемента должен быть дата атрибут data-fix-block. Компенсация отступа происходит за счёт добавления padding-right фиксированному блоку. Будьте внимательны, не устанавливайте padding-right, так как он переопределится в js.
-  p.
-    Пример подключения
-
+      .scroll-lock {
+        overflow: hidden;
+      }
+  p На данной странице размещено фиксированное окно, в скрол лок добавлен функционал для компенсации отступа у фиксированных элементов при локе страницы. Для этого у фиксированного элемента должен быть дата атрибут #[b data-fix-block]. Компенсация отступа происходит за счёт добавления #[b padding-right] фиксированному блоку.
+  blockquote Будьте внимательны, не устанавливайте фиксированному блоку padding-right, так как он переопределяется в js.
+  h3 Пример подключения
   pre
     |
-    code.
-
-                        import '../components/scroll-lock/js/scroll-lock';
-
-    |
-
-  p
-  p
-    em window.scrollLock.disableScrolling()
-    |  Блокирует скролл
-  p
-    em window.scrollLock.enableScrolling()
-    |  Разблокирует скролл
+    code.language-js.
+      import '../components/scroll-lock/js/scroll-lock';
+  table
+    tr
+      th
+        p window.scrollLock.disableScrolling()
+      td
+        p Блокирует скролл
+    tr
+      th
+        p window.scrollLock.enableScrolling()
+      td
+        p Разблокирует скролл

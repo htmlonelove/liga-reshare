@@ -1,0 +1,51 @@
+.breadcrumbs {
+  &__list {
+    align-items: center;
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0 0 0 3px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin: 0 18px 0 0;
+    }
+  }
+
+  &__link[href] {
+    padding: 7px 17px 7px 0;
+    position: relative;
+    transition: opacity $trans-default;
+
+    svg {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @include vp-767 {
+        height: 10px;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    font-size: 12px;
+    line-height: 1;
+    padding: 7px 0;
+
+    @include vp-767 {
+      padding: 11px 0;
+    }
+  }
+}

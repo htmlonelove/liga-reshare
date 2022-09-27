@@ -1,0 +1,6 @@
+mixin dynamic-adaptive()
+  section.component(data-tabs='parent', data-delay='300')
+    include ./component-heading
+    .component__content(data-tabs='content')
+      include ./component-description
+      include ./component-demo

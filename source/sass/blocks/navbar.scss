@@ -1,0 +1,164 @@
+.navbar {
+  flex: 0 0 auto;
+  height: 100%;
+  left: 0;
+  //min-height: 500px;
+  top: 0;
+  width: 287px;
+
+  background-color: $color-default-white;
+  position: absolute;
+  z-index: 20;
+
+  @include vp-1023 {
+    background-color: $color-default-white;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    opacity: 0;
+    margin: 0;
+    padding: 68px 0 40px;
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    transition: all $trans-default;
+    right: 0;
+    visibility: hidden;
+    width: 100%;
+    z-index: 30;
+  }
+
+  &.is-active {
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+  }
+
+  &__close {
+    background-color: $color-transparent;
+    border: none;
+    color: $color-default-black;
+    display: none;
+    height: 20px;
+    padding: 0;
+    position: fixed;
+    right: 20px;
+    top: 30px;
+    width: 20px;
+
+    &::before {
+      content: "";
+      height: 40px;
+      left: -10px;
+      position: absolute;
+      top: -10px;
+      width: 40px;
+    }
+
+    @include vp-1023 {
+      display: flex;
+    }
+
+    svg {
+      stroke: currentColor;
+    }
+  }
+
+  &__element {
+    &:not(:last-child) {
+      margin: 0 0 30px 0;
+    }
+
+    &.is-active {
+      .navbar__button-icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__wrapper {
+    height: 100%;
+    overflow-y: auto;
+    padding: 50px 0;
+    width: 100%;
+
+    scrollbar-color: rgba($color-neon-blue, 0.5) rgba($color-neon-blue, 0.2);
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+      background-color: rgba($color-neon-blue, 0.2);
+    }
+
+    &::-webkit-scrollbar-thumb:vertical {
+      height: 30px;
+      background-color: rgba($color-neon-blue, 0.5);
+      border-radius: 10px;
+    }
+
+    @include vp-1023 {
+      padding: 0;
+    }
+  }
+
+  &__button {
+    background-color: $color-transparent;
+    border: none;
+    cursor: pointer;
+    color: $color-default-black;
+    font-family: $ff-neue-machina;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+    padding: 0 20px 0 63px;
+    position: relative;
+    transition: opacity $trans-default;
+    text-align: left;
+    width: 100%;
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__button-icon {
+    height: 9px;
+    left: 32px;
+    position: absolute;
+    top: 5px;
+    transition: transform $trans-default;
+    width: 16px;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  &__link {
+    display: flex;
+    font-size: 16px;
+    line-height: 27px;
+    padding: 10px 20px 10px 63px;
+    transition: background-color $trans-default;
+
+    &.is-active {
+      background-color: $color-ghost-white;
+    }
+
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        background-color: $color-ghost-white;
+      }
+    }
+  }
+}

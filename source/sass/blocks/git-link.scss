@@ -1,17 +1,32 @@
 .git-link {
   display: flex;
+  position: relative;
+  z-index: 25;
 
-  svg {
-    width: 32px;
-    height: 32px;
+  &.is-active {
+    svg {
+      fill: $color-default-white;
+    }
   }
-
-  transition: fill $trans-default;
 
   @media (hover: hover), screen and (min-width: 0\0) {
     &:hover,
     &:focus {
-      fill: $color-neon-blue;
+      svg {
+        fill: $color-neon-blue;
+      }
+    }
+  }
+
+  svg {
+    fill: $color-default-black;
+    height: 35px;
+    transition: fill $trans-default;
+    width: 35px;
+
+    @include vp-1023 {
+      height: 30px;
+      width: 30px;
     }
   }
 }

@@ -1,20 +1,21 @@
-section.component-description
-  p Подсветка пунктов навигации состоит из из следующих файлов: navigation-changer.js js обязателен для переноса в проект, из файла navigation-changer.js экспортится класс NavigationChanger, в main создаётся экземпляр класса и у него вызывается метод init()
+section.component-description(data-tabs='element')
+  p Подсветка пунктов навигации состоит из&nbsp;из&nbsp;следующих файлов: #[b navigation-changer.js] обязателен для переноса в&nbsp;проект, из&nbsp;файла #[b navigation-changer.js] экспортируется класс #[b NavigationChanger], в&nbsp;main создаётся экземпляр класса и&nbsp;у&nbsp;него вызывается метод #[b init()]
   pre
-    code.
+    code.language-js.
+      import {NavigationChanger} from '../components/navigation-changer/js/navigation-changer';
+      const navigationChanger = new NavigationChanger();
+      navigationChanger.init();
 
-                      import {NavigationChanger} from '../components/navigation-changer/js/navigation-changer';
-                      const navigationChanger = new NavigationChanger();
-                      navigationChanger.init();
-
-  h2 Обязательные дата атрибуты
-  p
-    em data-navigation-link
-    |  Добавляется к ссылке
-  p Так же обязательно связывать ссылки с блоками с помощью href в ссылке и id в секции
+  h3 Обязательные дата атрибуты
+  table
+    tr
+      th
+        p data-navigation-link
+      td
+        p Добавляется к ссылке
+  blockquote Так&nbsp;же обязательно связывать ссылки с&nbsp;блоками с&nbsp;помощью href в&nbsp;ссылке и&nbsp;id&nbsp;в&nbsp;секции
   pre
-    code.
-
-                      &lt;a href="#section-1" class="navigation__link" data-navigation-link>Секция 1&lt;/a>
-                      &lt;section class="section-navigation" id="section-2">&lt;/section>
-  p По умалчанию подключен MoveTo
+    code.language-html.
+      &lt;a href="#section-1" class="navigation__link" data-navigation-link>Секция 1&lt;/a>
+      &lt;section class="section-navigation" id="section-2">&lt;/section>
+  p По умолчанию подключен MoveTo

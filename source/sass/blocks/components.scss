@@ -1,0 +1,70 @@
+.components {
+  &__about {
+    font-size: 16px;
+    line-height: 21px;
+    margin: 0 0 40px 0;
+    padding: 20px 0 0;
+    max-width: 950px;
+    width: 100%;
+  }
+
+  &__list {
+    display: grid;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+
+    &:first-child {
+      padding: 40px 0 0 0;
+    }
+
+    @media screen and (max-width: 1150px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include vp-767 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+    display: flex;
+    transition: color $trans-default;
+    align-items: center;
+    position: relative;
+    padding: 0 0 0 20px;
+
+    &::before {
+      content: "";
+      height: 10px;
+      width: 10px;
+      background-color: $color-neon-blue;
+      position: absolute;
+      top: 7px;
+      left: 0;
+    }
+
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        color: $color-neon-blue;
+      }
+    }
+  }
+
+  &__link-icon {
+    margin: 0 0 0 15px;
+
+    transform: rotate(90deg);
+
+    fill: currentColor;
+  }
+}

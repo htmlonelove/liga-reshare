@@ -76,7 +76,7 @@ const css = () => {
       .pipe(server.stream());
 };
 
-const componentsСss = () => {
+const componentsCss = () => {
   return gulp.src('source/components/**/*.scss')
       .pipe(plumber())
       .pipe(sourcemap.init())
@@ -121,7 +121,7 @@ const copySvg = () => {
 };
 
 const copyImages = () => {
-  return gulp.src('source/img/**/*.{png,jpg,webp}', {base: 'source'})
+  return gulp.src('source/img/**/*.{png,jpg,webp,gif}', {base: 'source'})
       .pipe(gulp.dest('build'));
 };
 
@@ -178,6 +178,7 @@ const cleanComponents = () => {
 const syncServer = () => {
   server.init({
     server: 'build/',
+    index: 'index.html',
     notify: false,
     open: true,
     cors: true,
@@ -189,11 +190,15 @@ const syncServer = () => {
   gulp.watch('source/js/**/*.{js,json}', gulp.series(js, refresh));
   gulp.watch('source/data/**/*.{js,json}', gulp.series(copy, refresh));
   gulp.watch('source/img/**/*.svg', gulp.series(copySvg, sprite, pugToHtml, refresh));
-  gulp.watch('source/img/**/*.{png,jpg,webp}', gulp.series(copyImages, pugToHtml, refresh));
+  gulp.watch('source/img/**/*.{png,jpg,webp,gif}', gulp.series(copyImages, pugToHtml, refresh));
 
   gulp.watch('source/components/**/*.pug', gulp.series(pugToHtml, refresh));
   gulp.watch('source/components/**/*.{scss,sass}', gulp.series(css, refresh));
   gulp.watch('source/components/**/*.{js,json}', gulp.series(js, refresh));
+
+  gulp.watch('source/guides/**/*.pug', gulp.series(pugToHtml, refresh));
+  gulp.watch('source/guides/**/*.{scss,sass}', gulp.series(css, refresh));
+  gulp.watch('source/guides/**/*.{js,json}', gulp.series(js, refresh));
 
   gulp.watch('source/favicon/**', gulp.series(copy, refresh));
   gulp.watch('source/video/**', gulp.series(copy, refresh));
@@ -206,7 +211,7 @@ const refresh = (done) => {
   done();
 };
 
-const baseSeries = gulp.series(clean, svgo, componentsToHtml, componentsСss, copy, css, sprite, js, pugToHtml, optimizeImages, zipFiles, cleanComponents);
+const baseSeries = gulp.series(clean, svgo, componentsToHtml, componentsCss, copy, css, sprite, js, pugToHtml, optimizeImages, zipFiles, cleanComponents);
 const start = gulp.series(baseSeries, syncServer);
 const build = gulp.series(baseSeries);
 

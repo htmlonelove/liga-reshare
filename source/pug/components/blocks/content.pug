@@ -1,0 +1,9 @@
+mixin content(options = {})
+  .content(id="content")
+    +hero(options)
+    .content__wrapper
+      +navbar-button()
+      +navbar()
+      .content__inner
+        block
+        +up-button()

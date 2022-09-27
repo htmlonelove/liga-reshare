@@ -1,0 +1,41 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: auto;
+
+  &__wrapper {
+    display: flex;
+    flex: 1 0 auto;
+    position: relative;
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 100%;
+
+    @include vp-1023 {
+      padding: 0 30px;
+    }
+
+    @include vp-767 {
+      padding: 0 20px;
+    }
+  }
+
+  &__inner {
+    border-left: 2px solid $color-ghost-white;
+    margin: 0 0 0 287px;
+    padding: 0 60px 88px 70px;
+    position: relative;
+    width: 100%;
+
+    @include vp-1023 {
+      border: none;
+      margin: 0;
+      padding: 0 0 70px;
+    }
+
+    @include vp-767 {
+      padding: 0 0 50px;
+    }
+  }
+}

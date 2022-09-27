@@ -1,17 +1,23 @@
 mixin header(headerMods, currentUrl)
-  header.header(class=headerMods)
+  header.header(class=headerMods, data-fix-block)
     .container
       if(currentUrl === "index.html")
-        +logo().header__logo
+        +logo().header__logo(data-header-logo)
       else
-        +logo({href: "index.html"}).header__logo
-      ul.header__external-list
-        li.header__external-item
-          a.header__external-link(href="https://ligaa.agency/") Лига А.
-        li.header__external-item
-          a.header__external-link(href="https://testim.agency/") Тестировошная
-        li.header__external-item
-          a.header__external-link(href="https://ligaa.agency/portfolio.html") Портфолио
-      .header__search
-
+        +logo({href: "index.html"}).header__logo(data-header-logo)
+      nav.header__nav.main-nav(data-main-nav)
+        ul.main-nav__list
+          li.main-nav__item(data-nav-item)
+            a.main-nav__link(href="components.html") Компоненты
+          //li.main-nav__item(data-nav-item)
+          //  span.main-nav__link Кейсы
+          li.main-nav__item(data-nav-item)
+            a.main-nav__link(href="guides.html") Гайды
+          li.main-nav__item(data-nav-item)
+            a.main-nav__link.main-nav__link--blue(href="https://ligaa.agency/") Лига А.
+      // Миксин поиска
+      //+search().header__search
       +git-link().header__git-link
+      button.header__sandwich.sandwich(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-sandwich)
+        span.sandwich__text Меню
+        +icon("icon-close", 20, 20).sandwich__icon

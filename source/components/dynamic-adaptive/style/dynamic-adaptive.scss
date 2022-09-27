@@ -1,0 +1,28 @@
+.dynamic-adaptive {
+  &__header,
+  &__footer {
+    border: 1px solid #000000;
+    min-height: 200px;
+    margin: 0 0 40px 0;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__note {
+    margin: 0 0 20px 0;
+    padding: 20px 0 0 20px;
+  }
+
+  &__item {
+    padding: 20px;
+  }
+
+  &__element {
+    margin: 0;
+  }
+}
