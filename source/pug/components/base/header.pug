@@ -2,11 +2,16 @@ mixin header(headerMods, currentUrl)
   header.header(class=headerMods)
     .container
       if(currentUrl === "index.html")
-        span.header__logo
-          +icon("icon-logo", 120, 27)
+        +logo().header__logo
       else
-        a.header__logo(href="index.html", aria-label="Переход на главную")
-          +icon("icon-logo", 120, 27)
-      nav.main-nav
-        a.header__git(href="https://github.com/htmlonelove/liga-componentov", target="_blank", rel="nofollow noopener noreferrer", aria-label="Ссылка на репозиторий")
-          +icon("git-logo", 32, 32)
+        +logo({href: "index.html"}).header__logo
+      ul.header__external-list
+        li.header__external-item
+          a.header__external-link(href="https://ligaa.agency/") Лига А.
+        li.header__external-item
+          a.header__external-link(href="https://testim.agency/") Тестировошная
+        li.header__external-item
+          a.header__external-link(href="https://ligaa.agency/portfolio.html") Портфолио
+      .header__search
+
+      +git-link().header__git-link

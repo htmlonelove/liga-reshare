@@ -1,0 +1,17 @@
+.git-link {
+  display: flex;
+
+  svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  transition: fill $trans-default;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      fill: $color-neon-blue;
+    }
+  }
+}

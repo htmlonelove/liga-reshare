@@ -408,6 +408,38 @@ template {
   src: url("../fonts/IBMPlexSansSemiBold.woff2") format("woff2"), url("../fonts/IBMPlexSansSemiBold.woff") format("woff");
 }
 
+@font-face {
+  font-style: normal;
+  font-weight: 300;
+  font-family: "Neue Machina";
+  font-display: swap;
+  src: url("../fonts/neuemachina-light.woff2") format("woff2"), url("../fonts/neuemachina-light.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Neue Machina";
+  font-display: swap;
+  src: url("../fonts/neuemachina-regular.woff2") format("woff2"), url("../fonts/neuemachina-regular.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 500;
+  font-family: "Neue Machina";
+  font-display: swap;
+  src: url("../fonts/neuemachina-medium.woff2") format("woff2"), url("../fonts/neuemachina-medium.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 900;
+  font-family: "Neue Machina";
+  font-display: swap;
+  src: url("../fonts/neuemachina-ultrabold.woff2") format("woff2"), url("../fonts/neuemachina-ultrabold.woff") format("woff");
+}
+
 *,
 *::before,
 *::after {
@@ -676,7 +708,7 @@ button,
 }
 
 .header__logo[href],
-.header__git {
+.header__git-link {
   -webkit-transition: fill 0.3s ease;
   -o-transition: fill 0.3s ease;
   transition: fill 0.3s ease;
@@ -696,8 +728,63 @@ button,
 }
 
 .footer {
-  padding: 40px 0;
-  background-color: #2c39f2;
+  padding: 24px 0;
+  border-top: 2px solid #F4F4FF;
+}
+
+.footer__wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.footer__address {
+  -ms-grid-column-align: start;
+  justify-self: start;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.footer__logo {
+  -ms-grid-column-align: center;
+  justify-self: center;
+}
+
+.footer__git-link {
+  -ms-grid-column-align: end;
+  justify-self: end;
+}
+
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.logo svg {
+  width: 258px;
+  height: 28px;
+}
+
+.git-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: fill 0.3s ease;
+  -o-transition: fill 0.3s ease;
+  transition: fill 0.3s ease;
+}
+
+.git-link svg {
+  width: 32px;
+  height: 32px;
 }
 
 .intro-heading {
@@ -911,8 +998,38 @@ button,
 }
 
 .footer {
-  padding: 40px 0;
-  background-color: #2c39f2;
+  padding: 24px 0;
+  border-top: 2px solid #F4F4FF;
+}
+
+.footer__wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.footer__address {
+  -ms-grid-column-align: start;
+  justify-self: start;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.footer__logo {
+  -ms-grid-column-align: center;
+  justify-self: center;
+}
+
+.footer__git-link {
+  -ms-grid-column-align: end;
+  justify-self: end;
 }
 
 .auto-resize-textarea {
@@ -1635,6 +1752,16 @@ button,
   background-color: #ffbbcc;
 }
 
+.tabs--unset .tabs__content {
+  height: 100px;
+}
+
+.tabs--unset .tabs__element {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 [data-tabs="parent"] {
   overflow: hidden;
 }
@@ -1933,8 +2060,13 @@ button,
 
   .header__logo[href]:hover,
   .header__logo[href]:focus,
-  .header__git:hover,
-  .header__git:focus {
+  .header__git-link:hover,
+  .header__git-link:focus {
+    fill: #2c39f2;
+  }
+
+  .git-link:hover,
+  .git-link:focus {
     fill: #2c39f2;
   }
 

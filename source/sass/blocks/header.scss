@@ -8,7 +8,7 @@
   }
 
   &__logo[href],
-  &__git {
+  &__git-link {
     transition: fill $trans-default;
 
     @media (hover: hover), screen and (min-width: 0\0) {
