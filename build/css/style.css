@@ -2063,6 +2063,8 @@ button,
   position: sticky;
   margin: 0 0 -50px 0;
   z-index: 10;
+  display: inline-block;
+  left: 100%;
 }
 
 .up-button__inner {
