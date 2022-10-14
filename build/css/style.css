@@ -215,9 +215,9 @@ select {
 */
 
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
 
@@ -226,9 +226,9 @@ button,
 */
 
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
   padding: 0;
   border-style: none;
 }
@@ -238,9 +238,9 @@ button::-moz-focus-inner,
 */
 
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -296,8 +296,8 @@ textarea {
 * 2. Remove the padding in IE 10.
 */
 
-[type="checkbox"],
-[type="radio"] {
+[type=checkbox],
+[type=radio] {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
@@ -309,8 +309,8 @@ textarea {
 * Correct the cursor style of increment and decrement buttons in Chrome.
 */
 
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -319,7 +319,7 @@ textarea {
 * 2. Correct the outline style in Safari.
 */
 
-[type="search"] {
+[type=search] {
   outline-offset: -2px;
   /* 2 */
   -webkit-appearance: textfield;
@@ -330,7 +330,7 @@ textarea {
 * Remove the inner padding in Chrome and Safari on macOS.
 */
 
-[type="search"]::-webkit-search-decoration {
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -392,7 +392,7 @@ pre[class*=language-] {
   color: #000;
   background: 0 0;
   text-shadow: 0 1px #fff;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   font-size: 1em;
   text-align: left;
   white-space: pre;
@@ -426,7 +426,7 @@ pre[class*=language-]::selection {
 
 pre[class*=language-] {
   padding: 1em;
-  margin: .5em 0;
+  margin: 0.5em 0;
   overflow: auto;
 }
 
@@ -436,8 +436,8 @@ pre[class*=language-] {
 }
 
 :not(pre) > code[class*=language-] {
-  padding: .1em;
-  border-radius: .3em;
+  padding: 0.1em;
+  border-radius: 0.3em;
   white-space: normal;
 }
 
@@ -453,7 +453,7 @@ pre[class*=language-] {
 }
 
 .token.namespace {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .token.boolean,
@@ -481,7 +481,7 @@ pre[class*=language-] {
 .token.operator,
 .token.url {
   color: #9a6e3a;
-  background: rgba(255, 255, 255, 0.5);
+  background: hsla(0deg, 0%, 100%, 0.5);
 }
 
 .token.atrule,
@@ -712,10 +712,10 @@ input::-ms-reveal {
   display: none;
 }
 
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
   -webkit-appearance: none;
   appearance: none;
 }
@@ -727,7 +727,7 @@ input::-webkit-inner-spin-button {
   appearance: none;
 }
 
-input[type="number"] {
+input[type=number] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   appearance: textfield;
@@ -735,22 +735,22 @@ input[type="number"] {
 
 select,
 textarea,
-input:matches([type="email"],
-[type="number"],
-[type="password"],
-[type="search"],
-[type="tel"],
-[type="text"],
-[type="url"]) {
+input:matches([type=email],
+[type=number],
+[type=password],
+[type=search],
+[type=tel],
+[type=text],
+[type=url]) {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
 
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1829,7 +1829,7 @@ button,
 .about__img-wrapper::before {
   display: block;
   content: "";
-  padding-bottom: calc(0.69 * 100%);
+  padding-bottom: 69%;
   width: 100%;
 }
 
@@ -2432,17 +2432,17 @@ button,
   justify-self: end;
 }
 
-[data-accordion="element"].is-active > [data-accordion="content"] {
+[data-accordion=element].is-active > [data-accordion=content] {
   max-height: 100%;
 }
 
-[data-accordion="parent"].no-transition [data-accordion="content"] {
+[data-accordion=parent].no-transition [data-accordion=content] {
   -webkit-transition: none;
   -o-transition: none;
   transition: none;
 }
 
-[data-accordion="content"] {
+[data-accordion=content] {
   max-height: 0;
   -webkit-transition: max-height 0.3s;
   -o-transition: max-height 0.3s;
@@ -2450,28 +2450,28 @@ button,
   overflow: hidden;
 }
 
-[data-tabs="parent"].no-transition > [data-tabs="control"],
-[data-tabs="parent"].no-transition > [data-tabs="content"],
-[data-tabs="parent"].no-transition > [data-tabs="element"] {
+[data-tabs=parent].no-transition > [data-tabs=control],
+[data-tabs=parent].no-transition > [data-tabs=content],
+[data-tabs=parent].no-transition > [data-tabs=element] {
   -webkit-transition: none;
   -o-transition: none;
   transition: none;
 }
 
-[data-tabs="parent"].no-transition-global [data-tabs="control"],
-[data-tabs="parent"].no-transition-global [data-tabs="content"],
-[data-tabs="parent"].no-transition-global [data-tabs="element"] {
+[data-tabs=parent].no-transition-global [data-tabs=control],
+[data-tabs=parent].no-transition-global [data-tabs=content],
+[data-tabs=parent].no-transition-global [data-tabs=element] {
   -webkit-transition: none;
   -o-transition: none;
   transition: none;
 }
 
-[data-tabs="parent"] [data-tabs="content"] {
+[data-tabs=parent] [data-tabs=content] {
   position: relative;
   overflow: hidden;
 }
 
-[data-tabs="element"] {
+[data-tabs=element] {
   position: absolute;
   visibility: hidden;
   opacity: 0;
@@ -2480,7 +2480,7 @@ button,
   transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
 }
 
-[data-tabs="element"].is-active {
+[data-tabs=element].is-active {
   z-index: 1;
   visibility: visible;
   opacity: 1;
@@ -2585,9 +2585,9 @@ button,
   top: 0;
   height: 100%;
   width: 110px;
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(70%, white));
-  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), white 70%);
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white 70%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(70%, rgb(255, 255, 255)));
+  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), rgb(255, 255, 255) 70%);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255) 70%);
 }
 
 .article-menu__point.is-inactive {
@@ -2645,9 +2645,9 @@ button,
   top: 0;
   height: 100%;
   width: 110px;
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(70%, white));
-  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), white 70%);
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white 70%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(70%, rgb(255, 255, 255)));
+  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), rgb(255, 255, 255) 70%);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255) 70%);
 }
 
 .article-menu__link.is-active {
@@ -2675,7 +2675,7 @@ button,
   border-color: #2c39f2;
 }
 
-.phone-mask input[type="tel"] {
+.phone-mask input[type=tel] {
   font-size: 26px;
   line-height: 30px;
   min-width: 300px;
@@ -2686,8 +2686,8 @@ button,
   transition: border 0.3s ease;
 }
 
-.phone-mask input[type="tel"]:hover,
-.phone-mask input[type="tel"]:focus {
+.phone-mask input[type=tel]:hover,
+.phone-mask input[type=tel]:focus {
   border-color: #2c39f2;
 }
 
@@ -2829,11 +2829,11 @@ button,
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  -webkit-transition: opacity  0.3s ease, -webkit-transform 0.3s ease;
-  transition: opacity  0.3s ease, -webkit-transform 0.3s ease;
-  -o-transition: transform 0.3s ease, opacity  0.3s ease;
-  transition: transform 0.3s ease, opacity  0.3s ease;
-  transition: transform 0.3s ease, opacity  0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
   pointer-events: none;
 }
 
@@ -2930,7 +2930,7 @@ button,
   transition: background-color 0.3s ease;
 }
 
-.custom-select__item[aria-selected="true"] {
+.custom-select__item[aria-selected=true] {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -3312,17 +3312,17 @@ button,
   padding: 10px;
 }
 
-[data-accordion="element"].is-active > [data-accordion="content"] {
+[data-accordion=element].is-active > [data-accordion=content] {
   max-height: 100%;
 }
 
-[data-accordion="parent"].no-transition [data-accordion="content"] {
+[data-accordion=parent].no-transition [data-accordion=content] {
   -webkit-transition: none;
   -o-transition: none;
   transition: none;
 }
 
-[data-accordion="content"] {
+[data-accordion=content] {
   max-height: 0;
   -webkit-transition: max-height 0.3s;
   -o-transition: max-height 0.3s;
@@ -3383,19 +3383,19 @@ button,
 }
 
 .tabs__element:nth-child(1) {
-  background-color: antiquewhite;
+  background-color: rgb(250, 235, 215);
 }
 
 .tabs__element:nth-child(2) {
-  background-color: #e5fad7;
+  background-color: rgb(229, 250, 215);
 }
 
 .tabs__element:nth-child(3) {
-  background-color: #b4bce9;
+  background-color: rgb(180, 188, 233);
 }
 
 .tabs__element:nth-child(4) {
-  background-color: #ffbbcc;
+  background-color: rgb(255, 187, 204);
 }
 
 .tabs--unset .tabs__content {
@@ -3699,7 +3699,7 @@ button,
   }
 } */
 
-@media (hover: hover), screen and (min-width: 0\0) {
+@media (hover: hover), screen and (min-width: 0\0 ) {
   .btn:hover,
   .btn:focus {
     background-color: #d62155;
@@ -3725,8 +3725,8 @@ button,
     color: #0026ff;
   }
 
-  .custom-select__item[aria-selected="true"]:hover,
-  .custom-select__item[aria-selected="true"]:focus {
+  .custom-select__item[aria-selected=true]:hover,
+  .custom-select__item[aria-selected=true]:focus {
     background-color: rgba(0, 0, 0, 0.2);
   }
 
