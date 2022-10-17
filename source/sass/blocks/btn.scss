@@ -37,10 +37,7 @@
     pointer-events: none;
   }
 
-  @media (hover: hover), screen and (min-width: 0\0) {
-    &:hover,
-    &:focus {
-      background-color: $color-amaranth;
-    }
+  @include hover-focus {
+    background-color: $color-amaranth;
   }
 }

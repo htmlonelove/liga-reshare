@@ -37,11 +37,9 @@
     height: 50px;
     width: 50px;
 
-    @media (hover: hover), screen and (min-width: 0\0) {
-      &:hover {
-        background-color: $color-neon-blue;
-        color: $color-default-white;
-      }
+    @include hover {
+      background-color: $color-neon-blue;
+      color: $color-default-white;
     }
 
     svg {

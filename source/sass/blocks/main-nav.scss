@@ -100,9 +100,8 @@
       line-height: 25px;
     }
 
-    @media (hover: hover) {
-      &:not(span):hover,
-      &:not(span):focus {
+    @include hover-focus {
+      &:not(span) {
         color: $color-neon-blue;
       }
     }
@@ -110,9 +109,8 @@
     &--blue {
       color: $color-neon-blue;
 
-      @media (hover: hover) {
-        &:not(span):hover,
-        &:not(span):focus {
+      @include hover-focus {
+        &:not(span) {
           color: $color-torch-red;
         }
       }

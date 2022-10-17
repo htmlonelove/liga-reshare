@@ -36,11 +36,8 @@
     color: $color-neon-blue;
     transition: color $trans-default;
 
-    @media (hover: hover), screen and (min-width: 0\0) {
-      &:hover,
-      &:focus {
-        color: $color-torch-red;
-      }
+    @include hover-focus {
+      color: $color-torch-red;
     }
   }
 

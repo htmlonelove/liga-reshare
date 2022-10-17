@@ -52,11 +52,8 @@
       left: 0;
     }
 
-    @media (hover: hover) {
-      &:hover,
-      &:focus {
-        color: $color-neon-blue;
-      }
+    @include hover-focus {
+      color: $color-neon-blue;
     }
   }
 

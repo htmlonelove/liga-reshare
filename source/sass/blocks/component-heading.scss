@@ -78,12 +78,9 @@
       line-height: 23px;
     }
 
-    @media (hover: hover) {
-      &:hover,
-      &:focus {
-        color: $color-neon-blue;
-        opacity: 0.8;
-      }
+    @include hover-focus {
+      color: $color-neon-blue;
+      opacity: 0.8;
     }
   }
 

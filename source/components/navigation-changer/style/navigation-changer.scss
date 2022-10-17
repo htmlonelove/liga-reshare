@@ -32,11 +32,16 @@
 
     transition: color 0.6s ease;
 
-    @media (hover: hover), screen and (min-width: 0\0) {
-      &:hover,
-      &:focus {
+    background-color: rgba(0, 0, 0, 0.2);
+
+    @media (hover: hover) {
+      &:hover:not(.focus-visible) {
         color: #0026ff;
       }
+    }
+
+    &.focus-visible:focus {
+      color: #0026ff;
     }
 
     &.is-active {

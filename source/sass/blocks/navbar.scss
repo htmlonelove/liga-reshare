@@ -121,8 +121,8 @@
     text-align: left;
     width: 100%;
 
-    @media (hover: hover) {
-      &:hover {
+    @include hover {
+      &:not(span) {
         opacity: 0.5;
       }
     }
@@ -154,11 +154,8 @@
       background-color: $color-ghost-white;
     }
 
-    @media (hover: hover) {
-      &:hover,
-      &:focus {
-        background-color: $color-ghost-white;
-      }
+    @include hover-focus {
+      background-color: $color-ghost-white;
     }
   }
 }

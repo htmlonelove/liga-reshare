@@ -30,11 +30,8 @@
       }
     }
 
-    @media (hover: hover) {
-      &:hover,
-      &:focus {
-        opacity: 0.5;
-      }
+    @include hover-focus {
+      opacity: 0.5;
     }
   }
 

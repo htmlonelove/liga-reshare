@@ -85,11 +85,8 @@
       line-height: 32px;
     }
 
-    @media (hover: hover) {
-      &:hover,
-      &:focus {
-        color: $color-neon-blue;
-      }
+    @include hover-focus {
+      color: $color-neon-blue;
     }
   }
 
@@ -118,21 +115,15 @@
       line-height: 22px;
     }
 
-    @media (hover: hover) {
-      &:hover,
-      &:focus {
-        color: $color-neon-blue;
-      }
+    @include hover-focus {
+      color: $color-neon-blue;
     }
 
     &--all {
       color: $color-neon-blue;
 
-      @media (hover: hover) {
-        &:hover,
-        &:focus {
-          color: $color-amaranth;
-        }
+      @include hover-focus {
+        color: $color-amaranth;
       }
     }
   }

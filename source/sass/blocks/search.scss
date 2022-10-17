@@ -46,12 +46,9 @@
     transform: translate3d(0, -50%, 0);
     width: 20px;
 
-    @media (hover: hover) {
-      &:hover,
-      &:focus {
-        svg {
-          fill: $color-neon-blue;
-        }
+    @include hover-focus {
+      svg {
+        fill: $color-neon-blue;
       }
     }
 

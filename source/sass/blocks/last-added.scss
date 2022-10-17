@@ -76,16 +76,13 @@
       z-index: -1;
     }
 
-    @media (hover: hover) {
-      &:hover,
-      &:focus {
-        &::after {
-          transform: translate3d(5px, -4px, 0) rotate(2deg);
-        }
+    @include hover-focus {
+      &::after {
+        transform: translate3d(5px, -4px, 0) rotate(2deg);
+      }
 
-        &::before {
-          transform: translate3d(-5px, 5px, 0) scaleY(1.05) scaleX(1.12) rotate(-2deg);
-        }
+      &::before {
+        transform: translate3d(-5px, 5px, 0) scaleY(1.05) scaleX(1.12) rotate(-2deg);
       }
     }
   }

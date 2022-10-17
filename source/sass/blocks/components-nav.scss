@@ -57,11 +57,8 @@
     font-weight: 600;
     transition: background $trans-default;
 
-    @media (hover: hover) {
-      &:hover,
-      &:focus {
-        background-color: $color-torch-red;
-      }
+    @include hover-focus {
+      background-color: $color-torch-red;
     }
   }
 }

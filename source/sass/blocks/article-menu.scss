@@ -40,11 +40,9 @@
       z-index: unset;
     }
 
-    @media (hover: hover) {
-      &:hover {
-        .article-menu__button {
-          opacity: 0.7;
-        }
+    @include hover-focus {
+      .article-menu__button {
+        opacity: 0.7;
       }
     }
   }
@@ -149,10 +147,8 @@
       background-color: $color-ghost-white;
     }
 
-    @media (hover: hover) {
-      &:hover {
-        background-color: $color-ghost-white;
-      }
+    @include hover {
+      background-color: $color-ghost-white;
     }
   }
 }
