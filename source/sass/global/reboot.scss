@@ -24,6 +24,10 @@ html {
   text-rendering: optimizeLegibility;
   // если по прежнему есть проблемы с выравниванием
   // https://transfonter.org/ - включите настройку https://prnt.sc/12rnt6g и переконвертируйте шрифт
+
+  @include vp-374 {
+    font-size: size-mobile($fz-default);
+  }
 }
 
 body {

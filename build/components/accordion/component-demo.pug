@@ -1,0 +1,110 @@
+section.component-demo(data-tabs='element')
+  h2.subtitle Пример аккордеона с вложенностью
+  .accordion(data-accordion="parent", data-single, data-close-inner)
+    .accordion__element(data-accordion="element")
+      button.accordion__button.btn.btn--aquamarine(type="button", data-accordion="button") Открыть
+      .accordion__content(data-accordion="content")
+        .accordion__wrapper
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eaque consequatur perspiciatis impedit ab aperiam neque corrupti nisi deleniti optio enim provident molestiae, quidem sint laboriosam reiciendis accusantium iusto distinctio!
+    .accordion__element(data-accordion="element")
+      button.accordion__button.accordion__button.btn.btn--aquamarine(type="button", data-accordion="button") Открыть
+      .accordion__content(data-accordion="content")
+        .accordion__wrapper
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eaque consequatur perspiciatis impedit ab aperiam neque corrupti nisi deleniti optio enim provident molestiae, quidem sint laboriosam reiciendis accusantium iusto distinctio!
+    .accordion__element(data-accordion="element")
+      button.accordion__button.btn.btn--aquamarine(type="button", data-accordion="button") Открыть
+      .accordion__content(data-accordion="content")
+        .accordion__wrapper
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eaque consequatur perspiciatis impedit ab aperiam neque corrupti nisi deleniti optio enim provident molestiae, quidem sint laboriosam reiciendis accusantium iusto distinctio!
+    .accordion__element(data-accordion="element")
+      button.accordion__button.btn.btn--aquamarine(type="button", data-accordion="button") Открыть
+      .accordion__content(data-accordion="content")
+        .accordion__wrapper
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eaque consequatur perspiciatis impedit ab aperiam neque corrupti nisi deleniti optio enim provident molestiae, quidem sint laboriosam reiciendis accusantium iusto distinctio!
+        .accordion(data-accordion="parent", data-single)
+          .accordion__element.is-active(data-accordion="element")
+            button.accordion__button.btn.btn--aquamarine(type="button", data-accordion="button") Открыть
+            .accordion__content(data-accordion="content")
+              .accordion__wrapper
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eaque consequatur perspiciatis impedit ab aperiam neque corrupti nisi deleniti optio enim provident molestiae, quidem sint laboriosam reiciendis accusantium iusto distinctio!
+          .accordion__element(data-accordion="element")
+            button.accordion__button.accordion__button.btn.btn--aquamarine(type="button", data-accordion="button") Открыть
+            .accordion__content(data-accordion="content")
+              .accordion__wrapper
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eaque consequatur perspiciatis impedit ab aperiam neque corrupti nisi deleniti optio enim provident molestiae, quidem sint laboriosam reiciendis accusantium iusto distinctio!
+          .accordion__element(data-accordion="element")
+            button.accordion__button.btn.btn--aquamarine(type="button", data-accordion="button") Открыть
+            .accordion__content(data-accordion="content")
+              .accordion__wrapper
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eaque consequatur perspiciatis impedit ab aperiam neque corrupti nisi deleniti optio enim provident molestiae, quidem sint laboriosam reiciendis accusantium iusto distinctio!
+          .accordion__element(data-accordion="element")
+            button.accordion__button.btn.btn--aquamarine(type="button", data-accordion="button") Открыть
+            .accordion__content(data-accordion="content")
+              .accordion__wrapper
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eaque consequatur perspiciatis impedit ab aperiam neque corrupti nisi deleniti optio enim provident molestiae, quidem sint laboriosam reiciendis accusantium iusto distinctio!
+                .accordion(data-accordion="parent")
+                  .accordion__element.is-active(data-accordion="element")
+                    button.accordion__button.btn.btn--aquamarine(type="button", data-accordion="button") Открыть
+                    .accordion__content(data-accordion="content")
+                      .accordion__wrapper
+                        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eaque consequatur perspiciatis impedit ab aperiam neque corrupti nisi deleniti optio enim provident molestiae, quidem sint laboriosam reiciendis accusantium iusto distinctio!
+                  .accordion__element(data-accordion="element")
+                    button.accordion__button.accordion__button.btn.btn--aquamarine(type="button", data-accordion="button") Открыть
+                    .accordion__content(data-accordion="content")
+                      .accordion__wrapper
+                        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eaque consequatur perspiciatis impedit ab aperiam neque corrupti nisi deleniti optio enim provident molestiae, quidem sint laboriosam reiciendis accusantium iusto distinctio!
+                  .accordion__element(data-accordion="element")
+                    button.accordion__button.btn.btn--aquamarine(type="button", data-accordion="button") Открыть
+                    .accordion__content(data-accordion="content")
+                      .accordion__wrapper
+                        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eaque consequatur perspiciatis impedit ab aperiam neque corrupti nisi deleniti optio enim provident molestiae, quidem sint laboriosam reiciendis accusantium iusto distinctio!
+                  .accordion__element(data-accordion="element")
+                    button.accordion__button.btn.btn--aquamarine(type="button", data-accordion="button") Открыть
+                    .accordion__content(data-accordion="content")
+                      .accordion__wrapper
+                        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eaque consequatur perspiciatis impedit ab aperiam neque corrupti nisi deleniti optio enim provident molestiae, quidem sint laboriosam reiciendis accusantium iusto distinctio!
+  h2.subtitle Пример аккордеона без вложенности
+  .accordion(data-accordion="parent", data-single)
+    .accordion__element.is-active(data-accordion="element")
+      button.accordion__button.btn.btn--aquamarine(type="button", data-accordion="button") Открыть
+      .accordion__content(data-accordion="content")
+        .accordion__wrapper
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eaque consequatur perspiciatis impedit ab aperiam neque corrupti nisi deleniti optio enim provident molestiae, quidem sint laboriosam reiciendis accusantium iusto distinctio!
+    .accordion__element(data-accordion="element")
+      button.accordion__button.accordion__button.btn.btn--aquamarine(type="button", data-accordion="button") Открыть
+      .accordion__content(data-accordion="content")
+        .accordion__wrapper
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eaque consequatur perspiciatis impedit ab aperiam neque corrupti nisi deleniti optio enim provident molestiae, quidem sint laboriosam reiciendis accusantium iusto distinctio!
+    .accordion__element(data-accordion="element")
+      button.accordion__button.btn.btn--aquamarine(type="button", data-accordion="button") Открыть
+      .accordion__content(data-accordion="content")
+        .accordion__wrapper
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eaque consequatur perspiciatis impedit ab aperiam neque corrupti nisi deleniti optio enim provident molestiae, quidem sint laboriosam reiciendis accusantium iusto distinctio!
+    .accordion__element(data-accordion="element")
+      button.accordion__button.btn.btn--aquamarine(type="button", data-accordion="button") Открыть
+      .accordion__content(data-accordion="content")
+        .accordion__wrapper
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eaque consequatur perspiciatis impedit ab aperiam neque corrupti nisi deleniti optio enim provident molestiae, quidem sint laboriosam reiciendis accusantium iusto distinctio!
+  h2.subtitle Пример аккордеона с установленым data-destroy="(max-width: 767px)
+  .accordion(data-accordion="parent", data-single, data-destroy="(max-width: 767px)")
+    .accordion__element(data-accordion="element")
+      button.accordion__button.btn.btn--aquamarine(type="button", data-accordion="button") Открыть
+      .accordion__content(data-accordion="content")
+        .accordion__wrapper
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eaque consequatur perspiciatis impedit ab aperiam neque corrupti nisi deleniti optio enim provident molestiae, quidem sint laboriosam reiciendis accusantium iusto distinctio!
+    .accordion__element(data-accordion="element")
+      button.accordion__button.accordion__button.btn.btn--aquamarine(type="button", data-accordion="button") Открыть
+      .accordion__content(data-accordion="content")
+        .accordion__wrapper
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eaque consequatur perspiciatis impedit ab aperiam neque corrupti nisi deleniti optio enim provident molestiae, quidem sint laboriosam reiciendis accusantium iusto distinctio!
+    .accordion__element(data-accordion="element")
+      button.accordion__button.btn.btn--aquamarine(type="button", data-accordion="button") Открыть
+      .accordion__content(data-accordion="content")
+        .accordion__wrapper
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eaque consequatur perspiciatis impedit ab aperiam neque corrupti nisi deleniti optio enim provident molestiae, quidem sint laboriosam reiciendis accusantium iusto distinctio!
+    .accordion__element(data-accordion="element")
+      button.accordion__button.btn.btn--aquamarine(type="button", data-accordion="button") Открыть
+      .accordion__content(data-accordion="content")
+        .accordion__wrapper
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eaque consequatur perspiciatis impedit ab aperiam neque corrupti nisi deleniti optio enim provident molestiae, quidem sint laboriosam reiciendis accusantium iusto distinctio!
+

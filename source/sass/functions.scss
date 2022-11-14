@@ -4,13 +4,13 @@
 // 1) ремы в плюс
 
 // functions.scss
-// @function size($size-in-px) {
-//   @return $size-in-px / $fz-default * 1rem;
-// }
+@function size($size-in-px) {
+  @return calc($size-in-px / $fz-default * 1rem);
+}
 
-// @function size-desktop($size-in-px) {
-//   @return $size-in-px / $vp-1920 * 100vw;
-// }
+@function size-mobile($size-in-px) {
+  @return calc($size-in-px / $vp-375 * 100vw);
+}
 
 // reboot.scss
 // html {
