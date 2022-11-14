@@ -933,6 +933,7 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 0 0 0 auto;
 }
 
 .footer {

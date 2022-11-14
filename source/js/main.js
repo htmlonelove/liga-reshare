@@ -12,7 +12,6 @@ import {initNavigationChanger} from './modules/init-navigation-changer';
 import {initArticleMenu} from './modules/init-article-menu';
 import {initChangeNumber} from './modules/init-change-number';
 import {initFixedNavbar} from './modules/init-fixed-navbar';
-import {initSearch} from './modules/init-search.js';
 
 
 // ---------------------------------
@@ -32,7 +31,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     initSandwichMenu();
-    // initHeaderObserver();
     initAccordions();
     initUpButton();
     initMoveTo();
@@ -42,7 +40,6 @@ window.addEventListener('DOMContentLoaded', () => {
     initArticleMenu();
     initChangeNumber();
     initFixedNavbar();
-    initSearch();
   });
 });
 

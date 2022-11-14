@@ -51,7 +51,7 @@
   &__git-link {
     display: flex;
     // Когда появится поиск строчку ниже нужно убрать
-    //margin: 0 0 0 auto;
+    margin: 0 0 0 auto;
 
     @include vp-1023 {
       margin: 0 24px 0 auto;
