@@ -2,7 +2,7 @@
   position: relative;
 
   width: 300px;
-  padding: 14px 0 14px;
+  padding: 14px 0 28px;
   margin: 0 0 44px 0;
 
   @media screen and (max-width: 767px) {
@@ -283,6 +283,20 @@
 
     .custom-select__text {
       opacity: 1;
+    }
+  }
+
+  .input-message {
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+
+    &--invalid {
+      color: #ff0000;
+    }
+
+    &--valid {
+      color: #15ab07;
     }
   }
 }

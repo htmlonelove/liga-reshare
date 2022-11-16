@@ -10,30 +10,23 @@
     width: 100%;
   }
 
-  &__error {
-    position: absolute;
-    left: 36px;
-    bottom: 40px;
-
-    color: #ff1553;
-
-    opacity: 0;
-
-    transition: opacity 0.3s ease;
-
-    @media screen and (max-width: 767px) {
-      bottom: 25px;
-      left: 0;
-    }
-  }
-
   &.is-invalid {
     label span {
       color: #ff1553;
     }
+  }
 
-    .toggle-group__error {
-      opacity: 1;
+  .input-message {
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+
+    &--invalid {
+      color: #ff0000;
+    }
+
+    &--valid {
+      color: #15ab07;
     }
   }
 }

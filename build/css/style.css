@@ -865,6 +865,11 @@ button,
   transition: background-color 0.3s ease;
 }
 
+.btn:hover,
+.btn:focus {
+  background-color: #ff1553;
+}
+
 .btn--red {
   background-color: #ff1553;
 }
@@ -2446,7 +2451,7 @@ button,
 
 .component-demo hr {
   border: 1px solid #f4f4ff;
-  margin: 0 0 58px;
+  margin: 20px 0 58px 0;
 }
 
 .component-demo pre {
@@ -2886,7 +2891,7 @@ button,
 .custom-select {
   position: relative;
   width: 300px;
-  padding: 14px 0 14px;
+  padding: 14px 0 28px;
   margin: 0 0 44px 0;
   /* &.is-valid {
     .custom-select__button {
@@ -3150,6 +3155,20 @@ button,
 .custom-select.slide-up.not-empty .custom-select__text,
 .custom-select.slide-up.is-open .custom-select__text {
   opacity: 1;
+}
+
+.custom-select .input-message {
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+}
+
+.custom-select .input-message--invalid {
+  color: #ff0000;
+}
+
+.custom-select .input-message--valid {
+  color: #15ab07;
 }
 
 .scroll-translator {
@@ -3501,7 +3520,7 @@ button,
   display: -ms-flexbox;
   display: flex;
   width: 530px;
-  padding: 14px 0 58px;
+  padding: 14px 0 28px;
 }
 
 .custom-input label,
@@ -3561,20 +3580,21 @@ button,
 }
 
 .custom-input.is-invalid input,
-.custom-textarea.is-invalid input {
+.custom-input.is-invalid textarea,
+.custom-textarea.is-invalid input,
+.custom-textarea.is-invalid textarea {
   border: 2px solid #ff1553;
 }
 
 .custom-input.is-invalid input:focus,
 .custom-input.is-invalid input:hover,
+.custom-input.is-invalid textarea:focus,
+.custom-input.is-invalid textarea:hover,
 .custom-textarea.is-invalid input:focus,
-.custom-textarea.is-invalid input:hover {
+.custom-textarea.is-invalid input:hover,
+.custom-textarea.is-invalid textarea:focus,
+.custom-textarea.is-invalid textarea:hover {
   border: 2px solid rgba(255, 21, 83, 0.5);
-}
-
-.custom-input.is-invalid .custom-input__error,
-.custom-textarea.is-invalid .custom-input__error {
-  opacity: 1;
 }
 
 .custom-input.is-valid input,
@@ -3589,6 +3609,23 @@ button,
   border: 2px solid rgba(34, 178, 89, 0.5);
 }
 
+.custom-input .input-message,
+.custom-textarea .input-message {
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+}
+
+.custom-input .input-message--invalid,
+.custom-textarea .input-message--invalid {
+  color: #ff0000;
+}
+
+.custom-input .input-message--valid,
+.custom-textarea .input-message--valid {
+  color: #15ab07;
+}
+
 .custom-toggle {
   position: relative;
   font-size: 18px;
@@ -3599,29 +3636,10 @@ button,
   display: flex;
   width: 500px;
   padding: 14px 0 10px 36px;
-  /*&.is-valid {
-    label span {
-      color: $color-eucalyptus;
-    }
-  }*/
 }
 
 .custom-toggle:last-of-type {
   padding: 14px 0 58px 36px;
-}
-
-.custom-toggle__error {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-  position: absolute;
-  top: 45px;
-  left: 36px;
-  color: #ff1553;
-  opacity: 0;
-  -webkit-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
 }
 
 .custom-toggle input {
@@ -3709,12 +3727,22 @@ button,
   background-color: #2c39f2;
 }
 
-.custom-toggle.is-invalid .custom-toggle__icon {
-  border: 1px solid #ff1553;
+.custom-toggle.is-invalid label span {
+  color: #ff1553;
 }
 
-.custom-toggle.is-invalid .custom-toggle__error {
-  opacity: 1;
+.custom-toggle .input-message {
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+}
+
+.custom-toggle .input-message--invalid {
+  color: #ff0000;
+}
+
+.custom-toggle .input-message--valid {
+  color: #15ab07;
 }
 
 .toggle-group {
@@ -3730,23 +3758,22 @@ button,
   padding: 0;
 }
 
-.toggle-group__error {
-  position: absolute;
-  left: 36px;
-  bottom: 40px;
-  color: #ff1553;
-  opacity: 0;
-  -webkit-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
-}
-
 .toggle-group.is-invalid label span {
   color: #ff1553;
 }
 
-.toggle-group.is-invalid .toggle-group__error {
-  opacity: 1;
+.toggle-group .input-message {
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+}
+
+.toggle-group .input-message--invalid {
+  color: #ff0000;
+}
+
+.toggle-group .input-message--valid {
+  color: #15ab07;
 }
 
 .dynamic-adaptive__header,
@@ -4524,7 +4551,7 @@ button,
   }
 
   .component-demo hr {
-    margin: 0 0 34px;
+    margin: 10px 0 34px 0;
   }
 
   .component-demo code {
@@ -4662,17 +4689,8 @@ button,
     padding: 14px 0 58px 0;
   }
 
-  .custom-toggle__error {
-    left: 0;
-  }
-
   .toggle-group {
     width: 100%;
-  }
-
-  .toggle-group__error {
-    bottom: 25px;
-    left: 0;
   }
 }
 

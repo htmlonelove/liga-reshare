@@ -1,7 +1,6 @@
 mixin custom-input(options = {})
   - const inputLabel = options.inputLabel ? options.inputLabel : false
   - const inputPlaceholder = options.inputPlaceholder ? options.inputPlaceholder : false
-  - const inputError = options.inputError ? options.inputError : false
   - const inputType = options.inputType ? options.inputType : "text"
   - const inputId = options.inputId ? options.inputId : false
   - const inputName = options.inputName ? options.inputName : false
@@ -14,13 +13,11 @@ mixin custom-input(options = {})
       if inputLabel
         span.custom-input__label!=inputLabel
       input(type=inputType, id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder)
-    if inputError
-      .custom-input__error!=inputError
+
 
 mixin custom-textarea(options = {})
   - const inputLabel = options.inputLabel ? options.inputLabel : false
   - const inputPlaceholder = options.inputPlaceholder ? options.inputPlaceholder : false
-  - const inputError = options.inputError ? options.inputError : false
   - const inputId = options.inputId ? options.inputId : false
   - const inputName = options.inputName ? options.inputName : false
   - const inputValue = options.inputValue ? options.inputValue : false
@@ -32,37 +29,32 @@ mixin custom-textarea(options = {})
       if inputLabel
         span.custom-textarea__label!=inputLabel
       textarea(id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder)
-    if inputError
-      .custom-textarea__error!=inputError
+
 
 mixin custom-toggle(options = {})
   - const inputLabel = options.inputLabel ? options.inputLabel : false
   - const inputType = options.inputType ? options.inputType : "checkbox"
-  - const inputError = options.inputError ? options.inputError : false
   - const inputId = options.inputId ? options.inputId : false
   - const inputChecked = options.inputChecked || false
   - const inputName = options.inputName ? options.inputName : false
+  - const inputValue = options.inputValue ? options.inputValue : false
 
   .custom-toggle&attributes(attributes)
     label
-      input(type=inputType, id=inputId, name=inputName, checked=inputChecked)
+      input(type=inputType, value=inputValue, id=inputId, name=inputName, checked=inputChecked)
       span.custom-toggle__icon
       if inputLabel
         span.custom-toggle__label!=inputLabel
-    if inputError
-      .custom-toggle__error!=inputError
+
 
 mixin custom-select(options = {})
   - const selectLabel = options.label ? options.label : false
-  - const selectError = options.error ? options.error : false
   - const selectPlaceholder = options.placeholder ? options.placeholder : false
   - const buttonAriaLabel = options.buttonAriaLabel ? options.buttonAriaLabel : "Выберите одну из опций"
 
   div&attributes(attributes)
     if selectLabel
       span.custom-select__label=selectLabel
-    if selectError
-      span.custom-select__error=selectError
     if selectPlaceholder
       span.custom-select__placeholder=selectPlaceholder
     button.custom-select__button(type="button", aria-label=buttonAriaLabel)
@@ -73,281 +65,86 @@ mixin custom-select(options = {})
         - const ariaSelected = item.isActive ? "true" : "false"
         li.custom-select__item(class=itemClass, tabindex="0", data-select-value=item.value, aria-selected=ariaSelected, role="option")=item.text
 
+
 section.component-demo(data-tabs='element')
-  div(data-validate)
+  div(data-form-validate, data-callback="base")
     form(method="post")
       h2.subtitle Инпуты
-      p Инпут #[b data-validate-type="text" data-limitations="letters"] с установленной minlength.
+      p Input #[b data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required].
       +custom-input({
         inputLabel: "Введите ваше имя",
-        inputError: "Не корректное имя",
         inputName: "user-name-1",
-        inputMinLength: "2"
-      })(data-validate-type="text", data-limitations="name")
-      p Инпут #[b data-validate-type="text" data-limitations="letters"] с установленной minlength с предустановленным корректным value.
-      +custom-input({
-        inputLabel: "Введите ваше имя",
-        inputError: "Не корректное имя",
-        inputName: "user-name-2",
-        inputMinLength: "2",
-        inputValue: "Дино"
-      })(data-validate-type="text", data-limitations="name")
+      })(data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required)
       hr
-      p Инпут #[b data-validate-type="matrix" data-matrix="____ ______" data-matrix-limitations="digit"].
+      p Input #[b data-validate-type="matrix", data-matrix-limitation="digit", data-matrix="____ ______", data-message-base="Поле обязательно к заполнению", data-required].
       +custom-input({
+        inputType: "text",
         inputLabel: "Введите номер паспорта",
-        inputError: "Не корректное имя",
         inputName: "user-passport",
-        inputMinLength: "2"
-      })(data-validate-type="matrix", data-matrix-limitations="digit", data-matrix="____ ______")
-      p Инпут #[b data-validate-type="matrix" data-matrix="____ ______" data-matrix-limitations="digit"] с предустановленным некорректным value.
-      +custom-input({
-        inputLabel: "Введите номер паспорта",
-        inputError: "Не корректное имя",
-        inputName: "user-passport",
-        inputMinLength: "10",
-        inputValue: "123123123312312"
-      })(data-validate-type="matrix", data-matrix-limitations="digit", data-matrix="____ ______")
-      p Инпут #[b data-validate-type="matrix" data-matrix="____ ______" data-matrix-limitations="digit"] с предустановленным корректным value.
-      +custom-input({
-        inputLabel: "Введите номер паспорта",
-        inputError: "Не корректное имя",
-        inputName: "user-passport",
-        inputMinLength: "10",
-        inputValue: "1234123456"
-      })(data-validate-type="matrix", data-matrix-limitations="digit", data-matrix="____ ______")
+      })(data-validate-type="matrix", data-matrix-limitation="digit", data-matrix="____ ______", data-message-base="Поле обязательно к заполнению", data-required)
       hr
-      p Инпут #[b data-validate-type="phone"].
+      p Input #[b data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required].
       +custom-input({
-        inputLabel: "Введите ваш телефон",
-        inputError: "Не корректный телефон",
+        inputType: "email",
+        inputLabel: "Введите ваш email",
         inputName: "user-phone",
-      })(data-validate-type="phone")
-      p Инпут #[b data-validate-type="phone"] с предустановленным некорректным value.
-      +custom-input({
-        inputLabel: "Введите ваш телефон",
-        inputError: "Не корректный телефон",
-        inputName: "user-phone",
-        inputValue: "123123"
-      })(data-validate-type="phone")
-      p Инпут #[b data-validate-type="phone"] с предустановленным корректным value.
-      +custom-input({
-        inputLabel: "Введите ваш телефон",
-        inputError: "Не корректный телефон",
-        inputName: "user-phone",
-        inputValue: "9999999999"
-      })(data-validate-type="phone")
+      })(data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required)
       hr
-      p Инпут #[b data-validate-type="email"].
+      p Input #[b data-validate-type="phone", data-on-input-validate, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-message-success="Поле заполнено верно", data-required].
       +custom-input({
-        inputLabel: "Введите ваш email",
-        inputError: "Не корректный email",
-        inputName: "user-mail",
-      })(data-validate-type="email")
-      p Инпут #[b data-validate-type="email"] с предустановленным некорректным value.
-      +custom-input({
-        inputLabel: "Введите ваш email",
-        inputError: "Не корректный email",
-        inputName: "user-mail",
-        inputValue: "user@us"
-      })(data-validate-type="email")
-      p Инпут #[b data-validate-type="email"] с предустановленным корректным value.
-      +custom-input({
-        inputLabel: "Введите ваш email",
-        inputError: "Не корректный email",
-        inputName: "user-mail",
-        inputValue: "user@user.ru"
-      })(data-validate-type="email")
+        inputType: "tel",
+        inputLabel: "Введите ваш телефон",
+        inputName: "user-phone"
+        })(data-validate-type="phone", data-on-input-validate, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-message-success="Поле заполнено верно", data-required)
+      p Input #[b data-validate-type="custom-example", data-message-base="Поле обязательно к заполнению", data-message-success="Поле заполнено верно", data-required].
+      +custom-input({inputLabel: "Введите 10 символов", inputName: "user-field", inputMinLength: "10"})(data-validate-type="custom-example", data-on-input-validate, data-required)
       hr
-      p #[b Не валидируемый инпут].
-      +custom-input({
-        inputLabel: "Введите ваш адрес",
-        inputError: "Не корректный адрес",
-        inputName: "user-address",
-      })
-      p Не валидируемый инпут с ограничением #[b data-limitations="letters"].
-      +custom-input({
-        inputLabel: "Введите ваше хобби",
-        inputError: "Не корректно заполненное поле",
-        inputName: "user-hobby",
-      })(data-limitations="letters")
-      p Не валидируемый инпут с ограничением #[b data-matrix="__.__.____" data-matrix-limitations="digit"].
-      +custom-input({
-        inputLabel: "Введите дату рождения",
-        inputError: "Не корректно заполненное поле",
-        inputName: "user-birthday",
-      })(data-matrix="__.__.____", data-matrix-limitations="digit")
+      p Textarea #[b data-validate-type="text"].
+      +custom-textarea({
+        inputLabel: "Расскажите о себе",
+        inputName: "user-info"
+      })(data-validate-type="text")
       hr
       h2.subtitle Чекбоксы
-      p Чекбокс #[b data-validate-type="checkbox"].
+      p Чекбокс #[b data-validate-type="checkbox", data-message-base="Поле обязательно к заполнению"].
       div
         +custom-toggle({
           inputLabel: "Чекбокс",
-          inputError: "Согласие является обязательным",
           inputName: "user-agreement",
+          inputValue: "user-agreement-1",
           inputChecked: false
-        })(data-validate-type="checkbox").custom-toggle--checkbox
-      p Чекбокс выбран #[b data-validate-type="checkbox"].
-      div
-        +custom-toggle({
-          inputLabel: "Чекбокс",
-          inputError: "Согласие является обязательным",
-          inputName: "user-agreement",
-          inputChecked: true
-        })(data-validate-type="checkbox").custom-toggle--checkbox
-      p Группа чекбоксов #[b data-validate-type="toggle-group"].
-      div.toggle-group(data-validate-type="toggle-group")
-        +custom-toggle({
-          inputLabel: "Чекбокс",
-          inputError: "Выберите хотя бы один вариант",
-          inputName: "user-agreement",
-          inputChecked: false
-        }).custom-toggle--checkbox
-        +custom-toggle({
-          inputLabel: "Чекбокс",
-          inputError: "Выберите хотя бы один вариант",
-          inputName: "user-agreement",
-          inputChecked: false
-        }).custom-toggle--checkbox
-        +custom-toggle({
-          inputLabel: "Чекбокс",
-          inputError: "Выберите хотя бы один вариант",
-          inputName: "user-agreement",
-          inputChecked: false
-        }).custom-toggle--checkbox
-        +custom-toggle({
-          inputLabel: "Чекбокс",
-          inputError: "Выберите хотя бы один вариант",
-          inputName: "user-agreement",
-          inputChecked: false
-        }).custom-toggle--checkbox
-        span.toggle-group__error Выберите хотя бы один вариант
-      p Группа чекбоксов #[b data-validate-type="toggle-group"] с выбранным чекбоксом по умолчанию
-      div.toggle-group(data-validate-type="toggle-group")
-        +custom-toggle({
-          inputLabel: "Чекбокс",
-          inputError: "Выберите хотя бы один вариант",
-          inputName: "user-agreement",
-          inputChecked: true
-        }).custom-toggle--checkbox
-        +custom-toggle({
-          inputLabel: "Чекбокс",
-          inputError: "Выберите хотя бы один вариант",
-          inputName: "user-agreement",
-          inputChecked: false
-        }).custom-toggle--checkbox
-        +custom-toggle({
-          inputLabel: "Чекбокс",
-          inputError: "Выберите хотя бы один вариант",
-          inputName: "user-agreement",
-          inputChecked: false
-        }).custom-toggle--checkbox
-        +custom-toggle({
-          inputLabel: "Чекбокс",
-          inputError: "Выберите хотя бы один вариант",
-          inputName: "user-agreement",
-          inputChecked: false
-        }).custom-toggle--checkbox
-        span.toggle-group__error Выберите хотя бы один вариант
+        })(data-validate-type="checkbox", data-message-base="Поле обязательно к заполнению").custom-toggle--checkbox
       hr
-      h2.subtitle Радио кнопки
-      p Радио кнопка #[b data-validate-type="radio"].
-      div
+      p Группа чекбоксов #[b data-validate-type="toggle-group"].
+      div.toggle-group(data-validate-type="toggle-group", data-message-base="Поле обязательно к заполнению")
         +custom-toggle({
-          inputType: "radio",
-          inputLabel: "Радио кнопка",
-          inputError: "Согласие является обязательным",
-          inputName: "user-radio-1",
+          inputLabel: "Чекбокс",
+          inputName: "user-agreement",
+          inputValue: "user-agreement-1",
           inputChecked: false
-        })(data-validate-type="radio").custom-toggle--radio
-      p Радио кнопка выбрана #[b data-validate-type="radio"].
-      div
+        }).custom-toggle--checkbox
         +custom-toggle({
-          inputType: "radio",
-          inputLabel: "Радио кнопка",
-          inputError: "Согласие является обязательным",
-          inputName: "user-radio-2",
-          inputChecked: true
-        })(data-validate-type="radio").custom-toggle--radio
-      p Группа радио кнопок #[b data-validate-type="toggle-group"].
-      div.toggle-group(data-validate-type="toggle-group")
-        +custom-toggle({
-          inputType: "radio",
-          inputLabel: "Радиокнопка",
-          inputError: "Выберите один вариант",
-          inputName: "user-choose",
+          inputLabel: "Чекбокс",
+          inputName: "user-agreement",
+          inputValue: "user-agreement-2",
           inputChecked: false
-        }).custom-toggle--radio
+        }).custom-toggle--checkbox
         +custom-toggle({
-          inputType: "radio",
-          inputLabel: "Радиокнопка",
-          inputError: "Выберите один вариант",
-          inputName: "user-choose",
+          inputLabel: "Чекбокс",
+          inputName: "user-agreement",
+          inputValue: "user-agreement-3",
           inputChecked: false
-        }).custom-toggle--radio
+        }).custom-toggle--checkbox
         +custom-toggle({
-          inputType: "radio",
-          inputLabel: "Радиокнопка",
-          inputError: "Выберите один вариант",
-          inputName: "user-choose",
+          inputLabel: "Чекбокс",
+          inputName: "user-agreement",
+          inputValue: "user-agreement-4",
           inputChecked: false
-        }).custom-toggle--radio
-        +custom-toggle({
-          inputType: "radio",
-          inputLabel: "Радиокнопка",
-          inputError: "Выберите один вариант",
-          inputName: "user-choose",
-          inputChecked: false
-        }).custom-toggle--radio
-        span.toggle-group__error Выберите один вариант
-      p Группа радио кнопок #[b data-validate-type="toggle-group"] с выбранной по умолчанию.
-      div.toggle-group(data-validate-type="toggle-group")
-        +custom-toggle({
-          inputType: "radio",
-          inputLabel: "Радиокнопка",
-          inputError: "Выберите один вариант",
-          inputName: "user-choose",
-          inputChecked: true
-        }).custom-toggle--radio
-        +custom-toggle({
-          inputType: "radio",
-          inputLabel: "Радиокнопка",
-          inputError: "Выберите один вариант",
-          inputName: "user-choose",
-          inputChecked: false
-        }).custom-toggle--radio
-        +custom-toggle({
-          inputType: "radio",
-          inputLabel: "Радиокнопка",
-          inputError: "Выберите один вариант",
-          inputName: "user-choose",
-          inputChecked: false
-        }).custom-toggle--radio
-        +custom-toggle({
-          inputType: "radio",
-          inputLabel: "Радиокнопка",
-          inputError: "Выберите один вариант",
-          inputName: "user-choose",
-          inputChecked: false
-        }).custom-toggle--radio
-        span.toggle-group__error Выберите один вариант
+        }).custom-toggle--checkbox
       hr
       h2.subtitle Селекты
-      p Селект простой #[b data-validate-type="select"].
-      +custom-select({
-        error: "Выберите тему обращения",
-        optionsList: [
-          {text: "Тема 1", value: "id-1"},
-          {text: "Тема 2", value: "id-2"},
-          {text: "Тема 3", value: "id-3"},
-          {text: "Тема 4", value: "id-4"},
-          {text: "Тема 5", value: "id-5"},
-          {text: "Тема 6", value: "id-6"}
-        ]
-      })("data-select", data-validate-type="select", data-name="some-name", data-id="id-example").custom-select
       p Селект простой с выбранной опцией.
       +custom-select({
-        error: "Выберите тему обращения",
         optionsList: [
           {text: "Тема 1", value: "id-1", isActive: true},
           {text: "Тема 2", value: "id-2"},
@@ -356,10 +153,9 @@ section.component-demo(data-tabs='element')
           {text: "Тема 5", value: "id-5"},
           {text: "Тема 6", value: "id-6"}
         ]
-      })("data-select", data-validate-type="select", data-name="some-name", data-id="id-example-2").custom-select
-      p Селект с мультивыбором
+      })("data-select", data-validate-type="select", data-name="some-name", data-id="id-example-1", data-message-base="Поле обязательно к заполнению").custom-select
+      p Селект простой без выбранной опции.
       +custom-select({
-        error: "Выберите тему обращения",
         optionsList: [
           {text: "Тема 1", value: "id-1"},
           {text: "Тема 2", value: "id-2"},
@@ -368,24 +164,10 @@ section.component-demo(data-tabs='element')
           {text: "Тема 5", value: "id-5"},
           {text: "Тема 6", value: "id-6"}
         ]
-      })("data-select", data-validate-type="select", data-name="some-name", data-id="id-example-2", data-multiple="true", data-insert="true").custom-select
-      p Селект с мультивыбором с выбранной опцией
-      +custom-select({
-        error: "Выберите тему обращения",
-        optionsList: [
-          {text: "Тема 1", value: "id-1", isActive: true},
-          {text: "Тема 2", value: "id-2"},
-          {text: "Тема 3", value: "id-3", isActive: true},
-          {text: "Тема 4", value: "id-4"},
-          {text: "Тема 5", value: "id-5", isActive: true},
-          {text: "Тема 6", value: "id-6", isActive: true}
-        ]
-      })("data-select", data-validate-type="select", data-name="some-name", data-id="id-example-2", data-multiple="true", data-insert="true").custom-select
+      })("data-select", data-validate-type="select", data-name="some-name", data-id="id-example-2", data-message-base="Поле обязательно к заполнению").custom-select
       hr
       h2.subtitle Кнопки отправки и сброса формы
       p #[b Кнопка отправки формы].
       button.btn.btn--form(type="submit") Отправить форму
-      p Кнопка сброса формы #[b с дата атрибутом data-reset сделана спаном].
-      span.btn.btn--form(data-reset) Сбросить форму
       p Кнопка сброса формы #[b с дата атрибутом type="reset" сделана кнопкой].
       button.btn.btn--form(type="reset") Сбросить форму

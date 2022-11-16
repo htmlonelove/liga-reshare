@@ -4,7 +4,7 @@
 
   display: flex;
   width: 530px;
-  padding: 14px 0 58px;
+  padding: 14px 0 28px;
 
   @media screen and (max-width: 767px) {
     padding: 4px 0 48px;
@@ -73,17 +73,14 @@
   }
 
   &.is-invalid {
-    input {
+    input,
+    textarea {
       border: 2px solid #ff1553;
 
       &:focus,
       &:hover {
         border: 2px solid rgba(#ff1553, 0.5);
       }
-    }
-
-    .custom-input__error {
-      opacity: 1;
     }
   }
 
@@ -95,6 +92,20 @@
       &:hover {
         border: 2px solid rgba(#22b259, 0.5);
       }
+    }
+  }
+
+  .input-message {
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+
+    &--invalid {
+      color: #ff0000;
+    }
+
+    &--valid {
+      color: #15ab07;
     }
   }
 }
