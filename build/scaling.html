@@ -388,7 +388,7 @@
               <!--li.main-nav__item(data-nav-item)-->
               <!--  span.main-nav__link Кейсы-->
               <li class="main-nav__item" data-nav-item><a class="main-nav__link" href="guides.html">Гайды</a></li>
-              <li class="main-nav__item" data-nav-item><a class="main-nav__link main-nav__link--blue" href="https://ligaa.agency/">Лига А.</a></li>
+              <li class="main-nav__item" data-nav-item><a class="main-nav__link main-nav__link--blue" href="https://ligaa.agency/" target="_blank">Лига А.</a></li>
             </ul>
           </nav>
           <!-- Миксин поиска-->
@@ -554,7 +554,7 @@
                     <section id="introduction">
                       <p><b>Ремы, скейлинг, масштабирование</b> - прием в верстке, когда на определенных разрешениях интерфейс выглядит одинаково, все элементы уменьшаются/увеличиваются пропорционально ширине экрана (на видео для разрешений выше 1920px включены ремы).</p>
                       <div class="component-description__video">
-                        <video src="video/scaling-1.mp4" width="380" height="700" controls playsinline></video>
+                        <video src="video/scaling-1.mp4#t=0.1" width="380" height="700" controls playsinline></video>
                       </div>
                       <p>Единица rem задает размер элемента относительно размера шрифта <html>, но в нашем случае она еще должна зависит от ширины экрана. Чтобы упросить и автоматизировать верстку на ремах, создаются функции scss и вводятся определенные правила для написания размеров в стилях.</p>
                     </section>
@@ -593,11 +593,11 @@
                       <h2 class="subtitle">Результат</h2>
                       <p>После всех манипуляций у нас должен получится вот такая страница.</p>
                       <div class="component-description__video">
-                        <video src="video/scaling-2.mp4" width="380" height="700" controls playsinline></video>
+                        <video src="video/scaling-2.mp4#t=0.1" width="380" height="700" controls playsinline></video>
                       </div>
                       <p>Обратите внимание, при разрешении 1920+ все элементы, все отступы, все бордеры пропорционально увеличиваются/уменьшаются, ниже 1920px сайт становится обычным “резиновым”. Если бы у нас не было ремов, сайт вел бы себя вот так:</p>
                       <div class="component-description__video">
-                        <video src="video/scaling-3.mp4" width="380" height="700" controls playsinline></video>
+                        <video src="video/scaling-3.mp4#t=0.1" width="380" height="700" controls playsinline></video>
                       </div>
                     </section>
                     <section id="check">
@@ -608,7 +608,7 @@
                       <h2 class="subtitle">Запись размеров</h2>
                       <p>Главная особенность ремов: все пиксельные размеры должны быть прописаны в css по виду size(). Особенно это касается иконок svg и картинок. Иначе может получиться ситуация, что весь контент, написанный на ремах, увеличится, а картинка, у которой размеры не заданы, останется такой, какой и была</p>
                       <div class="component-description__video">
-                        <video src="video/scaling-4.mp4" width="380" height="700" controls playsinline></video>
+                        <video src="video/scaling-4.mp4#t=0.1" width="380" height="700" controls playsinline></video>
                       </div>
                       <p>Если нужно вычислить, например, ширину с помощью calc(), то запись выглядит так:<br> <b>width: calc((100% - #{size(160px)}) / 2);</b> <br>Не забывайте указывать в ремах значение ширины бордеров: <b>border: size(1px) solid white;</b></p>
                     </section>

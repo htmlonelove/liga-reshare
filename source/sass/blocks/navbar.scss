@@ -29,6 +29,10 @@
     z-index: 30;
   }
 
+  @include vp-767 {
+    padding: 68px 0 0;
+  }
+
   &.is-active {
     opacity: 1;
     pointer-events: all;
@@ -104,6 +108,10 @@
     @include vp-1023 {
       padding: 0;
     }
+
+    @include vp-767 {
+      padding: 0 0 40px;
+    }
   }
 
   &__button {
@@ -120,6 +128,7 @@
     transition: opacity $trans-default;
     text-align: left;
     width: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
     @include hover {
       &:not(span) {
@@ -155,7 +164,9 @@
     }
 
     @include hover-focus {
-      background-color: $color-ghost-white;
+      &:not(span) {
+        background-color: $color-ghost-white;
+      }
     }
   }
 }
