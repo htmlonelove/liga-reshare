@@ -3817,6 +3817,52 @@ button,
   margin: 0;
 }
 
+.simple-cursor {
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  left: -10px;
+  border-radius: 50%;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 9999;
+  -webkit-transition: z-index 0.05s 0.1s, -webkit-transform 0.05s;
+  transition: z-index 0.05s 0.1s, -webkit-transform 0.05s;
+  -o-transition: transform 0.05s, z-index 0.05s 0.1s;
+  transition: transform 0.05s, z-index 0.05s 0.1s;
+  transition: transform 0.05s, z-index 0.05s 0.1s, -webkit-transform 0.05s;
+  pointer-events: none;
+}
+
+.simple-cursor span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  -o-transition: transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+  background-color: #2c39f2;
+}
+
+.simple-cursor.is-hidden {
+  z-index: -1;
+}
+
+.simple-cursor.is-hidden span {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
 /* @mixin hover-focus {
     @media (hover: hover) {
       &:hover:not(.focus-visible) {

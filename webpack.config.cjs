@@ -25,6 +25,7 @@ module.exports = {
     formValidate: './components/form-validate/js/',
     inlineVideo: './components/inline-video/js/',
     dynamicAdaptive: './components/dynamic-adaptive/js/',
+    simpleCursor: './components/simple-cursor/js/',
   },
   devtool: isDev ? 'source-map' : false,
   output: {
