@@ -2,7 +2,7 @@ section.component-description
   section(id="introduction")
     p #[b Ремы, скейлинг, масштабирование] - прием в верстке, когда на определенных разрешениях интерфейс выглядит одинаково, все элементы уменьшаются/увеличиваются пропорционально ширине экрана (на видео для разрешений выше 1920px включены ремы).
     .component-description__video
-      video(src="video/scaling-1.mp4", width="380", height="700", controls, playsinline)
+      video(src="video/scaling-1.mp4#t=0.1", width="380", height="700", controls, playsinline)
     p Единица rem задает размер элемента относительно размера шрифта <html>, но в нашем случае она еще должна зависит от ширины экрана. Чтобы упросить и автоматизировать верстку на ремах, создаются функции scss и вводятся определенные правила для написания размеров в стилях.
   section(id="settings")
     h2.subtitle Настройка
@@ -42,10 +42,10 @@ section.component-description
     h2.subtitle Результат
     p После всех манипуляций у нас должен получится вот такая страница.
     .component-description__video
-      video(src="video/scaling-2.mp4", width="380", height="700", controls, playsinline)
+      video(src="video/scaling-2.mp4#t=0.1", width="380", height="700", controls, playsinline)
     p Обратите внимание, при разрешении 1920+ все элементы, все отступы, все бордеры пропорционально увеличиваются/уменьшаются, ниже 1920px сайт становится обычным “резиновым”. Если бы у нас не было ремов, сайт вел бы себя вот так:
     .component-description__video
-      video(src="video/scaling-3.mp4", width="380", height="700", controls, playsinline)
+      video(src="video/scaling-3.mp4#t=0.1", width="380", height="700", controls, playsinline)
   section(id="check")
     h2.subtitle Проверь себя
     p На пограничный точках перестроения размеры должны соответствовать макетным. Например, в макете на 1920px шрифт указан 24px. При адаптиве в точке 1920 шрифт также должен быть 24px.
@@ -53,7 +53,7 @@ section.component-description
     h2.subtitle Запись размеров
     p Главная особенность ремов: все пиксельные размеры должны быть прописаны в css по виду size(). Особенно это касается иконок svg и картинок. Иначе может получиться ситуация, что весь контент, написанный на ремах, увеличится, а картинка, у которой размеры не заданы, останется такой, какой и была
     .component-description__video
-      video(src="video/scaling-4.mp4", width="380", height="700", controls, playsinline)
+      video(src="video/scaling-4.mp4#t=0.1", width="380", height="700", controls, playsinline)
     p Если нужно вычислить, например, ширину с помощью calc(), то запись выглядит так:#[br] #[b width: calc((100% - \#{size(160px)}) / 2);] #[br]Не забывайте указывать в ремах значение ширины бордеров: #[b border: size(1px) solid white;]
   section(id="icons")
     h2.subtitle Проблема иконок

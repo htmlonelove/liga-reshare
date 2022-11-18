@@ -11,6 +11,11 @@
   padding: 17px 35px;
   transition: background-color $trans-default;
 
+  &:hover,
+  &:focus {
+    background-color: $color-torch-red;
+  }
+
   &--red {
     background-color: $color-torch-red;
   }

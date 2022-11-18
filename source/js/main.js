@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
   initDynamicAdaptive();
   window.scrollLock = new ScrollLock();
   iosVhFix();
-
+  initHeaderObserver();
   // Modules
   // ---------------------------------
 
@@ -31,7 +31,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     initSandwichMenu();
-    initHeaderObserver();
     initAccordions();
     initUpButton();
     initMoveTo();

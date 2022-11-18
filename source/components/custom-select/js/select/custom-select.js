@@ -1,6 +1,7 @@
 
 import {createElement, renderElement} from './utils';
 import {createNativeSelectMarkup} from './create-select-markup';
+
 export class CustomSelect {
   constructor() {
     this._selects = null;
@@ -79,7 +80,7 @@ export class CustomSelect {
     const multiple = parent.dataset.multiple;
     const insert = parent.dataset.insert;
     const buttonTextBlock = parent.querySelector('.custom-select__text');
-    const itemText = element.innerText;
+    const itemText = element.textContent;
     const options = parent.querySelectorAll('option');
     const select = parent.querySelector('select');
     const changeEv = new CustomEvent('change');
@@ -87,6 +88,11 @@ export class CustomSelect {
     select.dispatchEvent(changeEv);
     select.dispatchEvent(inputEv);
     const form = select.closest('form');
+
+    const parentMessage = parent.querySelector('.input-message');
+    if (parentMessage) {
+      parentMessage.remove();
+    }
 
     if (form) {
       const formChangeEv = new CustomEvent('change');
@@ -257,7 +263,7 @@ export class CustomSelect {
     selectItems.forEach((selectItem) => {
       const value = selectItem.dataset.selectValue;
       const itemInfo = {};
-      itemInfo.text = selectItem.innerText;
+      itemInfo.text = selectItem.textContent;
       itemInfo.value = value;
       options.items.push(itemInfo);
     });

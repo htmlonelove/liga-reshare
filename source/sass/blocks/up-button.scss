@@ -33,7 +33,7 @@
     color: $color-neon-blue;
     display: flex;
     justify-content: center;
-    transition: background-color $trans-default;
+    transition: background-color $trans-default, color $trans-default;
     height: 50px;
     width: 50px;
 

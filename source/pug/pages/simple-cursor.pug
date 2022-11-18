@@ -1,0 +1,34 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Лига решений. Простой кастомный курсор" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const currentUrl = "simple-cursor.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const pageType = "component"
+  - const pageJs = "js/simpleCursor.min.js"
+
+block main
+  main
+    +content({
+      title: "Компоненты",
+      links: [
+        {
+          title: "Главная",
+          link: "index.html"
+        },
+        {
+          title: "Компоненты",
+          link: "components.html"
+        },
+        {
+          title: "Простой кастомный курсор",
+        }
+      ]
+    })
+      +simple-cursor()
+    .simple-cursor.is-hidden(data-cursor)
+      span
+block modals

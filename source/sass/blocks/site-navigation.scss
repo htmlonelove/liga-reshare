@@ -23,6 +23,11 @@
       line-height: 38px;
     }
 
+    @include vp-374 {
+      font-size: size(35px);
+      line-height: size(38px);
+    }
+
     &--blue {
       color: $color-neon-blue;
     }
@@ -64,7 +69,7 @@
   }
 
   &__heading {
-    display: block;
+    display: inline-block;
     font-weight: 700;
     font-family: $ff-neue-machina;
     font-size: 48px;
@@ -86,7 +91,9 @@
     }
 
     @include hover-focus {
-      color: $color-neon-blue;
+      &:not(span) {
+        color: $color-neon-blue;
+      }
     }
   }
 
@@ -116,7 +123,9 @@
     }
 
     @include hover-focus {
-      color: $color-neon-blue;
+      &:not(span) {
+        color: $color-neon-blue;
+      }
     }
 
     &--all {

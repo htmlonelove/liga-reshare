@@ -21,25 +21,6 @@
     }
   }
 
-  &__error {
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
-    position: absolute;
-    top: 45px;
-    left: 36px;
-
-    color: #ff1553;
-
-    opacity: 0;
-
-    transition: opacity 0.3s ease;
-
-    @media screen and (max-width: 767px) {
-      left: 0;
-    }
-  }
-
   input {
     position: absolute;
 
@@ -136,18 +117,22 @@
   }
 
   &.is-invalid {
-    .custom-toggle__icon {
-      border: 1px solid #ff1553;
-    }
-
-    .custom-toggle__error {
-      opacity: 1;
+    label span {
+      color: #ff1553;
     }
   }
 
-  /*&.is-valid {
-    label span {
-      color: $color-eucalyptus;
+  .input-message {
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+
+    &--invalid {
+      color: #ff0000;
     }
-  }*/
+
+    &--valid {
+      color: #15ab07;
+    }
+  }
 }

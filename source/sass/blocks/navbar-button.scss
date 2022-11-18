@@ -16,12 +16,12 @@
     display: flex;
     position: absolute;
     right: 30px;
-    top: 34px;
+    top: 20px;
   }
 
   @include vp-767 {
     right: 20px;
-    top: 30px;
+    top: 10px;
   }
 
   &.is-active {

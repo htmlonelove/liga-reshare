@@ -65,6 +65,10 @@
     @include vp-767 {
       padding: 35px 15px;
     }
+
+    @include vp-374 {
+      padding: size(35px) size(15px);
+    }
   }
 
   &__title {
@@ -85,6 +89,10 @@
       font-size: 66px;
       line-height: 1;
       text-align: center;
+    }
+
+    @include vp-374 {
+      font-size: size(66px)
     }
 
     &--blue {
