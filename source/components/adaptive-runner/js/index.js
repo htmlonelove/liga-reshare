@@ -1,7 +1,8 @@
-import {initAdaptiveRunner} from './init-adaptive-runner';
+import {AdaptiveRunner} from './adaptive-runner';
 
 window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
-    initAdaptiveRunner();
+    const adaptiveRunner = new AdaptiveRunner();
+    adaptiveRunner.init();
   });
 });

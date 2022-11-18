@@ -7,7 +7,6 @@ export class AdaptiveRunner {
     this.rObserverCheckpoint = null;
 
     this.onCheckpointClick = this.onCheckpointClick.bind(this);
-    this.init();
   }
 
   init() {

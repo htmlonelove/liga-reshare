@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<!-- - const pageJs = "js/navigationChanger.min.js"-->
 <html lang="ru">
   <head>
-    <title>Лига решений. Файлы необходимые для поддержки на проекте ie</title>
+    <title>Лига решений. Табы</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -418,7 +417,7 @@
                       <svg width="4" height="7" aria-hidden="true">
                         <use xlink:href="#icon-chevrone"></use>
                       </svg></a></li>
-                  <li class="breadcrumbs__item"><span class="breadcrumbs__link">Файлы необходимые для поддержки на проекте ie</span></li>
+                  <li class="breadcrumbs__item"><span class="breadcrumbs__link">Адаптивный бегунок</span></li>
                 </ul>
               </div>
               <h1 class="hero__title">Компоненты</h1>
@@ -475,7 +474,7 @@
                           </li>
                           <li class="navbar__item"><a class="navbar__link" href="navigation-changer.html">Подсветка пунктов навигации при скроле</a>
                           </li>
-                          <li class="navbar__item"><a class="navbar__link is-active" href="ie-support.html">Файлы необходимые для поддержки на проекте ie</a>
+                          <li class="navbar__item"><a class="navbar__link" href="ie-support.html">Файлы необходимые для поддержки на проекте ie</a>
                           </li>
                           <li class="navbar__item"><a class="navbar__link" href="send-mail.html">Отправка данных формы на почту</a>
                           </li>
@@ -485,7 +484,7 @@
                           </li>
                           <li class="navbar__item"><a class="navbar__link" href="simple-cursor.html">Простой кастомный курсор</a>
                           </li>
-                          <li class="navbar__item"><a class="navbar__link" href="adaptive-runner.html">Адаптивный бегунок</a>
+                          <li class="navbar__item"><a class="navbar__link is-active" href="adaptive-runner.html">Адаптивный бегунок</a>
                           </li>
                         </ul>
                       </div>
@@ -533,57 +532,99 @@
               <section class="component" data-tabs="parent" data-delay="300">
                 <section class="component-heading">
                   <div class="component-heading__head">
-                    <h1 class="title">Файлы необходимые для поддержки на проекте ie</h1>
+                    <h1 class="title">Адаптивный бегунок</h1>
                     <div class="component-heading__tabs">
                       <button class="component-heading__tab-control" type="button" data-tabs="control">Описание</button>
+                      <button class="component-heading__tab-control" type="button" data-tabs="control">Демо</button>
                     </div>
-                  </div><a class="component-heading__download-link btn" href="zip-components/ie-support.zip" download>Скачать компонент</a>
+                  </div><a class="component-heading__download-link btn" href="zip-components/adaptive-runner.zip" download>Скачать компонент</a>
                 </section>
                 <div class="component__content" data-tabs="content">
                   <section class="component-description" data-tabs="element">
-                    <p>В архиве лежат следующие файлы:</p>
+                    <p>При инициализации компонент создает в родительском контейнере структуру для нашего бегунка.</p><code>
+                      <pre>&lt;div class="adaptive-runner" data-adaptive-runner="runner"&gt;
+  &lt;div class="adaptive-runner__inner"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre></code>
+                    <p>Этого должно быть достаточно для простой стилизации, если в вашем случае будет что-то сложнее, можете дополнить разметку в <b>init-adaptive-runner.js</b> у функции <b>templateRunner</b>.</p>
+                    <p>Компонент состоит из следующих файлов: <b>adaptive-runner.js, init-adaptive-runner.js</b> все файлы обязательны к переносу в проект! Файл <b>adaptive-runner.scss</b> добавлен только для стилизации, в нём вы можете менять всё что угодно(так же ознакомьтесь с комментариями внутри файла, а после "сожгите")</p>
+                    <p>Это решение адаптировано для наших табов, но вы можете использовать его и вне компонента табов, если это будет необходимо. Только этом случае вам нужно будет самолично написать дополнительный скрипт который будет добавлять состояние <b>.is-active</b> для выбранного элемента.</p>
+                    <h2 class="subtitle">Обязательные data атрибуты</h2>
                     <table>
                       <tr>
                         <th>
-                          <p>ie-fix.js</p>
+                          <p>data-adaptive-runner="track"</p>
                         </th>
                         <td>
-                          <p>файл с&nbsp;различными полифилами, при необходимости закинуть файл в&nbsp;парку <b>utils</b> вашего проекта. Пример подключения: <a href="https://skr.sh/sCAPulmJkcT?a" target="_blank" rel="nofollow noopener noreferrer">Скриншот</a></p>
+                          <p>Устанавливается на родителе контролов</p>
                         </td>
                       </tr>
                       <tr>
                         <th>
-                          <p>polyfill-object-fit.js</p>
+                          <p>data-adaptive-runner="checkpoint"</p>
                         </th>
                         <td>
-                          <p>файл с&nbsp;полифилом <b>object-fit</b>, при необходимости закинуть файл в&nbsp;парку <b>utils</b> вашего проекта. Пример подключения: <a href="https://skr.sh/sCAJMSpibqr?a" target="_blank" rel="nofollow noopener noreferrer">Скриншот</a></p>
+                          <p>Устанавливается на контроле (кнопке, ссылке и тд)</p>
                         </td>
                       </tr>
                     </table>
-                    <h3>Swiper.js</h3>
-                    <table>
-                      <tr>
-                        <th>
-                          <p>swiper.js</p>
-                        </th>
-                        <td>
-                          <p>файл с Swiper версии 5.3.6</p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <p>swiper.scss</p>
-                        </th>
-                        <td>
-                          <p>scss файл для Swiper версии 5.3.6</p>
-                        </td>
-                      </tr>
-                    </table>
-                    <p>При необходимости нужно заменить оба файла и scss и js.</p>
-                    <p>Пример подключения:</p>
-                    <p>В файле <b>swiper.scss</b> меняем всё содержимое <a href="https://skr.sh/sCAASBKH5hs" target="_blank" rel="nofollow noopener noreferrer">Скриншот</a></p>
-                    <p>В файле <b>swiper.js</b> меняем всё содержимое <a href="https://skr.sh/sCA8E4UxeZQ?a" target="_blank" rel="nofollow noopener noreferrer">Скриншот</a></p>
-                    <p>Так же в package.json нужно поменять версию пакета <a href="https://skr.sh/sCAKDupGwj1?a" target="_blank" rel="nofollow noopener noreferrer">Скриншот</a></p>
+                  </section>
+                  <section class="component-demo" data-tabs="element">
+                    <h2 class="subtitle">Пример с использованием в табах</h2>
+                    <div class="tabs tabs--runner no-transition-global" data-tabs="parent" data-delay="300">
+                      <div class="tabs__controls" data-tabs="controls" data-adaptive-runner="track">
+                        <button class="tabs__control btn is-active" type="button" data-tabs="control" data-adaptive-runner="checkpoint">🏁 Старт 🏁</button>
+                        <button class="tabs__control btn" type="button" data-tabs="control" data-adaptive-runner="checkpoint">checkpoint 1</button>
+                        <button class="tabs__control btn" type="button" data-tabs="control" data-adaptive-runner="checkpoint">checkpoint 2</button>
+                        <button class="tabs__control btn" type="button" data-tabs="control" data-adaptive-runner="checkpoint">checkpoint 3</button>
+                        <button class="tabs__control btn" type="button" data-tabs="control" data-adaptive-runner="checkpoint">checkpoint 4</button>
+                        <button class="tabs__control btn" type="button" data-tabs="control" data-adaptive-runner="checkpoint">checkpoint 5</button>
+                        <button class="tabs__control btn" type="button" data-tabs="control" data-adaptive-runner="checkpoint">checkpoint 6</button>
+                        <button class="tabs__control btn" type="button" data-tabs="control" data-adaptive-runner="checkpoint">checkpoint 7</button>
+                        <button class="tabs__control btn" type="button" data-tabs="control" data-adaptive-runner="checkpoint">checkpoint 8</button>
+                        <button class="tabs__control btn" type="button" data-tabs="control" data-adaptive-runner="checkpoint">checkpoint 9</button>
+                        <button class="tabs__control btn" type="button" data-tabs="control" data-adaptive-runner="checkpoint">checkpoint 10</button>
+                        <button class="tabs__control btn" type="button" data-tabs="control" data-adaptive-runner="checkpoint">🏁 Финиш 🏁</button>
+                      </div>
+                      <div class="tabs__content" data-tabs="content">
+                        <div class="tabs__element" data-tabs="element">
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
+                        </div>
+                        <div class="tabs__element" data-tabs="element">
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
+                        </div>
+                        <div class="tabs__element" data-tabs="element">
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
+                        </div>
+                        <div class="tabs__element" data-tabs="element">
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
+                        </div>
+                        <div class="tabs__element" data-tabs="element">
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
+                        </div>
+                        <div class="tabs__element" data-tabs="element">
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
+                        </div>
+                        <div class="tabs__element" data-tabs="element">
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
+                        </div>
+                        <div class="tabs__element" data-tabs="element">
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
+                        </div>
+                        <div class="tabs__element" data-tabs="element">
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
+                        </div>
+                        <div class="tabs__element" data-tabs="element">
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
+                        </div>
+                        <div class="tabs__element" data-tabs="element">
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
+                        </div>
+                        <div class="tabs__element" data-tabs="element">
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis! Ab pariatur dolor alias debitis molestiae reprehenderit tempora ducimus, atque amet inventore illum ullam laboriosam totam vel error dicta et.</p>
+                        </div>
+                      </div>
+                    </div>
                   </section>
                 </div>
               </section>
@@ -629,5 +670,6 @@
     </div>
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>
+    <script src="js/adaptiveRunner.min.js"></script>
   </body>
 </html>
