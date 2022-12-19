@@ -62,7 +62,6 @@ const baseSeries = gulp.series(
   sprite,
   js,
   pug,
-  optimizeImages,
   zipFiles,
   cleanComponents,
 );

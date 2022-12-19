@@ -1,4 +1,4 @@
-import {CustomSelect} from './custom-select';
+import {CustomSelect} from './select/custom-select';
 
 window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
