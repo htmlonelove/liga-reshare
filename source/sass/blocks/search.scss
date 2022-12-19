@@ -1,28 +1,46 @@
 .search {
+  position: relative;
   display: flex;
   margin: 0 36px 0 auto;
-  position: relative;
+
+  &:focus-within {
+    .search__wrapper {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
 
   @include vp-1023 {
-    margin: 0 auto;
-    opacity: 0;
-    transition: opacity $trans-default;
     width: 50%;
+    margin: 0 auto;
+    transition: opacity $trans-default;
   }
 
   @include vp-767 {
-    margin: 0;
     width: 100%;
+    margin: 0;
+  }
+
+  &__form {
+    @include vp-1023 {
+      width: 100%;
+    }
   }
 
   &__input {
-    border: 1.5px solid $color-ghost-white;
-    border-radius: 8px;
     font-size: 14px;
     line-height: 21px;
     min-width: 306px;
     padding: 11px 40px 11px 14px;
     transition: all $trans-default;
+    border: 2px solid $color-ghost-white;
+    border-radius: 8px;
+
+    @include focus {
+      border: 2px solid $color-ghost-white;
+      border-radius: 8px 8px 0 0;
+      outline: none;
+    }
 
     @include vp-1279 {
       min-width: unset;
@@ -34,17 +52,17 @@
   }
 
   &__button {
-    background-color: $color-transparent;
-    border: none;
-    cursor: pointer;
-    height: 20px;
-    color: $color-default-black;
-    padding: 0;
     position: absolute;
     top: 50%;
     right: 17px;
-    transform: translate3d(0, -50%, 0);
     width: 20px;
+    height: 20px;
+    padding: 0;
+    cursor: pointer;
+    transform: translate3d(0, -50%, 0);
+    color: $color-default-black;
+    border: none;
+    background-color: $color-transparent;
 
     @include hover-focus {
       svg {
@@ -53,8 +71,72 @@
     }
 
     svg {
-      fill: currentColor;
       transition: fill $trans-default;
+      fill: currentColor;
     }
+  }
+
+  &__wrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border: 2px solid $color-ghost-white;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    background-color: $color-default-white;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $trans-default;
+  }
+
+  &__note {
+    padding: 10px 15px;
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 15px;
+    transition: background-color $trans-default;
+    background-color: $color-default-white;
+
+    @include hover-focus {
+      outline: none;
+      background-color: $color-ghost-white;
+    }
+  }
+
+  &__text {
+    &:not(:last-child) {
+      margin: 0 0 5px 0;
+    }
+
+    &--description {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &__hl {
+    color: $color-default-white;
+    background-color: $color-neon-blue;
   }
 }
