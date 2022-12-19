@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Кастомный селект",
+    "link": "custom-select.html",
+    "tag": "#компоненты"
+  },
+  {
+    "title": "Валидация формы",
+    "link": "form-validate.html",
+    "tag": "#компоненты"
+  }
+]
