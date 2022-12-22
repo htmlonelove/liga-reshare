@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>Гайды</title>
+    <title>Лига решений. Бегущаяя строка</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -413,10 +413,14 @@
                       <svg width="4" height="7" aria-hidden="true">
                         <use xlink:href="#icon-chevrone"></use>
                       </svg></a></li>
-                  <li class="breadcrumbs__item"><span class="breadcrumbs__link">Гайды</span></li>
+                  <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="components.html">Компоненты
+                      <svg width="4" height="7" aria-hidden="true">
+                        <use xlink:href="#icon-chevrone"></use>
+                      </svg></a></li>
+                  <li class="breadcrumbs__item"><span class="breadcrumbs__link">Бегущаяя строка</span></li>
                 </ul>
               </div>
-              <h1 class="hero__title">Гайды</h1>
+              <h1 class="hero__title">Компоненты</h1>
             </div>
           </section>
           <div class="content__wrapper">
@@ -433,7 +437,7 @@
               </button>
               <div class="navbar__wrapper">
                 <div class="navbar__accordion" data-accordion="parent" data-single data-close-inner>
-                  <div class="navbar__element" data-accordion="element">
+                  <div class="navbar__element is-active" data-accordion="element">
                     <button class="navbar__button" type="button" data-accordion="button">Компоненты
                       <svg class="navbar__button-icon" width="16" height="9" aria-hidden="true">
                         <use xlink:href="#icon-accordion"></use>
@@ -503,7 +507,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="navbar__element is-active" data-accordion="element">
+                  <div class="navbar__element" data-accordion="element">
                     <button class="navbar__button" type="button" data-accordion="button">Гайды
                       <svg class="navbar__button-icon" width="16" height="9" aria-hidden="true">
                         <use xlink:href="#icon-accordion"></use>
@@ -512,7 +516,7 @@
                     <div class="navbar__content" data-accordion="content">
                       <div class="navbar__inner">
                         <ul class="navbar__list">
-                          <li class="navbar__item"><a class="navbar__link is-active" href="guides.html">О разделе</a>
+                          <li class="navbar__item"><a class="navbar__link" href="guides.html">О разделе</a>
                           </li>
                           <li class="navbar__item"><a class="navbar__link" href="scaling.html">Скейлинг</a>
                           </li>
@@ -526,14 +530,44 @@
               </div>
             </aside>
             <div class="content__inner">
-              <section class="components">
-                <!--p.components__about Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.  Здесь может быть текст, но это не точно.-->
-                <ul class="components__list">
-                  <li class="components__item"><a class="components__link" href="scaling.html">Скейлинг
-                      <!--+icon("icon-accordion", 16, 9).components__link-icon--></a></li>
-                  <li class="components__item"><a class="components__link" href="pug.html">Шаблонизатор PUG
-                      <!--+icon("icon-accordion", 16, 9).components__link-icon--></a></li>
-                </ul>
+              <section class="component" data-tabs="parent" data-delay="300">
+                <section class="component-heading">
+                  <div class="component-heading__head">
+                    <h1 class="title">Бегущаяя строка</h1>
+                    <div class="component-heading__tabs">
+                      <button class="component-heading__tab-control" type="button" data-tabs="control">Описание</button>
+                      <button class="component-heading__tab-control" type="button" data-tabs="control">Демо</button>
+                    </div>
+                  </div><a class="component-heading__download-link btn" href="zip-components/marquee.zip" download>Скачать компонент</a>
+                </section>
+                <div class="component__content" data-tabs="content">
+                  <section class="component-description" data-tabs="element">
+                    <p>Бегущаяя строка реализованна с помощью css. Примеры представлены в демо.</p>
+                  </section>
+                  <section class="component-description" data-tabs="element">
+                    <h3>Бегущаяя строка</h3>
+                    <blockquote>Для того что бы увидеть результат работы данного компонента измените ширину окна браузера</blockquote>
+                    <div class="dynamic-adaptive">
+                      <header class="dynamic-adaptive__header">
+                        <p class="dynamic-adaptive__note" data-da=".dynamic-adaptive__footer, 1270, 0">Шапка сайта</p>
+                        <div class="dynamic-adaptive__list" data-da=".dynamic-adaptive__footer, 1280, last">
+                          <div class="dynamic-adaptive__item">
+                            <p class="dynamic-adaptive__element">Элемент меню 1</p>
+                          </div>
+                          <div class="dynamic-adaptive__item">
+                            <p class="dynamic-adaptive__element">Элемент меню 2</p>
+                          </div>
+                          <div class="dynamic-adaptive__item">
+                            <p class="dynamic-adaptive__element">Элемент меню 3</p>
+                          </div>
+                        </div>
+                      </header>
+                      <footer class="dynamic-adaptive__footer">
+                        <p class="dynamic-adaptive__note">Подвал сайта</p>
+                      </footer>
+                    </div>
+                  </section>
+                </div>
               </section>
               <div class="up-button">
                 <div class="up-button__inner"><a class="up-button__link" href="#content" aria-label="Прокрутить страницу наверх" data-trigger>

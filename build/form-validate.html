@@ -486,6 +486,7 @@
                           </li>
                           <li class="navbar__item"><a class="navbar__link" href="adaptive-runner.html">Адаптивный бегунок</a>
                           </li>
+                          <!--+navbar-item("marquee.html", "Бегущаяя строка")-->
                         </ul>
                       </div>
                     </div>
@@ -543,7 +544,7 @@
                   <section class="component-description" data-tabs="element">
                     <p>Форма должна быть обёрнута в html элемент c data атрибутом data-form-validate. Для передачи колбеков при сабмите, успеха и ошибки валидации нужно установить дата атрибут data-callback="callback" с указанием типа колбеков. Примеры находятся в файле callback.js</p>
                     <p>При динамическом добавлении полей в форму, валидация на них будет работать без дополнительной реинициализации. Исключением являются селекты и поля с телефоном</p>
-                    <p>Инициализация форм происходит в main.js. Экземпляр класса записывается в глобальную область видимости. Это делается для того что бы вы могли в проекте при необходимости вызвать один изметодов класса Form<br>const form = new Form();<br>form.init();<br>window.form = form;</p>
+                    <p>Инициализация форм происходит в main.js. Экземпляр класса записывается в глобальную область видимости. Это делается для того что бы вы могли в проекте при необходимости вызвать один изметодов класса Form<br><b>const form = new Form();</b><br><b>form.init();</b><br><b>window.form = form;</b></p>
                     <p>Методы</p>
                     <table>
                       <tr>
@@ -582,7 +583,9 @@
                     <p>Для сброса формы нужно использовать button(type="reset") или метод window.form.reset(form) с передачей в него формы</p>
                     <p>Добавлена возмоность валидации на лету. Для этого на родителя инпута нужно повесить дата аттрибут <b>data-on-input-validate</b></p>
                     <p>Указания типа валидаци инпута, добавляются на родительский div инпута, если не указать тип то валидироваться инпут не будет! Тип валидации не связан с обязательностью заполнения поля!</p>
-                    <p>Что бы поле являлось обязательным для заполнения на него нужно повесить дата аттрибут data-required!</p>
+                    <p>Что бы поле являлось обязательным для заполнения на родителя нужно повесить дата аттрибут <b>data-required</b>!
+                      Поля форм без дата атрибута <b>data-required</b> на родителе, в случае если указан какой-либо тип валидации будут участвовать в валидации только в том случае если значение value не пустое.
+                    </p>
                     <p>Типы валидации представленные в компоненте</p>
                     <table>
                       <tr>
@@ -608,6 +611,17 @@
                         </th>
                         <td>
                           <p>Валилируется как обычный email, от 1 символа до @ и от 1 после, затем точка и от 2 до 6 символов после неё</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          <p>data-validate-type="file"</p>
+                        </th>
+                        <td>
+                          <p>Данный тип валидации создан для валидации файлов.</p>
+                          <p><b>Важно! Мы не валидируем файлы по расширению! Для этого мы используем атрибут accept с перечисленными в нём допустимыми расширениями файлов.</b></p>
+                          <p>По умолчанию размер файла не ограничен. Для ограничения размера файла используйте у родителя дата атрибут <b>data-max-size="1048576"</b>. В него вы записываете максимальный размер файла в байтах. В примере 1мб переведён в байты.
+                          </p>
                         </td>
                       </tr>
                       <tr>
@@ -808,7 +822,7 @@
                         <p>Input <b>data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required</b>.</p>
                             <div class="custom-input" data-validate-type="email" data-message-base="Поле обязательно к заполнению" data-required>
                               <label><span class="custom-input__label">Введите ваш email</span>
-                                <input type="email" name="user-phone">
+                                <input type="email" name="user-email">
                               </label>
                             </div>
                         <hr>
@@ -829,6 +843,13 @@
                             <div class="custom-textarea" data-validate-type="text">
                               <label><span class="custom-textarea__label">Расскажите о себе</span>
                                 <textarea name="user-info"></textarea>
+                              </label>
+                            </div>
+                        <hr>
+                        <p>Input <b>data-validate-type="file", data-message-base="Файл обязателен к добавлению", data-message-extra="Файл слишком большой", data-on-input-validate, data-max-size="1048576"</b>.</p>
+                            <div class="custom-input" data-validate-type="file" data-message-base="Файл обязателен к добавлению" data-message-extra="Размер файла не должен привышать 1мб" data-on-input-validate data-max-size="1048576">
+                              <label><span class="custom-input__label">Добавьте файл</span>
+                                <input type="file" name="user-file" accept=".png, .jpg, .webp">
                               </label>
                             </div>
                         <hr>
