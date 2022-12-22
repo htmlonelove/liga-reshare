@@ -1,6 +1,30 @@
 mixin search()
+  .search(data-da=".main-nav,1023,last")
+    form.search__form(autocomplete="off")
+      input.search__input(type="text", name="headerSearchInput", aria-label="Поиск по сайту", value="")
+      span.search__button(type="submit", aria-label="Найти")
+        +icon("icon-search", 20, 20)
+    .search__wrapper
+      p.search__note Введите Ваш запрос
+      ul.search__list
+        //li.search__item
+        //  a.search__link(href="#")
+        //    span.search__text Что то так да
+        //    span.search__text Что то так да но и описание
+        //    span.search__text #компоненты
+        //li.search__item
+        //  a.search__link(href="#")
+        //    span.search__text Что то так да
+        //    span.search__text Что то так да но и описание
+        //    span.search__text #компоненты
+        //li.search__item
+        //  a.search__link(href="#")
+        //    span.search__text Что то так да
+        //    span.search__text Что то так да но и описание
+        //    span.search__text #компоненты
+        //li.search__item
+        //  a.search__link(href="#")
+        //    span.search__text Что то так да
+        //    span.search__text Что то так да но и описание
+        //    span.search__text #компоненты
 
-  form.search(data-da=".main-nav,1023,last")
-    input.search__input(type="text", name="headerSearchInput", aria-label="Поиск по сайту")
-    button.search__button(type="submit", aria-label="Найти")
-      +icon("icon-search", 20, 20)

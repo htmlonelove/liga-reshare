@@ -12,6 +12,7 @@ import {initNavigationChanger} from './modules/init-navigation-changer';
 import {initArticleMenu} from './modules/init-article-menu';
 import {initChangeNumber} from './modules/init-change-number';
 import {initFixedNavbar} from './modules/init-fixed-navbar';
+// import {initSearch} from './modules/init-search.js';
 
 
 // ---------------------------------
@@ -40,6 +41,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initArticleMenu();
     initChangeNumber();
     initFixedNavbar();
+    // initSearch();
   });
 });
 
