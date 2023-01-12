@@ -28,8 +28,13 @@ mixin site-navigation()
             span.site-nav__heading Кейсы
             ul.site-nav__links-list
               li.site-nav__links-item
-                span.site-nav__link
-                  span.site-nav__links-text Раздел в разработке
+                a.site-nav__link(href="open-graf.html")
+                  span.site-nav__links-text Микроразметка Open Graph
+              li.site-nav__links-item
+                a.site-nav__link(href="schema.html")
+                  span.site-nav__links-text Микроразметка Schema
+                //span.site-nav__link
+                  //span.site-nav__links-text Раздел в разработке
                   //+icon("icon-accordion", 14, 8).site-nav__links-icon
               //li.site-nav__links-item
               //  a.site-nav__link(href="#")

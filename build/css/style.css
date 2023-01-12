@@ -2568,6 +2568,17 @@ button,
   font-size: 0.8em;
 }
 
+.component-demo__link {
+  color: #2c39f2;
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+.component-demo__link.focus-visible:focus {
+  color: #ff1553;
+}
+
 .footer {
   border-top: 2px solid #f4f4ff;
   padding: 22px 0;
@@ -5170,6 +5181,10 @@ button,
   }
 
   .component-description a:hover:not(.focus-visible) {
+    color: #ff1553;
+  }
+
+  .component-demo__link:hover:not(.focus-visible) {
     color: #ff1553;
   }
 

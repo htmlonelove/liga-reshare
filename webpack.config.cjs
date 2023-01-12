@@ -27,6 +27,7 @@ module.exports = {
     dynamicAdaptive: './components/dynamic-adaptive/js/',
     adaptiveRunner: './components/adaptive-runner/js/',
     simpleCursor: './components/simple-cursor/js/',
+    openGraph: './components/open-graf/js/',
   },
   devtool: isDev ? 'source-map' : false,
   output: {

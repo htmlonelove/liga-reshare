@@ -44,7 +44,9 @@ mixin navbar()
           .navbar__content(data-accordion="content")
             .navbar__inner
               ul.navbar__list
-                +navbar-item("", "Раздел в разработке")
+                +navbar-item("cases.html", "О разделе")
+                +navbar-item("open-graf.html", "Микроразметка Open Graph")
+                +navbar-item("schema.html", "Микроразметка Schema")
                 //+navbar-item("#", "Кейс - 2")
         .navbar__element(class=pageType==="guide" ? "is-active" : "", data-accordion="element")
           button.navbar__button(type="button", data-accordion="button") Гайды

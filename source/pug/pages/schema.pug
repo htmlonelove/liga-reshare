@@ -1,0 +1,31 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Лига решений. Микроразметка Schema" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const currentUrl = "schema.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const pageType = "case"
+
+block main
+  main
+    +content({
+      title: "Кейсы",
+      links: [
+        {
+          title: "Главная",
+          link: "index.html"
+        },
+        {
+          title: "Кейсы",
+          link: "cases.html"
+        },
+        {
+          title: "Микроразметка Schema",
+        }
+      ]
+    })
+      +schema()
+block modals

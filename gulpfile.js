@@ -41,6 +41,10 @@ const syncServer = () => {
   gulp.watch('source/guides/**/*.{scss,sass}', gulp.series(streamStyles));
   gulp.watch('source/guides/**/*.{js,json}', gulp.series(js, refresh));
 
+  gulp.watch('source/cases/**/*.pug', gulp.series(pug, refresh));
+  gulp.watch('source/cases/**/*.{scss,sass}', gulp.series(streamStyles));
+  gulp.watch('source/cases/**/*.{js,json}', gulp.series(js, refresh));
+
   gulp.watch('source/favicon/**', gulp.series(copy, refresh));
   gulp.watch('source/video/**', gulp.series(copy, refresh));
   gulp.watch('source/downloads/**', gulp.series(copy, refresh));

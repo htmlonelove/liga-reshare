@@ -55,4 +55,13 @@
       word-break: break-word;
     }
   }
+
+  &__link {
+    color: $color-neon-blue;
+    transition: color $trans-default;
+
+    @include hover-focus {
+      color: $color-torch-red;
+    }
+  }
 }
