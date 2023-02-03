@@ -3271,11 +3271,11 @@ button,
   bottom: -5px;
 }
 
-.custom-select .input-message--invalid {
+.custom-select .input-message.is-invalid {
   color: #ff0000;
 }
 
-.custom-select .input-message--valid {
+.custom-select .input-message.is-valid {
   color: #15ab07;
 }
 
@@ -3724,13 +3724,13 @@ button,
   bottom: -5px;
 }
 
-.custom-input .input-message--invalid,
-.custom-textarea .input-message--invalid {
+.custom-input .input-message.is-invalid,
+.custom-textarea .input-message.is-invalid {
   color: #ff0000;
 }
 
-.custom-input .input-message--valid,
-.custom-textarea .input-message--valid {
+.custom-input .input-message.is-valid,
+.custom-textarea .input-message.is-valid {
   color: #15ab07;
 }
 
@@ -3845,11 +3845,11 @@ button,
   bottom: -5px;
 }
 
-.custom-toggle .input-message--invalid {
+.custom-toggle .input-message.is-invalid {
   color: #ff0000;
 }
 
-.custom-toggle .input-message--valid {
+.custom-toggle .input-message.is-valid {
   color: #15ab07;
 }
 
@@ -3876,11 +3876,11 @@ button,
   bottom: -5px;
 }
 
-.toggle-group .input-message--invalid {
+.toggle-group .input-message.is-invalid {
   color: #ff0000;
 }
 
-.toggle-group .input-message--valid {
+.toggle-group .input-message.is-valid {
   color: #15ab07;
 }
 

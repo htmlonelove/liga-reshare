@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>Лига решений. Простой кастомный курсор</title>
+    <title>Лига решений. Корректировка года</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -428,7 +428,7 @@
                       <svg width="4" height="7" aria-hidden="true">
                         <use xlink:href="#icon-chevrone"></use>
                       </svg></a></li>
-                  <li class="breadcrumbs__item"><span class="breadcrumbs__link">Простой кастомный курсор</span></li>
+                  <li class="breadcrumbs__item"><span class="breadcrumbs__link">Корректировка года</span></li>
                 </ul>
               </div>
               <h1 class="hero__title">Компоненты</h1>
@@ -493,11 +493,11 @@
                           </li>
                           <li class="navbar__item"><a class="navbar__link" href="dynamic-adaptive.html">Динамический адаптив</a>
                           </li>
-                          <li class="navbar__item"><a class="navbar__link is-active" href="simple-cursor.html">Простой кастомный курсор</a>
+                          <li class="navbar__item"><a class="navbar__link" href="simple-cursor.html">Простой кастомный курсор</a>
                           </li>
                           <li class="navbar__item"><a class="navbar__link" href="adaptive-runner.html">Адаптивный бегунок</a>
                           </li>
-                          <li class="navbar__item"><a class="navbar__link" href="year-correction.html">Корректировка года</a>
+                          <li class="navbar__item"><a class="navbar__link is-active" href="year-correction.html">Корректировка года</a>
                           </li>
                           <!--+navbar-item("marquee.html", "Бегущаяя строка")-->
                         </ul>
@@ -550,19 +550,22 @@
               <section class="component" data-tabs="parent" data-delay="300">
                 <section class="component-heading">
                   <div class="component-heading__head">
-                    <h1 class="title">Простой кастомный курсор</h1>
+                    <h1 class="title">Корректировка года</h1>
                     <div class="component-heading__tabs">
                       <button class="component-heading__tab-control" type="button" data-tabs="control">Описание</button>
+                      <button class="component-heading__tab-control" type="button" data-tabs="control">Демо</button>
                     </div>
-                  </div><a class="component-heading__download-link btn" href="zip-components/simple-cursor.zip" download>Скачать компонент</a>
+                  </div><a class="component-heading__download-link btn" href="zip-components/cookies.zip" download>Скачать компонент</a>
                 </section>
                 <div class="component__content" data-tabs="content">
                   <section class="component-description" data-tabs="element">
-                    <p>Курсор состоит из следующих файлов: simple-cursor.scss, simple-cursor.js, они обязательны к переносу в проект!</p>
-                    <p>На странице, на которой будет использоваться курсор, в разметку нужно добавить:</p>
-                    <pre><code class="language-html">&lt;div class="simple-cursor is-hidden" data-cursor>
-  &lt;span></span>
-&lt;/div></code></pre>
+                    <p>Данный компонент создан для изменения в вёрстке года, на текущий.</p>
+                    <p>Дата берётся из системы.</p>
+                    <p>На элемент в котором должен отображаться год, нужно добавить дата атрибут <b>data-year</b>.</p>
+                  </section>
+                  <section class="component-demo" data-tabs="element">
+                    <p>Текущий год <span data-year></span>
+                    </p>
                   </section>
                 </div>
               </section>
@@ -575,7 +578,6 @@
             </div>
           </div>
         </div>
-        <div class="simple-cursor is-hidden" data-cursor><span></span></div>
       </main>
       <footer class="footer">
         <div class="container">
@@ -609,6 +611,5 @@
     </div>
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>
-    <script src="js/simpleCursor.min.js"></script>
   </body>
 </html>
