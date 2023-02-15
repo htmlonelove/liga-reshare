@@ -63,7 +63,7 @@ export class Validator {
 
   _validateTextInput(parent, input) {
     let flag = true;
-    if (input.value.length >= (+input.getAttribute('minlength') || 2)) {
+    if (input.value.length >= (+input.getAttribute('minlength') || 1)) {
       this._setItemValidState(parent, input);
     } else {
       this._setItemInvalidState(parent, input);

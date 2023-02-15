@@ -6,6 +6,11 @@ export class NavigationChanger {
     this._linkElements = document.querySelectorAll('[data-navigation-link]');
     this._header = document.querySelector('.header');
     this._heading = document.querySelector('.component-heading');
+
+    if (!this._linkElements.length) {
+      return;
+    }
+
     if (this._heading) {
       this._blockShift = this._header.clientHeight + this._heading.clientHeight + 20;
     }

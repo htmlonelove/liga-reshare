@@ -28,6 +28,7 @@ module.exports = {
     adaptiveRunner: './components/adaptive-runner/js/',
     simpleCursor: './components/simple-cursor/js/',
     openGraph: './components/open-graf/js/',
+    header: './components/header/js/',
   },
   devtool: isDev ? 'source-map' : false,
   output: {

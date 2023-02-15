@@ -1,0 +1,37 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Лига решений. Header simple" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = ""
+  - const headerMods = ""
+  - const hasFooter = true
+  - const currentUrl = "header-simple-example.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const pageType = "component"
+  - const pageJs = "js/header.min.js"
+
+block main
+  header.header-example(data-header)
+    .container
+      +logo({href: "index.html"}).header-example__logo
+      nav.header-example__nav
+        ul.header-example__list
+          li.header-example__item
+            a.header-example__link(href="components.html") Компоненты
+          li.header-example__item
+            a.header-example__link(href="cases.html") Кейсы
+          li.header-example__item
+            a.header-example__link(href="guides.html") Гайды
+          li.header-example__item
+            a.header-example__link.header-example__link--blue(href="https://ligaa.agency/", target="_blank") Лига А.
+      +git-link().header-example__git-link
+      button.header-example__burger(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-burger)
+        span.header-example__burger-text Меню
+        +icon("icon-close", 20, 20).header-example__burger-icon
+  main
+    section.section-example
+    section.section-example
+    section.section-example
+    section.section-example
+
+block modals
