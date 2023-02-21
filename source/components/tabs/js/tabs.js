@@ -32,8 +32,12 @@ export class Tabs {
 
   _initAllTabs() {
     const tabs = document.querySelectorAll('[data-tabs="parent"]');
+    const forLoadTabs = document.querySelectorAll('[data-tabs="element"].for-load');
     tabs.forEach((tab) => {
       this._initTab(tab);
+    });
+    forLoadTabs.forEach((tab) => {
+      tab.classList.remove('for-load');
     });
   }
 

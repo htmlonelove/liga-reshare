@@ -54,7 +54,7 @@ export class StickyHeader {
   _onLocomotiveScroll(evt) {
     this._checkTheme();
 
-    if (evt.direction === 'down' & evt.delta.y > this._hidePoint) {
+    if (evt.direction === 'down' && evt.delta.y > this._hidePoint) {
       this._hideHeader();
     }
 
@@ -67,7 +67,7 @@ export class StickyHeader {
     this._scrollY = document.documentElement.scrollTop;
     this._checkTheme();
 
-    if (this._checkScrollDirection() === 'down' & this._scrollY > this._hidePoint) {
+    if (this._checkScrollDirection() === 'down' && this._scrollY > this._hidePoint) {
       this._hideHeader();
     }
 
