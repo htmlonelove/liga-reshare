@@ -1,10 +1,21 @@
 .intro {
+  // --line-duration-koff: 5;
+  // --line-max-animation: 2.63;
+  // --delay-state-two: 1.77;
+
+  --line-duration-koff: 7;
+  --line-max-animation: 2.1;
+  --banner-duration: 0.86;
+  --delay-state-two: 1.3;
+  --delay-state-third: calc(var(--line-max-animation) + 0.1);
+
   margin: 50px 0 140px;
   padding: 100px 0;
   position: relative;
   overflow: hidden;
 
   @include vp-1023 {
+    padding: 110px 0;
     margin: 50px 0 100px 0;
   }
 
@@ -23,9 +34,13 @@
     display: block;
     left: 50%;
     position: absolute;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateZ(0);
     top: 0;
     width: 1440px;
+
+    @include vp-1023 {
+      width: 1292px;
+    }
 
     @include vp-767 {
       height: 228px;
@@ -38,8 +53,12 @@
     bottom: 0;
     left: 50%;
     position: absolute;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateZ(0) rotate(180deg);
     width: 1440px;
+
+    @include vp-1023 {
+      width: 1292px;
+    }
 
     @include vp-767 {
       height: 275px;
@@ -47,9 +66,33 @@
     }
   }
 
+  &__kraken {
+    .kraken-piece__line--1 .kraken-piece__dot--2,
+    .kraken-piece__line--2 .kraken-piece__dot--1,
+    .kraken-piece__line--2 .kraken-piece__dot--2,
+    .kraken-piece__line--3 .kraken-piece__dot--4,
+    .kraken-piece__line--5 .kraken-piece__dot--1 {
+      color: $color-neon-blue;
+    }
+  }
+
+  &__kraken-copy {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    animation: offset-kraken 0.3s calc(var(--delay-state-third) * 1s) ease-in-out forwards;
+
+    .kraken-piece__line--3 .kraken-piece__dot--3,
+    .kraken-piece__line--2 .kraken-piece__dot--3,
+    .kraken-piece__line--1 .kraken-piece__dot--3,
+    .kraken-piece__line--1 .kraken-piece__dot--4,
+    .kraken-piece__line--4 .kraken-piece__dot--1{
+      color: $color-neon-blue;
+    }
+  }
+
   &__description {
     background-color: $color-default-white;
-    border: 1px solid $color-default-black;
     border-radius: 40px;
     max-width: 560px;
     padding: 53px 34px 46px;
@@ -60,10 +103,12 @@
       max-width: unset;
       padding: 35px 40px 35px;
       width: unset;
+      transform: translateX(12px);
     }
 
     @include vp-767 {
       padding: 35px 15px;
+      transform: none;
     }
 
     @include vp-374 {
@@ -71,14 +116,60 @@
     }
   }
 
+  &__description-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+
+    @include vp-1023 {
+      transform: translateX(-12px);
+    }
+
+    @include vp-767 {
+      transform: none;
+    }
+  }
+
+  &__slogan {
+    opacity: 0;
+    animation: fade 0.4s ease calc(var(--delay-state-third) * 1s) forwards;
+  }
+
+  &__banner-stroke {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+
+      path {
+        stroke-dasharray: 0, var(--line-distance);
+        animation-name: draw-svg-path;
+        animation-duration: calc(var(--banner-duration) * 1s);
+        animation-delay: calc(var(--delay-state-two) * 1s);
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+
   &__title {
     display: flex;
     flex-direction: column;
     font-family: $ff-neue-machina;
+    color: $color-neon-blue;
     font-size: 88px;
     line-height: 77px;
-    margin: 0 0 25px 0;
+    margin: 0 0 15px 0;
     text-transform: uppercase;
+    text-align: center;
 
     @include vp-1023 {
       font-size: 70px;
