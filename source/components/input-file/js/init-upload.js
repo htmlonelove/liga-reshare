@@ -9,6 +9,7 @@ const uploadFileDropPreviewBlock = document.querySelector('[data-upload="file-dr
 export const uploadImage = () => new Upload(uploadImageBlock, {
   uploadLength: 4,
   dropZone: true,
+  preview: true,
   previewImg: true,
   maxFileSize: 1048576,
   accept: ['.png', '.jpg', '.jpeg', '.webp'],
