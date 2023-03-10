@@ -108,6 +108,20 @@ section.component-demo(data-tabs='element')
       p Input #[b data-validate-type="file", data-message-base="Файл обязателен к добавлению", data-message-extra="Файл слишком большой", data-on-input-validate, data-max-size="1048576"].
       +custom-input({inputType: "file", inputLabel: "Добавьте файл", inputName: "user-file", inputAccept: ".png, .jpg, .webp" })(data-validate-type="file", data-message-base="Файл обязателен к добавлению", data-message-extra="Размер файла не должен привышать 1мб", data-on-input-validate, data-max-size="1048576")
       hr
+      h2.subtitle Кастомные Input file
+      p Input #[b data-validate-type="custom-upload", data-required].
+      .input-upload.input-upload--file(data-upload="file", data-validate-type="custom-upload", data-required)
+        label
+          input(type="file", name="upload-file")
+          span.btn Загрузить файл
+      hr
+      .input-upload.input-upload--images-drop(data-upload="img-drop", data-validate-type="custom-upload", data-required)
+        .input-upload__drop-zone(data-drop-zone)
+          span.input-upload__drop-zone-text Перетащите сюда файлы
+        label(data-drop-zone)
+          input(type="file", name="upload-file")
+          span.btn Загрузить файл
+      hr
       h2.subtitle Чекбоксы
       p Чекбокс #[b data-validate-type="checkbox", data-message-base="Поле обязательно к заполнению"].
       div
@@ -169,8 +183,7 @@ section.component-demo(data-tabs='element')
         ]
       })("data-select", data-validate-type="select", data-name="some-name", data-id="id-example-2", data-message-base="Поле обязательно к заполнению").custom-select
       hr
-      h2.subtitle Кнопки отправки и сброса формы
-      p #[b Кнопка отправки формы].
-      button.btn.btn--form(type="submit") Отправить форму
-      p Кнопка сброса формы #[b с дата атрибутом type="reset" сделана кнопкой].
+      h2.subtitle Кнопки сброса и отправки формы
       button.btn.btn--form(type="reset") Сбросить форму
+      button.btn.btn--form(type="submit") Отправить форму
+

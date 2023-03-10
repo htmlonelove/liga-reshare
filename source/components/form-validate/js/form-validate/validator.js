@@ -221,6 +221,14 @@ export class Validator {
     return flag;
   }
 
+  _customUpload(parent, input) {
+    let flag = true;
+    if (parent.classList.contains('is-invalid') || !input.files[0]) {
+      flag = false;
+    }
+    return flag;
+  }
+
   _validateInput(type, parent, input) {
     switch (type) {
       case 'text':
@@ -239,6 +247,8 @@ export class Validator {
         return this._validateToggleGroup(parent, input);
       case 'file':
         return this._validateFile(parent, input);
+      case 'custom-upload':
+        return this._customUpload(parent, input);
       case 'custom-example':
         return this._customExample(parent, input);
       default:

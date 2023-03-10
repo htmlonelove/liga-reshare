@@ -1,5 +1,5 @@
 const path = require('path');
-const CircularDependencyPlugin = require('circular-dependency-plugin')
+const CircularDependencyPlugin = require('circular-dependency-plugin');
 const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const isProd = process.env.NODE_ENV === 'production';
@@ -29,6 +29,7 @@ module.exports = {
     simpleCursor: './components/simple-cursor/js/',
     openGraph: './components/open-graf/js/',
     header: './components/header/js/',
+    inputFile: './components/input-file/js/',
   },
   devtool: isDev ? 'source-map' : false,
   output: {

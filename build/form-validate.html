@@ -500,6 +500,8 @@
                           </li>
                           <li class="navbar__item"><a class="navbar__link" href="header.html">Header</a>
                           </li>
+                          <li class="navbar__item"><a class="navbar__link" href="input-file.html">Input file</a>
+                          </li>
                           <!--+navbar-item("marquee.html", "Бегущаяя строка")-->
                         </ul>
                       </div>
@@ -818,6 +820,7 @@
                         </tr>
                       </table>
                     </p>
+                    <p><b>Важно!</b> У кастомных инпутов тайп файл сообщения добавляются при создании экземпляра класса.</p>
                   </section>
                   <section class="component-demo" data-tabs="element">
                     <div data-form-validate data-callback="base">
@@ -870,6 +873,21 @@
                                 <input type="file" name="user-file" accept=".png, .jpg, .webp">
                               </label>
                             </div>
+                        <hr>
+                        <h2 class="subtitle">Кастомные Input file</h2>
+                        <p>Input <b>data-validate-type="custom-upload", data-required</b>.</p>
+                        <div class="input-upload input-upload--file" data-upload="file" data-validate-type="custom-upload" data-required>
+                          <label>
+                            <input type="file" name="upload-file"><span class="btn">Загрузить файл</span>
+                          </label>
+                        </div>
+                        <hr>
+                        <div class="input-upload input-upload--images-drop" data-upload="img-drop" data-validate-type="custom-upload" data-required>
+                          <div class="input-upload__drop-zone" data-drop-zone><span class="input-upload__drop-zone-text">Перетащите сюда файлы</span></div>
+                          <label data-drop-zone>
+                            <input type="file" name="upload-file"><span class="btn">Загрузить файл</span>
+                          </label>
+                        </div>
                         <hr>
                         <h2 class="subtitle">Чекбоксы</h2>
                         <p>Чекбокс <b>data-validate-type="checkbox", data-message-base="Поле обязательно к заполнению"</b>.</p>
@@ -931,11 +949,9 @@
                               </ul>
                             </div>
                         <hr>
-                        <h2 class="subtitle">Кнопки отправки и сброса формы</h2>
-                        <p><b>Кнопка отправки формы</b>.</p>
-                        <button class="btn btn--form" type="submit">Отправить форму</button>
-                        <p>Кнопка сброса формы <b>с дата атрибутом type="reset" сделана кнопкой</b>.</p>
+                        <h2 class="subtitle">Кнопки сброса и отправки формы</h2>
                         <button class="btn btn--form" type="reset">Сбросить форму</button>
+                        <button class="btn btn--form" type="submit">Отправить форму</button>
                       </form>
                     </div>
                   </section>
