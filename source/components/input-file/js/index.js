@@ -1,4 +1,4 @@
-import {uploadImage, uploadFile, uploadImageDrop, uploadFileDrop} from './init-upload';
+import {uploadImage, uploadFile, uploadImageDrop, uploadFileDrop, uploadFileDropPreview} from './init-upload';
 
 window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
@@ -6,5 +6,6 @@ window.addEventListener('DOMContentLoaded', () => {
     uploadFile();
     uploadImageDrop();
     uploadFileDrop();
+    uploadFileDropPreview();
   });
 });
