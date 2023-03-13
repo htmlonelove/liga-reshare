@@ -955,21 +955,25 @@ button,
 }
 
 .btn {
-  border: none;
-  background-color: #2c39f2;
-  color: #ffffff;
-  cursor: pointer;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-size: 16px;
-  line-height: 1;
-  font-weight: 600;
   margin: 0;
   padding: 17px 35px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1;
+  color: #ffffff;
+  background-color: #2c39f2;
+  border: none;
+  cursor: pointer;
   -webkit-transition: background-color 0.3s ease;
   -o-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
+}
+
+.btn.focus-visible:focus {
+  background-color: #d62155;
 }
 
 .btn:hover,
@@ -982,28 +986,24 @@ button,
 }
 
 .btn--form {
-  border-radius: 8px;
-  font-size: 18px;
-  line-height: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 34px 0 58px;
-  max-width: 300px;
-  padding: 10px 30px;
   width: 100%;
+  max-width: 300px;
+  margin: 34px 0 58px;
+  padding: 10px 30px;
+  font-size: 18px;
+  line-height: 24px;
+  border-radius: 8px;
 }
 
 .btn:disabled {
   opacity: 0.5;
   pointer-events: none;
-}
-
-.btn.focus-visible:focus {
-  background-color: #d62155;
 }
 
 .header {
@@ -2636,6 +2636,10 @@ button,
 .component-demo {
   padding: 34px 0 0 0;
   width: 100%;
+}
+
+.component-demo__form {
+  padding-bottom: 40px;
 }
 
 .component-demo .subtitle {

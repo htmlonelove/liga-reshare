@@ -67,7 +67,7 @@ mixin custom-select(options = {})
 
 
 section.component-demo(data-tabs='element')
-  div(data-form-validate, data-callback="base")
+  div.component-demo__form(data-form-validate, data-callback="base")
     form(method="post")
       h2.subtitle Инпуты
       p Input #[b data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required].
@@ -182,6 +182,33 @@ section.component-demo(data-tabs='element')
           {text: "Тема 6", value: "id-6"}
         ]
       })("data-select", data-validate-type="select", data-name="some-name", data-id="id-example-2", data-message-base="Поле обязательно к заполнению").custom-select
+      hr
+      h2.subtitle Кнопки сброса и отправки формы
+      button.btn.btn--form(type="reset") Сбросить форму
+      button.btn.btn--form(type="submit") Отправить форму
+  h2.subtitle Пример формы с выводом общего сообщения об ошибке.
+  div.component-demo__form(data-form-validate, data-callback="base", data-parent-validate="base", data-message-base="Заполните все данные", data-message-extra="Неверный ввод данных")
+    form(method="post" action="https://echo.htmlacademy.ru/")
+      h2.subtitle Инпуты
+      p Input #[b data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required].
+      +custom-input({
+        inputLabel: "Введите ваше имя",
+        inputName: "user-name-1",
+      })(data-validate-type="text", data-limitation="name", data-required)
+      hr
+      p Input #[b data-validate-type="matrix", data-matrix-limitation="digit", data-matrix="____ ______", data-message-base="Поле обязательно к заполнению", data-required].
+      +custom-input({
+        inputType: "text",
+        inputLabel: "Введите номер паспорта",
+        inputName: "user-passport",
+      })(data-validate-type="matrix", data-matrix-limitation="digit", data-matrix="____ ______", data-required)
+      hr
+      p Input #[b data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required].
+      +custom-input({
+        inputType: "email",
+        inputLabel: "Введите ваш email",
+        inputName: "user-email",
+      })(data-validate-type="email", data-required)
       hr
       h2.subtitle Кнопки сброса и отправки формы
       button.btn.btn--form(type="reset") Сбросить форму

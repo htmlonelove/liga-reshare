@@ -821,9 +821,36 @@
                       </table>
                     </p>
                     <p><b>Важно!</b> У кастомных инпутов тайп файл сообщения добавляются при создании экземпляра класса.</p>
+                    <p>Так же, возможен вывод общей ошибки у формы. Для этого родителю нужно добавтьб ряд дата аттрибутов:</p>
+                    <table>
+                      <tr>
+                        <th>
+                          <p>data-parent-validate="base"</p>
+                        </th>
+                        <td>
+                          <p>В данном дата аттрибуте указывается тип валидации у родителя, работает аналогично с типами валидации у инпутов.</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          <p>data-message-base="Сообщение"</p>
+                        </th>
+                        <td>
+                          <p>Сообщение, при неуспешной валидации, для формы. В случае отсутствия сообщение выводиться не будет.</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          <p>data-message-extra="Сообщение"</p>
+                        </th>
+                        <td>
+                          <p>Сообщение, при неуспешной валидации, для формы. В случае отсутствия будет выводиться сообщение data-message-base="Сообщение".</p>
+                        </td>
+                      </tr>
+                    </table>
                   </section>
                   <section class="component-demo" data-tabs="element">
-                    <div data-form-validate data-callback="base">
+                    <div class="component-demo__form" data-form-validate data-callback="base">
                       <form method="post">
                         <h2 class="subtitle">Инпуты</h2>
                         <p>Input <b>data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required</b>.</p>
@@ -947,6 +974,36 @@
                                 <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">Тема 5</li>
                                 <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">Тема 6</li>
                               </ul>
+                            </div>
+                        <hr>
+                        <h2 class="subtitle">Кнопки сброса и отправки формы</h2>
+                        <button class="btn btn--form" type="reset">Сбросить форму</button>
+                        <button class="btn btn--form" type="submit">Отправить форму</button>
+                      </form>
+                    </div>
+                    <h2 class="subtitle">Пример формы с выводом общего сообщения об ошибке.</h2>
+                    <div class="component-demo__form" data-form-validate data-callback="base" data-parent-validate="base" data-message-base="Заполните все данные" data-message-extra="Неверный ввод данных">
+                      <form method="post" action="https://echo.htmlacademy.ru/">
+                        <h2 class="subtitle">Инпуты</h2>
+                        <p>Input <b>data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required</b>.</p>
+                            <div class="custom-input" data-validate-type="text" data-limitation="name" data-required>
+                              <label><span class="custom-input__label">Введите ваше имя</span>
+                                <input type="text" name="user-name-1">
+                              </label>
+                            </div>
+                        <hr>
+                        <p>Input <b>data-validate-type="matrix", data-matrix-limitation="digit", data-matrix="____ ______", data-message-base="Поле обязательно к заполнению", data-required</b>.</p>
+                            <div class="custom-input" data-validate-type="matrix" data-matrix-limitation="digit" data-matrix="____ ______" data-required>
+                              <label><span class="custom-input__label">Введите номер паспорта</span>
+                                <input type="text" name="user-passport">
+                              </label>
+                            </div>
+                        <hr>
+                        <p>Input <b>data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required</b>.</p>
+                            <div class="custom-input" data-validate-type="email" data-required>
+                              <label><span class="custom-input__label">Введите ваш email</span>
+                                <input type="email" name="user-email">
+                              </label>
                             </div>
                         <hr>
                         <h2 class="subtitle">Кнопки сброса и отправки формы</h2>
