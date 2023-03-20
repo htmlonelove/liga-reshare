@@ -125,14 +125,19 @@
     line-height: 25px;
     padding: 0 20px 0 63px;
     position: relative;
-    transition: opacity $trans-default;
+    transition: color $trans-default;
     text-align: left;
     width: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
     @include hover {
       &:not(span) {
-        opacity: 0.5;
+        //opacity: 0.5;
+        color: $color-neon-blue;
+      }
+
+      svg {
+        fill: $color-neon-blue;
       }
     }
   }
@@ -142,7 +147,7 @@
     left: 32px;
     position: absolute;
     top: 5px;
-    transition: transform $trans-default;
+    transition: all $trans-default;
     width: 16px;
   }
 

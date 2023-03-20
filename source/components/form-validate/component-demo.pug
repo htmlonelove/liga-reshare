@@ -7,13 +7,13 @@ mixin custom-input(options = {})
   - const inputValue = options.inputValue ? options.inputValue : false
   - const inputMinLength = options.inputMinLength ? options.inputMinLength : false
   - const inputMaxLength = options.inputMaxLength ? options.inputMaxLength : false
+  - const inputAccept = options.inputAccept ? options.inputAccept : false
 
   .custom-input&attributes(attributes)
     label
       if inputLabel
         span.custom-input__label!=inputLabel
-      input(type=inputType, id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder)
-
+      input(type=inputType, id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder, accept=inputAccept)
 
 mixin custom-textarea(options = {})
   - const inputLabel = options.inputLabel ? options.inputLabel : false
@@ -87,7 +87,7 @@ section.component-demo(data-tabs='element')
       +custom-input({
         inputType: "email",
         inputLabel: "Введите ваш email",
-        inputName: "user-phone",
+        inputName: "user-email",
       })(data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required)
       hr
       p Input #[b data-validate-type="phone", data-on-input-validate, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-message-success="Поле заполнено верно", data-required].
@@ -104,6 +104,9 @@ section.component-demo(data-tabs='element')
         inputLabel: "Расскажите о себе",
         inputName: "user-info"
       })(data-validate-type="text")
+      hr
+      p Input #[b data-validate-type="file", data-message-base="Файл обязателен к добавлению", data-message-extra="Файл слишком большой", data-on-input-validate, data-max-size="1048576"].
+      +custom-input({inputType: "file", inputLabel: "Добавьте файл", inputName: "user-file", inputAccept: ".png, .jpg, .webp" })(data-validate-type="file", data-message-base="Файл обязателен к добавлению", data-message-extra="Размер файла не должен привышать 1мб", data-on-input-validate, data-max-size="1048576")
       hr
       h2.subtitle Чекбоксы
       p Чекбокс #[b data-validate-type="checkbox", data-message-base="Поле обязательно к заполнению"].

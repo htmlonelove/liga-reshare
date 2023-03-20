@@ -1,25 +1,34 @@
 .footer {
-  border-top: 2px solid $color-ghost-white;
+  position: relative;
+  z-index: 22;
   padding: 22px 0;
+  border-top: 2px solid $color-ghost-white;
+  background-color: $color-default-white;
 
   &__wrapper {
     display: grid;
+    align-items: center;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-    align-items: center;
+
     @include vp-767 {
       gap: 25px;
     }
   }
 
   &__address {
-    justify-self: start;
-    font-style: normal;
-    font-weight: 600;
     font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
     line-height: 150%;
+    justify-self: start;
+
     @include vp-767 {
       font-size: 8px;
+    }
+
+    @include vp-374 {
+      font-size: size-mobile(8px);
     }
   }
 
@@ -28,14 +37,14 @@
 
     @include vp-767 {
       .logo__first-part {
-        height: 13px;
         width: 58px;
+        height: 13px;
       }
 
       .logo__second-part {
+        width: 84px;
         height: 20px;
         margin: 0;
-        width: 84px;
       }
     }
   }
