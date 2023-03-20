@@ -12,6 +12,7 @@ import {initNavigationChanger} from './modules/init-navigation-changer';
 import {initArticleMenu} from './modules/init-article-menu';
 import {initChangeNumber} from './modules/init-change-number';
 import {initFixedNavbar} from './modules/init-fixed-navbar';
+import {initYearCorrection} from './modules/init-year-correction';
 import {initSearch} from './modules/init-search.js';
 
 
@@ -25,6 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
   window.scrollLock = new ScrollLock();
   iosVhFix();
   initHeaderObserver();
+  initYearCorrection();
   // Modules
   // ---------------------------------
 

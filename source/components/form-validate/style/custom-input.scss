@@ -94,17 +94,16 @@
       }
     }
   }
-
   .input-message {
     position: absolute;
     right: 0;
     bottom: -5px;
 
-    &--invalid {
+    &.is-invalid {
       color: #ff0000;
     }
 
-    &--valid {
+    &.is-valid {
       color: #15ab07;
     }
   }

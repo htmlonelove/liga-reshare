@@ -50,7 +50,7 @@
     "gulp-webp": "4.0.1",
     "postcss": "8.4.14",
     "sass": "1.53.0",
-    "stylelint": "13.13.1",
+    "stylelint": "14.16.1",
     "webpack": "4.42.0",
     "webpack-stream": "5.2.1"
   },

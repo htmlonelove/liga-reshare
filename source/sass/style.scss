@@ -3,6 +3,7 @@
 
 @import "vendor/normalize";
 @import "vendor/prism";
+@import "vendor/locomotive-scroll";
 // Swiper 7.4.1
 // @import "vendor/swiper";
 
@@ -72,6 +73,8 @@
 @import "../components/adaptive-runner/style/adaptive-runner";
 @import "../components/simple-cursor/style/simple-cursor";
 @import "../components/marquee/style/marquee";
+@import "../components/header/style/header-example";
+@import "../components/input-file/style/input-upload";
 
 // ---------------------------------
 

@@ -3,9 +3,10 @@ mixin footer(footerMods)
     .container
       .footer__wrapper
         address.footer__address
-          | ООО&nbsp;Ракета,&nbsp;2017&#8209;2022,
+          | ООО Ракета, 2017-
+          span(data-year) 2022,
           br
           | из&nbsp;Санкт-Петербурга с&nbsp;любовью.
-        +logo().footer__logo
+        +logo({href: "#"}).footer__logo
         +git-link().footer__git-link
 

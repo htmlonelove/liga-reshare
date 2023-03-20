@@ -1,0 +1,183 @@
+hsection.component-description
+  section(id="introduction")
+    h2.subtitle Что такое Schema?
+    p В 2011 году поисковики Google, Yahoo!, Bing и Яндекс объединились для работы над единым словарем метаданных Schema.org. Цель данной работы улучшить понимание поисковиками данных на сайте и повысить релевантность поисковой выдачи. Schema.org помогает поисковикам лучше понимать данные, представленные на сайте. На основе этих данных поисковики формируют расширенные сниппеты в поисковой выдаче.
+    p Schema.org предоставляет общедоступный словарь, с помощью которого разработчики могут размечать страницы, так чтобы они были понятны самым распространенным поисковым системам.
+  section(id="why")
+    h2.subtitle Зачем нужна микроразметка Schema?
+    p Несмотря на то, что поисковые системы постоянно развиваются и обзаводятся новыми механизмами для определения типов контента на страницах в сети, они все еще часто ошибаются, им сложно определить то, о чем идет речь на странице. Правильное описание товаров, блоков с комментариями, информационных постов и других элементов упрощает работу Google, Яндекс и аналогичным сервисам.
+    p Грамотная и структурированная разметка позитивно сказывается на SEO-показателях. Помимо этого микроразметка – это один из простейших способов попасть в расширенные результаты поиска (карточки, сниппеты), напротив ссылок на вашу страницу появятся дополнительные подсказки: звездочки, если вы публикуете товар с рейтингом, карта, если вы описываете какое-то место, постер фильма, если вы описываете на сайте кинокартину, кнопка для быстрого заказа столика, если вы владеете рестораном. Все это выделит ресурс с разметкой на фоне конкурентов и спровоцирует пользователя стать вашим клиентом.
+    p Также микроданные помогают нивелировать ошибки со стороны поисковой системы. Она не определит статью как комментарий или страницу с товаром как рецепт блюда.
+    p Если правильно разметить сайт, то это напрямую не повысит позиции ресурса в поисковой выдаче, но сделает результаты, касающиеся ваших страниц, более релевантными и визуально привлекательными. Когда пользователь видит в результатах не просто ссылку, а нужный ему контент, то он с большей вероятностью перейдет по этому контенту.
+    p Микроразметка работает и на мобильных устройствах, а результат видно даже чаще, чем в случае с компьютерами. Для мобильных устройств постоянно создаются новые типы сниппетов, помогающие быстрее находить нужную информацию.
+    p Ниже представлен два сниппета с одного и того же сайта, первый — с микроразметкой, второй — без нее.
+    .component-description__img
+      img(src="img/content/schema.png", width="629", height="219", alt="пример")
+  section(id="essence")
+    h2.subtitle Сущности
+    p Словарь микроразметки состоит из сущностей (например, Product ) и свойств, которые описывают параметры сущности (SKU, цена, наличие и т.д.).
+    p
+      | Весь список сущностей и документация представлены на официальном сайте
+      =" "
+      a(href="https://schema.org", target="_blank") schema.org
+      | .
+    p
+      | Так же вы можете ознакомиться с пока не полностью переведённой, неофициальной документацией на сайте
+      =" "
+      a(href="https://ruschema.org/", target="_blank") ruschema.org
+      | .
+    p Вот несколько популярных типов сущностей:
+    ul
+      li
+        p
+          a(href="https://schema.org/Person", target="_blank") Person
+          =" "
+          |  — сущность для описания человека.
+      li
+        p
+          a(href="https://schema.org/Product", target="_blank") Product
+          =" "
+          |  — сущность, которая используется для разметки любого товара или услуги.
+      li
+        p
+          a(href="https://schema.org/Event ", target="_blank") Event
+          =" "
+          |  — для описания событий, происходящих в определенное время и в определенном месте: концерт, лекция, фестиваль и т.д. Также в Schema.org есть более специфичные типы сущностей Event для разных видов событий. Например, бизнес события (
+          a(href="https://schema.org/BusinessEvent ", target="_blank") BusinessEvent
+          | ), фестиваль (
+          a(href="https://schema.org/Festival ", target="_blank") Festival
+          | ), спортивное событие (
+          a(href="https://schema.org/SportsEvent ", target="_blank") SportsEvent
+          | ).
+      li
+        p
+          a(href="https://schema.org/Organization", target="_blank") Organization
+          | ,
+          =" "
+          a(href="https://schema.org/LocalBusiness", target="_blank") LocalBusiness
+          =" "
+          |  — сущность для описания подробных сведений о вашей компании.
+          br
+          b Не стоит использовать на нескольких страницах вашего сайта данные сущности (Organization/LocalBusiness), так как это может запутать поисковые системы.
+      li
+        p
+          a(href="https://schema.org/Breadcrumbs", target="_blank") Breadcrumbs
+          =" "
+          |  — сущность для описания цепочки или «хлебных крошек». Она позволяет понимать иерархию страниц сайта и отображает навигационные цепочки, в большинстве случаев разделяя на части соответствующий URL-адрес в сниппете.
+      li
+        p
+          a(href="https://schema.org/Person", target="_blank") Article
+          =" "
+          |  — сущность для описания статей. Также в Schema.org есть более специфичные типы сущностей для описания статей. Например, статья, содержимое которой носит новостной характер (
+          a(href="https://schema.org/NewsArticle", target="_blank") NewsArticle
+          | ), пост блога (
+          a(href="https://schema.org/BlogPosting", target="_blank") BlogPosting
+          | ), отчёт, составленный государственной или негосударственной организацией (
+          a(href="https://schema.org/Report", target="_blank") Report
+          | ), научная статья (
+          a(href="https://schema.org/ScholarlyArticle", target="_blank") ScholarlyArticle
+          | ), техническая статья (
+          a(href="https://schema.org/TechArticle", target="_blank") TechArticle
+          | )
+  section(id="example")
+    h2.subtitle Как размечать контент с помощью микроразметки
+    p Сразу отметим, что на всех примерах отображается синтаксис Microdata. Так как большая часть нашей аудитории распологается в РФ, то мы рекомендуем использовать именно этот стандарт, потому что Яндекс не работает с альтернативным форматом – JSON-LD.
+    p Ниже представлен пример простой карточки товара. Мы видя карточку понимаем что это, но для робота это просто набор тегов.
+    pre
+      code.language-html.
+        &lt;article>
+          &lt;img src="img/content/boots.png" width="100" height="100" alt="Ботинки мужские">
+          &lt;a href="#">
+            &lt;h3>Ботинки мужские&lt;/h3>
+          &lt;/a>
+          &lt;p>Очень удобные и красивые ботинки!&lt;/p>
+          &lt;div>
+            &lt;span>Цена 10 000&lt;/span>
+          &lt;/div>
+        &lt;/article>
+    p
+      b itemscope
+    p itemscope - данный атрибут говорит о том что тот блок на котором распологается данный атрибут родительский.
+    p
+      b itemtype
+    p itemtype - данный атрибут служит для указания схемы которую мы будем использовать. В нем мы указываем ссылку на схему которую будем использовать в блоке itemtype="https://schema.org/Product".
+    pre
+      code.language-html.
+        &lt;article itemscope itemtype="https://schema.org/Product">
+          &lt;img src="img/content/boots.png" width="100" height="100" alt="Ботинки мужские">
+          &lt;a href="#">
+            &lt;h3>Ботинки мужские&lt;/h3>
+          &lt;/a>
+          &lt;p>Очень удобные и красивые ботинки!&lt;/p>
+          &lt;div>
+            &lt;span>Цена 10 000&lt;/span>
+          &lt;/div>
+        &lt;/article>
+    p
+      b itemprop
+    p
+      | itemprop - данный атрибут говорит о свойствах сущности.
+      br
+      | itemprop="image" - указывает на то что это изображение товара.
+      br
+      | itemprop="url" - указывает на то что это ссылка на товар.
+      br
+      | itemprop="name" - указывает на то что это имя товара.
+      br
+      | itemprop="description" - указывает на то что это описание товара.
+      br
+      | itemprop="offers" - указывает на предложение предоставить этот товар — например, предложение продать товар.
+
+    pre
+      code.language-html.
+        &lt;article itemscope itemtype="https://schema.org/Product">
+          &lt;img itemprop="image" src="img/content/boots.png" width="100" height="100" alt="Ботинки мужские">
+          &lt;a itemprop="url" href="#">
+            &lt;h3 itemprop="name">Ботинки мужские&lt;/h3>
+          &lt;/a>
+          &lt;p itemprop="description">Очень удобные и красивые ботинки!&lt;/p>
+          &lt;div itemprop="offers">
+            &lt;span>Цена 10 000&lt;/span>
+          &lt;/div>
+        &lt;/article>
+    p
+      b Вложенные сущности
+    p Мы можем создавать новые родительские блоки (itemscope) внутри других родительских блоков.
+    pre
+      code.language-html.
+        &lt;article itemscope itemtype="https://schema.org/Product">
+          &lt;img itemprop="image" src="img/content/boots.png" width="100" height="100" alt="Ботинки мужские">
+          &lt;a itemprop="url" href="#">
+            &lt;h3 itemprop="name">Ботинки мужские&lt;/h3>
+          &lt;/a>
+          &lt;p itemprop="description">Очень удобные и красивые ботинки!&lt;/p>
+          &lt;div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            &lt;span itemprop="price">Цена 10 000&lt;/span>
+          &lt;/div>
+        &lt;/article>
+    p Если в дизайне не хватает каких-то элементов, которые мы хотели бы указать для поисковой системы, мы можем их добавить с помощью тегов meta и link.
+    p &lt;meta itemprop="priceCurrency" content="RUB"> указывает валюту.
+    p &lt;link itemprop="availability" href="https://schema.org/InStock"> указывает на то что товар в наличии.
+    pre
+      code.language-html.
+        &lt;article itemscope itemtype="https://schema.org/Product">
+          &lt;img itemprop="image" src="img/content/boots.png" width="100" height="100" alt="Ботинки мужские">
+          &lt;a itemprop="url" href="#">
+            &lt;h3 itemprop="name">Ботинки мужские&lt;/h3>
+          &lt;/a>
+          &lt;p itemprop="description">Очень удобные и красивые ботинки!&lt;/p>
+          &lt;div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            &lt;span itemprop="price">Цена 10 000&lt;/span>
+            &lt;meta itemprop="priceCurrency" content="RUB">
+            &lt;link itemprop="availability" href="https://schema.org/InStock">
+          &lt;/div>
+        &lt;/article>
+  section(id="check")
+    h2.subtitle Проверка валидности
+    p
+      | Закончив с оформлением атрибутов и тегов, обязательно прогоните свой сайт через
+      =" "
+      a(href="https://validator.schema.org/", target="_blank") валидатор Schema
+      | .
+      =" "
+      | Это специальное приложение, проверяющее ресурс на соответствие стандартам словаря. Оно помогает еще до публикации изменений проверить корректность введенных данных и устранить обнаруженные ошибки. По принципу работу он напоминает валидаторы HTML и CSS. Проверить можно как целую страницу, так и отдельный кусок кода.

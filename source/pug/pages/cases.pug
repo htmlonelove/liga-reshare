@@ -1,0 +1,28 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Кейсы" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const currentUrl = "cases.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const pageType = "case"
+
+block main
+  main
+    +content({
+      title: "Кейсы",
+      links: [
+        {
+          title: "Главная",
+          link: "index.html"
+        },
+        {
+          title: "Кейсы"
+        }
+      ]
+    })
+      +cases()
+
+block modals

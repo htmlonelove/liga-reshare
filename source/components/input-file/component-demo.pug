@@ -1,0 +1,39 @@
+section.component-demo(data-tabs="element")
+  form(action="https://echo.htmlacademy.ru/", method="post", enctype="multipart/form-data")
+    p Input file для загрузки изображений с ограничением по размеру файла, с превью загруженных файлов
+    .input-upload.input-upload--images(data-upload="img")
+      label
+        input(type="file", name="upload-img")
+        span.btn Загрузить изображение
+    p Input file для загрузки файлов с ограничением по размеру всех файлов, с превью загруженных файлов
+    .input-upload.input-upload--file(data-upload="file")
+      label
+        input(type="file", name="upload-file")
+        span.btn Загрузить файл
+    p Input file для загрузки изображений с ограничением по размеру файла, с превью загруженных файлов в виде dropZone
+    .input-upload.input-upload--images-drop(data-upload="img-drop")
+      .input-upload__drop-zone(data-drop-zone)
+        span.input-upload__drop-zone-text Перетащите сюда файлы
+      label(data-drop-zone)
+        input(type="file", name="upload-file")
+        span.btn Загрузить файл
+    p Input file для загрузки файлов с ограничением по размеру файла, с превью загруженных файлов в виде dropZone
+    .input-upload.input-upload--file-drop(data-upload="file-drop")
+      .input-upload__drop-zone(data-drop-zone)
+        span.input-upload__drop-zone-text Перетащите сюда файлы
+      label
+        input(type="file", name="upload-file")
+        span.input-upload.btn Загрузить файл
+    p Input file для загрузки файлов с ограничением по размеру файла, с превью загруженных файлов в блок превью и с  dropZone
+    .input-upload.input-upload--file-drop(data-upload="file-drop-preview")
+      .input-upload__drop-zone(data-drop-zone)
+        span.input-upload__drop-zone-text Перетащите сюда файлы
+      label
+        input(type="file", name="upload-file")
+        span.input-upload.btn Загрузить файл
+    button.btn(type="reset") Сбросить
+    button.btn(type="submit") Отправить
+
+
+
+
