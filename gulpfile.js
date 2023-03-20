@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
 import del from 'del';
-import styles from './gulp/compileStyles.mjs';
+import {compileStyles, compileMinStyles} from './gulp/compileStyles.mjs';
 import {copy, copyImages, copySvg} from './gulp/copyAssets.mjs';
 import js from './gulp/compileScripts.mjs';
 import {svgo, sprite, createWebp, optimizeImages} from './gulp/optimizeImages.mjs';
@@ -11,7 +11,7 @@ import componentsStyles from './gulp/compileComponentsStyles.mjs';
 import zipFiles from './gulp/zipFiles.mjs';
 
 const server = browserSync.create();
-const streamStyles = () => styles().pipe(server.stream());
+const streamStyles = () => compileStyles().pipe(server.stream());
 
 const clean = () => del('build');
 const cleanComponents = () => del('build/components');
@@ -56,21 +56,31 @@ const refresh = (done) => {
   done();
 };
 
-const baseSeries = gulp.series(
+const build = gulp.series(
   clean,
   svgo,
   componentsPug,
   componentsStyles,
   copy,
-  styles,
+  compileMinStyles,
   sprite,
   js,
   pug,
   zipFiles,
   cleanComponents,
 );
-
-const build = gulp.series(baseSeries);
-const start = gulp.series(baseSeries, syncServer);
+const start = gulp.series(
+  clean,
+  svgo,
+  componentsPug,
+  componentsStyles,
+  copy,
+  compileStyles,
+  sprite,
+  js,
+  pug,
+  zipFiles,
+  cleanComponents,
+  syncServer);
 
 export {optimizeImages as imagemin, createWebp as webp, build, start};
