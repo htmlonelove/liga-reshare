@@ -16,7 +16,7 @@
   }
 
   @include vp-767 {
-    padding: 227px 0 265px;
+    padding: 214px 0 250px;
     margin: 0 0 80px 0;
   }
 
@@ -107,13 +107,14 @@
 
   &__description {
     background-color: $color-default-white;
-    border-radius: 40px;
+    border-radius: 30px;
     max-width: 560px;
     padding: 53px 34px 46px;
     position: relative;
     width: 100%;
 
     @include vp-1023 {
+      border-radius: 20px;
       max-width: unset;
       padding: 35px 40px 35px;
       width: unset;
@@ -126,6 +127,7 @@
     }
 
     @include vp-374 {
+      border-radius: 18px;
       padding: size(35px) size(15px);
     }
   }
