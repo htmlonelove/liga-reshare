@@ -4,6 +4,13 @@ const sandwich = document.querySelector('[data-sandwich]');
 const nav = document.querySelector('[data-main-nav]');
 const gitLink = document.querySelector('.header__git-link');
 
+const removeTransition = (el) => {
+  el.classList.add('no-transition');
+  setTimeout(() => {
+    el.classList.remove('no-transition');
+  }, 300);
+};
+
 const openMenu = () => {
   const navItem = nav.querySelectorAll('[data-nav-item]');
   window.scrollLock.disableScrolling();
@@ -14,6 +21,10 @@ const openMenu = () => {
   headerLogo.classList.add('is-active');
   navItem.forEach((item, index) => {
     item.style.transitionDelay = `${0.2 + index * 0.1}s`;
+
+    setTimeout(() => {
+      item.style.transitionDelay = '';
+    }, 0.15 + 0.2 + index * 1000);
   });
 };
 
@@ -37,6 +48,8 @@ const breakpointChecker = () => {
     if (nav.classList.contains('is-active')) {
       closeMenu(true);
     }
+  } else {
+    removeTransition(nav);
   }
   breakpointMd.addListener(breakpointChecker);
 };
