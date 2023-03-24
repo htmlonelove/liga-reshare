@@ -1,19 +1,24 @@
 mixin intro()
   section.intro
+
     .intro__kraken-top
       .intro__kraken
         include ../../../img/svg/kraken-piece.svg
       .intro__kraken-copy
         include ../../../img/svg/kraken-piece.svg
-      //- source(media='(max-width: 767px)', srcset="img/svg/kraken-top-mobile.svg")
-      //- img(src="img/svg/kraken-top-desktop.svg", width="1440", height="290")
+
+    .intro__kraken-top.intro__kraken-top--mobile
+      img(src="img/svg/kraken-top-mobile.svg", width="350", height="252")
+
     .intro__kraken-bottom
       .intro__kraken
         include ../../../img/svg/kraken-piece.svg
       .intro__kraken-copy
         include ../../../img/svg/kraken-piece.svg
-      //- source(media='(max-width: 767px)', srcset="img/svg/kraken-bottom-mobile.svg")
-      //- img(src="img/svg/kraken-bottom-desktop.svg", width="1440", height="290")
+
+    .intro__kraken-bottom.intro__kraken-bottom--mobile
+      img(src="img/svg/kraken-bottom-mobile.svg", width="350", height="252")
+
     .container
       .intro__description
         .intro__banner-stroke
@@ -24,28 +29,3 @@ mixin intro()
             span Лига
             span.intro__title.intro__title--blue Решений
           p.intro__slogan Изучай. Внедряй. Создавай.
-
-
-    //- вспомогательный скрипт для расчетов длины анимации и длины линий path
-    //- используйте его только для того чтобы получить значения а потом заинлайнить их в svg и обновить переменные в css
-
-    //- script.
-    //-   const parent = document.querySelector('.intro');
-    //-   let prevTime = 0;
-
-    //-   function totalLength() {
-    //-     let lineGroup = document.querySelectorAll('.kraken-piece__line');
-    //-     lineGroup.forEach((line) => {
-    //-       const path = line.querySelector('.kraken-piece__path');
-    //-       let len = Math.round(path.getTotalLength());
-    //-       line.style.setProperty('--line-distance', len);
-    //-       const currentTime = parseFloat(window.getComputedStyle(path)['animation-delay']) + parseFloat(window.getComputedStyle(path)['animation-duration']);
-
-    //-       if (currentTime > prevTime) {
-    //-         prevTime = currentTime;
-    //-       }
-    //-     });
-    //-   }
-
-    //-   totalLength();
-    //-   parent.style.setProperty('--line-max-animation', prevTime);

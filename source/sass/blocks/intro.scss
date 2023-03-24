@@ -1,13 +1,9 @@
 .intro {
-  // --line-duration-koff: 5;
-  // --line-max-animation: 2.63;
-  // --delay-state-two: 1.77;
-
   --line-duration-koff: 7;
-  --line-max-animation: 2.1;
-  --banner-duration: 0.86;
+  --line-max-animation: 1.879;
   --delay-state-two: 1.3;
-  --delay-state-third: calc(var(--line-max-animation) + 0.1);
+  --banner-duration: calc(var(--line-max-animation) - var(--delay-state-two));
+  --delay-state-third: calc(var(--delay-state-two) + var(--banner-duration) + 0.1);
 
   margin: 50px 0 140px;
   padding: 100px 0;
@@ -43,8 +39,17 @@
     }
 
     @include vp-767 {
+      display: none;
       height: 228px;
       width: 375px;
+    }
+
+    &--mobile {
+      display: none;
+
+      @include vp-767 {
+        display: block;
+      }
     }
   }
 
@@ -61,8 +66,17 @@
     }
 
     @include vp-767 {
+      display: none;
       height: 275px;
       width: 375px;
+    }
+
+    &--mobile {
+      display: none;
+
+      @include vp-767 {
+        display: block;
+      }
     }
   }
 
@@ -148,6 +162,7 @@
       width: 100%;
       height: 100%;
       pointer-events: none;
+      overflow: visible;
 
       path {
         stroke-dasharray: 0, var(--line-distance);
