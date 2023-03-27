@@ -1,20 +1,20 @@
 .component-heading {
   position: sticky;
   z-index: 10;
-  top: 79px;
+  top: 69px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0 17px 0;
+  padding: 15px 0;
   border-bottom: 2px solid $color-ghost-white;
   background-color: $color-default-white;
 
   @include vp-1279 {
-    top: 82px;
+    top: 72px;
   }
 
   @include vp-1023 {
-    top: 73px;
+    top: 63px;
     padding: 20px 60px 17px 0;
   }
 

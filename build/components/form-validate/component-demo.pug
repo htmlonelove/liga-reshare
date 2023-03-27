@@ -1,0 +1,216 @@
+mixin custom-input(options = {})
+  - const inputLabel = options.inputLabel ? options.inputLabel : false
+  - const inputPlaceholder = options.inputPlaceholder ? options.inputPlaceholder : false
+  - const inputType = options.inputType ? options.inputType : "text"
+  - const inputId = options.inputId ? options.inputId : false
+  - const inputName = options.inputName ? options.inputName : false
+  - const inputValue = options.inputValue ? options.inputValue : false
+  - const inputMinLength = options.inputMinLength ? options.inputMinLength : false
+  - const inputMaxLength = options.inputMaxLength ? options.inputMaxLength : false
+  - const inputAccept = options.inputAccept ? options.inputAccept : false
+
+  .custom-input&attributes(attributes)
+    label
+      if inputLabel
+        span.custom-input__label!=inputLabel
+      input(type=inputType, id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder, accept=inputAccept)
+
+mixin custom-textarea(options = {})
+  - const inputLabel = options.inputLabel ? options.inputLabel : false
+  - const inputPlaceholder = options.inputPlaceholder ? options.inputPlaceholder : false
+  - const inputId = options.inputId ? options.inputId : false
+  - const inputName = options.inputName ? options.inputName : false
+  - const inputValue = options.inputValue ? options.inputValue : false
+  - const inputMinLength = options.inputMinLength ? options.inputMinLength : false
+  - const inputMaxLength = options.inputMaxLength ? options.inputMaxLength : false
+
+  .custom-textarea&attributes(attributes)
+    label
+      if inputLabel
+        span.custom-textarea__label!=inputLabel
+      textarea(id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder)
+
+
+mixin custom-toggle(options = {})
+  - const inputLabel = options.inputLabel ? options.inputLabel : false
+  - const inputType = options.inputType ? options.inputType : "checkbox"
+  - const inputId = options.inputId ? options.inputId : false
+  - const inputChecked = options.inputChecked || false
+  - const inputName = options.inputName ? options.inputName : false
+  - const inputValue = options.inputValue ? options.inputValue : false
+
+  .custom-toggle&attributes(attributes)
+    label
+      input(type=inputType, value=inputValue, id=inputId, name=inputName, checked=inputChecked)
+      span.custom-toggle__icon
+      if inputLabel
+        span.custom-toggle__label!=inputLabel
+
+
+mixin custom-select(options = {})
+  - const selectLabel = options.label ? options.label : false
+  - const selectPlaceholder = options.placeholder ? options.placeholder : false
+  - const buttonAriaLabel = options.buttonAriaLabel ? options.buttonAriaLabel : "Выберите одну из опций"
+
+  div&attributes(attributes)
+    if selectLabel
+      span.custom-select__label=selectLabel
+    if selectPlaceholder
+      span.custom-select__placeholder=selectPlaceholder
+    button.custom-select__button(type="button", aria-label=buttonAriaLabel)
+      span.custom-select__text
+      span.custom-select__icon
+    ul.custom-select__list(role="listbox")
+      each item in options.optionsList
+        - const ariaSelected = item.isActive ? "true" : "false"
+        li.custom-select__item(class=itemClass, tabindex="0", data-select-value=item.value, aria-selected=ariaSelected, role="option")=item.text
+
+
+section.component-demo(data-tabs='element')
+  div.component-demo__form(data-form-validate, data-callback="base")
+    form(method="post")
+      h2.subtitle Инпуты
+      p Input #[b data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required].
+      +custom-input({
+        inputLabel: "Введите ваше имя",
+        inputName: "user-name-1",
+      })(data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required)
+      hr
+      p Input #[b data-validate-type="matrix", data-matrix-limitation="digit", data-matrix="____ ______", data-message-base="Поле обязательно к заполнению", data-required].
+      +custom-input({
+        inputType: "text",
+        inputLabel: "Введите номер паспорта",
+        inputName: "user-passport",
+      })(data-validate-type="matrix", data-matrix-limitation="digit", data-matrix="____ ______", data-message-base="Поле обязательно к заполнению", data-required)
+      hr
+      p Input #[b data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required].
+      +custom-input({
+        inputType: "email",
+        inputLabel: "Введите ваш email",
+        inputName: "user-email",
+      })(data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required)
+      hr
+      p Input #[b data-validate-type="phone", data-on-input-validate, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-message-success="Поле заполнено верно", data-required].
+      +custom-input({
+        inputType: "tel",
+        inputLabel: "Введите ваш телефон",
+        inputName: "user-phone"
+        })(data-validate-type="phone", data-on-input-validate, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-message-success="Поле заполнено верно", data-required)
+      p Input #[b data-validate-type="custom-example", data-message-base="Поле обязательно к заполнению", data-message-success="Поле заполнено верно", data-required].
+      +custom-input({inputLabel: "Введите 10 символов", inputName: "user-field", inputMinLength: "10"})(data-validate-type="custom-example", data-on-input-validate, data-required)
+      hr
+      p Textarea #[b data-validate-type="text"].
+      +custom-textarea({
+        inputLabel: "Расскажите о себе",
+        inputName: "user-info"
+      })(data-validate-type="text")
+      hr
+      p Input #[b data-validate-type="file", data-message-base="Файл обязателен к добавлению", data-message-extra="Файл слишком большой", data-on-input-validate, data-max-size="1048576"].
+      +custom-input({inputType: "file", inputLabel: "Добавьте файл", inputName: "user-file", inputAccept: ".png, .jpg, .webp" })(data-validate-type="file", data-message-base="Файл обязателен к добавлению", data-message-extra="Размер файла не должен привышать 1мб", data-on-input-validate, data-max-size="1048576")
+      hr
+      h2.subtitle Кастомные Input file
+      p Input #[b data-validate-type="custom-upload", data-required].
+      .input-upload.input-upload--file(data-upload="file", data-validate-type="custom-upload", data-required)
+        label
+          input(type="file", name="upload-file")
+          span.btn Загрузить файл
+      hr
+      .input-upload.input-upload--images-drop(data-upload="img-drop", data-validate-type="custom-upload", data-required)
+        .input-upload__drop-zone(data-drop-zone)
+          span.input-upload__drop-zone-text Перетащите сюда файлы
+        label(data-drop-zone)
+          input(type="file", name="upload-file")
+          span.btn Загрузить файл
+      hr
+      h2.subtitle Чекбоксы
+      p Чекбокс #[b data-validate-type="checkbox", data-message-base="Поле обязательно к заполнению"].
+      div
+        +custom-toggle({
+          inputLabel: "Чекбокс",
+          inputName: "user-agreement",
+          inputValue: "user-agreement-1",
+          inputChecked: false
+        })(data-validate-type="checkbox", data-message-base="Поле обязательно к заполнению").custom-toggle--checkbox
+      hr
+      p Группа чекбоксов #[b data-validate-type="toggle-group"].
+      div.toggle-group(data-validate-type="toggle-group", data-message-base="Поле обязательно к заполнению")
+        +custom-toggle({
+          inputLabel: "Чекбокс",
+          inputName: "user-agreement",
+          inputValue: "user-agreement-1",
+          inputChecked: false
+        }).custom-toggle--checkbox
+        +custom-toggle({
+          inputLabel: "Чекбокс",
+          inputName: "user-agreement",
+          inputValue: "user-agreement-2",
+          inputChecked: false
+        }).custom-toggle--checkbox
+        +custom-toggle({
+          inputLabel: "Чекбокс",
+          inputName: "user-agreement",
+          inputValue: "user-agreement-3",
+          inputChecked: false
+        }).custom-toggle--checkbox
+        +custom-toggle({
+          inputLabel: "Чекбокс",
+          inputName: "user-agreement",
+          inputValue: "user-agreement-4",
+          inputChecked: false
+        }).custom-toggle--checkbox
+      hr
+      h2.subtitle Селекты
+      p Селект простой с выбранной опцией.
+      +custom-select({
+        optionsList: [
+          {text: "Тема 1", value: "id-1", isActive: true},
+          {text: "Тема 2", value: "id-2"},
+          {text: "Тема 3", value: "id-3"},
+          {text: "Тема 4", value: "id-4"},
+          {text: "Тема 5", value: "id-5"},
+          {text: "Тема 6", value: "id-6"}
+        ]
+      })("data-select", data-validate-type="select", data-name="some-name", data-id="id-example-1", data-message-base="Поле обязательно к заполнению").custom-select
+      p Селект простой без выбранной опции.
+      +custom-select({
+        optionsList: [
+          {text: "Тема 1", value: "id-1"},
+          {text: "Тема 2", value: "id-2"},
+          {text: "Тема 3", value: "id-3"},
+          {text: "Тема 4", value: "id-4"},
+          {text: "Тема 5", value: "id-5"},
+          {text: "Тема 6", value: "id-6"}
+        ]
+      })("data-select", data-validate-type="select", data-name="some-name", data-id="id-example-2", data-message-base="Поле обязательно к заполнению").custom-select
+      hr
+      h2.subtitle Кнопки сброса и отправки формы
+      button.btn.btn--form(type="reset") Сбросить форму
+      button.btn.btn--form(type="submit") Отправить форму
+  h2.subtitle Пример формы с выводом общего сообщения об ошибке.
+  div.component-demo__form(data-form-validate, data-callback="base", data-parent-validate="base", data-message-base="Заполните все данные", data-message-extra="Неверный ввод данных")
+    form(method="post" action="https://echo.htmlacademy.ru/")
+      h2.subtitle Инпуты
+      p Input #[b data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required].
+      +custom-input({
+        inputLabel: "Введите ваше имя",
+        inputName: "user-name-1",
+      })(data-validate-type="text", data-limitation="name", data-required)
+      hr
+      p Input #[b data-validate-type="matrix", data-matrix-limitation="digit", data-matrix="____ ______", data-message-base="Поле обязательно к заполнению", data-required].
+      +custom-input({
+        inputType: "text",
+        inputLabel: "Введите номер паспорта",
+        inputName: "user-passport",
+      })(data-validate-type="matrix", data-matrix-limitation="digit", data-matrix="____ ______", data-required)
+      hr
+      p Input #[b data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required].
+      +custom-input({
+        inputType: "email",
+        inputLabel: "Введите ваш email",
+        inputName: "user-email",
+      })(data-validate-type="email", data-required)
+      hr
+      h2.subtitle Кнопки сброса и отправки формы
+      button.btn.btn--form(type="reset") Сбросить форму
+      button.btn.btn--form(type="submit") Отправить форму
+

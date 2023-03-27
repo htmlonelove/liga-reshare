@@ -1,0 +1,32 @@
+.toggle-group {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  padding: 0;
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+
+  &.is-invalid {
+    label span {
+      color: #ff1553;
+    }
+  }
+
+  .input-message {
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+
+    &.is-invalid {
+      color: #ff0000;
+    }
+
+    &.is-valid {
+      color: #15ab07;
+    }
+  }
+}

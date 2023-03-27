@@ -402,7 +402,18 @@
             </ul>
           </nav>
           <!-- Миксин поиска-->
-          <!--+search().header__search--><a class="git-link header__git-link" href="https://github.com/htmlonelove/liga-reshare" target="_blank" rel="nofollow noopener noreferrer" aria-label="Ссылка на репозиторий">
+          <div class="search" data-search="./data/data-search.json" data-da=".main-nav,1023,last">
+            <form class="search__form" autocomplete="off">
+              <input class="search__input" type="text" name="headerSearchInput" aria-label="Поиск по сайту" value=""><span class="search__button" type="submit" aria-label="Найти">
+                <svg width="20" height="20" aria-hidden="true">
+                  <use xlink:href="#icon-search"></use>
+                </svg></span>
+            </form>
+            <div class="search__wrapper">
+              <p class="search__note">Введите Ваш запрос</p>
+              <ul class="search__list"></ul>
+            </div>
+          </div><a class="git-link header__git-link" href="https://github.com/htmlonelove/liga-reshare" target="_blank" rel="nofollow noopener noreferrer" aria-label="Ссылка на репозиторий">
             <svg width="35" height="35" aria-hidden="true">
               <use xlink:href="#icon-git"></use>
             </svg></a>

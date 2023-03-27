@@ -5,8 +5,8 @@
 
   &:focus-within {
     .search__wrapper {
-      opacity: 1;
       pointer-events: all;
+      opacity: 1;
     }
   }
 
@@ -81,26 +81,28 @@
     top: 100%;
     left: 0;
     width: 100%;
+    transition: opacity $trans-default;
+    pointer-events: none;
+    opacity: 0;
     border: 2px solid $color-ghost-white;
     border-top: none;
     border-radius: 0 0 8px 8px;
     background-color: $color-default-white;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity $trans-default;
   }
 
   &__note {
-    padding: 10px 15px;
     font-size: 16px;
     line-height: 18px;
     margin: 0;
+    padding: 10px 15px;
   }
 
   &__list {
     margin: 0;
     padding: 0;
     list-style: none;
+    max-height: 200px;
+    overflow: auto;
   }
 
   &__item {

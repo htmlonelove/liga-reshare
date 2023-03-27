@@ -13,8 +13,9 @@ import {initArticleMenu} from './modules/init-article-menu';
 import {initChangeNumber} from './modules/init-change-number';
 import {initFixedNavbar} from './modules/init-fixed-navbar';
 import {initYearCorrection} from './modules/init-year-correction';
-// import {initSearch} from './modules/init-search.js';
+import {Search} from './modules/search';
 
+const initSearch = () => new Search();
 
 // ---------------------------------
 
@@ -43,7 +44,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initArticleMenu();
     initChangeNumber();
     initFixedNavbar();
-    // initSearch();
+    initSearch();
   });
 });
 
