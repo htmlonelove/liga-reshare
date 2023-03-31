@@ -6,75 +6,33 @@
   white-space: nowrap;
   mix-blend-mode: difference;
 
-  &__content {
-    position: relative;
-
+  &__text {
     display: flex;
-    width: 100%;
-    height: 100%;
-  }
-
-  &__wrapper {
-    display: flex;
-
+    flex-direction: column;
     white-space: nowrap;
   }
 
   &__text {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__text-top,
-  &__text-bottom {
-    display: flex;
-    align-items: baseline;
-  }
-
-  &__text-top {
+    font-weight: 500;
+    font-size: 90px;
+    line-height: 100%;
+    padding-left: 30px;
+    text-transform: uppercase;
     animation-name: marquee-moving;
     animation-duration: 20s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
 
-  &__text-bottom {
+  &__text--reverse {
     animation-name: marquee-moving-reverse;
     animation-duration: 20s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
 
-  &__text-bottom-wrapper {
+  &__text-wrapper--reverse {
     transform: translateX(-100%);
-  }
-
-  &__text-big {
-    margin-left: 200px;
-
-    font-weight: 500;
-    font-size: 90px;
-    line-height: 100%;
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
-
-    @media (max-width: 767px) {
-      font-size: 40px;
-      margin-left: 100px;
-    }
-  }
-
-  &__text-small {
-    margin-left: 59px;
-
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 110%;
-    text-transform: uppercase;
-
-    @media (max-width: 767px) {
-      font-size: 12px;
-    }
   }
 }
 
