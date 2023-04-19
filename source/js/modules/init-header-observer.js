@@ -8,7 +8,9 @@ const initHeaderObserver = () => {
     for (let entry of entries) {
       const cr = entry.contentRect;
     }
-    main.style.paddingTop = `${header.clientHeight}px`;
+    if (header.clientHeight > 80) {
+      main.style.paddingTop = `${header.clientHeight}px`;
+    }
   });
   headerObserver.observe(header);
 };
