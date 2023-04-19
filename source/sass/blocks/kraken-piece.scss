@@ -1,0 +1,130 @@
+.kraken-piece {
+  &__left {
+    .kraken-piece__line--1 {
+      .kraken-piece__dot--1 {
+        transform: scale(1);
+        animation: none;
+      }
+
+      .kraken-piece__dot--2 {
+        --delay-dot-koff: 7;
+      }
+
+      .kraken-piece__dot--3 {
+        --delay-dot-koff: 2.1;
+      }
+
+      .kraken-piece__dot--4 {
+        --delay-dot-koff: 1;
+      }
+    }
+
+    .kraken-piece__line--2 {
+      --line-delay-koff: 0.75;
+
+      .kraken-piece__dot--1 {
+        --delay-dot-koff: 1.7;
+      }
+    }
+  }
+
+  &__right {
+    .kraken-piece__line--1 {
+      .kraken-piece__dot--1 {
+        transform: scale(1);
+        animation: none;
+      }
+
+      .kraken-piece__dot--2 {
+        --delay-dot-koff: 8;
+      }
+
+      .kraken-piece__dot--3 {
+        --delay-dot-koff: 2.4;
+      }
+
+      .kraken-piece__dot--4 {
+        --delay-dot-koff: 1;
+      }
+    }
+
+    .kraken-piece__line--2 {
+      --line-delay-koff: 6;
+
+      .kraken-piece__dot--1 {
+        --delay-dot-koff: 2;
+      }
+
+      .kraken-piece__dot--2 {
+        --delay-dot-koff: 1;
+      }
+    }
+
+    .kraken-piece__line--3 {
+      --line-delay-koff: 2.3;
+
+      .kraken-piece__dot--1 {
+        --delay-dot-koff: 6.8;
+      }
+
+      .kraken-piece__dot--2 {
+        --delay-dot-koff: 3.35;
+      }
+
+      .kraken-piece__dot--3 {
+        --delay-dot-koff: 1.55;
+      }
+
+      .kraken-piece__dot--4 {
+        --delay-dot-koff: 1;
+      }
+    }
+
+    .kraken-piece__line--4 {
+      --line-delay-koff: 0.2;
+
+      .kraken-piece__dot--1 {
+        --delay-dot-koff: 1;
+      }
+    }
+
+    .kraken-piece__line--5 {
+      --line-delay-koff: 0.367;
+
+      .kraken-piece__dot--1 {
+        --delay-dot-koff: 1;
+      }
+    }
+  }
+
+  &__line {
+    --line-speed: calc(var(--line-distance) / var(--line-duration-koff));
+    --line-delay: calc(var(--line-speed) / var(--line-delay-koff));
+    --line-duration: calc(var(--line-speed) + var(--line-delay, 0));
+  }
+
+  &__path {
+    stroke-dasharray: 0, var(--line-distance);
+    animation-name: draw-svg-path;
+    animation-duration: calc(var(--line-duration) * 10ms);
+    animation-delay: calc(var(--line-delay, 0) * 10ms);
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+
+  &__dot {
+    --dot-duration: 30;
+    --dot-delay: calc(var(--line-duration) / var(--delay-dot-koff) + var(--line-delay, 0));
+
+    color: $color-default-white;
+    transform: scale(0);
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+    transition: transform $trans-default;
+    animation-name: show-svg-dot;
+    animation-duration: calc(var(--dot-duration) * 10ms);
+    animation-delay: calc(var(--dot-delay, 0) * 10ms);
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+}

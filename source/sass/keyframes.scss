@@ -10,3 +10,43 @@
     opacity: 0;
   }
 }
+
+@keyframes draw-svg-path {
+  from {
+    stroke-dasharray: 0, var(--line-distance);
+  }
+
+  to {
+    stroke-dasharray: var(--line-distance), 0;
+  }
+}
+
+@keyframes show-svg-dot {
+  from {
+    transform: scale3d(0, 0, 0)
+  }
+
+  to {
+    transform: scale3d(1, 1, 1)
+  }
+}
+
+@keyframes offset-kraken {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(-8px, 0);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
