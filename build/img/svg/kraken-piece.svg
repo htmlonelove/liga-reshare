@@ -1,0 +1,64 @@
+<svg class="kraken-piece" width="1458" height="287" viewBox="0 0 1458 287" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <g class="kraken-piece__left">
+    <g class="kraken-piece__line kraken-piece__line--1" style="--line-distance: 681;">
+      <path class="kraken-piece__path" d="M9 188.5L153.5 188.5C156.814 188.5 159.5 185.814 159.5 182.5L159.5 106.5C159.5 103.186 162.186 100.5 165.5 100.5H300.5C303.814 100.5 306.5 97.8137 306.5 94.5V55.5C306.5 52.1863 309.186 49.5 312.5 49.5L561 49.5" stroke="black"></path>
+
+      <path class="kraken-piece__dot kraken-piece__dot--1" d="M9.00006 179.5C4.0295 179.5 0 183.529 0 188.5C0 193.471 4.0295 197.5 9.00006 197.5C13.9706 197.5 18 193.471 18 188.5C18 183.529 13.9706 179.5 9.00006 179.5Z" fill="black"></path>
+
+      <path class="kraken-piece__dot kraken-piece__dot--2" d="M96.5 188.5C96.5 179.939 103.439 173 112 173C120.56 173 127.5 179.939 127.5 188.5C127.5 197.06 120.56 204 112 204C103.439 204 96.5 197.06 96.5 188.5Z" fill="currentColor" stroke="black"></path>
+
+      <path class="kraken-piece__dot kraken-piece__dot--3" d="M261.5 91.5C256.53 91.5 252.5 95.5294 252.5 100.5C252.5 105.471 256.53 109.5 261.5 109.5C266.471 109.5 270.5 105.471 270.5 100.5C270.5 95.5294 266.471 91.5 261.5 91.5Z" fill="black"></path>
+
+      <path class="kraken-piece__dot kraken-piece__dot--4" d="M545.5 49.4999C545.5 40.9395 552.439 33.9999 561 33.9999C569.56 33.9999 576.5 40.9395 576.5 49.4999C576.5 58.0604 569.56 65 561 65C552.439 65 545.5 58.0604 545.5 49.4999Z" fill="currentColor" stroke="black"></path>
+    </g>
+    <g class="kraken-piece__line kraken-piece__line--2" style="--line-distance: 242;">
+      <path class="kraken-piece__path" d="M261.5 100V160.5C261.5 163.814 264.186 166.5 267.5 166.5L440 166.5" stroke="black"></path>
+
+      <path class="kraken-piece__dot kraken-piece__dot--1" d="M322.5 166.5C322.5 157.939 329.439 151 338 151C346.56 151 353.5 157.939 353.5 166.5C353.5 175.06 346.56 182 338 182C329.439 182 322.5 175.06 322.5 166.5Z" fill="currentColor" stroke="black"></path>
+    </g>
+  </g>
+
+  <g class="kraken-piece__right">
+    <g class="kraken-piece__line kraken-piece__line--1" style="--line-distance: 420;">
+      <path class="kraken-piece__path" d="M1449 270.5L1196.5 270.5C1193.19 270.5 1190.5 267.814 1190.5 264.5V221.5C1190.5 218.186 1187.81 215.5 1184.5 215.5H1079" stroke="black"></path>
+
+      <path class="kraken-piece__dot kraken-piece__dot--1" d="M1449 261.5C1444.03 261.5 1440 265.529 1440 270.5C1440 275.471 1444.03 279.5 1449 279.5C1453.97 279.5 1458 275.471 1458 270.5C1458 265.529 1453.97 261.5 1449 261.5Z" fill="black"></path>
+
+      <path class="kraken-piece__dot kraken-piece__dot--2" d="M1386.5 261.5C1381.53 261.5 1377.5 265.529 1377.5 270.5C1377.5 275.471 1381.53 279.5 1386.5 279.5C1391.47 279.5 1395.5 275.471 1395.5 270.5C1395.5 265.529 1391.47 261.5 1386.5 261.5Z" fill="black"></path>
+
+      <path class="kraken-piece__dot kraken-piece__dot--3" d="M1260.5 270.5C1260.5 261.94 1267.44 255 1276 255C1284.56 255 1291.5 261.94 1291.5 270.5C1291.5 279.06 1284.56 286 1276 286C1267.44 286 1260.5 279.06 1260.5 270.5Z" fill="currentColor" stroke="black"></path>
+
+      <path class="kraken-piece__dot kraken-piece__dot--4" d="M1063.5 215.5C1063.5 206.94 1070.44 200 1079 200C1087.56 200 1094.5 206.94 1094.5 215.5C1094.5 224.06 1087.56 231 1079 231C1070.44 231 1063.5 224.06 1063.5 215.5Z" fill="currentColor" stroke="black"></path>
+    </g>
+    <g class="kraken-piece__line kraken-piece__line--2" style="--line-distance: 375;">
+      <path class="kraken-piece__path" d="M1386.5 271V143.5C1386.5 140.186 1383.81 137.5 1380.5 137.5L1277.5 137.5C1274.19 137.5 1271.5 140.186 1271.5 143.5V176.5C1271.5 179.814 1268.81 182.5 1265.5 182.5H1182" stroke="black"></path>
+
+      <path class="kraken-piece__dot kraken-piece__dot--1" d="M1327.5 128.5C1322.53 128.5 1318.5 132.529 1318.5 137.5C1318.5 142.471 1322.53 146.5 1327.5 146.5C1332.47 146.5 1336.5 142.471 1336.5 137.5C1336.5 132.529 1332.47 128.5 1327.5 128.5Z" fill="black"></path>
+
+      <path class="kraken-piece__dot kraken-piece__dot--2" d="M1165.5 182.5C1165.5 173.94 1172.44 167 1181 167C1189.56 167 1196.5 173.94 1196.5 182.5C1196.5 191.06 1189.56 198 1181 198C1172.44 198 1165.5 191.06 1165.5 182.5Z" fill="currentColor" stroke="black"></path>
+    </g>
+    <g class="kraken-piece__line kraken-piece__line--3" style="--line-distance: 643;">
+      <path class="kraken-piece__path" d="M1327.5 138V76.5C1327.5 73.1863 1324.81 70.5 1321.5 70.5L1100.5 70.5C1097.19 70.5 1094.5 67.8137 1094.5 64.5V22.5C1094.5 19.1863 1091.81 16.5 1088.5 16.5L957.5 16.5C954.186 16.5 951.5 19.1863 951.5 22.5V64.5C951.5 67.8137 948.814 70.5 945.5 70.5L847.5 70.5" stroke="black"></path>
+
+      <path class="kraken-piece__dot kraken-piece__dot--1" d="M1290.5 61.5C1285.53 61.5 1281.5 65.5294 1281.5 70.5C1281.5 75.4706 1285.53 79.5 1290.5 79.5C1295.47 79.5 1299.5 75.4706 1299.5 70.5C1299.5 65.5294 1295.47 61.5 1290.5 61.5Z" fill="black"></path>
+
+      <path class="kraken-piece__dot kraken-piece__dot--2" d="M1194.5 61.5C1189.53 61.5 1185.5 65.5294 1185.5 70.5C1185.5 75.4706 1189.53 79.5 1194.5 79.5C1199.47 79.5 1203.5 75.4706 1203.5 70.5C1203.5 65.5294 1199.47 61.5 1194.5 61.5Z" fill="black"></path>
+
+      <path class="kraken-piece__dot kraken-piece__dot--3" d="M1007.5 16.5C1007.5 7.93959 1014.44 1.00003 1023 1.00003C1031.56 1.00003 1038.5 7.93959 1038.5 16.5C1038.5 25.0604 1031.56 32 1023 32C1014.44 32 1007.5 25.0604 1007.5 16.5Z" fill="currentColor" stroke="black"></path>
+
+      <path class="kraken-piece__dot kraken-piece__dot--4" d="M831.5 70.5C831.5 61.9396 838.44 55 847 55C855.56 55 862.5 61.9396 862.5 70.5C862.5 79.0604 855.56 86 847 86C838.44 86 831.5 79.0604 831.5 70.5Z" fill="currentColor" stroke="black"></path>
+    </g>
+    <g class="kraken-piece__line kraken-piece__line--4" style="--line-distance: 86;">
+      <path class="kraken-piece__path" d="M1290.5 71V32.5C1290.5 29.1863 1287.81 26.5 1284.5 26.5L1246 26.5" stroke="black"></path>
+
+      <path class="kraken-piece__dot kraken-piece__dot--1" d="M1230.5 26.5C1230.5 17.9396 1237.44 11 1246 11C1254.56 11 1261.5 17.9396 1261.5 26.5C1261.5 35.0604 1254.56 42 1246 42C1237.44 42 1230.5 35.0604 1230.5 26.5Z" fill="currentColor" stroke="black"></path>
+    </g>
+    <g class="kraken-piece__line kraken-piece__line--5" style="--line-distance: 204;">
+      <path class="kraken-piece__path" d="M1194.5 70V132.5C1194.5 135.814 1191.81 138.5 1188.5 138.5H1056.5" stroke="black"></path>
+
+      <path class="kraken-piece__dot kraken-piece__dot--1" d="M1041.5 138.5C1041.5 129.94 1048.44 123 1057 123C1065.56 123 1072.5 129.94 1072.5 138.5C1072.5 147.06 1065.56 154 1057 154C1048.44 154 1041.5 147.06 1041.5 138.5Z" fill="currentColor" stroke="black"></path>
+    </g>
+  </g>
+
+</svg>

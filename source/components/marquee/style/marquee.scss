@@ -4,15 +4,10 @@
   overflow: hidden;
 
   white-space: nowrap;
-  mix-blend-mode: difference;
 
   &__text {
     display: flex;
-    flex-direction: column;
     white-space: nowrap;
-  }
-
-  &__text {
     font-weight: 500;
     font-size: 90px;
     line-height: 100%;
