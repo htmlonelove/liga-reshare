@@ -1,6 +1,5 @@
 export class Tabs {
   constructor() {
-    this._windowWidth = window.innerWidth;
     this._documentClickHandler = this._documentClickHandler.bind(this);
     this._init();
   }
