@@ -97,7 +97,7 @@
       position: fixed;
       pointer-events: none;
       top: 0;
-      transition: all 0.3s ease;
+      transition: background-color 0.3s ease;
       right: 0;
       visibility: hidden;
       z-index: 20;
@@ -155,7 +155,7 @@
   &__item {
    @media (max-width: 1023px) {
       opacity: 0;
-      transition: all ease-out 0.15s;
+      transition: opacity ease-out 0.15s, transform ease-out 0.15s;
       transform: translateX(-15px);
     }
 
@@ -222,7 +222,7 @@
    @media (max-width: 1023px) {
       display: flex;
       position: relative;
-      transition: all 0.3s ease;
+      transition: opacity 0.3s ease;
     }
 
     .is-open {
