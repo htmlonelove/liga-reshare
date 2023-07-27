@@ -21,16 +21,16 @@
   transition: transform 0.3s ease;
   pointer-events: none;
   z-index: 3;
-}
 
-.adaptive-runner__inner {
-  width: 0; // ширина вычисляется через js, анимируемая ширина
-  height: 0; // высота вычисляется через js, анимируемая ширина
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #2c39f2;
-  transition: width 0.3s ease, height 0.3s ease;
+  &__inner {
+    width: 0; // ширина вычисляется через js, анимируемая ширина
+    height: 0; // высота вычисляется через js, анимируемая ширина
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #2c39f2;
+    transition: width 0.3s ease, height 0.3s ease;
+  }
 }
 
 // Так же у вас в проекте должен присутствовать класс .no-transition,
