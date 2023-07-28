@@ -1,5 +1,7 @@
 section.component-description(data-tabs='element')
-  p Подсветка пунктов навигации состоит из&nbsp;из&nbsp;следующих файлов: #[b navigation-changer.js] обязателен для переноса в&nbsp;проект, из&nbsp;файла #[b navigation-changer.js] экспортируется класс #[b NavigationChanger], в&nbsp;main создаётся экземпляр класса и&nbsp;у&nbsp;него вызывается метод #[b init()]
+  p Файл #[b navigation-changer.js] обязателен для переноса в&nbsp;проект, из&nbsp;него экспортируется класс #[b NavigationChanger].
+    br
+    | В&nbsp;main создаётся экземпляр класса и&nbsp;у&nbsp;него вызывается метод #[b init()].
   pre
     code.language-js.
       import {NavigationChanger} from '../components/navigation-changer/js/navigation-changer';
@@ -13,7 +15,7 @@ section.component-description(data-tabs='element')
         p data-navigation-link
       td
         p Добавляется к ссылке
-  blockquote Так&nbsp;же обязательно связывать ссылки с&nbsp;блоками с&nbsp;помощью href в&nbsp;ссылке и&nbsp;id&nbsp;в&nbsp;секции
+  blockquote #[b Ссылки должны быть якорными.]
   pre
     code.language-html.
       &lt;a href="#section-1" class="navigation__link" data-navigation-link>Секция 1&lt;/a>
