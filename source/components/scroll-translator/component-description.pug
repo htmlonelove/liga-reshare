@@ -1,5 +1,5 @@
 section.component-description(data-tabs='element')
-  p Прогресс скролла состоит из&nbsp;из&nbsp;следующих файлов: #[b scroll-translator.js] и&nbsp;#[b scroll-translator.scss js]&nbsp;обязателен для переноса в&nbsp;проект, из&nbsp;файла #[b scroll-translator.js] экспортируется класс #[b ScrollTranslator], в&nbsp;main создаётся экземпляр класса и&nbsp;у&nbsp;него вызывается метод #[b init()]
+  p Прогресс скролла состоит из&nbsp;следующих файлов: #[b scroll-translator.js] и&nbsp;#[b scroll-translator.scss]. #[b scroll-translator.js] обязателен для переноса в&nbsp;проект, из него экспортируется класс #[b ScrollTranslator]. В&nbsp;main создаётся экземпляр класса и&nbsp;у&nbsp;него вызывается метод #[b init()].
   pre
     code.language-js.
       import {ScrollTranslator} from '../components/scroll-translator/js/scroll-translator';
@@ -12,14 +12,14 @@ section.component-description(data-tabs='element')
       th
         p data-translator="parent"
       td
-        p Добавляется к родителю
+        p Добавляется к родителю.
     tr
       th
         p data-translator-type=""
       td
-        p Добавляется к&nbsp;родителю, отвечает за&nbsp;то&nbsp;как будет считаться изменение индикатора при скроле горизонтально или вертикально, может иметь два значения horizontal или vertical
+        p Добавляется к&nbsp;родителю, отвечает за&nbsp;то, как будет считаться изменение индикатора при скролле: горизонтально или вертикально. Может иметь два значения: horizontal или vertical.
     tr
       th
         p data-translator="indicator"
       td
-        p Добавляется к индикатору
+        p Добавляется к индикатору.
