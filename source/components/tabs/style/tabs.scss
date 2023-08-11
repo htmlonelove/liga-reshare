@@ -1,6 +1,31 @@
 .tabs {
   max-width: 100%;
 
+  [data-tabs="accordion"] {
+    @media screen and (max-width: 767px) {
+      margin: 10px 2% 0;
+    }
+
+    > .tabs__control.is-active {
+      pointer-events: auto;
+      opacity: 0.5;
+    }
+
+    > .tabs__control {
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+      }
+    }
+  }
+
+  [data-tabs="accordion"].is-active {
+    > .tabs__control {
+      opacity: 1;
+    }
+  }
+
   &__controls {
     display: flex;
     justify-content: space-between;

@@ -25,6 +25,7 @@ export class Tabs {
       return;
     }
     evt.preventDefault();
+    evt.stopPropagation();
     const control = target.closest('[data-tabs="control"]');
     this.openTab(control);
   }
@@ -146,13 +147,83 @@ export class Tabs {
     setTimeout(() => parentElement.classList.remove('no-transition'));
   }
 
+  _createDOMElement(elementType, attributes) {
+    const element = document.createElement(elementType);
+    for (let key in attributes) {
+      if (attributes.hasOwnProperty(key)) {
+        element.setAttribute(key, attributes[key]);
+      }
+    }
+    return element;
+  }
+
+  _toggleAndRemoveClass(element, accordion, control) {
+    accordion.classList.toggle('is-active', element.classList.contains('is-active'));
+    element.classList.remove('is-active');
+    control.classList.remove('is-active');
+  }
+
+  _setAccordionState(parent, elements, controls) {
+    parent.setAttribute('data-accordion-init', '')
+    elements.forEach((element, idx) => {
+      const accordion = this._createDOMElement('div', {'data-tabs': 'accordion'});
+      const accordionWrapper = this._createDOMElement('div', {'data-tabs': 'accordion-wrapper'});
+      const accordionContent = this._createDOMElement('div', {'data-tabs': 'accordion-content'});
+
+      accordion.append(controls[idx], accordionWrapper);
+      accordionWrapper.append(accordionContent);
+      accordionContent.append(element);
+
+      parent.append(accordion);
+      this._toggleAndRemoveClass(element, accordion, controls[idx]);
+    });
+  }
+
+  _removeAccordionState(parent, elements, controls) {
+    if (!parent.hasAttribute('data-accordion-init')) {
+      return;
+    }
+    parent.removeAttribute('data-accordion-init');
+    const controlList = this._returnScopeChild(parent.querySelectorAll('[data-tabs="controls"]'), parent);
+    const content = this._returnScopeChild(parent.querySelectorAll('[data-tabs="content"]'), parent);
+    const activeAccordions = this._returnScopeList(parent.querySelectorAll('[data-tabs="accordion"].is-active'), parent);
+    const activeControl = activeAccordions.length ? activeAccordions[0].querySelector('[data-tabs="control"]') : controls[0];
+    const activeElement = activeAccordions.length ? activeAccordions[0].querySelector('[data-tabs="element"]') : elements[0];
+    elements.forEach((element, idx) => {
+      const accordion = element.closest('[data-tabs="accordion"]');
+      if (!accordion) {
+        return;
+      }
+      controlList.append(controls[idx]);
+      content.append(element);
+      this._toggleAndRemoveClass(element, accordion, controls[idx]);
+      accordion.remove()
+    });
+
+    activeControl.classList.add('is-active');
+    activeElement.classList.add('is-active');
+  }
+
+  accordionBreakpointChecker(media, parent, elements, controls) {
+    if (media.matches) {
+      this._setAccordionState(parent, elements, controls)
+    } else {
+      this._removeAccordionState(parent, elements, controls)
+    }
+  }
+
   _initTab(tab) {
     const dataHeight = tab.dataset.height;
     const dataDelay = tab.dataset.delay ? tab.dataset.delay : 0;
     const tabContentElement = tab.querySelector('[data-tabs="content"]');
     const tabControlElements = this._returnScopeList(tab.querySelectorAll('[data-tabs="control"]'), tab);
     const tabElements = this._returnScopeList(tab.querySelectorAll('[data-tabs="element"]'), tab);
+    const accordionMedia = tab.getAttribute('data-accordion-media') ? window.matchMedia(tab.getAttribute('data-accordion-media')) : null;
     this._setTabStartState(tab, dataHeight, tabElements, tabContentElement, tabControlElements, dataDelay);
+    if (accordionMedia) {
+      this.accordionBreakpointChecker(accordionMedia, tab, tabElements, tabControlElements)
+      accordionMedia.addListener(this.accordionBreakpointChecker.bind(this, accordionMedia, tab, tabElements, tabControlElements));
+    }
     if (dataHeight !== 'unset') {
       tabElements.forEach((element) => {
         this._resizeObserver().observe(element);
@@ -170,6 +241,14 @@ export class Tabs {
   openTab(control) {
     const currentIndex = control.dataset.index;
     const parentElement = control.closest('[data-tabs="parent"]');
+    const accordion = control.closest('[data-tabs="accordion"]')
+
+    if (accordion && accordion.closest('[data-tabs="parent"]') === parentElement) {
+      accordion.classList.toggle('is-active')
+      document.activeElement.blur();
+      return;
+    }
+
 
     if (control.classList.contains('is-active') || parentElement.classList.contains('no-action')) {
       return;

@@ -45,3 +45,34 @@
   visibility: visible;
   opacity: 1;
 }
+
+[data-accordion-init] {
+  > [data-tabs="content"],
+  > [data-tabs="controls"] {
+    display: none;
+  }
+
+  [data-tabs="element"] {
+    z-index: 1;
+    visibility: visible;
+    position: static;
+    opacity: 1;
+  }
+}
+
+[data-tabs="accordion-wrapper"] {
+  display: grid;
+  grid-template-rows: 0fr;
+  grid-template-columns: 1fr;
+  transition: grid-template-rows $trans-default;
+}
+
+[data-tabs="accordion-content"] {
+  overflow: hidden;
+}
+
+[data-tabs="accordion"].is-active {
+  > [data-tabs="accordion-wrapper"] {
+    grid-template-rows: 1fr;
+  }
+}
