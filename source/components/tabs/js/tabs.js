@@ -164,6 +164,9 @@ export class Tabs {
   }
 
   _setAccordionState(parent, elements, controls) {
+    if (parent.hasAttribute('data-accordion-init')) {
+      return
+    }
     parent.setAttribute('data-accordion-init', '')
     elements.forEach((element, idx) => {
       const accordion = this._createDOMElement('div', {'data-tabs': 'accordion'});
@@ -220,9 +223,10 @@ export class Tabs {
     const tabElements = this._returnScopeList(tab.querySelectorAll('[data-tabs="element"]'), tab);
     const accordionMedia = tab.getAttribute('data-accordion-media') ? window.matchMedia(tab.getAttribute('data-accordion-media')) : null;
     this._setTabStartState(tab, dataHeight, tabElements, tabContentElement, tabControlElements, dataDelay);
-    if (accordionMedia) {
+    if (accordionMedia && !tab.accordionListener) {
       this.accordionBreakpointChecker(accordionMedia, tab, tabElements, tabControlElements)
-      accordionMedia.addListener(this.accordionBreakpointChecker.bind(this, accordionMedia, tab, tabElements, tabControlElements));
+      accordionMedia.addEventListener("change", this.accordionBreakpointChecker.bind(this, accordionMedia, tab, tabElements, tabControlElements));
+      tab.accordionListener = true;
     }
     if (dataHeight !== 'unset') {
       tabElements.forEach((element) => {
@@ -238,13 +242,47 @@ export class Tabs {
     this._initAllTabs();
   }
 
+  toggleAccordion(accordion) {
+    if (accordion.classList.contains('is-active')) {
+      this.closeAccordion(accordion)
+    } else {
+      this.openAccordion(accordion)
+    }
+  }
+
+  openAccordion(accordion) {
+    const accordionWrapper = accordion.querySelector('[data-tabs="accordion-wrapper"]');
+    accordionWrapper.style.maxHeight = `${accordionWrapper.offsetHeight}px`;
+    accordion.classList.add('is-active');
+    setTimeout(() => {
+      accordionWrapper.style.maxHeight = `${accordionWrapper.scrollHeight}px`;
+      accordionWrapper.addEventListener('transitionend', () => {
+        accordionWrapper.style.maxHeight = null;
+      }, {once: true})
+    }, 0)
+  }
+
+  closeAccordion(accordion) {
+    const accordionWrapper = accordion.querySelector('[data-tabs="accordion-wrapper"]');
+    accordion.classList.remove('is-active');
+    accordionWrapper.style.transition = 'none';
+    accordionWrapper.style.maxHeight = `${accordionWrapper.scrollHeight}px`;
+    setTimeout(() => {
+      accordionWrapper.style.transition = null;
+      accordionWrapper.style.maxHeight = '0px';
+      accordionWrapper.addEventListener('transitionend', () => {
+        accordionWrapper.style.maxHeight = null;
+      }, {once: true})
+    }, 0)
+  }
+
   openTab(control) {
     const currentIndex = control.dataset.index;
     const parentElement = control.closest('[data-tabs="parent"]');
     const accordion = control.closest('[data-tabs="accordion"]')
 
     if (accordion && accordion.closest('[data-tabs="parent"]') === parentElement) {
-      accordion.classList.toggle('is-active')
+      this.toggleAccordion(accordion)
       document.activeElement.blur();
       return;
     }

@@ -3042,6 +3042,10 @@ button,
   overflow: hidden;
 }
 
+[data-tabs=parent] {
+  overflow: hidden;
+}
+
 [data-tabs=parent].no-transition > [data-tabs=control],
 [data-tabs=parent].no-transition > [data-tabs=content],
 [data-tabs=parent].no-transition > [data-tabs=element] {
@@ -3095,24 +3099,25 @@ button,
 }
 
 [data-tabs=accordion-wrapper] {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 0fr;
-  grid-template-rows: 0fr;
-  -ms-grid-columns: 1fr;
-  grid-template-columns: 1fr;
-  -webkit-transition: grid-template-rows 0.3s ease;
-  transition: grid-template-rows 0.3s ease;
-  transition: grid-template-rows 0.3s ease, -ms-grid-rows 0.3s ease;
+  display: block;
+  max-height: 0;
+  -webkit-transition: max-height 0.3s ease;
+  transition: max-height 0.3s ease;
+  overflow: hidden;
 }
 
 [data-tabs=accordion-content] {
   overflow: hidden;
 }
 
+[data-tabs=accordion] {
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+}
+
 [data-tabs=accordion].is-active > [data-tabs=accordion-wrapper] {
-  -ms-grid-rows: 1fr;
-  grid-template-rows: 1fr;
+  max-height: none;
 }
 
 .article-menu {

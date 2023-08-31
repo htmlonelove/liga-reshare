@@ -1,5 +1,5 @@
 [data-tabs="parent"] {
-  //overflow: hidden;
+  overflow: hidden;
 
   &.no-transition {
     > [data-tabs="control"],
@@ -61,18 +61,24 @@
 }
 
 [data-tabs="accordion-wrapper"] {
-  display: grid;
-  grid-template-rows: 0fr;
-  grid-template-columns: 1fr;
-  transition: grid-template-rows $trans-default;
+  display: block;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+  overflow: hidden;
 }
 
 [data-tabs="accordion-content"] {
   overflow: hidden;
 }
 
+[data-tabs="accordion"] {
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+}
+
 [data-tabs="accordion"].is-active {
   > [data-tabs="accordion-wrapper"] {
-    grid-template-rows: 1fr;
+    max-height: none;
   }
 }
