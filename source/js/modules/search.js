@@ -60,7 +60,7 @@ export class Search {
 
     this._searchList.innerHTML = this._value ? html : '';
 
-    this._searchNote.textContent = matchArray.length ? '' : 'Упс... Ни чего не найдено';
+    this._searchNote.textContent = matchArray.length ? '' : 'Упс... Ничего не найдено';
 
     this._searchNote.style.display = matchArray.length ? 'none' : 'block';
 
