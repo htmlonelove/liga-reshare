@@ -165,9 +165,9 @@ export class Tabs {
 
   _setAccordionState(parent, elements, controls) {
     if (parent.hasAttribute('data-accordion-init')) {
-      return
+      return;
     }
-    parent.setAttribute('data-accordion-init', '')
+    parent.setAttribute('data-accordion-init', '');
     elements.forEach((element, idx) => {
       const accordion = this._createDOMElement('div', {'data-tabs': 'accordion'});
       const accordionWrapper = this._createDOMElement('div', {'data-tabs': 'accordion-wrapper'});
@@ -200,7 +200,7 @@ export class Tabs {
       controlList.append(controls[idx]);
       content.append(element);
       this._toggleAndRemoveClass(element, accordion, controls[idx]);
-      accordion.remove()
+      accordion.remove();
     });
 
     activeControl.classList.add('is-active');
@@ -209,9 +209,9 @@ export class Tabs {
 
   accordionBreakpointChecker(media, parent, elements, controls) {
     if (media.matches) {
-      this._setAccordionState(parent, elements, controls)
+      this._setAccordionState(parent, elements, controls);
     } else {
-      this._removeAccordionState(parent, elements, controls)
+      this._removeAccordionState(parent, elements, controls);
     }
   }
 
@@ -224,8 +224,8 @@ export class Tabs {
     const accordionMedia = tab.getAttribute('data-accordion-media') ? window.matchMedia(tab.getAttribute('data-accordion-media')) : null;
     this._setTabStartState(tab, dataHeight, tabElements, tabContentElement, tabControlElements, dataDelay);
     if (accordionMedia && !tab.accordionListener) {
-      this.accordionBreakpointChecker(accordionMedia, tab, tabElements, tabControlElements)
-      accordionMedia.addEventListener("change", this.accordionBreakpointChecker.bind(this, accordionMedia, tab, tabElements, tabControlElements));
+      this.accordionBreakpointChecker(accordionMedia, tab, tabElements, tabControlElements);
+      accordionMedia.addEventListener('change', this.accordionBreakpointChecker.bind(this, accordionMedia, tab, tabElements, tabControlElements));
       tab.accordionListener = true;
     }
     if (dataHeight !== 'unset') {
@@ -244,9 +244,9 @@ export class Tabs {
 
   toggleAccordion(accordion) {
     if (accordion.classList.contains('is-active')) {
-      this.closeAccordion(accordion)
+      this.closeAccordion(accordion);
     } else {
-      this.openAccordion(accordion)
+      this.openAccordion(accordion);
     }
   }
 
@@ -258,8 +258,8 @@ export class Tabs {
       accordionWrapper.style.maxHeight = `${accordionWrapper.scrollHeight}px`;
       accordionWrapper.addEventListener('transitionend', () => {
         accordionWrapper.style.maxHeight = null;
-      }, {once: true})
-    }, 0)
+      }, {once: true});
+    }, 0);
   }
 
   closeAccordion(accordion) {
@@ -272,17 +272,17 @@ export class Tabs {
       accordionWrapper.style.maxHeight = '0px';
       accordionWrapper.addEventListener('transitionend', () => {
         accordionWrapper.style.maxHeight = null;
-      }, {once: true})
-    }, 0)
+      }, {once: true});
+    }, 0);
   }
 
   openTab(control) {
     const currentIndex = control.dataset.index;
     const parentElement = control.closest('[data-tabs="parent"]');
-    const accordion = control.closest('[data-tabs="accordion"]')
+    const accordion = control.closest('[data-tabs="accordion"]');
 
     if (accordion && accordion.closest('[data-tabs="parent"]') === parentElement) {
-      this.toggleAccordion(accordion)
+      this.toggleAccordion(accordion);
       document.activeElement.blur();
       return;
     }
