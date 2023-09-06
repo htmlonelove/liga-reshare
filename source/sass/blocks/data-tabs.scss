@@ -1,5 +1,5 @@
 [data-tabs="parent"] {
-  overflow: hidden;
+  //overflow: hidden;
 
   &.no-transition {
     > [data-tabs="control"],
@@ -20,6 +20,7 @@
 
 [data-tabs="parent"] [data-tabs="content"] {
   position: relative;
+  overflow: hidden;
 }
 
 [data-tabs="element"] {
