@@ -574,7 +574,7 @@
                 </section>
                 <div class="component__content" data-tabs="content">
                   <section class="component-description" data-tabs="element">
-                    <p>Прогресс скролла состоит из&nbsp;из&nbsp;следующих файлов: <b>scroll-translator.js</b> и&nbsp;<b>scroll-translator.scss js</b>&nbsp;обязателен для переноса в&nbsp;проект, из&nbsp;файла <b>scroll-translator.js</b> экспортируется класс <b>ScrollTranslator</b>, в&nbsp;main создаётся экземпляр класса и&nbsp;у&nbsp;него вызывается метод <b>init()</b></p>
+                    <p>Прогресс скролла состоит из&nbsp;следующих файлов: <b>scroll-translator.js</b> и&nbsp;<b>scroll-translator.scss</b>. <b>scroll-translator.js</b> обязателен для переноса в&nbsp;проект, из него экспортируется класс <b>ScrollTranslator</b>. В&nbsp;main создаётся экземпляр класса и&nbsp;у&nbsp;него вызывается метод <b>init()</b>.</p>
                     <pre><code class="language-js">import {ScrollTranslator} from '../components/scroll-translator/js/scroll-translator';
 const scrollTranslator = new ScrollTranslator();
 scrollTranslator.init();
@@ -586,7 +586,7 @@ scrollTranslator.init();
                           <p>data-translator="parent"</p>
                         </th>
                         <td>
-                          <p>Добавляется к родителю</p>
+                          <p>Добавляется к родителю.</p>
                         </td>
                       </tr>
                       <tr>
@@ -594,7 +594,7 @@ scrollTranslator.init();
                           <p>data-translator-type=""</p>
                         </th>
                         <td>
-                          <p>Добавляется к&nbsp;родителю, отвечает за&nbsp;то&nbsp;как будет считаться изменение индикатора при скроле горизонтально или вертикально, может иметь два значения horizontal или vertical</p>
+                          <p>Добавляется к&nbsp;родителю, отвечает за&nbsp;то, как будет считаться изменение индикатора при скролле: горизонтально или вертикально. Может иметь два значения: horizontal или vertical.</p>
                         </td>
                       </tr>
                       <tr>
@@ -602,7 +602,7 @@ scrollTranslator.init();
                           <p>data-translator="indicator"</p>
                         </th>
                         <td>
-                          <p>Добавляется к индикатору</p>
+                          <p>Добавляется к индикатору.</p>
                         </td>
                       </tr>
                     </table>

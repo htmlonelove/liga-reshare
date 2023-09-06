@@ -12,7 +12,6 @@ export class StickyHeader {
     this._prevScrollY = null;
 
     this._isHidden = false;
-    this._isDisableScrolling = false;
 
     this._onWindowScroll = this._onWindowScroll.bind(this);
     this._onLocomotiveScroll = this._onLocomotiveScroll.bind(this);

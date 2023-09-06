@@ -575,7 +575,7 @@
                 </section>
                 <div class="component__content" data-tabs="content">
                   <section class="component-description" data-tabs="element">
-                    <p>Подсветка пунктов навигации состоит из&nbsp;из&nbsp;следующих файлов: <b>navigation-changer.js</b> обязателен для переноса в&nbsp;проект, из&nbsp;файла <b>navigation-changer.js</b> экспортируется класс <b>NavigationChanger</b>, в&nbsp;main создаётся экземпляр класса и&nbsp;у&nbsp;него вызывается метод <b>init()</b></p>
+                    <p>Файл <b>navigation-changer.js</b> обязателен для переноса в&nbsp;проект, из&nbsp;него экспортируется класс <b>NavigationChanger</b>.<br>В&nbsp;main создаётся экземпляр класса и&nbsp;у&nbsp;него вызывается метод <b>init()</b>.</p>
                     <pre><code class="language-js">import {NavigationChanger} from '../components/navigation-changer/js/navigation-changer';
 const navigationChanger = new NavigationChanger();
 navigationChanger.init();
@@ -591,7 +591,7 @@ navigationChanger.init();
                         </td>
                       </tr>
                     </table>
-                    <blockquote>Так&nbsp;же обязательно связывать ссылки с&nbsp;блоками с&nbsp;помощью href в&nbsp;ссылке и&nbsp;id&nbsp;в&nbsp;секции</blockquote>
+                    <blockquote><b>Ссылки должны быть якорными.</b></blockquote>
                     <pre><code class="language-html">&lt;a href="#section-1" class="navigation__link" data-navigation-link>Секция 1&lt;/a>
 &lt;section class="section-navigation" id="section-2">&lt;/section></code></pre>
                     <p>По умолчанию подключен MoveTo</p>
