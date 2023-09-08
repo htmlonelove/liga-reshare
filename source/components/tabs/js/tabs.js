@@ -251,8 +251,14 @@ export class Tabs {
   }
 
   openAccordion(accordion) {
+    const parentElement = accordion.closest('[data-accordion-init]');
     const accordionWrapper = accordion.querySelector('[data-tabs="accordion-wrapper"]');
     accordionWrapper.style.maxHeight = `${accordionWrapper.offsetHeight}px`;
+
+    if (parentElement.hasAttribute('data-single')) {
+      this.closeAllAccordion(parentElement);
+    }
+
     accordion.classList.add('is-active');
     setTimeout(() => {
       accordionWrapper.style.maxHeight = `${accordionWrapper.scrollHeight}px`;
@@ -260,6 +266,16 @@ export class Tabs {
         accordionWrapper.style.maxHeight = null;
       }, {once: true});
     }, 0);
+  }
+
+  closeAllAccordion(parent) {
+    const elements = parent.querySelectorAll('[data-tabs="accordion"]');
+    elements.forEach((element) => {
+      const currentParent = element.closest('[data-accordion-init]');
+      if (currentParent === parent && element.classList.contains('is-active')) {
+        this.closeAccordion(element);
+      }
+    });
   }
 
   closeAccordion(accordion) {
