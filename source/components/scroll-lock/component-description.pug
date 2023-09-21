@@ -1,34 +1,61 @@
 section.component-description(data-tabs='element')
-  p Лок страницы состоит из из следующих файлов: #[b ios-checker.js], #[b scroll-lock.js] они обязательны для переноса в проект.
-  p Из файла #[b scroll-lock.js] экспортируется класс #[bFocusLock], в файле создаётся экземпляр класса и записывается в глобальную область видимости #[b window.scrollLock = new ScrollLock();]
-  p Так же у вас в проекте должно находится два утилитарных класса для блокировки страницы:
-  pre
-    |
-    code.language-css.
-      .scroll-lock-ios {
-        position: fixed;
+  p Добавляем файл scroll-lock.js, импортируем в нужный файл и используем:
 
-        overflow: hidden;
-      }
-
-      .scroll-lock {
-        overflow: hidden;
-      }
-  p На данной странице размещено фиксированное окно, в скрол лок добавлен функционал для компенсации отступа у фиксированных элементов при локе страницы. Для этого у фиксированного элемента должен быть дата атрибут #[b data-fix-block]. Компенсация отступа происходит за счёт добавления #[b padding-right] фиксированному блоку.
-  blockquote Будьте внимательны, не устанавливайте фиксированному блоку padding-right, так как он переопределяется в js.
-  h3 Пример подключения
   pre
     |
     code.language-js.
-      import '../components/scroll-lock/js/scroll-lock';
-  table
-    tr
-      th
-        p window.scrollLock.disableScrolling()
-      td
-        p Блокирует скролл
-    tr
-      th
-        p window.scrollLock.enableScrolling()
-      td
-        p Разблокирует скролл
+      //es6 import
+      import { disablePageScroll, enablePageScroll } from 'scroll-lock';
+
+      //или
+      import scrollLock from 'scroll-lock';
+      scrollLock.disablePageScroll(); // заблокировать скролл
+      scrollLock.enablePageScroll(); // разблокировать скролл
+      //...
+  blockquote При блокировке скролла, прокрута на touch устройствах будет отключена на всех элементах, для этого надо явно указать, какой элемент будет прокручиваться на странице.
+
+  p Есть 2 варианта как это сделать:
+  h3 1. Передать элемент аргументом:
+
+  pre
+    |
+    code.language-js.
+      import { disablePageScroll, enablePageScroll } from 'scroll-lock';
+
+      //Получим элемент, который должен прокручиваться при отключеной прокрутки страницы
+      const scrollableElement = document.querySelector('.my-scrollable-element');
+
+      //Передадим элемент аргументом и отключим прокрутку на странице
+      disablePageScroll(scrollableElement);
+
+      //Также передадим аргументом элемент и активируем прокрутку на странице
+      enablePageScroll(scrollableElement);
+
+  h3 2. Или указать атрибут #[b data-scroll-lock-scrollable] прокручиваемому элементу:
+
+  pre
+    |
+    code.language-pug.
+      .my-scrollable-element(data-scroll-lock-scrollable)
+  p Если в прокручиваемом элементе будут вложены #[b textarea] или #[b contenteditable] то они будут прокручиваться без явного указания.
+
+  p На данной странице размещено фиксированное окно, в скролл лок добавлен функционал для компенсации отступа у фиксированных элементов при локе страницы. Для этого надо явно указать, какому элементу нужно добавить отступ. Компенсация отступа происходит за счёт добавления #[b padding-right] фиксированному блоку.
+
+  pre
+    |
+    code.language-js.
+      import { addFillGapTarget, addFillGapSelector } from 'scroll-lock';
+
+      //селектор
+      addFillGapSelector('.my-fill-gap-selector');
+
+      // или
+
+      //элемент
+      const fillGapElement = document.querySelector('.my-fill-gap-element');
+      addFillGapTarget(fillGapElement);
+  p Или же можно указать атрибут #[b data-scroll-lock-fill-gap].
+  pre
+    |
+    code.language-pug.
+      .my-fill-gap-element(data-scroll-lock-fill-gap)

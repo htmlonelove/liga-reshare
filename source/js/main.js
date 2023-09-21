@@ -1,6 +1,6 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initSandwichMenu} from './modules/init-sandwich-menu';
-import {ScrollLock} from './utils/scroll-lock';
+import scrollLock from './utils/scroll-lock';
 import {initDynamicAdaptive} from './modules/init-dynamic-adaptive';
 import {initAccordions} from './modules/init-accordion';
 import {initUpButton} from './modules/init-up-button';
@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Utils
   // ---------------------------------
   initDynamicAdaptive();
-  window.scrollLock = new ScrollLock();
+  window.scrollLock = scrollLock;
   iosVhFix();
   initHeaderObserver();
   initYearCorrection();

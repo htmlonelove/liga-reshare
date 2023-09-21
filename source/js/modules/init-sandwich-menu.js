@@ -13,7 +13,7 @@ const removeTransition = (el) => {
 
 const openMenu = () => {
   const navItem = nav.querySelectorAll('[data-nav-item]');
-  window.scrollLock.disableScrolling();
+  window.scrollLock.disablePageScroll();
   sandwich.classList.add('is-active');
   sandwich.ariaPressed = 'true';
   nav.classList.add('is-active');
@@ -31,7 +31,7 @@ const openMenu = () => {
 const closeMenu = (unlock) => {
   const navItem = nav.querySelectorAll('[data-nav-item]');
   if (unlock) {
-    window.scrollLock.enableScrolling();
+    window.scrollLock.enablePageScroll();
   }
   sandwich.classList.remove('is-active');
   sandwich.ariaPressed = 'false';

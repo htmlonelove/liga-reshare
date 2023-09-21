@@ -1,1 +1,1 @@
-import {ScrollLock} from './scroll-lock';
+import scrollLock from './scroll-lock';

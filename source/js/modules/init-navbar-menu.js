@@ -4,15 +4,16 @@ const navbarCloseButton = document.querySelector('[data-navbar-close]');
 const navbar = document.querySelector('.navbar');
 const innerContent = document.querySelector('.content__inner');
 const header = document.querySelector('.header');
+const navbarWrapper = document.querySelector('.navbar__wrapper');
 
 const openNavbar = () => {
-  window.scrollLock.disableScrolling();
+  window.scrollLock.disablePageScroll(navbarWrapper);
   navbar.classList.add('is-active');
 };
 
 const closeNavbar = (unlock) => {
   if (unlock) {
-    window.scrollLock.enableScrolling();
+    window.scrollLock.enablePageScroll(navbarWrapper);
   }
   navbar.classList.remove('is-active');
 };
