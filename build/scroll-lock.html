@@ -599,7 +599,7 @@ enablePageScroll(scrollableElement);
 </code></pre>
                     <h3>2. Или указать атрибут <b>data-scroll-lock-scrollable</b> прокручиваемому элементу:</h3>
                     <pre><code class="language-pug">.my-scrollable-element(data-scroll-lock-scrollable)</code></pre>
-                    <p>Если в прокручиваемом элементе будут вложены <b>textarea</b> или <b>contenteditable</b> то они будут прокручиваться без явного указания.</p>
+                    <p>Если в прокручиваемом элементе будут вложены <b>textarea</b> или <b>contenteditable</b> то они будут прокручиваться без явного указания.</p><br>
                     <p>На данной странице размещено фиксированное окно, в скролл лок добавлен функционал для компенсации отступа у фиксированных элементов при локе страницы. Для этого надо явно указать, какому элементу нужно добавить отступ. Компенсация отступа происходит за счёт добавления <b>padding-right</b> фиксированному блоку.</p>
                     <pre><code class="language-js">import { addFillGapTarget, addFillGapSelector } from 'scroll-lock';
 
