@@ -1,5 +1,5 @@
 mixin header(headerMods, currentUrl)
-  header.header(class=headerMods, data-fix-block)
+  header.header(class=headerMods, data-scroll-lock-fill-gap)
     .container
       if(currentUrl === "index.html")
         +logo().header__logo(data-header-logo)

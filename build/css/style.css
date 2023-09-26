@@ -565,7 +565,6 @@ html.has-scroll-dragging {
   transform-origin: center right;
   -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
   transition: opacity 0.3s, -webkit-transform 0.3s;
-  -o-transition: transform 0.3s, opacity 0.3s;
   transition: transform 0.3s, opacity 0.3s;
   transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
   opacity: 0;
@@ -1051,7 +1050,6 @@ button,
 .no-transition {
   /* stylelint-disable-next-line */
   -webkit-transition: none !important;
-  -o-transition: none !important;
   transition: none !important;
 }
 
@@ -1080,7 +1078,6 @@ button,
   border: none;
   cursor: pointer;
   -webkit-transition: background-color 0.3s ease;
-  -o-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
 }
 
@@ -1249,7 +1246,6 @@ button,
 .logo.is-active .logo__shield {
   fill: #ffffff;
   -webkit-transition: fill 0.3s ease;
-  -o-transition: fill 0.3s ease;
   transition: fill 0.3s ease;
 }
 
@@ -1269,21 +1265,18 @@ button,
 .logo__text {
   fill: #000000;
   -webkit-transition: fill 0.3s ease;
-  -o-transition: fill 0.3s ease;
   transition: fill 0.3s ease;
 }
 
 .logo__symbol {
   fill: #ffffff;
   -webkit-transition: fill 0.3s ease;
-  -o-transition: fill 0.3s ease;
   transition: fill 0.3s ease;
 }
 
 .logo__shield {
   fill: #2c39f2;
   -webkit-transition: fill 0.3s ease;
-  -o-transition: fill 0.3s ease;
   transition: fill 0.3s ease;
 }
 
@@ -1307,7 +1300,6 @@ button,
   fill: #000000;
   height: 35px;
   -webkit-transition: fill 0.3s ease;
-  -o-transition: fill 0.3s ease;
   transition: fill 0.3s ease;
   width: 35px;
 }
@@ -1403,7 +1395,6 @@ button,
   padding: 0 20px 0 63px;
   position: relative;
   -webkit-transition: color 0.3s ease;
-  -o-transition: color 0.3s ease;
   transition: color 0.3s ease;
   text-align: left;
   width: 100%;
@@ -1416,7 +1407,6 @@ button,
   position: absolute;
   top: 5px;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   width: 16px;
 }
@@ -1435,7 +1425,6 @@ button,
   line-height: 27px;
   padding: 10px 20px 10px 63px;
   -webkit-transition: background-color 0.3s ease;
-  -o-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
 }
 
@@ -1463,7 +1452,6 @@ button,
 .main-nav.is-active .search {
   opacity: 1;
   -webkit-transition: opacity 0.3s ease 0.5s;
-  -o-transition: opacity 0.3s ease 0.5s;
   transition: opacity 0.3s ease 0.5s;
 }
 
@@ -1501,7 +1489,6 @@ button,
   font-weight: 600;
   line-height: 25px;
   -webkit-transition: color 0.3s ease;
-  -o-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
 
@@ -1534,7 +1521,6 @@ button,
   opacity: 0;
   pointer-events: none;
   -webkit-transition: opacity 0.3s ease 0s;
-  -o-transition: opacity 0.3s ease 0s;
   transition: opacity 0.3s ease 0s;
 }
 
@@ -1542,7 +1528,6 @@ button,
   opacity: 1;
   pointer-events: all;
   -webkit-transition: opacity 0.3s ease 0.2s;
-  -o-transition: opacity 0.3s ease 0.2s;
   transition: opacity 0.3s ease 0.2s;
 }
 
@@ -1552,7 +1537,6 @@ button,
   font-weight: 700;
   line-height: 1;
   -webkit-transition: opacity 0.3s ease 0.1s;
-  -o-transition: opacity 0.3s ease 0.1s;
   transition: opacity 0.3s ease 0.1s;
 }
 
@@ -1560,7 +1544,6 @@ button,
   stroke: #ffffff;
   opacity: 0;
   -webkit-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
   pointer-events: none;
   position: absolute;
@@ -1590,7 +1573,6 @@ button,
   min-width: 306px;
   padding: 11px 40px 11px 14px;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   border: 2px solid #f4f4ff;
   border-radius: 8px;
@@ -1623,7 +1605,6 @@ button,
 
 .search__button svg {
   -webkit-transition: fill 0.3s ease;
-  -o-transition: fill 0.3s ease;
   transition: fill 0.3s ease;
   fill: currentColor;
 }
@@ -1634,7 +1615,6 @@ button,
   left: 0;
   width: 100%;
   -webkit-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
   pointer-events: none;
   opacity: 0;
@@ -1678,7 +1658,6 @@ button,
   width: 100%;
   padding: 10px 15px;
   -webkit-transition: background-color 0.3s ease;
-  -o-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
   background-color: #ffffff;
 }
@@ -1695,7 +1674,6 @@ button,
 .search__text--description {
   overflow: hidden;
   white-space: nowrap;
-  -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
 }
 
@@ -1726,7 +1704,6 @@ button,
   padding: 7px 17px 7px 0;
   position: relative;
   -webkit-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
 
@@ -2062,7 +2039,6 @@ button,
   transform-origin: 50% 50%;
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
-  -o-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   -webkit-animation-name: show-svg-dot;
@@ -2131,7 +2107,6 @@ button,
   line-height: 1;
   margin: 0 0 28px 0;
   -webkit-transition: color 0.3s ease;
-  -o-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
 
@@ -2160,7 +2135,6 @@ button,
   font-weight: 500;
   line-height: 25px;
   -webkit-transition: color 0.3s ease;
-  -o-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
 
@@ -2182,7 +2156,6 @@ button,
   -webkit-transform: translate3d(0, 0, 0) rotate(90deg);
   transform: translate3d(0, 0, 0) rotate(90deg);
   -webkit-transition: fill 0.3s ease;
-  -o-transition: fill 0.3s ease;
   transition: fill 0.3s ease;
 }
 
@@ -2238,7 +2211,6 @@ button,
   right: -11px;
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
-  -o-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   width: calc(100% - 5px);
@@ -2255,7 +2227,6 @@ button,
   right: -20px;
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
-  -o-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   width: calc(100% - 12px);
@@ -2309,7 +2280,6 @@ button,
   -webkit-transform: translate3d(0, 0, 0) rotate(90deg);
   transform: translate3d(0, 0, 0) rotate(90deg);
   -webkit-transition: fill 0.3s ease;
-  -o-transition: fill 0.3s ease;
   transition: fill 0.3s ease;
 }
 
@@ -2375,7 +2345,6 @@ button,
   -webkit-transform: translate3d(0, 100px, 0);
   transform: translate3d(0, 100px, 0);
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -2547,7 +2516,6 @@ button,
   color: #ffffff;
   font-weight: 600;
   -webkit-transition: background 0.3s ease;
-  -o-transition: background 0.3s ease;
   transition: background 0.3s ease;
 }
 
@@ -2587,7 +2555,6 @@ button,
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-transition: color 0.3s ease;
-  -o-transition: color 0.3s ease;
   transition: color 0.3s ease;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2673,7 +2640,6 @@ button,
   justify-content: flex-end;
   opacity: 0;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   -webkit-transform: translate3d(0, 100px, 0);
   transform: translate3d(0, 100px, 0);
@@ -2700,7 +2666,6 @@ button,
   -ms-flex-pack: center;
   justify-content: center;
   -webkit-transition: background-color 0.3s ease, color 0.3s ease;
-  -o-transition: background-color 0.3s ease, color 0.3s ease;
   transition: background-color 0.3s ease, color 0.3s ease;
   height: 50px;
   width: 50px;
@@ -2709,7 +2674,6 @@ button,
 .up-button__link svg {
   fill: currentColor;
   -webkit-transition: fill 0.3s ease;
-  -o-transition: fill 0.3s ease;
   transition: fill 0.3s ease;
 }
 
@@ -2779,7 +2743,6 @@ button,
   padding: 0;
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   color: #000000;
   border: none;
@@ -2795,7 +2758,6 @@ button,
   opacity: 0;
   background-color: #2c39f2;
   -webkit-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
 
@@ -2846,7 +2808,6 @@ button,
 .component-description a {
   color: #2c39f2;
   -webkit-transition: color 0.3s ease;
-  -o-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
 
@@ -3023,7 +2984,6 @@ button,
 .component-demo__link {
   color: #2c39f2;
   -webkit-transition: color 0.3s ease;
-  -o-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
 
@@ -3072,14 +3032,12 @@ button,
 
 [data-accordion=parent].no-transition [data-accordion=content] {
   -webkit-transition: none;
-  -o-transition: none;
   transition: none;
 }
 
 [data-accordion=content] {
   max-height: 0;
   -webkit-transition: max-height 0.3s;
-  -o-transition: max-height 0.3s;
   transition: max-height 0.3s;
   overflow: hidden;
 }
@@ -3088,7 +3046,6 @@ button,
 [data-tabs=parent].no-transition > [data-tabs=content],
 [data-tabs=parent].no-transition > [data-tabs=element] {
   -webkit-transition: none;
-  -o-transition: none;
   transition: none;
 }
 
@@ -3096,7 +3053,6 @@ button,
 [data-tabs=parent].no-transition-global [data-tabs=content],
 [data-tabs=parent].no-transition-global [data-tabs=element] {
   -webkit-transition: none;
-  -o-transition: none;
   transition: none;
 }
 
@@ -3110,7 +3066,6 @@ button,
   visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
-  -o-transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
   transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
 }
 
@@ -3119,7 +3074,6 @@ button,
   visibility: visible;
   opacity: 1;
   -webkit-transition: none;
-  -o-transition: none;
   transition: none;
 }
 
@@ -3145,7 +3099,6 @@ button,
   display: block;
   max-height: 0;
   -webkit-transition: max-height 0.3s ease;
-  -o-transition: max-height 0.3s ease;
   transition: max-height 0.3s ease;
   overflow: hidden;
 }
@@ -3192,7 +3145,6 @@ button,
   -webkit-transform: translate3d(0, -50%, 0);
   transform: translate3d(0, -50%, 0);
   -webkit-transition: all ease-out 0.3s;
-  -o-transition: all ease-out 0.3s;
   transition: all ease-out 0.3s;
   width: 20px;
   z-index: 15;
@@ -3226,7 +3178,6 @@ button,
   transform: translate3d(0, 0, 0);
   -webkit-transition: -webkit-transform ease-out 0.3s;
   transition: -webkit-transform ease-out 0.3s;
-  -o-transition: transform ease-out 0.3s;
   transition: transform ease-out 0.3s;
   transition: transform ease-out 0.3s, -webkit-transform ease-out 0.3s;
 }
@@ -3251,10 +3202,8 @@ button,
   padding: 8px 43px 8px 15px;
   position: relative;
   -webkit-transition: all ease-out 0.3s;
-  -o-transition: all ease-out 0.3s;
   transition: all ease-out 0.3s;
   -webkit-transition-timing-function: step-start;
-  -o-transition-timing-function: step-start;
   transition-timing-function: step-start;
   white-space: nowrap;
   overflow: hidden;
@@ -3268,7 +3217,6 @@ button,
   height: 100%;
   width: 110px;
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(70%, rgb(255, 255, 255)));
-  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), rgb(255, 255, 255) 70%);
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255) 70%);
 }
 
@@ -3276,7 +3224,6 @@ button,
   opacity: 0;
   pointer-events: none;
   -webkit-transition-timing-function: step-end;
-  -o-transition-timing-function: step-end;
   transition-timing-function: step-end;
 }
 
@@ -3293,7 +3240,6 @@ button,
   position: absolute;
   pointer-events: none;
   -webkit-transition: all ease-out 0.3s;
-  -o-transition: all ease-out 0.3s;
   transition: all ease-out 0.3s;
   top: 0;
   width: 305px;
@@ -3315,7 +3261,6 @@ button,
   padding: 8px 70px 8px 15px;
   position: relative;
   -webkit-transition: all ease-out 0.2s;
-  -o-transition: all ease-out 0.2s;
   transition: all ease-out 0.2s;
   white-space: nowrap;
 }
@@ -3328,7 +3273,6 @@ button,
   height: 100%;
   width: 110px;
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(70%, rgb(255, 255, 255)));
-  background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), rgb(255, 255, 255) 70%);
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255) 70%);
 }
 
@@ -3348,7 +3292,6 @@ button,
   border: 2px solid #000000;
   outline: none;
   -webkit-transition: border-color 0.3s ease;
-  -o-transition: border-color 0.3s ease;
   transition: border-color 0.3s ease;
 }
 
@@ -3364,7 +3307,6 @@ button,
   border: 2px solid #000000;
   outline: none;
   -webkit-transition: border 0.3s ease;
-  -o-transition: border 0.3s ease;
   transition: border 0.3s ease;
 }
 
@@ -3413,7 +3355,6 @@ button,
   font-weight: 600;
   text-transform: uppercase;
   -webkit-transition: color 0.6s ease;
-  -o-transition: color 0.6s ease;
   transition: color 0.6s ease;
   background-color: rgba(0, 0, 0, 0.2);
 }
@@ -3443,7 +3384,6 @@ button,
   transform-origin: right;
   -webkit-transition: -webkit-transform 0.6s ease;
   transition: -webkit-transform 0.6s ease;
-  -o-transition: transform 0.6s ease;
   transition: transform 0.6s ease;
   transition: transform 0.6s ease, -webkit-transform 0.6s ease;
 }
@@ -3518,7 +3458,6 @@ button,
   transform: translateY(-50%);
   -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
   transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
-  -o-transition: transform 0.3s ease, opacity 0.3s ease;
   transition: transform 0.3s ease, opacity 0.3s ease;
   transition: transform 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
   pointer-events: none;
@@ -3533,7 +3472,6 @@ button,
   transform: translateY(-50%);
   -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
   transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
-  -o-transition: transform 0.3s ease, opacity 0.3s ease;
   transition: transform 0.3s ease, opacity 0.3s ease;
   transition: transform 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
   pointer-events: none;
@@ -3569,7 +3507,6 @@ button,
   outline: none;
   cursor: pointer;
   -webkit-transition: border 0.3s ease;
-  -o-transition: border 0.3s ease;
   transition: border 0.3s ease;
 }
 
@@ -3604,7 +3541,6 @@ button,
   visibility: hidden;
   opacity: 0;
   -webkit-transition: visibility 0.3s ease, opacity 0.3s ease;
-  -o-transition: visibility 0.3s ease, opacity 0.3s ease;
   transition: visibility 0.3s ease, opacity 0.3s ease;
 }
 
@@ -3613,7 +3549,6 @@ button,
   outline: none;
   cursor: pointer;
   -webkit-transition: background-color 0.3s ease;
-  -o-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
 }
 
@@ -3636,7 +3571,6 @@ button,
   color: #ff1553;
   opacity: 0;
   -webkit-transition: opacity 0.1s ease;
-  -o-transition: opacity 0.1s ease;
   transition: opacity 0.1s ease;
 }
 
@@ -3649,11 +3583,9 @@ button,
   overflow: hidden;
   text-align: left;
   white-space: nowrap;
-  -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   opacity: 0;
   -webkit-transition: opacity 0.3s ease 0.1s;
-  -o-transition: opacity 0.3s ease 0.1s;
   transition: opacity 0.3s ease 0.1s;
 }
 
@@ -3670,7 +3602,6 @@ button,
   background-color: #000000;
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
-  -o-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   -webkit-clip-path: polygon(100% 0, 100% 20%, 50% 100%, 0 20%, 0 0, 50% 80%);
@@ -3850,7 +3781,6 @@ button,
   opacity: 0;
   -webkit-transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
-  -o-transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   pointer-events: none;
@@ -3918,7 +3848,6 @@ button,
 
 .modal--preload {
   -webkit-transition: none;
-  -o-transition: none;
   transition: none;
 }
 
@@ -3930,7 +3859,6 @@ button,
   opacity: 1;
   -webkit-transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
-  -o-transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   pointer-events: auto;
@@ -4027,14 +3955,12 @@ button,
 
 [data-accordion=parent].no-transition [data-accordion=content] {
   -webkit-transition: none;
-  -o-transition: none;
   transition: none;
 }
 
 [data-accordion=content] {
   max-height: 0;
   -webkit-transition: max-height 0.3s;
-  -o-transition: max-height 0.3s;
   transition: max-height 0.3s;
   overflow: hidden;
 }
@@ -4083,7 +4009,6 @@ button,
 .tabs__content {
   margin-bottom: 40px;
   -webkit-transition: height 0.3s;
-  -o-transition: height 0.3s;
   transition: height 0.3s;
 }
 
@@ -4162,7 +4087,6 @@ button,
   border-radius: 5px;
   outline: none;
   -webkit-transition: border 0.3s ease;
-  -o-transition: border 0.3s ease;
   transition: border 0.3s ease;
 }
 
@@ -4188,7 +4112,6 @@ button,
   color: #ff1553;
   opacity: 0;
   -webkit-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
 
@@ -4282,7 +4205,6 @@ button,
   height: 28px;
   border: 1.5px solid #2c39f2;
   -webkit-transition: border 0.3s ease;
-  -o-transition: border 0.3s ease;
   transition: border 0.3s ease;
 }
 
@@ -4298,7 +4220,6 @@ button,
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   -webkit-transition: background-color 0.3s ease;
-  -o-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
 }
 
@@ -4311,7 +4232,6 @@ button,
   border: 1px solid #2c39f2;
   border-radius: 50%;
   -webkit-transition: border 0.3s ease;
-  -o-transition: border 0.3s ease;
   transition: border 0.3s ease;
 }
 
@@ -4328,7 +4248,6 @@ button,
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   -webkit-transition: color 0.3s ease;
-  -o-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
 
@@ -4430,7 +4349,6 @@ button,
   left: 0;
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
-  -o-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   pointer-events: none;
@@ -4445,7 +4363,6 @@ button,
   left: 0;
   background-color: #2c39f2;
   -webkit-transition: width 0.3s ease, height 0.3s ease;
-  -o-transition: width 0.3s ease, height 0.3s ease;
   transition: width 0.3s ease, height 0.3s ease;
 }
 
@@ -4494,7 +4411,6 @@ button,
   z-index: 9999;
   -webkit-transition: z-index 0.05s 0.1s, -webkit-transform 0.05s;
   transition: z-index 0.05s 0.1s, -webkit-transform 0.05s;
-  -o-transition: transform 0.05s, z-index 0.05s 0.1s;
   transition: transform 0.05s, z-index 0.05s 0.1s;
   transition: transform 0.05s, z-index 0.05s 0.1s, -webkit-transform 0.05s;
   pointer-events: none;
@@ -4506,7 +4422,6 @@ button,
   border-radius: 50%;
   -webkit-transition: -webkit-transform 0.6s ease;
   transition: -webkit-transform 0.6s ease;
-  -o-transition: transform 0.6s ease;
   transition: transform 0.6s ease;
   transition: transform 0.6s ease, -webkit-transform 0.6s ease;
   background-color: #2c39f2;
@@ -4522,7 +4437,6 @@ button,
   transform: scale(0);
   -webkit-transition: -webkit-transform 0.2s ease;
   transition: -webkit-transform 0.2s ease;
-  -o-transition: transform 0.2s ease;
   transition: transform 0.2s ease;
   transition: transform 0.2s ease, -webkit-transform 0.2s ease;
 }
@@ -4627,7 +4541,6 @@ button,
   z-index: 30;
   -webkit-transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
   transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
-  -o-transition: transform 0.3s ease, background-color 0.3s ease;
   transition: transform 0.3s ease, background-color 0.3s ease;
   transition: transform 0.3s ease, background-color 0.3s ease, -webkit-transform 0.3s ease;
 }
@@ -4749,7 +4662,6 @@ button,
   font-weight: 600;
   line-height: 25px;
   -webkit-transition: color 0.3s ease;
-  -o-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
 
@@ -4774,7 +4686,6 @@ button,
   opacity: 0;
   pointer-events: none;
   -webkit-transition: opacity 0.3s ease 0s;
-  -o-transition: opacity 0.3s ease 0s;
   transition: opacity 0.3s ease 0s;
 }
 
@@ -4782,7 +4693,6 @@ button,
   opacity: 1;
   pointer-events: all;
   -webkit-transition: opacity 0.3s ease 0.2s;
-  -o-transition: opacity 0.3s ease 0.2s;
   transition: opacity 0.3s ease 0.2s;
 }
 
@@ -4792,7 +4702,6 @@ button,
   font-weight: 700;
   line-height: 1;
   -webkit-transition: opacity 0.3s ease 0.1s;
-  -o-transition: opacity 0.3s ease 0.1s;
   transition: opacity 0.3s ease 0.1s;
   cursor: pointer;
 }
@@ -4801,7 +4710,6 @@ button,
   opacity: 0;
   pointer-events: none;
   -webkit-transition: opacity 0.3s ease 0s;
-  -o-transition: opacity 0.3s ease 0s;
   transition: opacity 0.3s ease 0s;
 }
 
@@ -4809,7 +4717,6 @@ button,
   stroke: #ffffff;
   opacity: 0;
   -webkit-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
   pointer-events: none;
   position: absolute;
@@ -4825,7 +4732,6 @@ button,
   opacity: 1;
   pointer-events: all;
   -webkit-transition: opacity 0.3s ease 0.2s;
-  -o-transition: opacity 0.3s ease 0.2s;
   transition: opacity 0.3s ease 0.2s;
 }
 
@@ -4913,7 +4819,6 @@ button,
 .input-upload__preview-file-name {
   white-space: nowrap;
   overflow: hidden;
-  -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
 }
 
@@ -4974,7 +4879,6 @@ button,
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 0;
   -webkit-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
 
@@ -4986,7 +4890,6 @@ button,
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   -webkit-transition: opacity 0.3s ease, visibility 0.3s ease;
-  -o-transition: opacity 0.3s ease, visibility 0.3s ease;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
@@ -5379,7 +5282,6 @@ button,
     pointer-events: none;
     top: 0;
     -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
     right: 0;
     visibility: hidden;
@@ -5415,7 +5317,6 @@ button,
     pointer-events: none;
     top: 0;
     -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
     right: 0;
     visibility: hidden;
@@ -5434,7 +5335,6 @@ button,
   .main-nav__item {
     opacity: 0;
     -webkit-transition: all ease-out 0.15s;
-    -o-transition: all ease-out 0.15s;
     transition: all ease-out 0.15s;
     -webkit-transform: translateX(-15px);
     -ms-transform: translateX(-15px);
@@ -5457,7 +5357,6 @@ button,
     display: flex;
     position: relative;
     -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
 
@@ -5465,7 +5364,6 @@ button,
     width: 50%;
     margin: 0 auto;
     -webkit-transition: opacity 0.3s ease;
-    -o-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
   }
 
@@ -5666,7 +5564,6 @@ button,
     pointer-events: none;
     top: 0;
     -webkit-transition: background-color 0.3s ease;
-    -o-transition: background-color 0.3s ease;
     transition: background-color 0.3s ease;
     right: 0;
     visibility: hidden;
@@ -5686,7 +5583,6 @@ button,
     opacity: 0;
     -webkit-transition: opacity ease-out 0.15s, -webkit-transform ease-out 0.15s;
     transition: opacity ease-out 0.15s, -webkit-transform ease-out 0.15s;
-    -o-transition: opacity ease-out 0.15s, transform ease-out 0.15s;
     transition: opacity ease-out 0.15s, transform ease-out 0.15s;
     transition: opacity ease-out 0.15s, transform ease-out 0.15s, -webkit-transform ease-out 0.15s;
     -webkit-transform: translateX(-15px);
@@ -5710,7 +5606,6 @@ button,
     display: flex;
     position: relative;
     -webkit-transition: opacity 0.3s ease;
-    -o-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
   }
 }

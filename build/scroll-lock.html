@@ -372,7 +372,7 @@
 </g></symbol></svg>
     </div>
     <div class="wrapper">
-      <header class="header" data-fix-block>
+      <header class="header" data-scroll-lock-fill-gap>
         <div class="container">
           <a class="logo header__logo" href="index.html" aria-label="Переход на главную страницу" data-header-logo>
             <svg class="logo__first-part" width="91" height="21" viewbox="0 0 91 21" xmlns="http://www.w3.org/2000/svg">
@@ -574,42 +574,45 @@
                 </section>
                 <div class="component__content" data-tabs="content">
                   <section class="component-description" data-tabs="element">
-                    <p>Лок страницы состоит из из следующих файлов: <b>ios-checker.js</b>, <b>scroll-lock.js</b> они обязательны для переноса в проект.</p>
-                    <p>Из файла <b>scroll-lock.js</b> экспортируется класс 
-                      <bFocusLock></bFocusLock>, в файле создаётся экземпляр класса и записывается в глобальную область видимости <b>window.scrollLock = new ScrollLock();</b>
-                    </p>
-                    <p>Так же у вас в проекте должно находится два утилитарных класса для блокировки страницы:</p>
-                    <pre><code class="language-css">.scroll-lock-ios {
-  position: fixed;
+                    <p>Добавляем файл scroll-lock.js, импортируем в нужный файл и используем:</p>
+                    <pre><code class="language-js">//es6 import
+import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 
-  overflow: hidden;
-}
+//или
+import scrollLock from 'scroll-lock';
+scrollLock.disablePageScroll(); // заблокировать скролл
+scrollLock.enablePageScroll(); // разблокировать скролл
+//...</code></pre>
+                    <blockquote>При блокировке скролла, прокрута на touch устройствах будет отключена на всех элементах, для этого надо явно указать, какой элемент будет прокручиваться на странице.</blockquote>
+                    <p>Есть 2 варианта как это сделать:</p>
+                    <h3>1. Передать элемент аргументом:</h3>
+                    <pre><code class="language-js">import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 
-.scroll-lock {
-  overflow: hidden;
-}</code></pre>
-                    <p>На данной странице размещено фиксированное окно, в скрол лок добавлен функционал для компенсации отступа у фиксированных элементов при локе страницы. Для этого у фиксированного элемента должен быть дата атрибут <b>data-fix-block</b>. Компенсация отступа происходит за счёт добавления <b>padding-right</b> фиксированному блоку.</p>
-                    <blockquote>Будьте внимательны, не устанавливайте фиксированному блоку padding-right, так как он переопределяется в js.</blockquote>
-                    <h3>Пример подключения</h3>
-                    <pre><code class="language-js">import '../components/scroll-lock/js/scroll-lock';</code></pre>
-                    <table>
-                      <tr>
-                        <th>
-                          <p>window.scrollLock.disableScrolling()</p>
-                        </th>
-                        <td>
-                          <p>Блокирует скролл</p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <p>window.scrollLock.enableScrolling()</p>
-                        </th>
-                        <td>
-                          <p>Разблокирует скролл</p>
-                        </td>
-                      </tr>
-                    </table>
+//Получим элемент, который должен прокручиваться при отключеной прокрутки страницы
+const scrollableElement = document.querySelector('.my-scrollable-element');
+
+//Передадим элемент аргументом и отключим прокрутку на странице
+disablePageScroll(scrollableElement);
+
+//Также передадим аргументом элемент и активируем прокрутку на странице
+enablePageScroll(scrollableElement);
+</code></pre>
+                    <h3>2. Или указать атрибут <b>data-scroll-lock-scrollable</b> прокручиваемому элементу:</h3>
+                    <pre><code class="language-pug">.my-scrollable-element(data-scroll-lock-scrollable)</code></pre>
+                    <p>Если в прокручиваемом элементе будут вложены <b>textarea</b> или <b>contenteditable</b> то они будут прокручиваться без явного указания.</p><br>
+                    <p>На данной странице размещено фиксированное окно, в скролл лок добавлен функционал для компенсации отступа у фиксированных элементов при локе страницы. Для этого надо явно указать, какому элементу нужно добавить отступ. Компенсация отступа происходит за счёт добавления <b>padding-right</b> фиксированному блоку.</p>
+                    <pre><code class="language-js">import { addFillGapTarget, addFillGapSelector } from 'scroll-lock';
+
+//селектор
+addFillGapSelector('.my-fill-gap-selector');
+
+// или
+
+//элемент
+const fillGapElement = document.querySelector('.my-fill-gap-element');
+addFillGapTarget(fillGapElement);</code></pre>
+                    <p>Или же можно указать атрибут <b>data-scroll-lock-fill-gap</b>.</p>
+                    <pre><code class="language-pug">.my-fill-gap-element(data-scroll-lock-fill-gap)</code></pre>
                   </section>
                   <section class="component-demo" data-tabs="element">
                     <p>
@@ -619,7 +622,7 @@
                       <button class="btn unlock" type="button">Разблокировать скролл страницы</button>
                     </p>
                     <p></p>
-                    <div class="fix-block" data-fix-block>
+                    <div class="fix-block" data-scroll-lock-fill-gap>
                       <p>Я фиксированное окно</p>
                     </div>
                     <section class="lock-block">
@@ -640,8 +643,8 @@
                       const lockBtnElement = document.querySelector('.lock');
                       const unlockBtnElement = document.querySelector('.unlock');
                       
-                      lockBtnElement.addEventListener('click', () => window.scrollLock.disableScrolling());
-                      unlockBtnElement.addEventListener('click', () => window.scrollLock.enableScrolling());
+                      lockBtnElement.addEventListener('click', () =>  window.scrollLock.disablePageScroll());
+                      unlockBtnElement.addEventListener('click', () => window.scrollLock.enablePageScroll());
                     </script>
                   </section>
                 </div>

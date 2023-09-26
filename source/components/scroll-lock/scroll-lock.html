@@ -2,7 +2,7 @@
   <p><button class="btn lock" type="button">Заблокировать скролл страницы</button></p>
   <p><button class="btn unlock" type="button">Разблокировать скролл страницы</button></p>
 </p>
-<div class="fix-block" data-fix-block>
+<div class="fix-block" data-scroll-lock-fill-gap>
   <p>Я фиксированное окно</p>
 </div>
 <section class="lock-block">
@@ -24,6 +24,6 @@
   const lockBtnElement = document.querySelector('.lock');
   const unlockBtnElement = document.querySelector('.unlock');
 
-  lockBtnElement.addEventListener('click', () => window.scrollLock.disableScrolling());
-  unlockBtnElement.addEventListener('click', () => window.scrollLock.enableScrolling());
+  lockBtnElement.addEventListener('click', () =>  window.scrollLock.disablePageScroll());
+  unlockBtnElement.addEventListener('click', () => window.scrollLock.enablePageScroll());
 </script>
