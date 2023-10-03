@@ -1,0 +1,33 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Лига решений. Прелоадер" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const currentUrl = "page-loader.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const pageType = "component"
+  - const pageJs = ""
+
+block main
+  main
+    +content({
+      title: "Компоненты",
+      links: [
+        {
+          title: "Главная",
+          link: "index.html"
+        },
+        {
+          title: "Компоненты",
+          link: "components.html"
+        },
+        {
+          title: "Прелоадер",
+        }
+      ]
+    })
+      +page-loader()
+
+block modals
