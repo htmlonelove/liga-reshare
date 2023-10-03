@@ -30,6 +30,16 @@
     "tag": "#компоненты"
   },
   {
+    "title": "Бегущаяя строка",
+    "link": "marquee.html",
+    "tag": "#компоненты"
+  },
+  {
+    "title": "Прелоадер",
+    "link": "page-loader.html",
+    "tag": "#компоненты"
+  },
+  {
     "title": "Аккордеон",
     "link": "accordion.html",
     "tag": "#компоненты"

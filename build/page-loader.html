@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>Лига решений. Cookie</title>
+    <title>Лига решений. Прелоадер</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -438,7 +438,7 @@
                       <svg width="4" height="7" aria-hidden="true">
                         <use xlink:href="#icon-chevrone"></use>
                       </svg></a></li>
-                  <li class="breadcrumbs__item"><span class="breadcrumbs__link">Cookie</span></li>
+                  <li class="breadcrumbs__item"><span class="breadcrumbs__link">Прелоадер</span></li>
                 </ul>
               </div>
               <h1 class="hero__title">Компоненты</h1>
@@ -477,7 +477,7 @@
                           </li>
                           <li class="navbar__item"><a class="navbar__link" href="phone-mask.html">Легковесная телефонная маска</a>
                           </li>
-                          <li class="navbar__item"><a class="navbar__link is-active" href="cookies.html">Cookies</a>
+                          <li class="navbar__item"><a class="navbar__link" href="cookies.html">Cookies</a>
                           </li>
                           <li class="navbar__item"><a class="navbar__link" href="tabs.html">Табы</a>
                           </li>
@@ -515,7 +515,7 @@
                           </li>
                           <li class="navbar__item"><a class="navbar__link" href="marquee.html">Бегущаяя строка</a>
                           </li>
-                          <li class="navbar__item"><a class="navbar__link" href="page-loader.html">Прелоадер</a>
+                          <li class="navbar__item"><a class="navbar__link is-active" href="page-loader.html">Прелоадер</a>
                           </li>
                         </ul>
                       </div>
@@ -567,58 +567,25 @@
               <section class="component" data-tabs="parent" data-delay="300">
                 <section class="component-heading">
                   <div class="component-heading__head">
-                    <h1 class="title">Cookie</h1>
+                    <h1 class="title">Прелоадер</h1>
                     <div class="component-heading__tabs">
                       <button class="component-heading__tab-control" type="button" data-tabs="control">Описание</button>
-                      <button class="component-heading__tab-control" type="button" data-tabs="control">Демо</button>
                     </div>
-                  </div><a class="component-heading__download-link btn" href="zip-components/cookies.zip" download>Скачать компонент</a>
+                  </div><a class="component-heading__download-link btn" href="zip-components/page-loader.zip" download>Скачать компонент</a>
                 </section>
                 <div class="component__content" data-tabs="content">
                   <section class="component-description" data-tabs="element">
-                    <p>Cookie состоят из следующих файлов: cookie.js, cookie-consent-checker.js, они обязательны к переносу в проект! Файл стилей представлен как пример для визуального отображения блока. При нажатии на кнопку OK блок исчезнет на 30 дней.</p>
-                    <h2 class="subtitle">Обязательные data атрибуты</h2>
-                    <table>
-                      <tr>
-                        <th>
-                          <p>data-cookies</p>
-                        </th>
-                        <td>
-                          <p>Устанавливается на родителе</p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <p>data-cookies-consent</p>
-                        </th>
-                        <td>
-                          <p>Устанавливается на кнопке подтверждения</p>
-                        </td>
-                      </tr>
-                    </table>
-                    <h2 class="subtitle">Не обязательные data атрибуты</h2>
-                    <table>
-                      <tr>
-                        <th>
-                          <p>data-cookies-duration="30"</p>
-                        </th>
-                        <td>
-                          <p>Устанавливается на родителе, записывается количество дней действия согласия. Если не установлено, то вступает в силу значение по умолчанию <b>const BASE_DURATION = 30;</b></p>
-                        </td>
-                      </tr>
-                    </table>
-                    <pre><code class="language-html">&lt;div class="cookies is-active" data-cookies data-cookies-duration="30">
-  &lt;div> class="cookies__text">
-    &lt;span>Мы используем куки&lt;/span>
-  &lt;/div>
-  &lt;button class="cookies__btn" type="button" data-cookies-consent>OK&lt;/button>
-&lt;/div></code></pre>
-                  </section>
-                  <section class="component-demo" data-tabs="element">
-                    <div class="cookies" data-cookies data-cookies-duration="30">
-                      <div class="cookies__text"><span>Мы используем куки</span></div>
-                      <button class="cookies__btn" type="button" data-cookies-consent>OK</button>
-                    </div>
+                    <p>В данном компоненте представленны две простые реализации прелоадера, на функциях и на классах, выбирайте тот что покажется вам комфортным для понимания.</p>
+                    <p>Обязательный аттрибут <b>data-page-loader</b> нужно добавить на блок прелоадера.</p><code>
+                      <pre>&lt;div class="page-loader" data-page-loader&gt;
+  ...
+&lt;/div&gt;
+</pre></code>
+                    <p>В данном компоненте задействован функционал <a href="scroll-lock.html">блокировки скролла</a>, если на вашем проекте используется другой функционал или библиотека, следует адаптировать это под свой проект.</p>
+                    <p>Если вам нужно будет выполнить какие-то дополнительные действия после снятия прелоадера, завязывайтесь на событие <b>loaderOff</b> которое запускает компонент.</p><code>
+                      <pre>window.addEventListener('loaderOff', () => { ... });</pre></code>
+                    <p><a href="page-loader-example.html">Пример функционального прелоадера</a></p>
+                    <p><a href="page-loader-class-example.html">Пример классового прелоадера</a></p>
                   </section>
                 </div>
               </section>
@@ -664,6 +631,5 @@
     </div>
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>
-    <script src="js/cookies.min.js"></script>
   </body>
 </html>
