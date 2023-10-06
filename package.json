@@ -48,7 +48,7 @@
     "gulp-sass": "5.1.0",
     "gulp-svgstore": "9.0.0",
     "gulp-webp": "4.0.1",
-    "postcss": "8.4.14",
+    "postcss": "8.4.31",
     "sass": "1.53.0",
     "stylelint": "14.16.1",
     "webpack": "4.42.0",
