@@ -792,7 +792,7 @@
         }
       
         off() {
-          window.scrollLock.disablePageScroll(); // заблокировать скролл
+          window.scrollLock.enablePageScroll(); // разблокировать скролл
       
           if (history.scrollRestoration) {
             history.scrollRestoration = 'manual';
@@ -803,7 +803,8 @@
         }
       
         init() {
-          window.scrollLock.enablePageScroll(); // разблокировать скролл
+          console.log(window.scrollLock)
+          window.scrollLock.disablePageScroll(); // заблокировать скролл
           window.addEventListener('load', this.off); // после загрузки страницы вызови метод off
         }
       }
