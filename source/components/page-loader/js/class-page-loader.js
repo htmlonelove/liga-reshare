@@ -14,7 +14,7 @@ class PageLoader {
   }
 
   off() {
-    window.scrollLock.disablePageScroll(); // заблокировать скролл
+    window.scrollLock.enablePageScroll(); // разблокировать скролл
 
     // востановление позиции скролла
     if (history.scrollRestoration) {
@@ -26,7 +26,7 @@ class PageLoader {
   }
 
   init() {
-    window.scrollLock.enablePageScroll(); // разблокировать скролл
+    window.scrollLock.disablePageScroll(); // заблокировать скролл
     window.addEventListener('load', this.off); // после загрузки страницы вызови метод off
   }
 }
